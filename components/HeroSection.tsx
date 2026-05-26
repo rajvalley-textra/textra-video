@@ -147,7 +147,7 @@ export default function HeroSection() {
             Your Content Deserves Better Than{' '}
             <em style={{ fontStyle: 'italic', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Dead PDFs</em>
           </h1>
-          <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.92)', lineHeight: 1.7, margin: '0 0 36px 0', fontWeight: 700 }}>
+          <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.92)', lineHeight: 1.7, margin: '0 0 36px 0', fontWeight: 600 }}>
             Turn boring documents into studio-quality{' '}
             <em style={{ fontStyle: 'italic', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', filter: 'brightness(1.2)' }}>animated video</em>
             {' '}in{' '}
