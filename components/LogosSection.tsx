@@ -8,7 +8,7 @@ const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 const clients = [
   { name: 'Amazon',             src: '/assets/logos/amazon.png',        use: 'Enterprise Training & Onboarding',   w: 120, h: 40 },
   { name: 'HSBC',               src: '/assets/logos/hsbc.png',          use: 'Compliance & Regulatory Training',   w: 120, h: 40 },
-  { name: 'GSK',                src: '/assets/logos/gsk.png',           use: 'Regulatory & Sales Training',        w: 40,  h: 40 },
+  { name: 'GSK',                src: '/assets/logos/gsk.png',           use: 'Regulatory & Sales Training',        w: 55,  h: 55 },
   { name: 'Cisco',              src: '/assets/logos/cisco.png',         use: 'Sales Enablement & Onboarding',      w: 120, h: 40 },
   { name: 'Dept for Education', src: '/assets/logos/dfe.png',           use: 'Government Compliance Training',     w: 120, h: 35 },
 ];
