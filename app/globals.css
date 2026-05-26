@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* ── Keyframe Animations ── */
+@keyframes vidProg {
+  from { width: 0%; }
+  to   { width: 74%; }
+}
+
+@keyframes clockSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes glitchEffect {
+  0%,  78%, 100% { transform: translate(0); opacity: 1; filter: none; }
+  80%  { transform: translate(-3px, 1px);  opacity: 0.85; filter: hue-rotate(80deg); }
+  82%  { transform: translate(3px, -2px);  filter: hue-rotate(-80deg); }
+  84%  { transform: translate(-2px, 1px);  opacity: 0.9;  filter: none; }
+  86%  { transform: translate(0);          opacity: 1; }
+}
+
+@keyframes checkDraw {
+  0%,  8%  { stroke-dashoffset: 100; opacity: 0; }
+  25%, 80% { stroke-dashoffset: 0;   opacity: 1; }
+  94%, 100% { stroke-dashoffset: 100; opacity: 0; }
+}
+
+@keyframes textraPulse {
+  0%, 100% { opacity: 0.12; transform: scale(1); }
+  50%      { opacity: 0.28; transform: scale(1.06); }
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* ── Responsive layout helpers ── */
+@media (max-width: 900px) {
+  .hero-grid       { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .problem-grid    { grid-template-columns: 1fr !important; }
+  .steps-grid      { grid-template-columns: repeat(2, 1fr) !important; }
+  .steps-connector { display: none !important; }
+  .stats-grid      { grid-template-columns: repeat(2, 1fr) !important; gap: 0 !important; }
+  .stat-item       { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .roles-grid      { grid-template-columns: 1fr !important; }
+  .footer-cols     { grid-template-columns: repeat(2, 1fr) !important; }
+  .comp-svg        { width: 100% !important; height: auto !important; }
+  .cta-inner       { padding: 48px 32px !important; }
+  .cta-title       { font-size: 34px !important; }
+  .wrap-pad        { padding: 0 20px !important; }
+}
+
+@media (max-width: 560px) {
+  .steps-grid { grid-template-columns: 1fr !important; }
+  .stats-grid { grid-template-columns: 1fr !important; }
+  .footer-cols { grid-template-columns: 1fr !important; }
+  .role-tabs  { flex-direction: column !important; align-items: center !important; }
+}
