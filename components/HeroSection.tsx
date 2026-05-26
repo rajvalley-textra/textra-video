@@ -148,8 +148,9 @@ export default function HeroSection() {
             <em style={{ fontStyle: 'italic', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Dead PDFs</em>
           </h1>
           <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.76)', lineHeight: 1.7, margin: '0 0 36px 0', fontWeight: 400 }}>
-            Turn boring documents into studio-quality video in 24 hours.{' '}
-            No crew. No delays. No compromise on brand.
+            Turn boring documents into studio-quality{' '}
+            <em style={{ fontStyle: 'italic', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>animated video</em>
+            {' '}in 24 hours. No crew. No delays. No compromise on brand.
           </p>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 48 }}>
             <a

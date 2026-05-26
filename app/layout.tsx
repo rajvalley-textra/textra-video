@@ -11,9 +11,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'Textra Video — Turn Dead Documents Into Studio-Quality Video',
+  title: 'Textra Video — Turn Dead Documents Into Studio-Quality Animated Video',
   description:
-    'Turn boring documents into studio-quality branded video in 24 hours. No crew. No delays. No compromise on brand.',
+    'Turn boring documents into studio-quality animated video in 24 hours. No crew. No delays. No compromise on brand.',
   robots: {
     index: false,
     follow: false,

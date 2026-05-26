@@ -14,11 +14,11 @@ const clients = [
 ];
 
 const partners = [
-  { name: 'Cornerstone',       src: '/assets/logos/cornerstone.png',    h: 22 },
-  { name: 'Kineo / Mindtools', src: '/assets/logos/kineo.png',          h: 34 },
-  { name: 'Jam Pan',           src: '/assets/logos/jampan.webp',        h: 16 },
-  { name: 'Netex',             src: '/assets/logos/netex.png',          h: 36 },
-  { name: 'Learning Nexus',    src: '/assets/logos/learningnexus.png',  h: 26 },
+  { name: 'Cornerstone',       src: '/assets/logos/cornerstone.png',    h: 18 },
+  { name: 'Kineo / Mindtools', src: '/assets/logos/kineo.png',          h: 28 },
+  { name: 'Jam Pan',           src: '/assets/logos/jampan.webp',        h: 13 },
+  { name: 'Netex',             src: '/assets/logos/netex.png',          h: 29 },
+  { name: 'Learning Nexus',    src: '/assets/logos/learningnexus.png',  h: 21 },
 ];
 
 export default function LogosSection() {
@@ -39,7 +39,7 @@ export default function LogosSection() {
           {clients.map((c, i) => (
             <div
               key={c.name}
-              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '16px 20px', borderRadius: 14, background: '#fff', border: `1px solid ${C.gray200}`, minWidth: 130, minHeight: 95, opacity: vis ? 1 : 0, transform: vis ? 'translateY(0)' : 'translateY(10px)', transition: `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s`, boxShadow: sh.sm }}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '16px 20px', borderRadius: 14, background: '#fff', minWidth: 130, minHeight: 95, opacity: vis ? 1 : 0, transform: vis ? 'translateY(0)' : 'translateY(10px)', transition: `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s`, boxShadow: sh.sm }}
             >
               <Image
                 src={c.src}
@@ -66,7 +66,7 @@ export default function LogosSection() {
                 key={p.name}
                 src={p.src}
                 alt={p.name}
-                width={140}
+                width={110}
                 height={p.h}
                 style={{ objectFit: 'contain', filter: 'grayscale(1) opacity(0.45)', transition: `filter 0.3s ease, opacity 0.5s ease ${i * 0.07}s`, opacity: vis ? 1 : 0 }}
                 onMouseEnter={(e) => { (e.target as HTMLImageElement).style.filter = 'grayscale(0) opacity(1)'; }}
