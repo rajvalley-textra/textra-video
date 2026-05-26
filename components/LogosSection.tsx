@@ -8,7 +8,7 @@ const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 const clients = [
   { name: 'Amazon',             src: '/assets/logos/amazon.png',        use: 'Enterprise Training & Onboarding',   h: 40 },
   { name: 'HSBC',               src: '/assets/logos/hsbc.png',          use: 'Compliance & Regulatory Training',   h: 40 },
-  { name: 'GSK',                src: '/assets/logos/gsk.png',           use: 'Regulatory & Sales Training',        h: 32 },
+  { name: 'GSK',                src: '/assets/logos/gsk.png',           use: 'Regulatory & Sales Training',        h: 28 },
   { name: 'Cisco',              src: '/assets/logos/cisco.png',         use: 'Sales Enablement & Onboarding',      h: 40 },
   { name: 'Dept for Education', src: '/assets/logos/dfe.png',           use: 'Government Compliance Training',     h: 35 },
 ];
@@ -39,7 +39,7 @@ export default function LogosSection() {
           {clients.map((c, i) => (
             <div
               key={c.name}
-              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '16px 20px', borderRadius: 14, background: '#fff', minWidth: 130, minHeight: 95, opacity: vis ? 1 : 0, transform: vis ? 'translateY(0)' : 'translateY(10px)', transition: `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s`, boxShadow: sh.sm }}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '16px 20px', borderRadius: 14, minWidth: 130, minHeight: 95, opacity: vis ? 1 : 0, transform: vis ? 'translateY(0)' : 'translateY(10px)', transition: `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s` }}
             >
               <Image
                 src={c.src}
