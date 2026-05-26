@@ -7,6 +7,7 @@ import CompetitiveSection from '@/components/CompetitiveSection';
 import RolesSection from '@/components/RolesSection';
 import PricingSection from '@/components/PricingSection';
 import CTASection from '@/components/CTASection';
+import FooterSection from '@/components/FooterSection';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <RolesSection />
       <PricingSection />
       <CTASection />
+      <FooterSection />
     </>
   );
 }
