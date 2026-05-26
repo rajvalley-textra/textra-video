@@ -9,7 +9,7 @@ const clients = [
   { name: 'Amazon',             src: '/assets/logos/amazon.png',        use: 'Enterprise Training & Onboarding',   w: 120, h: 40 },
   { name: 'HSBC',               src: '/assets/logos/hsbc.png',          use: 'Compliance & Regulatory Training',   w: 120, h: 40 },
   { name: 'GSK',                src: '/assets/logos/gsk.png',           use: 'Regulatory & Sales Training',        w: 55,  h: 55 },
-  { name: 'Cisco',              src: '/assets/logos/cisco.png',         use: 'Sales Enablement & Onboarding',      w: 120, h: 32 },
+  { name: 'Cisco',              src: '/assets/logos/cisco.png',         use: 'Sales Enablement & Onboarding',      w: 100, h: 26 },
   { name: 'Dept for Education', src: '/assets/logos/dfe.png',           use: 'Government Compliance Training',     w: 100, h: 40 },
 ];
 
