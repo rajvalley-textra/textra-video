@@ -6,11 +6,11 @@ import { useReveal } from '@/hooks/useReveal';
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
 const clients = [
-  { name: 'Amazon',             src: '/assets/logos/amazon.png',        use: 'Enterprise Training & Onboarding',   h: 28 },
-  { name: 'HSBC',               src: '/assets/logos/hsbc.png',          use: 'Compliance & Regulatory Training',   h: 30 },
-  { name: 'GSK',                src: '/assets/logos/gsk.png',           use: 'Regulatory & Sales Training',        h: 54 },
-  { name: 'Cisco',              src: '/assets/logos/cisco.png',         use: 'Sales Enablement & Onboarding',      h: 38 },
-  { name: 'Dept for Education', src: '/assets/logos/dfe.png',           use: 'Government Compliance Training',     h: 56 },
+  { name: 'Amazon',             src: '/assets/logos/amazon.png',        use: 'Enterprise Training & Onboarding',   h: 40 },
+  { name: 'HSBC',               src: '/assets/logos/hsbc.png',          use: 'Compliance & Regulatory Training',   h: 40 },
+  { name: 'GSK',                src: '/assets/logos/gsk.png',           use: 'Regulatory & Sales Training',        h: 40 },
+  { name: 'Cisco',              src: '/assets/logos/cisco.png',         use: 'Sales Enablement & Onboarding',      h: 40 },
+  { name: 'Dept for Education', src: '/assets/logos/dfe.png',           use: 'Government Compliance Training',     h: 40 },
 ];
 
 const partners = [
