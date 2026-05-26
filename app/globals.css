@@ -49,7 +49,8 @@ img, video { max-width: 100%; }
   .hero-metric:nth-child(3),
   .hero-metric:nth-child(4)    { border-bottom: none !important; }
   .nav-links       { display: none !important; }
-  .nav-cta         { padding: 8px 16px !important; font-size: 13px !important; }
+  .nav-cta         { display: none !important; }
+  .nav-logo        { font-size: 24px !important; }
   .problem-grid    { grid-template-columns: 1fr !important; }
   .steps-grid      { grid-template-columns: repeat(2, 1fr) !important; }
   .steps-connector { display: none !important; }

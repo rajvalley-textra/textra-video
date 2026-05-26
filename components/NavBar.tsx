@@ -31,8 +31,8 @@ export default function NavBar() {
     }}>
       <div style={{ ...WRAP, display: 'flex', alignItems: 'center', height: 70 }}>
         <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 2, textDecoration: 'none', flexShrink: 0 }}>
-          <span style={{ fontWeight: 900, fontSize: 20, color: scrolled ? C.navy : '#fff', letterSpacing: '-0.02em', transition: 'color 280ms' }}>Textra</span>
-          <span style={{ fontWeight: 900, fontSize: 20, letterSpacing: '-0.02em', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginLeft: 5 }}>Video</span>
+          <span className="nav-logo" style={{ fontWeight: 900, fontSize: 20, color: scrolled ? C.navy : '#fff', letterSpacing: '-0.02em', transition: 'color 280ms' }}>Textra</span>
+          <span className="nav-logo" style={{ fontWeight: 900, fontSize: 20, letterSpacing: '-0.02em', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginLeft: 5 }}>Video</span>
         </a>
 
         <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 32, marginLeft: 48, flex: 1 }}>
