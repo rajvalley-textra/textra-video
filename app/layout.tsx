@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: 'Textra Video — Turn Dead Documents Into Studio-Quality Video',
   description:
     'Turn boring documents into studio-quality branded video in 24 hours. No crew. No delays. No compromise on brand.',
+  robots: 'noindex, nofollow',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
