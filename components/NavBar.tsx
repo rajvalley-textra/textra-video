@@ -35,7 +35,7 @@ export default function NavBar() {
           <span style={{ fontWeight: 900, fontSize: 20, letterSpacing: '-0.02em', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginLeft: 5 }}>Video</span>
         </a>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 32, marginLeft: 48, flex: 1 }}>
+        <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 32, marginLeft: 48, flex: 1 }}>
           {links.map((l) => {
             const lc = scrolled ? C.gray600 : 'rgba(255,255,255,0.8)';
             return (
