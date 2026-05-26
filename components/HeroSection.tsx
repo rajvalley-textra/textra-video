@@ -143,11 +143,11 @@ export default function HeroSection() {
           <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(102,188,173,0.92)', marginBottom: 18 }}>
             AI-Powered Video Platform
           </div>
-          <h1 style={{ fontSize: 52, fontWeight: 900, color: '#fff', lineHeight: 1.08, letterSpacing: '-0.02em', margin: '0 0 22px 0' }}>
+          <h1 className="hero-title" style={{ fontSize: 52, fontWeight: 900, color: '#fff', lineHeight: 1.08, letterSpacing: '-0.02em', margin: '0 0 22px 0' }}>
             Your Content Deserves Better Than{' '}
             <em style={{ fontStyle: 'italic', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Dead PDFs</em>
           </h1>
-          <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.92)', lineHeight: 1.7, margin: '0 0 36px 0', fontWeight: 600 }}>
+          <p className="hero-sub" style={{ fontSize: 18, color: 'rgba(255,255,255,0.92)', lineHeight: 1.7, margin: '0 0 36px 0', fontWeight: 600 }}>
             Turn boring documents into studio-quality{' '}
             <em style={{ fontStyle: 'italic', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', filter: 'brightness(1.2)' }}>animated video</em>
             {' '}in{' '}
@@ -186,7 +186,7 @@ export default function HeroSection() {
         </div>
 
         {/* Right */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
+        <div className="hero-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
           <AnimatedHeroCard />
           <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontWeight: 500, letterSpacing: '0.06em' }}>Any document → Branded video · Delivered in 24 hours</div>
         </div>

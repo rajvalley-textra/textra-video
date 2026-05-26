@@ -37,7 +37,10 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 
 /* ── Responsive layout helpers ── */
 @media (max-width: 900px) {
-  .hero-grid       { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .hero-grid       { grid-template-columns: 1fr !important; gap: 40px !important; padding: 60px 20px 40px !important; }
+  .hero-title      { font-size: 38px !important; }
+  .hero-sub        { font-size: 15px !important; }
+  .hero-card       { max-width: 100% !important; }
   .problem-grid    { grid-template-columns: 1fr !important; }
   .steps-grid      { grid-template-columns: repeat(2, 1fr) !important; }
   .steps-connector { display: none !important; }
@@ -45,6 +48,8 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
   .stat-item       { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .roles-grid      { grid-template-columns: 1fr !important; }
   .footer-cols     { grid-template-columns: repeat(2, 1fr) !important; }
+  .footer-top      { flex-direction: column !important; gap: 32px !important; }
+  .footer-top > *  { max-width: 100% !important; width: 100% !important; }
   .comp-svg        { width: 100% !important; height: auto !important; }
   .cta-inner       { padding: 48px 32px !important; }
   .cta-title       { font-size: 34px !important; }
@@ -52,8 +57,9 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 }
 
 @media (max-width: 560px) {
-  .steps-grid { grid-template-columns: 1fr !important; }
-  .stats-grid { grid-template-columns: 1fr !important; }
-  .footer-cols { grid-template-columns: 1fr !important; }
-  .role-tabs  { flex-direction: column !important; align-items: center !important; }
+  .hero-title  { font-size: 30px !important; }
+  .steps-grid  { grid-template-columns: 1fr !important; }
+  .stats-grid  { grid-template-columns: 1fr !important; }
+  .footer-cols { grid-template-columns: repeat(2, 1fr) !important; }
+  .role-tabs   { flex-direction: column !important; align-items: center !important; }
 }

@@ -31,9 +31,9 @@ export default function FooterSection() {
 
   return (
     <footer id="about" style={{ background: '#1b2558', paddingTop: 72, paddingBottom: 0 }}>
-      <div style={{ ...WRAP }}>
+      <div style={{ ...WRAP }} className="wrap-pad">
         {/* Top row: logo + newsletter */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 48, marginBottom: 56, flexWrap: 'wrap' }}>
+        <div className="footer-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 48, marginBottom: 56, flexWrap: 'wrap' }}>
           {/* Logo & Social */}
           <div style={{ maxWidth: 320 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 18 }}>
@@ -94,7 +94,7 @@ export default function FooterSection() {
         </div>
 
         {/* Link columns */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32, paddingBottom: 48, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <div className="footer-cols" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32, paddingBottom: 48, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
           {cols.map((col) => (
             <div key={col.title}>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', marginBottom: 16 }}>{col.title}</div>
