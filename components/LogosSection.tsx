@@ -6,11 +6,11 @@ import { useReveal } from '@/hooks/useReveal';
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
 const clients = [
-  { name: 'Amazon',             src: '/assets/logos/amazon.png',        use: 'Enterprise Training & Onboarding',   h: 40 },
-  { name: 'HSBC',               src: '/assets/logos/hsbc.png',          use: 'Compliance & Regulatory Training',   h: 40 },
-  { name: 'GSK',                src: '/assets/logos/gsk.png',           use: 'Regulatory & Sales Training',        h: 22 },
-  { name: 'Cisco',              src: '/assets/logos/cisco.png',         use: 'Sales Enablement & Onboarding',      h: 40 },
-  { name: 'Dept for Education', src: '/assets/logos/dfe.png',           use: 'Government Compliance Training',     h: 35 },
+  { name: 'Amazon',             src: '/assets/logos/amazon.png',        use: 'Enterprise Training & Onboarding',   w: 120, h: 40 },
+  { name: 'HSBC',               src: '/assets/logos/hsbc.png',          use: 'Compliance & Regulatory Training',   w: 120, h: 40 },
+  { name: 'GSK',                src: '/assets/logos/gsk.png',           use: 'Regulatory & Sales Training',        w: 40,  h: 40 },
+  { name: 'Cisco',              src: '/assets/logos/cisco.png',         use: 'Sales Enablement & Onboarding',      w: 120, h: 40 },
+  { name: 'Dept for Education', src: '/assets/logos/dfe.png',           use: 'Government Compliance Training',     w: 120, h: 35 },
 ];
 
 const partners = [
@@ -44,7 +44,7 @@ export default function LogosSection() {
               <Image
                 src={c.src}
                 alt={c.name}
-                width={120}
+                width={c.w}
                 height={c.h}
                 style={{ objectFit: 'contain', filter: 'saturate(0.6) opacity(0.82)', transition: 'filter 0.3s ease' }}
                 onMouseEnter={(e) => { (e.target as HTMLImageElement).style.filter = 'saturate(1) opacity(1)'; }}
