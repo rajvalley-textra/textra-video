@@ -9,8 +9,8 @@ const clients = [
   { name: 'Amazon',             src: '/assets/logos/amazon.png',        use: 'Enterprise Training & Onboarding',   w: 120, h: 40 },
   { name: 'HSBC',               src: '/assets/logos/hsbc.png',          use: 'Compliance & Regulatory Training',   w: 120, h: 40 },
   { name: 'GSK',                src: '/assets/logos/gsk.png',           use: 'Regulatory & Sales Training',        w: 55,  h: 55 },
-  { name: 'Cisco',              src: '/assets/logos/cisco.png',         use: 'Sales Enablement & Onboarding',      w: 120, h: 40 },
-  { name: 'Dept for Education', src: '/assets/logos/dfe.png',           use: 'Government Compliance Training',     w: 120, h: 35 },
+  { name: 'Cisco',              src: '/assets/logos/cisco.png',         use: 'Sales Enablement & Onboarding',      w: 120, h: 32 },
+  { name: 'Dept for Education', src: '/assets/logos/dfe.png',           use: 'Government Compliance Training',     w: 100, h: 40 },
 ];
 
 const partners = [
@@ -35,11 +35,11 @@ export default function LogosSection() {
           <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.gray400 }}>Trusted By Enterprise</span>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', gap: 12, flexWrap: 'wrap' }}>
           {clients.map((c, i) => (
             <div
               key={c.name}
-              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '16px 20px', borderRadius: 14, minWidth: 130, minHeight: 95, opacity: vis ? 1 : 0, transform: vis ? 'translateY(0)' : 'translateY(10px)', transition: `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s` }}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', gap: 8, padding: '16px 20px', borderRadius: 14, minWidth: 130, minHeight: 95, opacity: vis ? 1 : 0, transform: vis ? 'translateY(0)' : 'translateY(10px)', transition: `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s` }}
             >
               <Image
                 src={c.src}
