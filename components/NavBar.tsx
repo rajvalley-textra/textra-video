@@ -29,7 +29,7 @@ export default function NavBar() {
       boxShadow: scrolled ? sh.sm : 'none',
       transition: 'all 280ms cubic-bezier(0,0,0.2,1)',
     }}>
-      <div style={{ ...WRAP, display: 'flex', alignItems: 'center', height: 70 }}>
+      <div className="wrap-pad" style={{ ...WRAP, display: 'flex', alignItems: 'center', height: 70 }}>
         <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 2, textDecoration: 'none', flexShrink: 0 }}>
           <span className="nav-logo" style={{ fontWeight: 900, fontSize: 20, color: scrolled ? C.navy : '#fff', letterSpacing: '-0.02em', transition: 'color 280ms' }}>Textra</span>
           <span className="nav-logo" style={{ fontWeight: 900, fontSize: 20, letterSpacing: '-0.02em', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginLeft: 5 }}>Video</span>

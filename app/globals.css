@@ -39,7 +39,7 @@ img, video { max-width: 100%; }
 /* ── Responsive layout helpers ── */
 @media (max-width: 900px) {
   .hero-grid       { grid-template-columns: 1fr !important; gap: 32px !important; padding: 50px 20px 36px !important; }
-  .hero-title      { font-size: 34px !important; line-height: 1.12 !important; }
+  .hero-title      { font-size: 28px !important; line-height: 1.12 !important; }
   .hero-sub        { font-size: 15px !important; margin-bottom: 24px !important; }
   .hero-cta        { margin-bottom: 28px !important; }
   .hero-card       { max-width: 100% !important; }
@@ -50,7 +50,7 @@ img, video { max-width: 100%; }
   .hero-metric:nth-child(4)    { border-bottom: none !important; }
   .nav-links       { display: none !important; }
   .nav-cta         { display: none !important; }
-  .nav-logo        { font-size: 24px !important; }
+  .nav-logo        { font-size: 28px !important; }
   .problem-grid    { grid-template-columns: 1fr !important; }
   .steps-grid      { grid-template-columns: repeat(2, 1fr) !important; }
   .steps-connector { display: none !important; }
@@ -67,7 +67,7 @@ img, video { max-width: 100%; }
 }
 
 @media (max-width: 560px) {
-  .hero-title  { font-size: 28px !important; }
+  .hero-title  { font-size: 24px !important; }
   .steps-grid  { grid-template-columns: 1fr !important; }
   .stats-grid  { grid-template-columns: 1fr !important; }
   .footer-cols { grid-template-columns: repeat(2, 1fr) !important; }
