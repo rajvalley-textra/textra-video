@@ -38,13 +38,18 @@ img, video { max-width: 100%; }
 
 /* ── Responsive layout helpers ── */
 @media (max-width: 900px) {
-  .hero-grid       { grid-template-columns: 1fr !important; gap: 40px !important; padding: 60px 20px 40px !important; }
+  .hero-grid       { grid-template-columns: 1fr !important; gap: 32px !important; padding: 50px 20px 36px !important; }
   .hero-title      { font-size: 34px !important; line-height: 1.12 !important; }
-  .hero-sub        { font-size: 15px !important; }
+  .hero-sub        { font-size: 15px !important; margin-bottom: 24px !important; }
+  .hero-cta        { margin-bottom: 28px !important; }
   .hero-card       { max-width: 100% !important; }
-  .hero-metrics    { flex-wrap: wrap !important; gap: 16px !important; }
-  .hero-metric     { border-right: none !important; flex: 0 0 auto !important; white-space: normal !important; }
+  .hero-metrics    { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0 !important; border: 1px solid rgba(255,255,255,0.12) !important; border-radius: 12px !important; overflow: hidden !important; }
+  .hero-metric     { border-right: none !important; flex: none !important; white-space: normal !important; padding: 14px 16px !important; margin: 0 !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
+  .hero-metric:nth-child(odd)  { border-right: 1px solid rgba(255,255,255,0.08) !important; }
+  .hero-metric:nth-child(3),
+  .hero-metric:nth-child(4)    { border-bottom: none !important; }
   .nav-links       { display: none !important; }
+  .nav-cta         { padding: 8px 16px !important; font-size: 13px !important; }
   .problem-grid    { grid-template-columns: 1fr !important; }
   .steps-grid      { grid-template-columns: repeat(2, 1fr) !important; }
   .steps-connector { display: none !important; }

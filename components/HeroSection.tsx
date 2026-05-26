@@ -154,7 +154,7 @@ export default function HeroSection() {
             <em style={{ fontStyle: 'italic', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', filter: 'brightness(1.2)' }}>24 hours</em>
             . No crew. No delays. No compromise on brand.
           </p>
-          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 48 }}>
+          <div className="hero-cta" style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 48 }}>
             <a
               href="#contact"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: C.navy, borderRadius: 9999, padding: '14px 28px', fontSize: 15, fontWeight: 700, textDecoration: 'none', boxShadow: '0 4px 20px rgba(0,0,0,0.18)', transition: 'transform 200ms, box-shadow 200ms' }}

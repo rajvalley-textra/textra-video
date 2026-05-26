@@ -54,6 +54,7 @@ export default function NavBar() {
 
         <a
           href="#contact"
+          className="nav-cta"
           style={{ background: scrolled ? C.navy : '#fff', color: scrolled ? '#fff' : C.navy, borderRadius: 9999, padding: '11px 24px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', flexShrink: 0 }}
           onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '0.85'; }}
           onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '1'; }}
