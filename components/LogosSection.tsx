@@ -39,18 +39,18 @@ export default function LogosSection() {
           {clients.map((c, i) => (
             <div
               key={c.name}
-              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 10, padding: '20px 28px', borderRadius: 14, background: '#fff', border: `1px solid ${C.gray200}`, minWidth: 155, minHeight: 110, opacity: vis ? 1 : 0, transform: vis ? 'translateY(0)' : 'translateY(10px)', transition: `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s`, boxShadow: sh.sm }}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '16px 20px', borderRadius: 14, background: '#fff', border: `1px solid ${C.gray200}`, minWidth: 130, minHeight: 95, opacity: vis ? 1 : 0, transform: vis ? 'translateY(0)' : 'translateY(10px)', transition: `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s`, boxShadow: sh.sm }}
             >
               <Image
                 src={c.src}
                 alt={c.name}
-                width={160}
+                width={120}
                 height={c.h}
                 style={{ objectFit: 'contain', filter: 'saturate(0.6) opacity(0.82)', transition: 'filter 0.3s ease' }}
                 onMouseEnter={(e) => { (e.target as HTMLImageElement).style.filter = 'saturate(1) opacity(1)'; }}
                 onMouseLeave={(e) => { (e.target as HTMLImageElement).style.filter = 'saturate(0.6) opacity(0.82)'; }}
               />
-              <div style={{ fontSize: 9, color: C.gray400, fontWeight: 500, textAlign: 'center', lineHeight: 1.4, maxWidth: 140 }}>{c.use}</div>
+              <div style={{ fontSize: 8, color: C.gray400, fontWeight: 500, textAlign: 'center', lineHeight: 1.3, maxWidth: 120 }}>{c.use}</div>
             </div>
           ))}
         </div>
@@ -60,13 +60,13 @@ export default function LogosSection() {
           <div style={{ textAlign: 'center', marginBottom: 20, opacity: vis ? 1 : 0, transition: 'opacity 0.6s ease 0.2s' }}>
             <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.gray400 }}>Partnerships</span>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
             {partners.map((p, i) => (
               <Image
                 key={p.name}
                 src={p.src}
                 alt={p.name}
-                width={180}
+                width={140}
                 height={p.h}
                 style={{ objectFit: 'contain', filter: 'grayscale(1) opacity(0.45)', transition: `filter 0.3s ease, opacity 0.5s ease ${i * 0.07}s`, opacity: vis ? 1 : 0 }}
                 onMouseEnter={(e) => { (e.target as HTMLImageElement).style.filter = 'grayscale(0) opacity(1)'; }}
