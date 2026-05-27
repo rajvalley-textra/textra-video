@@ -1,117 +1,7 @@
 'use client';
-import { useState, useEffect, CSSProperties } from 'react';
 import { C, grad, gradHero, sh } from '@/lib/theme';
 
 const WRAP = { maxWidth: 1300, margin: '0 auto', padding: '0 40px' };
-
-type Phase = 'doc' | 'process' | 'video';
-
-function AnimatedHeroCard() {
-  const [phase, setPhase] = useState<Phase>('doc');
-  const [progress, setProgress] = useState(0);
-  const [vkey, setVkey] = useState(0);
-
-  useEffect(() => {
-    const durations: Record<Phase, number> = { doc: 3000, process: 1800, video: 3200 };
-    const order: Phase[] = ['doc', 'process', 'video'];
-    let idx = 0;
-    let timer: ReturnType<typeof setTimeout>;
-    let raf: number;
-
-    function advance() {
-      idx = (idx + 1) % 3;
-      const next = order[idx];
-      setPhase(next);
-      if (next === 'video') setVkey((k) => k + 1);
-      if (next === 'process') {
-        let start: number | null = null;
-        setProgress(0);
-        function tick(ts: number) {
-          if (!start) start = ts;
-          const p = Math.min((ts - start) / durations.process, 1);
-          setProgress(p);
-          if (p < 1) raf = requestAnimationFrame(tick);
-        }
-        raf = requestAnimationFrame(tick);
-      }
-      timer = setTimeout(advance, durations[next]);
-    }
-    timer = setTimeout(advance, durations.doc);
-    return () => { clearTimeout(timer); cancelAnimationFrame(raf); };
-  }, []);
-
-  function layerStyle(p: Phase): CSSProperties {
-    return {
-      position: 'absolute', inset: 0,
-      opacity: phase === p ? 1 : 0,
-      transition: 'opacity 0.55s cubic-bezier(0,0,0.2,1)',
-      pointerEvents: phase === p ? 'auto' : 'none',
-    };
-  }
-
-  return (
-    <div style={{ position: 'relative', width: '100%', borderRadius: 20, overflow: 'hidden', boxShadow: sh.xl, border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '4/3' }}>
-
-      {/* Doc layer */}
-      <div style={{ ...layerStyle('doc'), background: '#fff', padding: '22px 26px', display: 'flex', flexDirection: 'column', gap: 9 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, paddingBottom: 10, borderBottom: `1px solid ${C.gray100}` }}>
-          <div style={{ width: 28, height: 36, background: '#eef0f7', borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={C.navy} strokeWidth="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          </div>
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: C.navy, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>Q3_Strategy_Brief.pdf</div>
-            <div style={{ fontSize: 9, color: C.gray400, marginTop: 1 }}>42 pages · Modified today</div>
-          </div>
-          <div style={{ fontSize: 8, fontWeight: 700, background: '#e8ebf5', color: C.gray500, padding: '3px 6px', borderRadius: 3, flexShrink: 0, letterSpacing: '0.04em' }}>PDF</div>
-        </div>
-        <div style={{ fontSize: 10, fontWeight: 700, color: C.navy, marginBottom: 2 }}>Q3 Strategy Brief — Leadership Team</div>
-        {[88, 68, 82, 55, 78, 48, 80, 62].map((w, i) => (
-          <div key={i} style={{ height: 7, background: i < 2 ? C.gray200 : C.gray100, borderRadius: 4, width: `${w}%` }} />
-        ))}
-        <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', fontSize: 8, color: C.gray300, paddingTop: 8, borderTop: `1px solid ${C.gray100}` }}>
-          <span>Page 1 of 42</span><span>Confidential</span>
-        </div>
-      </div>
-
-      {/* Processing layer */}
-      <div style={{ ...layerStyle('process'), background: 'linear-gradient(160deg, #273572, #1A71B1)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 18, padding: 32 }}>
-        <div style={{ textAlign: 'center' }}>
-          <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.92)', marginBottom: 5 }}>Converting to branded video...</div>
-          <div style={{ fontSize: 10, color: 'rgba(102,188,173,0.85)', lineHeight: 1.5 }}>AI processing · Quality check · Brand match</div>
-        </div>
-        <div style={{ width: '78%', height: 4, background: 'rgba(255,255,255,0.14)', borderRadius: 4, overflow: 'hidden' }}>
-          <div style={{ height: '100%', background: grad, borderRadius: 4, width: `${progress * 100}%`, transition: 'width 0.08s linear' }} />
-        </div>
-        <div style={{ display: 'flex', gap: 14 }}>
-          {['AI Processing', 'Brand Match', 'Quality Check'].map((step, i) => {
-            const done = progress > (i + 1) / 3;
-            return (
-              <div key={step} style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 9, color: done ? 'rgba(102,188,173,0.9)' : 'rgba(255,255,255,0.35)', fontWeight: 600, transition: 'color 0.3s ease' }}>
-                <span style={{ width: 12, height: 12, borderRadius: '50%', border: '1.5px solid', borderColor: done ? '#66BCAD' : 'rgba(255,255,255,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'border-color 0.3s ease' }}>
-                  {done && <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#66BCAD' }} />}
-                </span>
-                {step}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Video layer */}
-      <div style={{ ...layerStyle('video'), background: '#000', display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden' }}>
-        <iframe
-          src="https://player.vimeo.com/video/1077894850"
-          width="100%"
-          height="100%"
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-          style={{ display: 'block' }}
-        />
-      </div>
-    </div>
-  );
-}
 
 const trustItems: [string, string][] = [
   ['Same day', 'Delivery'],
@@ -180,7 +70,17 @@ export default function HeroSection() {
 
         {/* Right */}
         <div className="hero-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
-          <AnimatedHeroCard />
+          <div style={{ position: 'relative', width: '100%', borderRadius: 20, overflow: 'hidden', boxShadow: 'rgba(0, 0, 0, 0.25) 0px 25px 50px -12px', border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '4/3' }}>
+            <iframe
+              src="https://player.vimeo.com/video/1077894850"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              style={{ display: 'block' }}
+            />
+          </div>
           <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontWeight: 500, letterSpacing: '0.06em' }}>Any document → Branded video · Delivered in 24 hours</div>
         </div>
       </div>
