@@ -2,7 +2,7 @@
 import { useState, useEffect, CSSProperties } from 'react';
 import { C, grad, gradHero, sh } from '@/lib/theme';
 
-const WRAP = { maxWidth: 1400, margin: '0 auto', padding: '0 40px' };
+const WRAP = { maxWidth: 1300, margin: '0 auto', padding: '0 40px' };
 
 type Phase = 'doc' | 'process' | 'video';
 
@@ -98,24 +98,16 @@ function AnimatedHeroCard() {
       </div>
 
       {/* Video layer */}
-      <div style={{ ...layerStyle('video'), background: 'linear-gradient(160deg, #1b2558, #273572)', display: 'flex', flexDirection: 'column', padding: '18px 22px' }}>
-        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(26,113,177,0.18), rgba(102,188,173,0.08))', borderRadius: 10 }} />
-          <div style={{ position: 'relative', zIndex: 1, width: 52, height: 52, borderRadius: '50%', background: 'rgba(255,255,255,0.14)', border: '2px solid rgba(255,255,255,0.22)', backdropFilter: 'blur(8px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 2 }}><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          </div>
-          <div style={{ position: 'absolute', top: 6, right: 6, background: grad, padding: '3px 9px', borderRadius: 5, fontSize: 8, fontWeight: 800, color: '#fff', letterSpacing: '0.08em' }}>✓ READY</div>
-        </div>
-        <div>
-          <div style={{ fontSize: 12, fontWeight: 700, color: '#fff', marginBottom: 2 }}>Q3 Strategy Brief — Team Video</div>
-          <div style={{ fontSize: 9, color: 'rgba(255,255,255,0.42)', marginBottom: 8 }}>On-brand · 3:24 · Delivered in 24 hours</div>
-          <div style={{ height: 3, background: 'rgba(255,255,255,0.12)', borderRadius: 3, overflow: 'hidden' }}>
-            <div key={vkey} style={{ height: '100%', background: grad, borderRadius: 3, animation: 'vidProg 3.2s ease-out forwards' }} />
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 8, color: 'rgba(255,255,255,0.3)', marginTop: 4 }}>
-            <span>0:00</span><span>3:24</span>
-          </div>
-        </div>
+      <div style={{ ...layerStyle('video'), background: '#000', display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden' }}>
+        <iframe
+          src="https://player.vimeo.com/video/1077894850"
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+          style={{ display: 'block' }}
+        />
       </div>
     </div>
   );
