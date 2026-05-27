@@ -44,7 +44,7 @@ export default function CompetitiveSection() {
       <div style={{ ...WRAP, position: 'relative' }} className="wrap-pad">
         <div style={{ textAlign: 'center', marginBottom: 56, opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(18px)', transition: 'all 0.6s ease' }}>
           <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.teal, marginBottom: 12 }}>Competitive Positioning</div>
-          <h2 style={{ fontSize: 38, fontWeight: 800, color: '#fff', lineHeight: 1.18, margin: '0 0 14px 0' }}>Everyone Offers Speed. We Offer Both.</h2>
+          <h2 style={{ fontSize: 38, fontWeight: 800, color: '#fff', lineHeight: 1.18, margin: '0 0 14px 0' }}>Everyone Offers Speed. Some, quality. Some ease-of-use. We Offer all 3.</h2>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.55)', lineHeight: 1.65, margin: 0 }}>
             Fast delivery. Studio-quality output. 100% on-brand. Textra is the only platform in the top-right.
           </p>

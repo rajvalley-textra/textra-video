@@ -122,10 +122,11 @@ function AnimatedHeroCard() {
 }
 
 const trustItems: [string, string][] = [
-  ['24hr', 'Delivery SLA'],
-  ['30–50%', 'Engagement uplift'],
-  ['On-Brand', 'Every video'],
-  ['Enterprise', 'Grade security'],
+  ['Same day', 'Delivery'],
+  ['38–55%', 'Engagement uplift'],
+  ['On-Brand &', 'Compliant'],
+  ['Zero training', 'Required'],
+  ['Built for', 'Enterprise'],
 ];
 
 export default function HeroSection() {
@@ -177,7 +178,7 @@ export default function HeroSection() {
           {/* Trust metrics */}
           <div className="hero-metrics" style={{ display: 'flex', gap: 0, alignItems: 'stretch' }}>
             {trustItems.map((item, i) => (
-              <div key={item[0]} className="hero-metric" style={{ flex: 1, paddingRight: 24, marginRight: 24, borderRight: i < 3 ? '1px solid rgba(255,255,255,0.14)' : 'none', whiteSpace: 'nowrap' }}>
+              <div key={item[0]} className="hero-metric" style={{ flex: 1, paddingRight: 24, marginRight: 24, borderRight: i < 4 ? '1px solid rgba(255,255,255,0.14)' : 'none', whiteSpace: 'nowrap' }}>
                 <div style={{ fontSize: 18, fontWeight: 900, color: '#fff', lineHeight: 1 }}>{item[0]}</div>
                 <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.5)', fontWeight: 500, marginTop: 4, lineHeight: 1.3 }}>{item[1]}</div>
               </div>

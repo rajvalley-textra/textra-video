@@ -70,7 +70,7 @@ export default function RolesSection() {
         <div style={{ textAlign: 'center', marginBottom: 48, opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(18px)', transition: 'all 0.6s ease' }}>
           <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.teal, marginBottom: 12 }}>Solutions By Role</div>
           <h2 style={{ fontSize: 38, fontWeight: 800, color: C.navy, lineHeight: 1.18, margin: '0 0 14px 0' }}>Built For Your Team</h2>
-          <p style={{ fontSize: 16, color: C.gray500, lineHeight: 1.65, margin: 0 }}>Click your role. See your problem. Find your solution.</p>
+          <p style={{ fontSize: 16, color: C.gray500, lineHeight: 1.65, margin: 0 }}>Train your team, educate your audience, deliver your message.</p>
         </div>
 
         {/* Tabs */}

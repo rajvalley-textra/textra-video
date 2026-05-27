@@ -7,12 +7,12 @@ const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 const steps = [
   {
     num: 1, time: '30 mins', title: 'Connect & Onboard',
-    body: 'Link your LMS, CMS, or SharePoint. Instant integration with your existing content workflow.',
+    body: 'Access our web app. Instant integration with your existing content workflow.',
     icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>,
   },
   {
     num: 2, time: '2 days, once', title: 'Design Your Brand Template',
-    body: 'We build your on-brand character set, color palette, and animation style. Done once, used forever.',
+    body: 'As simple as sharing your company URL. We build your on-brand character set, color palette, and animation style. Done once, used forever.',
     icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="13.5" cy="6.5" r="0.5"/><circle cx="17.5" cy="10.5" r="0.5"/><circle cx="8.5" cy="7.5" r="0.5"/><circle cx="6.5" cy="12.5" r="0.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 011.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>,
   },
   {
