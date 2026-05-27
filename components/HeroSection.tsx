@@ -50,7 +50,7 @@ function AnimatedHeroCard() {
   }
 
   return (
-    <div style={{ position: 'relative', width: '100%', maxWidth: 480, borderRadius: 20, overflow: 'hidden', boxShadow: sh.xl, border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '4/3' }}>
+    <div style={{ position: 'relative', width: '100%', maxWidth: 560, borderRadius: 20, overflow: 'hidden', boxShadow: sh.xl, border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '4/3' }}>
 
       {/* Doc layer */}
       <div style={{ ...layerStyle('doc'), background: '#fff', padding: '22px 26px', display: 'flex', flexDirection: 'column', gap: 9 }}>
