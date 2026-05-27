@@ -13,7 +13,7 @@ const trustItems: [string, string][] = [
 
 export default function HeroSection() {
   return (
-    <section id="hero" style={{ background: gradHero, minHeight: '100vh', paddingTop: 70, display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
+    <section id="hero" style={{ background: gradHero, minHeight: '100vh', paddingTop: 40, display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
       {/* Dot grid */}
       <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '36px 36px', pointerEvents: 'none' }} />
       {/* Blobs */}
