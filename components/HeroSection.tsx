@@ -50,7 +50,7 @@ function AnimatedHeroCard() {
   }
 
   return (
-    <div style={{ position: 'relative', width: '100%', maxWidth: 480, borderRadius: 20, overflow: 'hidden', boxShadow: sh.xl, border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '4/3' }}>
+    <div style={{ position: 'relative', width: '100%', maxWidth: 560, borderRadius: 20, overflow: 'hidden', boxShadow: sh.xl, border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '4/3' }}>
 
       {/* Doc layer */}
       <div style={{ ...layerStyle('doc'), background: '#fff', padding: '22px 26px', display: 'flex', flexDirection: 'column', gap: 9 }}>
@@ -131,14 +131,14 @@ const trustItems: [string, string][] = [
 
 export default function HeroSection() {
   return (
-    <section id="hero" style={{ background: gradHero, minHeight: '100vh', paddingTop: 70, display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
+    <section id="hero" style={{ background: gradHero, paddingTop: 70, display: 'flex', alignItems: 'flex-start', position: 'relative', overflow: 'hidden' }}>
       {/* Dot grid */}
       <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '36px 36px', pointerEvents: 'none' }} />
       {/* Blobs */}
       <div style={{ position: 'absolute', top: -140, right: -100, width: 600, height: 600, borderRadius: '50%', background: 'rgba(255,255,255,0.03)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', bottom: -80, left: -60, width: 340, height: 340, borderRadius: '50%', background: 'rgba(102,188,173,0.09)', pointerEvents: 'none' }} />
 
-      <div className="hero-grid wrap-pad" style={{ ...WRAP, width: '100%', display: 'grid', gridTemplateColumns: '55fr 45fr', gap: 64, alignItems: 'center', padding: '52px 40px 48px' }}>
+      <div className="hero-grid wrap-pad" style={{ ...WRAP, width: '100%', display: 'grid', gridTemplateColumns: '55fr 45fr', gap: 64, alignItems: 'center', padding: '72px 40px 64px' }}>
         {/* Left */}
         <div>
           <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.65)', marginBottom: 18, lineHeight: 1.5 }}>
@@ -166,7 +166,7 @@ export default function HeroSection() {
             </a>
             <a
               href="#showreel"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: '#fff', borderRadius: 9999, padding: '14px 32px', fontSize: 16, fontWeight: 700, textDecoration: 'none', border: '2px solid rgba(255,255,255,0.45)', transition: 'border-color 200ms, background 200ms' }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: '#fff', borderRadius: 9999, padding: '14px 28px', fontSize: 15, fontWeight: 600, textDecoration: 'none', border: '1.5px solid rgba(255,255,255,0.32)', transition: 'border-color 200ms, background 200ms' }}
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.65)'; e.currentTarget.style.background = 'rgba(255,255,255,0.07)'; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.32)'; e.currentTarget.style.background = 'transparent'; }}
             >
