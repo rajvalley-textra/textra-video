@@ -131,14 +131,14 @@ const trustItems: [string, string][] = [
 
 export default function HeroSection() {
   return (
-    <section id="hero" style={{ background: gradHero, minHeight: '100vh', paddingTop: 70, display: 'flex', alignItems: 'flex-start', position: 'relative', overflow: 'hidden' }}>
+    <section id="hero" style={{ background: gradHero, minHeight: '100vh', paddingTop: 70, display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
       {/* Dot grid */}
       <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '36px 36px', pointerEvents: 'none' }} />
       {/* Blobs */}
       <div style={{ position: 'absolute', top: -140, right: -100, width: 600, height: 600, borderRadius: '50%', background: 'rgba(255,255,255,0.03)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', bottom: -80, left: -60, width: 340, height: 340, borderRadius: '50%', background: 'rgba(102,188,173,0.09)', pointerEvents: 'none' }} />
 
-      <div className="hero-grid wrap-pad" style={{ ...WRAP, width: '100%', display: 'grid', gridTemplateColumns: '55fr 45fr', gap: 64, alignItems: 'center', padding: '80px 40px 48px' }}>
+      <div className="hero-grid wrap-pad" style={{ ...WRAP, width: '100%', display: 'grid', gridTemplateColumns: '55fr 45fr', gap: 64, alignItems: 'center', padding: '80px 40px' }}>
         {/* Left */}
         <div>
           <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.65)', marginBottom: 18, lineHeight: 1.5 }}>
@@ -155,10 +155,10 @@ export default function HeroSection() {
             <em style={{ fontStyle: 'italic', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', filter: 'brightness(1.2)' }}>24 hours</em>
             .<br/>No crew. No delays. No compromise on brand.
           </p>
-          <div className="hero-cta" style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 28 }}>
+          <div className="hero-cta" style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
             <a
               href="#contact"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: C.navy, borderRadius: 9999, padding: '14px 28px', fontSize: 15, fontWeight: 700, textDecoration: 'none', boxShadow: '0 4px 20px rgba(0,0,0,0.18)', transition: 'transform 200ms, box-shadow 200ms' }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: C.navy, borderRadius: 9999, padding: '11px 22px', fontSize: 14, fontWeight: 700, textDecoration: 'none', boxShadow: '0 4px 20px rgba(0,0,0,0.18)', transition: 'transform 200ms, box-shadow 200ms' }}
               onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(0,0,0,0.22)'; }}
               onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.18)'; }}
             >
@@ -166,7 +166,7 @@ export default function HeroSection() {
             </a>
             <a
               href="#showreel"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: '#fff', borderRadius: 9999, padding: '14px 28px', fontSize: 15, fontWeight: 600, textDecoration: 'none', border: '1.5px solid rgba(255,255,255,0.32)', transition: 'border-color 200ms, background 200ms' }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: '#fff', borderRadius: 9999, padding: '11px 22px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1.5px solid rgba(255,255,255,0.32)', transition: 'border-color 200ms, background 200ms' }}
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.65)'; e.currentTarget.style.background = 'rgba(255,255,255,0.07)'; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.32)'; e.currentTarget.style.background = 'transparent'; }}
             >
