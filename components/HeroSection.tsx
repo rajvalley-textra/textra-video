@@ -138,11 +138,11 @@ export default function HeroSection() {
       <div style={{ position: 'absolute', top: -140, right: -100, width: 600, height: 600, borderRadius: '50%', background: 'rgba(255,255,255,0.03)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', bottom: -80, left: -60, width: 340, height: 340, borderRadius: '50%', background: 'rgba(102,188,173,0.09)', pointerEvents: 'none' }} />
 
-      <div className="hero-grid wrap-pad" style={{ ...WRAP, width: '100%', display: 'grid', gridTemplateColumns: '55fr 45fr', gap: 64, alignItems: 'center', padding: '80px 40px' }}>
+      <div className="hero-grid wrap-pad" style={{ ...WRAP, width: '100%', display: 'grid', gridTemplateColumns: '55fr 45fr', gap: 64, alignItems: 'center', padding: '52px 40px 48px' }}>
         {/* Left */}
         <div>
-          <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(102,188,173,0.92)', marginBottom: 18 }}>
-            AI-Powered Video Platform
+          <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.65)', marginBottom: 18, lineHeight: 1.5 }}>
+            Custom design & powerhouse code harnessing AI for rapid, on-brand animated video
           </div>
           <h1 className="hero-title" style={{ fontSize: 52, fontWeight: 900, color: '#fff', lineHeight: 1.08, letterSpacing: '-0.02em', margin: '0 0 22px 0' }}>
             Your Content Deserves Better Than{' '}
@@ -153,9 +153,9 @@ export default function HeroSection() {
             <em style={{ fontStyle: 'italic', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', filter: 'brightness(1.2)' }}>animated video</em>
             {' '}in{' '}
             <em style={{ fontStyle: 'italic', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', filter: 'brightness(1.2)' }}>24 hours</em>
-            . No crew. No delays. No compromise on brand.
+            .<br/>No crew. No delays. No compromise on brand.
           </p>
-          <div className="hero-cta" style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 48 }}>
+          <div className="hero-cta" style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 28 }}>
             <a
               href="#contact"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: C.navy, borderRadius: 9999, padding: '14px 28px', fontSize: 15, fontWeight: 700, textDecoration: 'none', boxShadow: '0 4px 20px rgba(0,0,0,0.18)', transition: 'transform 200ms, box-shadow 200ms' }}
@@ -166,7 +166,7 @@ export default function HeroSection() {
             </a>
             <a
               href="#showreel"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: '#fff', borderRadius: 9999, padding: '14px 28px', fontSize: 15, fontWeight: 600, textDecoration: 'none', border: '1.5px solid rgba(255,255,255,0.32)', transition: 'border-color 200ms, background 200ms' }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: '#fff', borderRadius: 9999, padding: '14px 32px', fontSize: 16, fontWeight: 700, textDecoration: 'none', border: '2px solid rgba(255,255,255,0.45)', transition: 'border-color 200ms, background 200ms' }}
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.65)'; e.currentTarget.style.background = 'rgba(255,255,255,0.07)'; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.32)'; e.currentTarget.style.background = 'transparent'; }}
             >
