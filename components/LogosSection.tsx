@@ -11,6 +11,7 @@ const clients = [
   { name: 'GSK',                src: '/assets/logos/gsk.png',           use: 'Regulatory & Sales Training',        h: 32 },
   { name: 'Cisco',              src: '/assets/logos/cisco.png',         use: 'Sales Enablement & Onboarding',      h: 22 },
   { name: 'Dept for Education', src: '/assets/logos/dfe.png',           use: 'Government Compliance Training',     h: 34 },
+  { name: 'ARP',                src: '/assets/logos/arp.png',           use: 'Revenue & Finance Management',       h: 28 },
 ];
 
 const partners = [
