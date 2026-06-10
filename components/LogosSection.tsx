@@ -14,11 +14,11 @@ const clients = [
 ];
 
 const partners = [
-  { name: 'Cornerstone',       src: '/assets/logos/cornerstone.png',    h: 16 },
-  { name: 'Kineo / Mindtools', src: '/assets/logos/kineo.png',          h: 24 },
-  { name: 'Jam Pan',           src: '/assets/logos/jampan.webp',        h: 12 },
-  { name: 'Netex',             src: '/assets/logos/netex.png',          h: 26 },
-  { name: 'Learning Nexus',    src: '/assets/logos/learningnexus.png',  h: 20 },
+  { name: 'Cornerstone',       src: '/assets/logos/cornerstone.png',    h: 12 },
+  { name: 'Kineo / Mindtools', src: '/assets/logos/kineo.png',          h: 18 },
+  { name: 'Jam Pan',           src: '/assets/logos/jampan.webp',        h: 9 },
+  { name: 'Netex',             src: '/assets/logos/netex.png',          h: 20 },
+  { name: 'Learning Nexus',    src: '/assets/logos/learningnexus.png',  h: 15 },
 ];
 
 export default function LogosSection() {
