@@ -184,7 +184,17 @@ export default function HeroSection() {
 
         {/* Right */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
-          <AnimatedHeroCard />
+          <div style={{ position: 'relative', width: '100%', maxWidth: 480, borderRadius: 20, overflow: 'hidden', boxShadow: sh.xl, border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '4/3' }}>
+            <iframe
+              src="https://player.vimeo.com/video/1077894850"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              style={{ display: 'block' }}
+            />
+          </div>
           <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontWeight: 500, letterSpacing: '0.06em' }}>Any document → Branded video · Delivered in 24 hours</div>
         </div>
       </div>
