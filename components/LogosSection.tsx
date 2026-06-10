@@ -6,19 +6,19 @@ import { useReveal } from '@/hooks/useReveal';
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
 const clients = [
-  { name: 'Amazon',             src: '/assets/logos/amazon.png',        use: 'Enterprise Training & Onboarding',   h: 28 },
-  { name: 'HSBC',               src: '/assets/logos/hsbc.png',          use: 'Compliance & Regulatory Training',   h: 30 },
-  { name: 'GSK',                src: '/assets/logos/gsk.png',           use: 'Regulatory & Sales Training',        h: 54 },
-  { name: 'Cisco',              src: '/assets/logos/cisco.png',         use: 'Sales Enablement & Onboarding',      h: 38 },
-  { name: 'Dept for Education', src: '/assets/logos/dfe.png',           use: 'Government Compliance Training',     h: 56 },
+  { name: 'Amazon',             src: '/assets/logos/amazon.png',        use: 'Enterprise Training & Onboarding',   h: 20 },
+  { name: 'HSBC',               src: '/assets/logos/hsbc.png',          use: 'Compliance & Regulatory Training',   h: 22 },
+  { name: 'GSK',                src: '/assets/logos/gsk.png',           use: 'Regulatory & Sales Training',        h: 40 },
+  { name: 'Cisco',              src: '/assets/logos/cisco.png',         use: 'Sales Enablement & Onboarding',      h: 28 },
+  { name: 'Dept for Education', src: '/assets/logos/dfe.png',           use: 'Government Compliance Training',     h: 42 },
 ];
 
 const partners = [
-  { name: 'Cornerstone',       src: '/assets/logos/cornerstone.png',    h: 22 },
-  { name: 'Kineo / Mindtools', src: '/assets/logos/kineo.png',          h: 34 },
-  { name: 'Jam Pan',           src: '/assets/logos/jampan.webp',        h: 16 },
-  { name: 'Netex',             src: '/assets/logos/netex.png',          h: 36 },
-  { name: 'Learning Nexus',    src: '/assets/logos/learningnexus.png',  h: 26 },
+  { name: 'Cornerstone',       src: '/assets/logos/cornerstone.png',    h: 16 },
+  { name: 'Kineo / Mindtools', src: '/assets/logos/kineo.png',          h: 24 },
+  { name: 'Jam Pan',           src: '/assets/logos/jampan.webp',        h: 12 },
+  { name: 'Netex',             src: '/assets/logos/netex.png',          h: 26 },
+  { name: 'Learning Nexus',    src: '/assets/logos/learningnexus.png',  h: 20 },
 ];
 
 export default function LogosSection() {
@@ -35,7 +35,7 @@ export default function LogosSection() {
           <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.gray400 }}>Trusted By Enterprise</span>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
           {clients.map((c, i) => (
             <div
               key={c.name}
