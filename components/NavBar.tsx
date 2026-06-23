@@ -23,8 +23,8 @@ export default function NavBar() {
   return (
     <nav style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
-      background: scrolled ? 'rgba(255,255,255,0.97)' : 'transparent',
-      backdropFilter: scrolled ? 'blur(16px)' : 'none',
+      background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.15)',
+      backdropFilter: 'blur(16px)',
       borderBottom: scrolled ? `1px solid ${C.gray200}` : '1px solid transparent',
       boxShadow: scrolled ? sh.sm : 'none',
       transition: 'all 280ms cubic-bezier(0,0,0.2,1)',

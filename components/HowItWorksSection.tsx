@@ -27,7 +27,7 @@ const steps = [
   },
 ];
 
-const extras = ['Zero training required', 'Dedicated account manager', 'API-accessible platform', 'SCORM & xAPI export'];
+const extras = ['Zero training required', 'Dedicated account manager', 'SCORM integration'];
 
 export default function HowItWorksSection() {
   const [ref, vis] = useReveal(0.08);

@@ -98,7 +98,7 @@ export default function CompetitiveSection() {
                     )}
                     <circle cx={cx2} cy={cy2} r={b.r} fill={b.fill} stroke={b.border} strokeWidth="1.5" />
                     {labelLines.map((line, li) => (
-                      <text key={li} x={cx2} y={cy2 + (li - (totalLines - 1) / 2) * 14} textAnchor="middle" dominantBaseline="middle" fontSize={b.isTextra ? 15 : 13} fontWeight={b.isTextra ? 800 : 700} fill={b.textFill} fontFamily="var(--font-montserrat), sans-serif">{line}</text>
+                      <text key={li} x={cx2} y={cy2 + (li - (totalLines - 1) / 2) * 14} textAnchor="middle" dominantBaseline="middle" fontSize={b.isTextra ? 17 : 15} fontWeight={b.isTextra ? 800 : 800} fill={b.textFill} fontFamily="var(--font-montserrat), sans-serif">{line}</text>
                     ))}
                     {b.sub.split('\n').map((line, li) => {
                       const baseY = b.isTextra ? b.r + 18 : (totalLines - 1) * 7 + 18;
@@ -119,7 +119,7 @@ export default function CompetitiveSection() {
             <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 8, background: item.bold ? 'rgba(255,255,255,0.06)' : 'transparent', borderRadius: 20, padding: item.bold ? '6px 14px' : '0', border: item.bold ? '1px solid rgba(102,188,173,0.3)' : 'none' }}>
               <div style={{ width: 10, height: 10, borderRadius: '50%', background: item.color, flexShrink: 0 }} />
               <span style={{ fontSize: 12, color: item.bold ? '#fff' : 'rgba(255,255,255,0.7)', fontWeight: item.bold ? 800 : 600 }}>{item.label}</span>
-              <span style={{ fontSize: 10, color: item.bold ? 'rgba(102,188,173,0.9)' : 'rgba(255,255,255,0.25)' }}>· {item.note}</span>
+              <span style={{ fontSize: 9, color: item.bold ? 'rgba(102,188,173,0.8)' : 'rgba(255,255,255,0.15)' }}>· {item.note}</span>
             </div>
           ))}
         </div>

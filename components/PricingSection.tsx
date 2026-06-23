@@ -8,7 +8,7 @@ const features = [
   '60 minutes of video production per year',
   'Unlimited revisions on any video',
   'Custom on-brand template (built for you)',
-  'Full API access & LMS integration',
+  'LMS integration',
   'Priority support & dedicated account manager',
   'Watch tracking & compliance reporting',
 ];
