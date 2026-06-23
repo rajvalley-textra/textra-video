@@ -76,8 +76,8 @@ export default function ProblemSection() {
               </div>
 
               <div style={{ fontSize: 9, fontWeight: 800, letterSpacing: '0.14em', color: card.badgeColor }}>{card.badge}</div>
-              <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: card.id === 'textra' ? 'rgba(102,188,173,0.85)' : C.teal }}>{card.overline}</div>
-              <h3 style={{ fontSize: 24, fontWeight: 900, color: card.textColor, lineHeight: 1.15, margin: 0, whiteSpace: 'pre-line' }}>{card.title}</h3>
+              <div style={{ fontSize: 22, fontWeight: 900, letterSpacing: '-0.01em', color: card.id === 'textra' ? 'rgba(102,188,173,0.95)' : C.teal }}>{card.overline}</div>
+              <h3 style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: card.textColor, lineHeight: 1.4, margin: 0, whiteSpace: 'pre-line', opacity: 0.65 }}>{card.title}</h3>
               <p style={{ fontSize: 14, color: card.bodyColor, lineHeight: 1.72, margin: 0, flex: 1 }}>{card.body}</p>
 
               {card.cta && (
