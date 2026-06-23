@@ -174,9 +174,9 @@ export default function HeroSection() {
           </div>
 
           {/* Trust metrics */}
-          <div style={{ display: 'flex', gap: 0, alignItems: 'stretch' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
             {trustItems.map((item, i) => (
-              <div key={item[0]} style={{ flex: 1, paddingRight: 24, marginRight: 24, borderRight: i < 3 ? '1px solid rgba(255,255,255,0.14)' : 'none', whiteSpace: 'nowrap' }}>
+              <div key={item[0]} style={{ paddingRight: 0, marginRight: 0, borderRight: 'none', whiteSpace: 'nowrap' }}>
                 <div style={{ fontSize: 18, fontWeight: 900, color: '#fff', lineHeight: 1 }}>{item[0]}</div>
                 <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.5)', fontWeight: 500, marginTop: 4, lineHeight: 1.3 }}>{item[1]}</div>
               </div>
@@ -186,7 +186,7 @@ export default function HeroSection() {
 
         {/* Right */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
-          <div style={{ position: 'relative', width: '100%', maxWidth: 480, borderRadius: 20, overflow: 'hidden', boxShadow: sh.xl, border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '4/3' }}>
+          <div style={{ position: 'relative', width: '100%', maxWidth: 560, borderRadius: 20, overflow: 'hidden', boxShadow: sh.xl, border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '4/3' }}>
             <iframe
               src="https://player.vimeo.com/video/1077894850"
               width="100%"
