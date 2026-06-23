@@ -98,12 +98,12 @@ export default function CompetitiveSection() {
                     )}
                     <circle cx={cx2} cy={cy2} r={b.r} fill={b.fill} stroke={b.border} strokeWidth="1.5" />
                     {labelLines.map((line, li) => (
-                      <text key={li} x={cx2} y={cy2 + (li - (totalLines - 1) / 2) * 14} textAnchor="middle" dominantBaseline="middle" fontSize={b.isTextra ? 13 : 11} fontWeight={b.isTextra ? 800 : 800} fill={b.textFill} fontFamily="var(--font-montserrat), sans-serif">{line}</text>
+                      <text key={li} x={cx2} y={cy2 + (li - (totalLines - 1) / 2) * 14} textAnchor="middle" dominantBaseline="middle" fontSize={b.isTextra ? 15 : 14} fontWeight={b.isTextra ? 800 : 800} fill={b.textFill} fontFamily="var(--font-montserrat), sans-serif">{line}</text>
                     ))}
                     {b.sub.split('\n').map((line, li) => {
                       const baseY = b.isTextra ? b.r + 18 : (totalLines - 1) * 7 + 18;
                       return (
-                        <text key={`s${li}`} x={cx2} y={cy2 + baseY + li * 14} textAnchor="middle" fontSize={b.isTextra ? 15 : 13} fontWeight={b.isTextra ? 700 : 700} fill={b.isTextra ? '#fff' : 'rgba(255,255,255,0.6)'} fontFamily="var(--font-montserrat), sans-serif">{line}</text>
+                        <text key={`s${li}`} x={cx2} y={cy2 + baseY + li * 14} textAnchor="middle" fontSize={b.isTextra ? 11 : 9} fontWeight={b.isTextra ? 700 : 600} fill={b.isTextra ? '#fff' : 'rgba(255,255,255,0.35)'} fontFamily="var(--font-montserrat), sans-serif">{line}</text>
                       );
                     })}
                   </g>

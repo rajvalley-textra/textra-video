@@ -6,6 +6,7 @@ const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
 const links = [
   { label: 'How It Works', href: '#how-it-works' },
+  { label: 'Demos', href: '#demos' },
   { label: 'Solutions', href: '#solutions' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'About', href: '#about' },

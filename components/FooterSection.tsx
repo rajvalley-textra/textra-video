@@ -57,6 +57,8 @@ export default function FooterSection() {
           <div>
             <a
               href="http://invest.textra.video/"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, background: grad, color: '#fff', padding: '14px 20px', borderRadius: 10, textDecoration: 'none', fontWeight: 700, fontSize: 13, transition: 'all 200ms', boxShadow: '0 4px 16px rgba(102,188,173,0.3)' }}
               onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(102,188,173,0.4)'; }}
               onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(102,188,173,0.3)'; }}>
