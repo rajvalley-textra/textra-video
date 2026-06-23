@@ -123,8 +123,9 @@ export default function FooterSection() {
               hello@textra.video
             </a>
           </div>
-          <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.25)' }}>
-            © 2026 Textra Video Ltd. Made by video experts. Built for enterprises.
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, fontSize: 12, color: 'rgba(255,255,255,0.25)' }}>
+            <div>© 2026 Textra Video Ltd. Made by video experts. Built for enterprises.</div>
+            <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)' }}>✓ British Sign Language support available</div>
           </div>
         </div>
       </div>
