@@ -62,7 +62,7 @@ export default function CompetitiveSection() {
 
               {/* Winning zone */}
               <rect x={bx(0.5)} y={cy0} width={cw * 0.5} height={ch * 0.5} rx="4" fill="rgba(102,188,173,0.05)" />
-              <text x={bx(0.75)} y={cy0 + 18} textAnchor="middle" fontSize="9" fontWeight="700" fill="rgba(102,188,173,0.5)" letterSpacing="2" fontFamily="var(--font-montserrat), sans-serif">WINNING ZONE</text>
+              <text x={bx(0.75)} y={cy0 + ch * 0.5 - 12} textAnchor="middle" fontSize="9" fontWeight="700" fill="rgba(102,188,173,0.5)" letterSpacing="2" fontFamily="var(--font-montserrat), sans-serif">WINNING ZONE</text>
 
               {/* Grid */}
               {gridLines.map((p) => (
