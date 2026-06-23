@@ -37,8 +37,8 @@ export default function FooterSection() {
               <div style={{ display: 'flex', gap: 12 }}>
                 {/* Social icons */}
                 {[
-                  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/textra-video' },
-                  { label: 'Vimeo', href: 'https://vimeo.com/showcase/11919627?share=copy' },
+                  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/textra-video', icon: '/assets/icons/icons8-linkedin-logo-100.webp' },
+                  { label: 'Vimeo', href: 'https://vimeo.com/showcase/11919627?share=copy', icon: '/assets/icons/icons8-vimeo-100.webp' },
                 ].map((s) => (
                   <a
                     key={s.label}
@@ -46,10 +46,10 @@ export default function FooterSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    style={{ width: 36, height: 36, borderRadius: 6, border: '1px solid rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'border-color 150ms, background 150ms', fontSize: '16px' }}
+                    style={{ width: 40, height: 40, borderRadius: 6, border: '1px solid rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'border-color 150ms, background 150ms', padding: '6px' }}
                     onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.background = 'transparent'; }}>
-                    {s.label === 'LinkedIn' ? '🔗' : '▶️'}
+                    <img src={s.icon} alt={s.label} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                   </a>
                 ))}
               </div>
