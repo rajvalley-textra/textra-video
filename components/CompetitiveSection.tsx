@@ -11,10 +11,10 @@ const by = (yp: number) => cy0 + yp * ch;
 const gridLines = [0.25, 0.5, 0.75];
 
 const bubbles = [
-  { xp: 0.11, yp: 0.14, r: 52, label: 'The Agency\nRoute', sub: '30 days · £50k+',           fill: 'rgba(255,255,255,0.07)', textFill: 'rgba(255,255,255,0.75)', border: 'rgba(255,255,255,0.15)', isTextra: false },
-  { xp: 0.74, yp: 0.76, r: 44, label: 'The DIY\nRoute',            sub: 'Generic output',             fill: 'rgba(255,255,255,0.07)', textFill: 'rgba(255,255,255,0.75)', border: 'rgba(255,255,255,0.15)', isTextra: false },
+  { xp: 0.11, yp: 0.14, r: 52, label: 'Traditional\nAgencies', sub: '30 days · £50k+',           fill: 'rgba(255,255,255,0.07)', textFill: 'rgba(255,255,255,0.75)', border: 'rgba(255,255,255,0.15)', isTextra: false },
+  { xp: 0.74, yp: 0.76, r: 44, label: 'DIY Tools',            sub: 'Generic output',             fill: 'rgba(255,255,255,0.07)', textFill: 'rgba(255,255,255,0.75)', border: 'rgba(255,255,255,0.15)', isTextra: false },
   { xp: 0.62, yp: 0.60, r: 40, label: 'AI Platforms',         sub: 'Off-brand',                  fill: 'rgba(255,255,255,0.06)', textFill: 'rgba(255,255,255,0.65)', border: 'rgba(255,255,255,0.12)', isTextra: false },
-  { xp: 0.83, yp: 0.11, r: 52, label: 'The Textra\nRoute',         sub: 'Fast · Studio-quality · On-brand', fill: 'url(#textraBubbleGrad)', textFill: '#fff', border: 'none', isTextra: true },
+  { xp: 0.83, yp: 0.11, r: 52, label: 'Textra\nVideo',         sub: 'Fast · Studio-quality · On-brand', fill: 'url(#textraBubbleGrad)', textFill: '#fff', border: 'none', isTextra: true },
 ];
 
 const legend = [
@@ -98,12 +98,12 @@ export default function CompetitiveSection() {
                     )}
                     <circle cx={cx2} cy={cy2} r={b.r} fill={b.fill} stroke={b.border} strokeWidth="1.5" />
                     {labelLines.map((line, li) => (
-                      <text key={li} x={cx2} y={cy2 + (li - (totalLines - 1) / 2) * 14} textAnchor="middle" dominantBaseline="middle" fontSize={b.isTextra ? "20" : "19"} fontWeight={b.isTextra ? 800 : 800} fill={b.textFill} fontFamily="var(--font-montserrat), sans-serif">{line}</text>
+                      <text key={li} x={cx2} y={cy2 + (li - (totalLines - 1) / 2) * 14} textAnchor="middle" dominantBaseline="middle" fontSize={b.isTextra ? 13 : 11} fontWeight={b.isTextra ? 800 : 600} fill={b.textFill} fontFamily="var(--font-montserrat), sans-serif">{line}</text>
                     ))}
                     {b.sub.split('\n').map((line, li) => {
                       const baseY = b.isTextra ? b.r + 18 : (totalLines - 1) * 7 + 18;
                       return (
-                        <text key={`s${li}`} x={cx2} y={cy2 + baseY + li * 14} textAnchor="middle" fontSize={b.isTextra ? "7" : "6"} fontWeight={b.isTextra ? 600 : 500} fill={b.isTextra ? '#fff' : 'rgba(255,255,255,0.25)'} fontFamily="var(--font-montserrat), sans-serif">{line}</text>
+                        <text key={`s${li}`} x={cx2} y={cy2 + baseY + li * 14} textAnchor="middle" fontSize={b.isTextra ? 11 : 9} fontWeight={b.isTextra ? 700 : 400} fill={b.isTextra ? '#fff' : 'rgba(255,255,255,0.45)'} fontFamily="var(--font-montserrat), sans-serif">{line}</text>
                       );
                     })}
                   </g>
@@ -119,7 +119,7 @@ export default function CompetitiveSection() {
             <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 8, background: item.bold ? 'rgba(255,255,255,0.06)' : 'transparent', borderRadius: 20, padding: item.bold ? '6px 14px' : '0', border: item.bold ? '1px solid rgba(102,188,173,0.3)' : 'none' }}>
               <div style={{ width: 10, height: 10, borderRadius: '50%', background: item.color, flexShrink: 0 }} />
               <span style={{ fontSize: 12, color: item.bold ? '#fff' : 'rgba(255,255,255,0.7)', fontWeight: item.bold ? 800 : 600 }}>{item.label}</span>
-              <span style={{ fontSize: 9, color: item.bold ? 'rgba(102,188,173,0.8)' : 'rgba(255,255,255,0.15)' }}>· {item.note}</span>
+              <span style={{ fontSize: 11, color: item.bold ? 'rgba(102,188,173,0.9)' : 'rgba(255,255,255,0.35)' }}>· {item.note}</span>
             </div>
           ))}
         </div>
