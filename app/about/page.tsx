@@ -1,4 +1,6 @@
 import { C } from '@/lib/theme';
+import NavBar from '@/components/NavBar';
+import FooterSection from '@/components/FooterSection';
 
 export const metadata = {
   title: 'About Textra Video | Enterprise Video Platform',
@@ -40,7 +42,9 @@ export default function AboutPage() {
   ];
 
   return (
-    <main>
+    <>
+      <NavBar />
+      <main>
       {/* Hero */}
       <section style={{ paddingTop: 120, paddingBottom: 80, background: '#fff' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px' }}>
@@ -129,5 +133,7 @@ export default function AboutPage() {
         </div>
       </section>
     </main>
+      <FooterSection />
+    </>
   );
 }
