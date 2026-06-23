@@ -9,40 +9,41 @@ export default function FooterSection() {
   const cols = [
     {
       title: 'Company',
-      links: ['About Textra', 'Our Team', 'Blog & Resources', 'Press & Media', 'Careers'],
+      links: ['About Textra', 'Our Team'],
     },
     {
       title: 'Legal',
-      links: ['Privacy Policy', 'Terms of Service', 'SOC 2 Certification', 'Data Security', 'Cookie Policy'],
+      links: ['Privacy Policy', 'Terms of Service'],
     },
   ];
 
   const linkStyle = { fontSize: 13, color: 'rgba(255,255,255,0.45)', textDecoration: 'none' as const, lineHeight: '28px', display: 'block' as const, transition: 'color 150ms', fontWeight: 400 };
 
   return (
-    <footer id="about" style={{ background: '#1b2558', paddingTop: 72, paddingBottom: 0 }}>
+    <footer id="about" style={{ background: '#1b2558', paddingTop: 56, paddingBottom: 0 }}>
       <div style={{ ...WRAP }}>
         {/* Top row: logo + main content */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 48, marginBottom: 56, flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 48, marginBottom: 40, flexWrap: 'wrap' }}>
           {/* Logo & Social */}
           <div style={{ maxWidth: 320 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 18 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 12 }}>
               <span style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 900, fontSize: 20, color: '#fff', letterSpacing: '-0.02em' }}>Textra</span>
               <span style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 900, fontSize: 20, letterSpacing: '-0.02em', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginLeft: 5 }}>Video</span>
             </div>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, margin: '0 0 20px 0' }}>
+            <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', lineHeight: 1.6, margin: '0 0 16px 0' }}>
               Custom design and powerhouse code harnessing AI for rapid, on-brand video. Built for enterprises.
             </p>
             <div style={{ display: 'flex', gap: 14 }}>
               {/* Social icons */}
               {[
-                { label: 'LinkedIn', path: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z' },
-                { label: 'Twitter', path: 'M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z' },
-                { label: 'YouTube', path: 'M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z' },
+                { label: 'LinkedIn', href: 'https://www.linkedin.com/company/textra-video', path: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z' },
+                { label: 'Vimeo', href: 'https://vimeo.com/showcase/11919627?share=copy', path: 'M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z' },
               ].map((s) => (
                 <a
                   key={s.label}
-                  href="#"
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={s.label}
                   style={{ width: 36, height: 36, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'border-color 150ms, background 150ms' }}
                   onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; }}
@@ -68,7 +69,7 @@ export default function FooterSection() {
         </div>
 
         {/* Link columns */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 32, paddingBottom: 48, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 48, paddingBottom: 32, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
           {cols.map((col) => (
             <div key={col.title}>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', marginBottom: 16 }}>{col.title}</div>
@@ -87,7 +88,7 @@ export default function FooterSection() {
         </div>
 
         {/* Bottom: logo + copyright */}
-        <div style={{ padding: '32px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 32 }}>
+        <div style={{ padding: '24px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 32 }}>
           {/* Bottom left: logo + BSL */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
