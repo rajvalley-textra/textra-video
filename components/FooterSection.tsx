@@ -6,20 +6,10 @@ const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 const grad = 'linear-gradient(135deg, #1A71B1 0%, #66BCAD 100%)';
 
 export default function FooterSection() {
-  const [nsVal, setNsVal] = React.useState('');
-
   const cols = [
     {
-      title: 'Product',
-      links: ['How It Works', 'Pricing', 'Solutions by Role', 'API Documentation', 'Security & Compliance'],
-    },
-    {
       title: 'Company',
-      links: ['About Textra', 'Our Team', 'Blog & Resources', 'Press & Media', 'Careers', 'Invest in Textra'],
-    },
-    {
-      title: 'Learn',
-      links: ['Case Studies', 'Webinars', 'Integration Guides', 'Best Practices', 'FAQ'],
+      links: ['About Textra', 'Our Team', 'Blog & Resources', 'Press & Media', 'Careers'],
     },
     {
       title: 'Legal',
@@ -32,7 +22,7 @@ export default function FooterSection() {
   return (
     <footer id="about" style={{ background: '#1b2558', paddingTop: 72, paddingBottom: 0 }}>
       <div style={{ ...WRAP }}>
-        {/* Top row: logo + newsletter */}
+        {/* Top row: logo + main content */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 48, marginBottom: 56, flexWrap: 'wrap' }}>
           {/* Logo & Social */}
           <div style={{ maxWidth: 320 }}>
@@ -63,28 +53,10 @@ export default function FooterSection() {
             </div>
           </div>
 
-          {/* Newsletter + Invest CTA */}
-          <div style={{ maxWidth: 340 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: C.teal, marginBottom: 10 }}>Newsletter</div>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: '0 0 16px 0' }}>Weekly tips on video strategy for enterprise teams.</p>
-            <div style={{ display: 'flex', gap: 0, borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.12)', marginBottom: 20 }}>
-              <input
-                type="email"
-                placeholder="your@company.com"
-                value={nsVal}
-                onChange={(e) => setNsVal(e.target.value)}
-                style={{ flex: 1, background: 'rgba(255,255,255,0.05)', border: 'none', padding: '12px 16px', fontSize: 13, color: '#fff', outline: 'none', fontFamily: 'Montserrat, sans-serif' }}
-              />
-              <button
-                style={{ background: grad, border: 'none', padding: '12px 20px', fontSize: 13, fontWeight: 700, color: '#fff', cursor: 'pointer', whiteSpace: 'nowrap', fontFamily: 'Montserrat, sans-serif', transition: 'filter 150ms' }}
-                onMouseEnter={(e) => { e.currentTarget.style.filter = 'brightness(1.1)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.filter = 'none'; }}>
-                Subscribe
-              </button>
-            </div>
-            {/* Invest in Textra CTA */}
+          {/* Invest CTA */}
+          <div>
             <a
-              href="#"
+              href="http://invest.textra.video/"
               style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, background: grad, color: '#fff', padding: '14px 20px', borderRadius: 10, textDecoration: 'none', fontWeight: 700, fontSize: 13, transition: 'all 200ms', boxShadow: '0 4px 16px rgba(102,188,173,0.3)' }}
               onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(102,188,173,0.4)'; }}
               onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(102,188,173,0.3)'; }}>
@@ -94,14 +66,14 @@ export default function FooterSection() {
         </div>
 
         {/* Link columns */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32, paddingBottom: 48, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 32, paddingBottom: 48, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
           {cols.map((col) => (
             <div key={col.title}>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', marginBottom: 16 }}>{col.title}</div>
               {col.links.map((link) => (
                 <a
                   key={link}
-                  href="#"
+                  href={link === 'Privacy Policy' ? '/privacy' : link === 'Terms of Service' ? '/terms' : '#'}
                   style={linkStyle}
                   onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.82)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.45)'; }}>
@@ -112,9 +84,18 @@ export default function FooterSection() {
           ))}
         </div>
 
-        {/* Contact + copyright */}
-        <div style={{ padding: '24px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
-          <div style={{ display: 'flex', gap: 28, flexWrap: 'wrap' }}>
+        {/* Bottom: logo + copyright */}
+        <div style={{ padding: '32px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 32 }}>
+          {/* Bottom left: logo + BSL */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
+              <img src="/assets/logos/Textra video logo_1.png" alt="Textra Video" style={{ height: 32, width: 'auto', objectFit: 'contain' }} />
+            </div>
+            <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)' }}>✓ British Sign Language support available</div>
+          </div>
+
+          {/* Right: contact + copyright */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 8 }}>
             <a
               href="mailto:hello@textra.video"
               style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)', textDecoration: 'none', transition: 'color 150ms' }}
@@ -122,10 +103,9 @@ export default function FooterSection() {
               onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.35)'; }}>
               hello@textra.video
             </a>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, fontSize: 12, color: 'rgba(255,255,255,0.25)' }}>
-            <div>© 2026 Textra Video Ltd. Made by video experts. Built for enterprises.</div>
-            <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)' }}>✓ British Sign Language support available</div>
+            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.25)' }}>
+              © 2026 Textra Video Ltd. Made by video experts. Built for enterprises.
+            </div>
           </div>
         </div>
       </div>
