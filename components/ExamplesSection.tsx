@@ -1,4 +1,5 @@
 'use client';
+import { useRef, useState } from 'react';
 import { C } from '@/lib/theme';
 
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
@@ -13,6 +14,39 @@ const videos = [
 ];
 
 export default function ExamplesSection() {
+  const iframeRefs = useRef<{ [key: string]: HTMLIFrameElement }>({});
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  const handleVideoClick = (videoId: string) => {
+    // Pause all other videos
+    Object.keys(iframeRefs.current).forEach((id) => {
+      if (id !== videoId && iframeRefs.current[id]) {
+        iframeRefs.current[id].style.pointerEvents = 'none';
+        // Send pause command to Vimeo
+        iframeRefs.current[id].contentWindow?.postMessage(
+          { method: 'pause' },
+          'https://player.vimeo.com'
+        );
+      }
+    });
+    setActiveVideo(videoId);
+  };
+
+  const handleFullscreen = (videoId: string) => {
+    const iframe = iframeRefs.current[videoId];
+    if (iframe) {
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if ((iframe as any).webkitRequestFullscreen) {
+        (iframe as any).webkitRequestFullscreen();
+      } else if ((iframe as any).mozRequestFullScreen) {
+        (iframe as any).mozRequestFullScreen();
+      } else if ((iframe as any).msRequestFullscreen) {
+        (iframe as any).msRequestFullscreen();
+      }
+    }
+  };
+
   return (
     <section id="demos" style={{ background: '#fff', padding: '80px 40px' }}>
       <div style={{ ...WRAP }}>
@@ -27,9 +61,56 @@ export default function ExamplesSection() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginTop: 40 }}>
           {videos.map((video) => (
-            <div key={video.id} style={{ aspectRatio: '16/9', borderRadius: 12, overflow: 'hidden', boxShadow: '0 4px 16px rgba(39,53,114,0.12)' }}>
+            <div
+              key={video.id}
+              style={{
+                aspectRatio: '16/9',
+                borderRadius: 12,
+                overflow: 'hidden',
+                boxShadow: '0 4px 16px rgba(39,53,114,0.12)',
+                position: 'relative',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={() => handleVideoClick(video.id)}
+            >
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleFullscreen(video.id);
+                }}
+                style={{
+                  position: 'absolute',
+                  top: 12,
+                  left: 12,
+                  zIndex: 10,
+                  width: 32,
+                  height: 32,
+                  borderRadius: 6,
+                  border: 'none',
+                  background: 'rgba(0,0,0,0.5)',
+                  color: '#fff',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 16,
+                  transition: 'background 200ms',
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.background = 'rgba(0,0,0,0.7)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.background = 'rgba(0,0,0,0.5)';
+                }}
+                title="Fullscreen"
+              >
+                ⛶
+              </button>
               <iframe
-                src={`https://player.vimeo.com/video/${video.id}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
+                ref={(el) => {
+                  if (el) iframeRefs.current[video.id] = el;
+                }}
+                src={`https://player.vimeo.com/video/${video.id}?title=0&byline=0&portrait=0&badge=0&autopause=1&player_id=0&app_id=58479`}
                 width="100%"
                 height="100%"
                 frameBorder="0"
