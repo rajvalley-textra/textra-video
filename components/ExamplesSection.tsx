@@ -16,6 +16,7 @@ const videos = [
 export default function ExamplesSection() {
   const iframeRefs = useRef<{ [key: string]: HTMLIFrameElement }>({});
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [hoveredVideo, setHoveredVideo] = useState<string | null>(null);
 
   const handleVideoClick = (videoId: string) => {
     // Pause all other videos
@@ -71,7 +72,11 @@ export default function ExamplesSection() {
                 position: 'relative',
                 cursor: 'pointer',
               }}
-              onMouseEnter={() => handleVideoClick(video.id)}
+              onMouseEnter={() => {
+                handleVideoClick(video.id);
+                setHoveredVideo(video.id);
+              }}
+              onMouseLeave={() => setHoveredVideo(null)}
             >
               <button
                 onClick={(e) => {
@@ -87,20 +92,22 @@ export default function ExamplesSection() {
                   height: 32,
                   borderRadius: 6,
                   border: 'none',
-                  background: 'rgba(0,0,0,0.5)',
+                  background: 'rgba(0,0,0,0.6)',
                   color: '#fff',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: 16,
-                  transition: 'background 200ms',
+                  transition: 'opacity 200ms, background 200ms',
+                  opacity: hoveredVideo === video.id ? 1 : 0,
+                  pointerEvents: hoveredVideo === video.id ? 'auto' : 'none',
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLButtonElement).style.background = 'rgba(0,0,0,0.7)';
+                  (e.currentTarget as HTMLButtonElement).style.background = 'rgba(0,0,0,0.8)';
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLButtonElement).style.background = 'rgba(0,0,0,0.5)';
+                  (e.currentTarget as HTMLButtonElement).style.background = 'rgba(0,0,0,0.6)';
                 }}
                 title="Fullscreen"
               >
@@ -110,7 +117,7 @@ export default function ExamplesSection() {
                 ref={(el) => {
                   if (el) iframeRefs.current[video.id] = el;
                 }}
-                src={`https://player.vimeo.com/video/${video.id}?title=0&byline=0&portrait=0&badge=0&autopause=1&player_id=0&app_id=58479`}
+                src={`https://player.vimeo.com/video/${video.id}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=${video.id}&app_id=58479`}
                 width="100%"
                 height="100%"
                 frameBorder="0"
