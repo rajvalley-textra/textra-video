@@ -103,7 +103,7 @@ export default function CompetitiveSection() {
                     {b.sub.split('\n').map((line, li) => {
                       const baseY = b.isTextra ? b.r + 18 : (totalLines - 1) * 7 + 18;
                       return (
-                        <text key={`s${li}`} x={cx2} y={cy2 + baseY + li * 14} textAnchor="middle" fontSize={b.isTextra ? 11 : 9} fontWeight={b.isTextra ? 700 : 400} fill={b.isTextra ? '#fff' : 'rgba(255,255,255,0.45)'} fontFamily="var(--font-montserrat), sans-serif">{line}</text>
+                        <text key={`s${li}`} x={cx2} y={cy2 + baseY + li * 14} textAnchor="middle" fontSize={b.isTextra ? 10 : 9} fontWeight={b.isTextra ? 700 : 400} fill={b.isTextra ? '#fff' : 'rgba(255,255,255,0.45)'} fontFamily="var(--font-montserrat), sans-serif">{line}</text>
                       );
                     })}
                   </g>
