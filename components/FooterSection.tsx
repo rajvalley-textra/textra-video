@@ -26,9 +26,8 @@ export default function FooterSection() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 48, marginBottom: 40, flexWrap: 'wrap' }}>
           {/* Logo & Social */}
           <div style={{ maxWidth: 320 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 12 }}>
-              <span style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 900, fontSize: 20, color: '#fff', letterSpacing: '-0.02em' }}>Textra</span>
-              <span style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 900, fontSize: 20, letterSpacing: '-0.02em', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginLeft: 5 }}>Video</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 12, height: 40 }}>
+              <img src="/assets/logos/Textra video logo_1.png" alt="Textra Video" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
             </div>
             <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', lineHeight: 1.6, margin: '0 0 16px 0' }}>
               Custom design and powerhouse code harnessing AI for rapid, on-brand video. Built for enterprises.
@@ -46,9 +45,9 @@ export default function FooterSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    style={{ width: 44, height: 44, borderRadius: 8, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'opacity 150ms', opacity: 0.9 }}
+                    style={{ width: 32, height: 32, borderRadius: 6, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'opacity 150ms', opacity: 0.85 }}
                     onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.9'; }}>
+                    onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.85'; }}>
                     <img src={s.icon} alt={s.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </a>
                 ))}
