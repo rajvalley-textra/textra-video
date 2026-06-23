@@ -57,10 +57,14 @@ export default function ProblemSection() {
               {/* Icon */}
               <div style={{ width: 58, height: 58, borderRadius: 14, background: card.id === 'textra' ? 'rgba(255,255,255,0.1)' : C.gray50, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {card.id === 'agency' && (
-                  <svg width="32" height="32" viewBox="0 0 48 48">
+                  <svg width="32" height="32" viewBox="0 0 48 48" style={{ overflow: 'visible' }}>
                     <circle cx="24" cy="24" r="19" fill="none" stroke={C.gray200} strokeWidth="2.5"/>
-                    <line x1="24" y1="24" x2="24" y2="9" stroke={C.gray300} strokeWidth="2.5" strokeLinecap="round" style={{ transformOrigin: '24px 24px', transformBox: 'fill-box', animation: 'clockSpin 8s linear infinite' as string }}/>
-                    <line x1="24" y1="24" x2="33" y2="24" stroke={C.navy} strokeWidth="2" strokeLinecap="round" style={{ transformOrigin: '24px 24px', transformBox: 'fill-box', animation: 'clockSpin 2s linear infinite' as string }}/>
+                    <g style={{ transformOrigin: '24px 24px', animation: 'clockSpin 12s linear infinite' }}>
+                      <line x1="24" y1="24" x2="24" y2="12" stroke={C.gray300} strokeWidth="2.5" strokeLinecap="round"/>
+                    </g>
+                    <g style={{ transformOrigin: '24px 24px', animation: 'clockSpin 3s linear infinite' }}>
+                      <line x1="24" y1="24" x2="32" y2="24" stroke={C.navy} strokeWidth="2" strokeLinecap="round"/>
+                    </g>
                     <circle cx="24" cy="24" r="2.5" fill={C.navy}/>
                   </svg>
                 )}
