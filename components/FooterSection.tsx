@@ -20,43 +20,21 @@ export default function FooterSection() {
   const linkStyle = { fontSize: 13, color: 'rgba(255,255,255,0.45)', textDecoration: 'none' as const, lineHeight: '28px', display: 'block' as const, transition: 'color 150ms', fontWeight: 400 };
 
   return (
-    <footer id="about" style={{ background: '#1b2558', paddingTop: 56, paddingBottom: 0 }}>
-      <div style={{ ...WRAP }}>
-        {/* Top row: logo + main content */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 48, marginBottom: 40, flexWrap: 'wrap' }}>
-          {/* Logo & Social */}
-          <div style={{ maxWidth: 320 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 12, height: 40 }}>
+    <footer id="about">
+      {/* Bone white section with logo, description, and invest button */}
+      <div style={{ background: '#f5f3f0', padding: '48px 40px' }}>
+        <div style={{ ...WRAP, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 48, flexWrap: 'wrap' }}>
+          {/* Logo & Description */}
+          <div style={{ maxWidth: 400 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 16, height: 32 }}>
               <img src="/assets/logos/Textra video logo_1.png" alt="Textra Video" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
             </div>
-            <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', lineHeight: 1.6, margin: '0 0 16px 0' }}>
+            <p style={{ fontSize: 13, color: '#273572', lineHeight: 1.7, margin: 0 }}>
               Custom design and powerhouse code harnessing AI for rapid, on-brand video. Built for enterprises.
             </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <div style={{ display: 'flex', gap: 12 }}>
-                {/* Social icons */}
-                {[
-                  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/textra-video', icon: '/assets/icons/linkedin.png' },
-                  { label: 'Vimeo', href: 'https://vimeo.com/showcase/11919627?share=copy', icon: '/assets/icons/vimeo.png' },
-                ].map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={s.label}
-                    style={{ width: 32, height: 32, borderRadius: 6, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'opacity 150ms', opacity: 0.85 }}
-                    onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.85'; }}>
-                    <img src={s.icon} alt={s.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                  </a>
-                ))}
-              </div>
-              <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)' }}>✓ British Sign Language support available</div>
-            </div>
           </div>
 
-          {/* Invest CTA */}
+          {/* Invest Button */}
           <div>
             <a
               href="http://invest.textra.video/"
@@ -67,6 +45,35 @@ export default function FooterSection() {
               onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(102,188,173,0.3)'; }}>
               💼 Invest in Textra
             </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Dark footer section */}
+      <div style={{ background: '#1b2558', paddingTop: 40, paddingBottom: 0 }}>
+        <div style={{ ...WRAP }}>
+          {/* Social section */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <div style={{ display: 'flex', gap: 12 }}>
+              {/* Social icons */}
+              {[
+                { label: 'LinkedIn', href: 'https://www.linkedin.com/company/textra-video', icon: '/assets/icons/linkedin.png' },
+                { label: 'Vimeo', href: 'https://vimeo.com/showcase/11919627?share=copy', icon: '/assets/icons/vimeo.png' },
+              ].map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  style={{ width: 32, height: 32, borderRadius: 6, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'opacity 150ms', opacity: 0.85 }}
+                  onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.85'; }}>
+                  <img src={s.icon} alt={s.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </a>
+              ))}
+            </div>
+            <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)' }}>✓ British Sign Language support available</div>
           </div>
         </div>
 
