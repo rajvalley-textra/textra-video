@@ -37,8 +37,8 @@ export default function FooterSection() {
               <div style={{ display: 'flex', gap: 12 }}>
                 {/* Social icons */}
                 {[
-                  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/textra-video', icon: '/assets/icons/icons8-linkedin-logo-100.webp' },
-                  { label: 'Vimeo', href: 'https://vimeo.com/showcase/11919627?share=copy', icon: '/assets/icons/icons8-vimeo-100.webp' },
+                  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/textra-video', icon: '/assets/icons/linkedin.png' },
+                  { label: 'Vimeo', href: 'https://vimeo.com/showcase/11919627?share=copy', icon: '/assets/icons/vimeo.png' },
                 ].map((s) => (
                   <a
                     key={s.label}
@@ -46,10 +46,10 @@ export default function FooterSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    style={{ width: 40, height: 40, borderRadius: 6, border: '1px solid rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'border-color 150ms, background 150ms', padding: '6px' }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.background = 'transparent'; }}>
-                    <img src={s.icon} alt={s.label} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                    style={{ width: 44, height: 44, borderRadius: 8, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'opacity 150ms', opacity: 0.9 }}
+                    onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.9'; }}>
+                    <img src={s.icon} alt={s.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </a>
                 ))}
               </div>
