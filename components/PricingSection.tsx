@@ -60,8 +60,7 @@ export default function PricingSection() {
             >
               Book a Demo
             </a>
-            <div style={{ fontSize: 11, color: C.gray400, textAlign: 'center', marginTop: 12 }}>No credit card required · 24-hour setup</div>
-            <div style={{ fontSize: 10, color: C.gray400, textAlign: 'center', marginTop: 8 }}>Pilot scheme option for six-month contracts available</div>
+            <div style={{ fontSize: 12, color: C.gray400, textAlign: 'center', marginTop: 12 }}>* Pilot scheme option for six-month contracts available</div>
           </div>
 
           {/* Side panel */}

@@ -7,7 +7,7 @@ const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 const steps = [
   {
     num: 1, time: '30 mins', title: 'Onboard',
-    body: 'We onboard you with an educated account manager and look after you every step of the way.',
+    body: 'We provide a dedicated account manager to support you at every step.',
     icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>,
   },
   {
