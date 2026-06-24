@@ -53,7 +53,7 @@ export default function PricingSection() {
             </div>
 
             <a
-              href="#contact"
+              href="mailto:sales@textra.video"
               style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, background: grad, color: '#fff', borderRadius: 9999, padding: '16px 32px', fontSize: 15, fontWeight: 700, textDecoration: 'none', width: '100%', boxSizing: 'border-box', transition: 'filter 200ms, transform 200ms, box-shadow 200ms', boxShadow: sh.md }}
               onMouseEnter={(e) => { e.currentTarget.style.filter = 'brightness(1.08)'; e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = sh.lg; }}
               onMouseLeave={(e) => { e.currentTarget.style.filter = 'none'; e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = sh.md; }}

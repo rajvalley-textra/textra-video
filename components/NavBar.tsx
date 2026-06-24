@@ -37,13 +37,13 @@ export default function NavBar() {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 32, marginLeft: 48, flex: 1 }}>
           {links.map((l) => {
-            const lc = scrolled ? C.navy : 'rgba(255,255,255,0.8)';
+            const lc = C.navy;
             return (
               <a
                 key={l.label}
                 href={l.href}
                 style={{ fontSize: 14, fontWeight: 500, color: lc, textDecoration: 'none', transition: 'color 150ms' }}
-                onMouseEnter={(e) => { (e.target as HTMLAnchorElement).style.color = scrolled ? C.teal : '#fff'; }}
+                onMouseEnter={(e) => { (e.target as HTMLAnchorElement).style.color = C.teal; }}
                 onMouseLeave={(e) => { (e.target as HTMLAnchorElement).style.color = lc; }}
               >
                 {l.label}
@@ -57,15 +57,15 @@ export default function NavBar() {
             href="https://invest.textra.ai"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ background: 'transparent', color: scrolled ? C.teal : '#fff', borderRadius: 9999, padding: '11px 20px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', border: `1.5px solid ${scrolled ? C.teal : 'rgba(255,255,255,0.4)'}` }}
+            style={{ background: 'transparent', color: C.teal, borderRadius: 9999, padding: '11px 20px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', border: `1.5px solid ${C.teal}` }}
             onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.8'; }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
           >
             Invest
           </a>
           <a
-            href="#contact"
-            style={{ background: scrolled ? C.teal : '#fff', color: scrolled ? '#fff' : C.navy, borderRadius: 9999, padding: '11px 24px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms' }}
+            href="mailto:sales@textra.video"
+            style={{ background: C.teal, color: '#fff', borderRadius: 9999, padding: '11px 24px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms' }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '0.85'; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '1'; }}
           >
