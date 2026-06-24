@@ -34,7 +34,7 @@ export default function PricingSection() {
               <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.teal, marginBottom: 16 }}>Enterprise Plan</div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 4 }}>
                 <span style={{ fontSize: 28, fontWeight: 800, color: C.navy, marginTop: 8 }}>£</span>
-                <span style={{ fontSize: 64, fontWeight: 900, color: C.navy, lineHeight: 1 }}>12,000<sup style={{ fontSize: 20 }}>*</sup></span>
+                <span style={{ fontSize: 64, fontWeight: 900, color: C.navy, lineHeight: 1 }}>12,000<sub style={{ fontSize: 20, position: 'relative', top: 8 }}>*</sub></span>
               </div>
               <div style={{ fontSize: 14, color: C.gray400, fontWeight: 500, marginTop: 2 }}>per year · billed annually</div>
             </div>
