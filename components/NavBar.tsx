@@ -31,7 +31,7 @@ export default function NavBar() {
       transition: 'all 280ms cubic-bezier(0,0,0.2,1)',
     }}>
       <div style={{ ...WRAP, display: 'flex', alignItems: 'center', height: 70 }}>
-        <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 0, textDecoration: 'none', flexShrink: 0, height: 28 }}>
+        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: 0, textDecoration: 'none', flexShrink: 0, height: 28 }}>
           <img src="/assets/logos/Textra video logo_1.png" alt="Textra Video" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
         </a>
 
