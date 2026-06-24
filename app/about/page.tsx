@@ -14,30 +14,35 @@ export default function AboutPage() {
       title: 'CEO',
       bio: 'Founder and product-led CEO with 14+ years\' experience across animation, video, and technology. Leads product vision, strategy, and commercial direction.',
       linkedin: 'https://www.linkedin.com/in/matthewjamescooper/',
+      image: '/assets/Profile pics/Matt.png',
     },
     {
       name: 'Raj Valley',
       title: 'COO',
       bio: '30+ years in operations, media, and creative automation. Expert in scaling delivery, operations, and investment planning.',
       linkedin: 'https://www.linkedin.com/in/rajvalley/',
+      image: '/assets/Profile pics/Raj.png',
     },
     {
       name: 'Steven Godman',
       title: 'CRO',
       bio: 'SaaS commercial leader with a 25-year track record of building and scaling B2B ventures to £5m+ ARR.',
       linkedin: 'https://www.linkedin.com/in/stevegodman/',
+      image: '/assets/Profile pics/Steve.png',
     },
     {
       name: 'Stuart Jeffrey',
       title: 'CFO',
       bio: 'Startup finance and fundraising specialist with deep experience in scaling early-stage businesses and managing investor relations.',
       linkedin: 'https://www.linkedin.com/in/stuart-jeffrey-9a3739/',
+      image: '/assets/Profile pics/Stuart.png',
     },
     {
       name: 'Alexis Cheshire',
       title: 'CTO',
       bio: '25+ years building B2B and D2C digital products and leading engineering teams. Responsible for platform scalability, security, and automation.',
       linkedin: 'https://www.linkedin.com/in/alexischeshire/',
+      image: '/assets/Profile pics/Alexis.png',
     },
   ];
 
@@ -96,37 +101,46 @@ export default function AboutPage() {
               <div
                 key={member.name}
                 style={{
-                  padding: 32,
                   background: '#f8f9fb',
                   borderRadius: 16,
                   border: '1px solid #e2e6ec',
+                  overflow: 'hidden',
                 }}
               >
-                <h3 style={{ fontSize: 20, fontWeight: 800, color: C.navy, margin: '0 0 8px 0' }}>
-                  {member.name}
-                </h3>
-                <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.teal, marginBottom: 16 }}>
-                  {member.title}
+                <div style={{ width: '100%', height: 320, overflow: 'hidden', background: '#e2e6ec' }}>
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
                 </div>
-                <p style={{ fontSize: 14, color: C.gray600, lineHeight: 1.7, margin: '0 0 20px 0' }}>
-                  {member.bio}
-                </p>
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 8,
-                    fontSize: 13,
-                    fontWeight: 600,
-                    color: C.teal,
-                    textDecoration: 'none',
-                  }}
-                >
-                  View on LinkedIn →
-                </a>
+                <div style={{ padding: 32 }}>
+                  <h3 style={{ fontSize: 20, fontWeight: 800, color: C.navy, margin: '0 0 8px 0' }}>
+                    {member.name}
+                  </h3>
+                  <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.teal, marginBottom: 16 }}>
+                    {member.title}
+                  </div>
+                  <p style={{ fontSize: 14, color: C.gray600, lineHeight: 1.7, margin: '0 0 20px 0' }}>
+                    {member.bio}
+                  </p>
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 8,
+                      fontSize: 13,
+                      fontWeight: 600,
+                      color: C.teal,
+                      textDecoration: 'none',
+                    }}
+                  >
+                    View on LinkedIn →
+                  </a>
+                </div>
               </div>
             ))}
           </div>
