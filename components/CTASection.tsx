@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import { C, grad, sh } from '@/lib/theme';
 import { useReveal } from '@/hooks/useReveal';
 
@@ -12,8 +13,10 @@ const promises: [string, string][] = [
 
 export default function CTASection() {
   const [ref, vis] = useReveal(0.1);
+  const [showModal, setShowModal] = useState(false);
 
   return (
+    <>
     <section id="contact" ref={ref as React.RefObject<HTMLElement>} style={{ padding: '96px 0', background: '#fff' }}>
       <div style={{ ...WRAP }} className="wrap-pad">
         <div
@@ -47,19 +50,43 @@ export default function CTASection() {
               >
                 Book a Demo
               </a>
-              <a
-                href="#showreel"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: '#fff', borderRadius: 9999, padding: '16px 32px', fontSize: 16, fontWeight: 600, textDecoration: 'none', border: '1.5px solid rgba(255,255,255,0.3)', transition: 'border-color 200ms, background 200ms' }}
+              <button
+                onClick={() => setShowModal(true)}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: '#fff', borderRadius: 9999, padding: '16px 32px', fontSize: 16, fontWeight: 600, textDecoration: 'none', border: '1.5px solid rgba(255,255,255,0.3)', transition: 'border-color 200ms, background 200ms', cursor: 'pointer' }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.6)'; e.currentTarget.style.background = 'rgba(255,255,255,0.07)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.background = 'transparent'; }}
               >
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 Watch Showreel
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    {showModal && (
+      <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 9999, padding: '20px' }}>
+        <div style={{ position: 'relative', width: '100%', maxWidth: 1200, aspectRatio: '16/9' }}>
+          <button
+            onClick={() => setShowModal(false)}
+            style={{ position: 'absolute', top: -40, right: 0, background: 'none', border: 'none', color: '#fff', fontSize: 28, cursor: 'pointer', fontWeight: 'bold' }}
+          >
+            ✕
+          </button>
+          <iframe
+            src="https://player.vimeo.com/video/1077894850?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            title="Textra Promo"
+            style={{ borderRadius: 8 }}
+          />
+        </div>
+      </div>
+    )}
+    </>
   );
 }

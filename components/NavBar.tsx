@@ -24,10 +24,10 @@ export default function NavBar() {
   return (
     <nav style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
-      background: scrolled ? '#f5f3f0' : 'rgba(245,243,240,0.15)',
+      background: '#f5f3f0',
       backdropFilter: 'blur(16px)',
-      borderBottom: scrolled ? '1px solid rgba(0,0,0,0.08)' : '1px solid transparent',
-      boxShadow: scrolled ? sh.sm : 'none',
+      borderBottom: '1px solid rgba(0,0,0,0.08)',
+      boxShadow: sh.sm,
       transition: 'all 280ms cubic-bezier(0,0,0.2,1)',
     }}>
       <div style={{ ...WRAP, display: 'flex', alignItems: 'center', height: 70 }}>

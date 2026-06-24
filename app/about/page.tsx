@@ -93,7 +93,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}>
+      <section id="team" style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px' }}>
           <h2 style={{ fontSize: 36, fontWeight: 800, color: C.navy, margin: '0 0 56px 0' }}>Our Team</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 24 }}>
@@ -111,7 +111,7 @@ export default function AboutPage() {
                   <img
                     src={member.image}
                     alt={member.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center' }}
                   />
                 </div>
                 <div style={{ padding: 16 }}>
