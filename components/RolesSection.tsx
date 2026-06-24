@@ -124,16 +124,6 @@ export default function RolesSection() {
           ))}
         </div>
 
-        <div style={{ textAlign: 'center', marginTop: 36, opacity: vis ? 1 : 0, transition: 'opacity 0.6s ease 0.7s' }}>
-          <a
-            href="#contact"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: grad, color: '#fff', borderRadius: 9999, padding: '14px 28px', fontSize: 14, fontWeight: 700, textDecoration: 'none', boxShadow: sh.md, transition: 'filter 200ms, transform 200ms' }}
-            onMouseEnter={(e) => { e.currentTarget.style.filter = 'brightness(1.08)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.filter = 'none'; e.currentTarget.style.transform = 'none'; }}
-          >
-            See How {active.tab} Teams Use Textra →
-          </a>
-        </div>
       </div>
     </section>
   );

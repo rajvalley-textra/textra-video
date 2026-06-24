@@ -43,7 +43,7 @@ export default function ProblemSection() {
       <div style={{ ...WRAP }} className="wrap-pad">
         <div style={{ textAlign: 'center', marginBottom: 56, opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(18px)', transition: 'all 0.6s ease' }}>
           <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.teal, marginBottom: 12 }}>The Problem</div>
-          <h2 style={{ fontSize: 38, fontWeight: 800, color: C.navy, lineHeight: 1.18, margin: 0 }}>Three Routes. One Clear Winner.</h2>
+          <h2 style={{ fontSize: 48, fontWeight: 900, color: C.navy, lineHeight: 1.18, margin: 0 }}>Three Routes. One Clear Winner.</h2>
         </div>
 
         <div className="problem-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>

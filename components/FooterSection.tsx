@@ -91,7 +91,7 @@ export default function FooterSection() {
             ))}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <img src="/assets/logos/BSL Logo.png" alt="British Sign Language" style={{ height: 24, width: 'auto', objectFit: 'contain' }} />
+            <img src="/assets/logos/BSL-icon-01.svg" alt="British Sign Language" style={{ height: 24, width: 'auto', objectFit: 'contain' }} />
             <span style={{ fontSize: 11, color: '#576170' }}>British Sign Language support available</span>
           </div>
         </div>
