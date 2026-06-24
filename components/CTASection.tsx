@@ -6,7 +6,7 @@ const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
 const promises: [string, string][] = [
   ['Your brand template', 'in 2 days'],
-  ['Your first video', 'in 24 hours'],
+  ['Your first video', 'in under an hour'],
   ['Your new workflow', 'forever'],
 ];
 

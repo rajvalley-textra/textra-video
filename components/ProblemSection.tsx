@@ -26,8 +26,8 @@ const cards = [
   {
     id: 'textra',
     overline: 'The Textra Route',
-    title: '24 Hours.\nOn-Brand.\nDone.',
-    badge: '24HR · AGENCY QUALITY',
+    title: 'Under 1 Hour.\nOn-Brand.\nDone.',
+    badge: 'UNDER 1HR · AGENCY QUALITY',
     body: 'Agency quality at AI speed. Upload any document, receive a polished branded video — guaranteed within an hour. Every time.',
     bg: 'linear-gradient(160deg, #1b2558 0%, #273572 60%, #1A71B1 100%)',
     textColor: '#fff', bodyColor: 'rgba(255,255,255,0.7)', border: 'transparent', badgeColor: 'rgba(102,188,173,0.9)',

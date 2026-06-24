@@ -122,7 +122,7 @@ function AnimatedHeroCard() {
 }
 
 const trustItems: [string, string][] = [
-  ['24hr', 'Delivery SLA'],
+  ['Under 1hr', 'Delivery SLA'],
   ['30+', 'Languages'],
   ['30–50%', 'Engagement uplift'],
   ['Subtitles', 'Included'],
