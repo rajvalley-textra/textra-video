@@ -9,7 +9,7 @@ const links = [
   { label: 'Demos', href: '#demos' },
   { label: 'Solutions', href: '#solutions' },
   { label: 'Pricing', href: '#pricing' },
-  { label: 'About', href: '#about' },
+  { label: 'About', href: '/about' },
 ];
 
 export default function NavBar() {
@@ -24,9 +24,9 @@ export default function NavBar() {
   return (
     <nav style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
-      background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.15)',
+      background: scrolled ? '#f5f3f0' : 'rgba(245,243,240,0.15)',
       backdropFilter: 'blur(16px)',
-      borderBottom: scrolled ? `1px solid ${C.gray200}` : '1px solid transparent',
+      borderBottom: scrolled ? '1px solid rgba(0,0,0,0.08)' : '1px solid transparent',
       boxShadow: scrolled ? sh.sm : 'none',
       transition: 'all 280ms cubic-bezier(0,0,0.2,1)',
     }}>
@@ -37,13 +37,13 @@ export default function NavBar() {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 32, marginLeft: 48, flex: 1 }}>
           {links.map((l) => {
-            const lc = scrolled ? C.gray600 : 'rgba(255,255,255,0.8)';
+            const lc = scrolled ? C.navy : 'rgba(255,255,255,0.8)';
             return (
               <a
                 key={l.label}
                 href={l.href}
                 style={{ fontSize: 14, fontWeight: 500, color: lc, textDecoration: 'none', transition: 'color 150ms' }}
-                onMouseEnter={(e) => { (e.target as HTMLAnchorElement).style.color = scrolled ? C.navy : '#fff'; }}
+                onMouseEnter={(e) => { (e.target as HTMLAnchorElement).style.color = scrolled ? C.teal : '#fff'; }}
                 onMouseLeave={(e) => { (e.target as HTMLAnchorElement).style.color = lc; }}
               >
                 {l.label}
@@ -57,7 +57,7 @@ export default function NavBar() {
             href="https://invest.textra.ai"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ background: 'transparent', color: scrolled ? C.navy : '#fff', borderRadius: 9999, padding: '11px 20px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', border: `1.5px solid ${scrolled ? C.navy : 'rgba(255,255,255,0.4)'}` }}
+            style={{ background: 'transparent', color: scrolled ? C.teal : '#fff', borderRadius: 9999, padding: '11px 20px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', border: `1.5px solid ${scrolled ? C.teal : 'rgba(255,255,255,0.4)'}` }}
             onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.8'; }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
           >
@@ -65,7 +65,7 @@ export default function NavBar() {
           </a>
           <a
             href="#contact"
-            style={{ background: scrolled ? C.navy : '#fff', color: scrolled ? '#fff' : C.navy, borderRadius: 9999, padding: '11px 24px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms' }}
+            style={{ background: scrolled ? C.teal : '#fff', color: scrolled ? '#fff' : C.navy, borderRadius: 9999, padding: '11px 24px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms' }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '0.85'; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '1'; }}
           >

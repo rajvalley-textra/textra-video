@@ -132,8 +132,10 @@ const trustItems: [string, string][] = [
 
 export default function HeroSection() {
   const [heroHovered, setHeroHovered] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
+    <>
     <section id="hero" style={{ background: gradHero, minHeight: '100vh', paddingTop: 70, display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
       {/* Dot grid */}
       <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '36px 36px', pointerEvents: 'none' }} />
@@ -148,8 +150,8 @@ export default function HeroSection() {
             Enterprise Video Platform
           </div>
           <h1 style={{ fontSize: 52, fontWeight: 900, color: '#fff', lineHeight: 1.08, letterSpacing: '-0.02em', margin: '0 0 22px 0' }}>
-            Your Content Deserves Better Than{' '}
-            <em style={{ fontStyle: 'italic', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Dead PDFs</em>
+            Don't be lifeless...{' '}
+            <em style={{ fontStyle: 'italic', color: '#fff' }}>get animated</em>
           </h1>
           <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.76)', lineHeight: 1.7, margin: '0 0 36px 0', fontWeight: 400 }}>
             Turn boring documents into studio-quality video in under an hour.{' '}
@@ -164,15 +166,15 @@ export default function HeroSection() {
             >
               Book a Demo
             </a>
-            <a
-              href="#showreel"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: '#fff', borderRadius: 9999, padding: '14px 28px', fontSize: 15, fontWeight: 600, textDecoration: 'none', border: '1.5px solid rgba(255,255,255,0.32)', transition: 'border-color 200ms, background 200ms' }}
+            <button
+              onClick={() => setShowModal(true)}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: '#fff', borderRadius: 9999, padding: '14px 28px', fontSize: 15, fontWeight: 600, textDecoration: 'none', border: '1.5px solid rgba(255,255,255,0.32)', transition: 'border-color 200ms, background 200ms', cursor: 'pointer' }}
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.65)'; e.currentTarget.style.background = 'rgba(255,255,255,0.07)'; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.32)'; e.currentTarget.style.background = 'transparent'; }}
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               Watch Showreel
-            </a>
+            </button>
           </div>
 
           {/* Trust metrics */}
@@ -236,7 +238,10 @@ export default function HeroSection() {
               ⛶
             </button>
           </div>
-          <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontWeight: 500, letterSpacing: '0.06em' }}>Any document → Branded video · Delivered under an hour</div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, alignItems: 'center' }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', letterSpacing: '0.04em' }}>Textra Video· <span style={{ color: 'rgba(102,188,173,0.9)' }}>Fast · Studio-quality · On-brand</span></div>
+            <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontWeight: 500, letterSpacing: '0.06em' }}>Any document → Branded video · Delivered under an hour</div>
+          </div>
         </div>
       </div>
 
@@ -251,5 +256,29 @@ export default function HeroSection() {
         </svg>
       </div>
     </section>
+
+    {showModal && (
+      <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 9999, padding: '20px' }}>
+        <div style={{ position: 'relative', width: '100%', maxWidth: 1200, aspectRatio: '16/9' }}>
+          <button
+            onClick={() => setShowModal(false)}
+            style={{ position: 'absolute', top: -40, right: 0, background: 'none', border: 'none', color: '#fff', fontSize: 28, cursor: 'pointer', fontWeight: 'bold' }}
+          >
+            ✕
+          </button>
+          <iframe
+            src="https://player.vimeo.com/video/1077894850?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            title="Textra Promo"
+            style={{ borderRadius: 8 }}
+          />
+        </div>
+      </div>
+    )}
+    </>
   );
 }

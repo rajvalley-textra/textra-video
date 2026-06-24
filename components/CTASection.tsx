@@ -57,7 +57,6 @@ export default function CTASection() {
                 Watch Showreel
               </a>
             </div>
-            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.38)', fontWeight: 500 }}>No credit card. No calls with sales. Just results.</div>
           </div>
         </div>
       </div>
