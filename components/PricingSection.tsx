@@ -85,12 +85,6 @@ export default function PricingSection() {
                 <div style={{ fontSize: 13, fontWeight: 700, color: C.navy }}>Save up to 90%</div>
               </div>
             </div>
-            <div style={{ background: 'linear-gradient(135deg, #f2f4fa, #edf9f7)', borderRadius: 16, padding: '20px', border: `1px solid ${C.gray100}` }}>
-              <div style={{ fontSize: 13, fontWeight: 600, color: C.navy, lineHeight: 1.6 }}>
-                &ldquo;Most clients see ROI within the first video — before the end of Month 1.&rdquo;
-              </div>
-              <div style={{ fontSize: 11, color: C.gray400, marginTop: 8 }}>— Matt Cooper, Founder</div>
-            </div>
           </div>
         </div>
       </div>
