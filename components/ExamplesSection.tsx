@@ -15,23 +15,7 @@ const videos = [
 
 export default function ExamplesSection() {
   const iframeRefs = useRef<{ [key: string]: HTMLIFrameElement }>({});
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const [hoveredVideo, setHoveredVideo] = useState<string | null>(null);
-
-  const handleVideoClick = (videoId: string) => {
-    // Pause all other videos
-    Object.keys(iframeRefs.current).forEach((id) => {
-      if (id !== videoId && iframeRefs.current[id]) {
-        iframeRefs.current[id].style.pointerEvents = 'none';
-        // Send pause command to Vimeo
-        iframeRefs.current[id].contentWindow?.postMessage(
-          { method: 'pause' },
-          'https://player.vimeo.com'
-        );
-      }
-    });
-    setActiveVideo(videoId);
-  };
 
   const handleFullscreen = (videoId: string) => {
     const iframe = iframeRefs.current[videoId];
@@ -70,12 +54,8 @@ export default function ExamplesSection() {
                 overflow: 'hidden',
                 boxShadow: '0 4px 16px rgba(39,53,114,0.12)',
                 position: 'relative',
-                cursor: 'pointer',
               }}
-              onMouseEnter={() => {
-                handleVideoClick(video.id);
-                setHoveredVideo(video.id);
-              }}
+              onMouseEnter={() => setHoveredVideo(video.id)}
               onMouseLeave={() => setHoveredVideo(null)}
             >
               <button
@@ -117,7 +97,7 @@ export default function ExamplesSection() {
                 ref={(el) => {
                   if (el) iframeRefs.current[video.id] = el;
                 }}
-                src={`https://player.vimeo.com/video/${video.id}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
+                src={`https://player.vimeo.com/video/${video.id}?h=&title=0&byline=0&portrait=0&badge=0&player_id=0&app_id=58479`}
                 width="100%"
                 height="100%"
                 frameBorder="0"
