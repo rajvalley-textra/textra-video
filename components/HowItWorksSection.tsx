@@ -6,7 +6,7 @@ const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
 const steps = [
   {
-    num: 1, time: '30 mins', title: 'Connect & Onboard',
+    num: 1, time: '30 mins', title: 'Onboard',
     body: 'Link your LMS, CMS, or SharePoint. Instant integration with your existing content workflow.',
     icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>,
   },
@@ -21,7 +21,7 @@ const steps = [
     icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/></svg>,
   },
   {
-    num: 4, time: '24 hours', title: 'Download & Deploy',
+    num: 4, time: 'under an hour', title: 'Download & Deploy',
     body: 'Your finished branded video is ready. Download directly, embed in your LMS, or share via the Textra portal.',
     icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>,
   },
@@ -37,9 +37,9 @@ export default function HowItWorksSection() {
       <div style={{ ...WRAP }} className="wrap-pad">
         <div style={{ textAlign: 'center', marginBottom: 64, opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(18px)', transition: 'all 0.6s ease' }}>
           <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: C.teal, marginBottom: 12 }}>How It Works</div>
-          <h2 style={{ fontSize: 38, fontWeight: 800, color: C.navy, lineHeight: 1.18, margin: '0 0 14px 0' }}>Four Steps. One Day. Done.</h2>
+          <h2 style={{ fontSize: 38, fontWeight: 800, color: C.navy, lineHeight: 1.18, margin: '0 0 14px 0' }}>Three Steps. One Day. Done.</h2>
           <p style={{ fontSize: 16, color: C.gray500, lineHeight: 1.65, margin: '0 auto', maxWidth: 520 }}>
-            From document upload to finished branded video in 24 hours. Zero training required.
+            From document upload to finished branded video in under an hour. Zero training required.
           </p>
         </div>
 

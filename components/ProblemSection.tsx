@@ -28,7 +28,7 @@ const cards = [
     overline: 'The Textra Route',
     title: '24 Hours.\nOn-Brand.\nDone.',
     badge: '24HR · AGENCY QUALITY',
-    body: 'Agency quality at AI speed. Upload any document, receive a polished branded video — guaranteed within 24 hours. Every time.',
+    body: 'Agency quality at AI speed. Upload any document, receive a polished branded video — guaranteed within an hour. Every time.',
     bg: 'linear-gradient(160deg, #1b2558 0%, #273572 60%, #1A71B1 100%)',
     textColor: '#fff', bodyColor: 'rgba(255,255,255,0.7)', border: 'transparent', badgeColor: 'rgba(102,188,173,0.9)',
     cta: true,
@@ -58,18 +58,17 @@ export default function ProblemSection() {
               <div style={{ width: 58, height: 58, borderRadius: 14, background: card.id === 'textra' ? 'rgba(255,255,255,0.1)' : C.gray50, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {card.id === 'agency' && (
                   <svg width="32" height="32" viewBox="0 0 48 48" style={{ overflow: 'visible' }}>
-                    <circle cx="24" cy="24" r="19" fill="none" stroke={C.gray200} strokeWidth="2.5"/>
-                    <g style={{ transformOrigin: '24px 24px', animation: 'clockSpin 12s linear infinite' }}>
-                      <line x1="24" y1="24" x2="24" y2="12" stroke={C.gray300} strokeWidth="2.5" strokeLinecap="round"/>
-                    </g>
-                    <g style={{ transformOrigin: '24px 24px', animation: 'clockSpin 3s linear infinite' }}>
-                      <line x1="24" y1="24" x2="32" y2="24" stroke={C.navy} strokeWidth="2" strokeLinecap="round"/>
-                    </g>
-                    <circle cx="24" cy="24" r="2.5" fill={C.navy}/>
+                    <circle cx="24" cy="24" r="19" fill="none" stroke="#d32f2f" strokeWidth="2.5"/>
+                    <line x1="16" y1="16" x2="32" y2="32" stroke="#d32f2f" strokeWidth="3" strokeLinecap="round"/>
+                    <line x1="32" y1="16" x2="16" y2="32" stroke="#d32f2f" strokeWidth="3" strokeLinecap="round"/>
                   </svg>
                 )}
                 {card.id === 'diy' && (
-                  <div style={{ width: 36, height: 28, borderRadius: 6, background: C.gray200, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 8, fontWeight: 800, color: C.gray500, letterSpacing: '0.05em', animation: 'glitchEffect 5s ease-in-out infinite' }}>GENERIC</div>
+                  <svg width="32" height="32" viewBox="0 0 48 48" style={{ overflow: 'visible' }}>
+                    <circle cx="24" cy="24" r="19" fill="none" stroke="#d32f2f" strokeWidth="2.5"/>
+                    <line x1="16" y1="16" x2="32" y2="32" stroke="#d32f2f" strokeWidth="3" strokeLinecap="round"/>
+                    <line x1="32" y1="16" x2="16" y2="32" stroke="#d32f2f" strokeWidth="3" strokeLinecap="round"/>
+                  </svg>
                 )}
                 {card.id === 'textra' && (
                   <svg width="32" height="32" viewBox="0 0 48 48">

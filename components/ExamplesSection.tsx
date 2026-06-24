@@ -40,7 +40,7 @@ export default function ExamplesSection() {
             See It In Action
           </h2>
           <p style={{ fontSize: 16, color: C.gray600, lineHeight: 1.6 }}>
-            Watch how Textra Video creates studio-quality content in just 24 hours.
+            Watch how Textra Video creates studio-quality content in under an hour.
           </p>
         </div>
 

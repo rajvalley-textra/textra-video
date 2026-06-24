@@ -10,7 +10,7 @@ const features = [
   'Custom on-brand template (built for you)',
   'LMS integration',
   'Priority support & dedicated account manager',
-  'Watch tracking & compliance reporting',
+  'Bespoke customisation included',
 ];
 
 export default function PricingSection() {
@@ -34,7 +34,7 @@ export default function PricingSection() {
               <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.teal, marginBottom: 16 }}>Enterprise Plan</div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 4 }}>
                 <span style={{ fontSize: 28, fontWeight: 800, color: C.navy, marginTop: 8 }}>£</span>
-                <span style={{ fontSize: 64, fontWeight: 900, color: C.navy, lineHeight: 1 }}>12,000</span>
+                <span style={{ fontSize: 64, fontWeight: 900, color: C.navy, lineHeight: 1 }}>12,000<sup style={{ fontSize: 20, marginLeft: 2 }}>*</sup></span>
               </div>
               <div style={{ fontSize: 14, color: C.gray400, fontWeight: 500, marginTop: 2 }}>per year · billed annually</div>
             </div>
@@ -61,14 +61,15 @@ export default function PricingSection() {
               Book a Demo
             </a>
             <div style={{ fontSize: 11, color: C.gray400, textAlign: 'center', marginTop: 12 }}>No credit card required · 24-hour setup</div>
+            <div style={{ fontSize: 10, color: C.gray400, textAlign: 'center', marginTop: 8, fontStyle: 'italic' }}>* Pilot scheme option for six-month contracts available</div>
           </div>
 
           {/* Side panel */}
           <div style={{ maxWidth: 300, width: '100%', display: 'flex', flexDirection: 'column', gap: 20, opacity: vis ? 1 : 0, transform: vis ? 'translateY(0)' : 'translateY(22px)', transition: 'all 0.65s ease 0.22s' }}>
             <div style={{ background: '#fff', borderRadius: 16, padding: '24px', border: `1px solid ${C.gray200}`, boxShadow: sh.sm }}>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.teal, marginBottom: 10 }}>Typical Usage</div>
-              <div style={{ fontSize: 28, fontWeight: 900, color: C.navy, marginBottom: 4 }}>40–50 min</div>
-              <div style={{ fontSize: 13, color: C.gray500, lineHeight: 1.6 }}>used in Year 1. Your 60 min allowance gives room to scale. Upgrade in Year 2 when ready.</div>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.teal, marginBottom: 10 }}>Your Plan</div>
+              <div style={{ fontSize: 28, fontWeight: 900, color: C.navy, marginBottom: 4 }}>60 mins</div>
+              <div style={{ fontSize: 13, color: C.gray500, lineHeight: 1.6 }}>of content per year. Scale as you grow, or upgrade to higher usage tiers as needed.</div>
             </div>
             <div style={{ background: '#fff', borderRadius: 16, padding: '24px', border: `1px solid ${C.gray200}`, boxShadow: sh.sm }}>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.teal, marginBottom: 10 }}>vs. Traditional Agency</div>

@@ -5,8 +5,8 @@ import { useReveal } from '@/hooks/useReveal';
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
 const promises: [string, string][] = [
-  ['Your first video', 'in 24 hours'],
   ['Your brand template', 'in 2 days'],
+  ['Your first video', 'in 24 hours'],
   ['Your new workflow', 'forever'],
 ];
 

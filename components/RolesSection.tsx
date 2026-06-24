@@ -32,7 +32,7 @@ function MiniTransform({ color }: { color: string }) {
 const roles = [
   {
     id: 'ld', tab: 'L&D', headline: 'Deploy Training 10× Faster',
-    sub: 'Convert compliance docs, product manuals, and training materials into engaging video — in 24 hours.',
+    sub: 'Convert compliance docs, product manuals, and training materials into engaging video — in under an hour.',
     sectors: [
       { industry: 'Finance & Banking',  companies: 'HSBC · Lloyds Register',                   challenge: 'Compliance training for 30,000+ employees',         solution: 'Video-first compliance suite, deployed in days', color: C.blue },
       { industry: 'Government',         companies: 'Dept for Education · Met Police · Army',    challenge: 'Mandatory training with completion tracking',        solution: 'Compliance video with built-in watch tracking',  color: C.navy },
@@ -41,7 +41,7 @@ const roles = [
   },
   {
     id: 'cco', tab: 'Communications', headline: 'Instant Comms That Actually Land',
-    sub: 'Replace ignored emails with branded video updates that employees actually watch — delivered in 24 hours.',
+    sub: 'Replace ignored emails with branded video updates that employees actually watch — delivered in under an hour.',
     sectors: [
       { industry: 'Financial Services', companies: 'HSBC · Bloomberg',                          challenge: 'CEO announcements going unread by employees',        solution: 'On-brand exec video updates with 85% view rate',  color: C.blue },
       { industry: 'Government',         companies: 'Dept for Education · Met Police',           challenge: 'Policy changes communicated to remote field staff',  solution: 'Video policy briefs with watch-tracking built in', color: C.navy },

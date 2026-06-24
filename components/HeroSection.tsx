@@ -108,7 +108,7 @@ function AnimatedHeroCard() {
         </div>
         <div>
           <div style={{ fontSize: 12, fontWeight: 700, color: '#fff', marginBottom: 2 }}>Q3 Strategy Brief — Team Video</div>
-          <div style={{ fontSize: 9, color: 'rgba(255,255,255,0.42)', marginBottom: 8 }}>On-brand · 3:24 · Delivered in 24 hours</div>
+          <div style={{ fontSize: 9, color: 'rgba(255,255,255,0.42)', marginBottom: 8 }}>On-brand · 3:24 · Delivered under an hour</div>
           <div style={{ height: 3, background: 'rgba(255,255,255,0.12)', borderRadius: 3, overflow: 'hidden' }}>
             <div key={vkey} style={{ height: '100%', background: grad, borderRadius: 3, animation: 'vidProg 3.2s ease-out forwards' }} />
           </div>
@@ -131,6 +131,8 @@ const trustItems: [string, string][] = [
 ];
 
 export default function HeroSection() {
+  const [heroHovered, setHeroHovered] = useState(false);
+
   return (
     <section id="hero" style={{ background: gradHero, minHeight: '100vh', paddingTop: 70, display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
       {/* Dot grid */}
@@ -143,14 +145,14 @@ export default function HeroSection() {
         {/* Left */}
         <div>
           <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(102,188,173,0.92)', marginBottom: 18 }}>
-            AI-Powered Video Platform
+            Enterprise Video Platform
           </div>
           <h1 style={{ fontSize: 52, fontWeight: 900, color: '#fff', lineHeight: 1.08, letterSpacing: '-0.02em', margin: '0 0 22px 0' }}>
             Your Content Deserves Better Than{' '}
             <em style={{ fontStyle: 'italic', background: grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Dead PDFs</em>
           </h1>
           <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.76)', lineHeight: 1.7, margin: '0 0 36px 0', fontWeight: 400 }}>
-            Turn boring documents into studio-quality video in 24 hours.{' '}
+            Turn boring documents into studio-quality video in under an hour.{' '}
             No crew. No delays. No compromise on brand.
           </p>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 48 }}>
@@ -186,7 +188,11 @@ export default function HeroSection() {
 
         {/* Right */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
-          <div style={{ position: 'relative', width: '100%', maxWidth: 560, borderRadius: 20, overflow: 'hidden', boxShadow: sh.xl, border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '4/3' }}>
+          <div
+            style={{ position: 'relative', width: '100%', maxWidth: 560, borderRadius: 20, overflow: 'hidden', boxShadow: sh.xl, border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '4/3' }}
+            onMouseEnter={() => setHeroHovered(true)}
+            onMouseLeave={() => setHeroHovered(false)}
+          >
             <iframe
               src="https://player.vimeo.com/video/1077894850"
               width="100%"
@@ -196,8 +202,41 @@ export default function HeroSection() {
               allowFullScreen
               style={{ display: 'block' }}
             />
+            <button
+              onClick={() => {
+                const iframe = document.querySelector('iframe[src*="1077894850"]') as HTMLIFrameElement;
+                if (iframe && iframe.requestFullscreen) {
+                  iframe.requestFullscreen();
+                } else if (iframe && (iframe as any).webkitRequestFullscreen) {
+                  (iframe as any).webkitRequestFullscreen();
+                }
+              }}
+              style={{
+                position: 'absolute',
+                top: 12,
+                left: 12,
+                zIndex: 10,
+                width: 32,
+                height: 32,
+                borderRadius: 6,
+                border: 'none',
+                background: 'rgba(0,0,0,0.6)',
+                color: '#fff',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: 16,
+                transition: 'opacity 200ms, background 200ms',
+                opacity: heroHovered ? 1 : 0,
+                pointerEvents: heroHovered ? 'auto' : 'none',
+              }}
+              title="Fullscreen"
+            >
+              ⛶
+            </button>
           </div>
-          <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontWeight: 500, letterSpacing: '0.06em' }}>Any document → Branded video · Delivered in 24 hours</div>
+          <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontWeight: 500, letterSpacing: '0.06em' }}>Any document → Branded video · Delivered under an hour</div>
         </div>
       </div>
 

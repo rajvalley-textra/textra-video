@@ -52,14 +52,26 @@ export default function NavBar() {
           })}
         </div>
 
-        <a
-          href="#contact"
-          style={{ background: scrolled ? C.navy : '#fff', color: scrolled ? '#fff' : C.navy, borderRadius: 9999, padding: '11px 24px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', flexShrink: 0 }}
-          onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '0.85'; }}
-          onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '1'; }}
-        >
-          Book a Demo
-        </a>
+        <div style={{ display: 'flex', gap: 12, flexShrink: 0 }}>
+          <a
+            href="https://invest.textra.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ background: 'transparent', color: scrolled ? C.navy : '#fff', borderRadius: 9999, padding: '11px 20px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', border: `1.5px solid ${scrolled ? C.navy : 'rgba(255,255,255,0.4)'}` }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.8'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
+          >
+            Invest
+          </a>
+          <a
+            href="#contact"
+            style={{ background: scrolled ? C.navy : '#fff', color: scrolled ? '#fff' : C.navy, borderRadius: 9999, padding: '11px 24px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms' }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '0.85'; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '1'; }}
+          >
+            Book a Demo
+          </a>
+        </div>
       </div>
     </nav>
   );
