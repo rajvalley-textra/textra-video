@@ -96,32 +96,32 @@ export default function AboutPage() {
       <section style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px' }}>
           <h2 style={{ fontSize: 36, fontWeight: 800, color: C.navy, margin: '0 0 56px 0' }}>Our Team</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 48 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 24 }}>
             {team.map((member) => (
               <div
                 key={member.name}
                 style={{
                   background: '#f8f9fb',
-                  borderRadius: 16,
+                  borderRadius: 12,
                   border: '1px solid #e2e6ec',
                   overflow: 'hidden',
                 }}
               >
-                <div style={{ width: '100%', height: 320, overflow: 'hidden', background: '#e2e6ec' }}>
+                <div style={{ width: '100%', height: 160, overflow: 'hidden', background: '#e2e6ec' }}>
                   <img
                     src={member.image}
                     alt={member.name}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </div>
-                <div style={{ padding: 32 }}>
-                  <h3 style={{ fontSize: 20, fontWeight: 800, color: C.navy, margin: '0 0 8px 0' }}>
+                <div style={{ padding: 16 }}>
+                  <h3 style={{ fontSize: 13, fontWeight: 800, color: C.navy, margin: '0 0 4px 0', lineHeight: 1.3 }}>
                     {member.name}
                   </h3>
-                  <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.teal, marginBottom: 16 }}>
+                  <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: C.teal, marginBottom: 8 }}>
                     {member.title}
                   </div>
-                  <p style={{ fontSize: 14, color: C.gray600, lineHeight: 1.7, margin: '0 0 20px 0' }}>
+                  <p style={{ fontSize: 12, color: C.gray600, lineHeight: 1.5, margin: '0 0 12px 0' }}>
                     {member.bio}
                   </p>
                   <a
@@ -131,14 +131,14 @@ export default function AboutPage() {
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
-                      gap: 8,
-                      fontSize: 13,
+                      gap: 4,
+                      fontSize: 11,
                       fontWeight: 600,
                       color: C.teal,
                       textDecoration: 'none',
                     }}
                   >
-                    View on LinkedIn →
+                    LinkedIn →
                   </a>
                 </div>
               </div>
