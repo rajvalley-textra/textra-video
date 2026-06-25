@@ -25,7 +25,7 @@ export default function AboutPage() {
       linkedin: 'https://www.linkedin.com/in/rajvalley/',
       image: '/assets/Profile pics/Raj.png',
       imagePos: 'center 36%',
-      imageScale: 0.75,
+      imageScale: 1.1,
     },
     {
       name: 'Steven Godman',
@@ -34,7 +34,7 @@ export default function AboutPage() {
       linkedin: 'https://www.linkedin.com/in/stevegodman/',
       image: '/assets/Profile pics/Steve.png',
       imagePos: 'center 36%',
-      imageScale: 0.75,
+      imageScale: 1.1,
     },
     {
       name: 'Stuart Jeffrey',
@@ -43,7 +43,7 @@ export default function AboutPage() {
       linkedin: 'https://www.linkedin.com/in/stuart-jeffrey-9a3739/',
       image: '/assets/Profile pics/Stuart.png',
       imagePos: 'center 38%',
-      imageScale: 0.75,
+      imageScale: 1.1,
     },
     {
       name: 'Alexis Cheshire',
