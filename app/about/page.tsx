@@ -15,7 +15,7 @@ export default function AboutPage() {
       bio: 'Founder and product-led CEO with 14+ years\' experience across animation, video, and technology. Leads product vision, strategy, and commercial direction.',
       linkedin: 'https://www.linkedin.com/in/matthewjamescooper/',
       image: '/assets/Profile pics/Matt.png',
-      imagePos: 'center 12%',
+      imagePos: 'center 30%',
     },
     {
       name: 'Raj Valley',
@@ -23,7 +23,7 @@ export default function AboutPage() {
       bio: '30+ years in operations, media, and creative automation. Expert in scaling delivery, operations, and investment planning.',
       linkedin: 'https://www.linkedin.com/in/rajvalley/',
       image: '/assets/Profile pics/Raj.png',
-      imagePos: 'center 28%',
+      imagePos: 'center 36%',
     },
     {
       name: 'Steven Godman',
@@ -31,7 +31,7 @@ export default function AboutPage() {
       bio: 'SaaS commercial leader with a 25-year track record of building and scaling B2B ventures to £5m+ ARR.',
       linkedin: 'https://www.linkedin.com/in/stevegodman/',
       image: '/assets/Profile pics/Steve.png',
-      imagePos: 'center 30%',
+      imagePos: 'center 36%',
     },
     {
       name: 'Stuart Jeffrey',
@@ -47,7 +47,7 @@ export default function AboutPage() {
       bio: '25+ years building B2B and D2C digital products and leading engineering teams. Responsible for platform scalability, security, and automation.',
       linkedin: 'https://www.linkedin.com/in/alexischeshire/',
       image: '/assets/Profile pics/Alexis.png',
-      imagePos: 'center 28%',
+      imagePos: 'center 36%',
     },
   ];
 
