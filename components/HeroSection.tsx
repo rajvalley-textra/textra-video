@@ -221,6 +221,7 @@ export default function HeroSection() {
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
               allowFullScreen
+              title="Textra Video Showreel"
               style={{ display: 'block' }}
             />
             {showFullscreenBtn && (
