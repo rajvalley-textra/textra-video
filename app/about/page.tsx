@@ -62,7 +62,7 @@ export default function AboutPage() {
       <main>
       {/* Hero */}
       <section style={{ paddingTop: 120, paddingBottom: 80, background: '#fff' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px' }} className="wrap-pad">
           <h1 style={{ fontSize: 48, fontWeight: 900, color: C.navy, lineHeight: 1.15, margin: '0 0 32px 0' }}>
             About Textra Video
           </h1>
@@ -77,9 +77,9 @@ export default function AboutPage() {
 
       {/* Problem */}
       <section style={{ paddingTop: 80, paddingBottom: 80, background: '#f8f9fb' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px' }} className="wrap-pad">
           <h2 style={{ fontSize: 36, fontWeight: 800, color: C.navy, margin: '0 0 40px 0' }}>The Challenge We Solve</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
+          <div className="about-problem-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
             <div>
               <div style={{ fontSize: 56, fontWeight: 900, color: C.teal, marginBottom: 16 }}>75%</div>
               <p style={{ fontSize: 14, color: C.gray600, lineHeight: 1.7 }}>
@@ -104,9 +104,9 @@ export default function AboutPage() {
 
       {/* Team */}
       <section id="team" style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px' }} className="wrap-pad">
           <h2 style={{ fontSize: 36, fontWeight: 800, color: C.navy, margin: '0 0 56px 0' }}>Our Team</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 24 }}>
+          <div className="team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 24 }}>
             {team.map((member) => (
               <div
                 key={member.name}

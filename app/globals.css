@@ -49,6 +49,12 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
   .cta-inner       { padding: 48px 32px !important; }
   .cta-title       { font-size: 34px !important; }
   .wrap-pad        { padding: 0 20px !important; }
+  .examples-grid       { grid-template-columns: repeat(2, 1fr) !important; }
+  .team-grid           { grid-template-columns: repeat(3, 1fr) !important; }
+  .about-problem-grid  { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .nav-links           { display: none !important; }
+  .nav-cta             { display: none !important; }
+  .nav-burger          { display: flex !important; }
 }
 
 @media (max-width: 560px) {
@@ -56,4 +62,6 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
   .stats-grid { grid-template-columns: 1fr !important; }
   .footer-cols { grid-template-columns: 1fr !important; }
   .role-tabs  { flex-direction: column !important; align-items: center !important; }
+  .examples-grid { grid-template-columns: 1fr !important; }
+  .team-grid     { grid-template-columns: repeat(2, 1fr) !important; }
 }

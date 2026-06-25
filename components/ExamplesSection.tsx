@@ -33,8 +33,8 @@ export default function ExamplesSection() {
   };
 
   return (
-    <section id="demos" style={{ background: '#fff', padding: '80px 40px' }}>
-      <div style={{ ...WRAP }}>
+    <section id="demos" style={{ background: '#fff', padding: '80px 0' }}>
+      <div style={{ ...WRAP }} className="wrap-pad">
         <div style={{ textAlign: 'center', marginBottom: 60 }}>
           <h2 style={{ fontSize: 42, fontWeight: 900, color: C.navy, lineHeight: 1.1, margin: '0 0 16px 0' }}>
             See It In Action
@@ -44,7 +44,7 @@ export default function ExamplesSection() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginTop: 40 }}>
+        <div className="examples-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginTop: 40 }}>
           {videos.map((video) => (
             <div key={video.id}>
               <div
