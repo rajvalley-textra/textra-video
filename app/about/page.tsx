@@ -16,6 +16,7 @@ export default function AboutPage() {
       linkedin: 'https://www.linkedin.com/in/matthewjamescooper/',
       image: '/assets/Profile pics/Matt.png',
       imagePos: 'center 22%',
+      imageScale: 0.75,
     },
     {
       name: 'Raj Valley',
@@ -116,7 +117,7 @@ export default function AboutPage() {
                   <img
                     src={member.image}
                     alt={member.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: member.imagePos || 'center center' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: member.imagePos || 'center center', transform: member.imageScale ? `scale(${member.imageScale})` : undefined }}
                   />
                 </div>
                 <div style={{ padding: 16 }}>
