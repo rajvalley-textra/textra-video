@@ -15,7 +15,7 @@ export default function AboutPage() {
       bio: 'Founder and product-led CEO with 14+ years\' experience across animation, video, and technology. Leads product vision, strategy, and commercial direction.',
       linkedin: 'https://www.linkedin.com/in/matthewjamescooper/',
       image: '/assets/Profile pics/Matt.png',
-      imagePos: 'center 30%',
+      imagePos: 'center 37%',
     },
     {
       name: 'Raj Valley',
