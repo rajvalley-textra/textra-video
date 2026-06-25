@@ -59,7 +59,7 @@ export default function FooterSection() {
               {col.links.map((link) => (
                 <a
                   key={link}
-                  href={link === 'Privacy Policy' ? '/privacy' : link === 'Terms of Service' ? '/terms' : link === 'About Textra' || link === 'Our Team' ? '/about' : '#'}
+                  href={link === 'Privacy Policy' ? '/privacy' : link === 'Terms of Service' ? '/terms' : link === 'About Textra' ? '/about' : link === 'Our Team' ? '/about#team' : '#'}
                   style={linkStyle}
                   onMouseEnter={(e) => { e.currentTarget.style.color = '#273572'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = '#576170'; }}>

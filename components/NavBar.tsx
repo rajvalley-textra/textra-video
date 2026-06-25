@@ -64,7 +64,9 @@ export default function NavBar() {
             Invest
           </a>
           <a
-            href="mailto:sales@textra.video"
+            href="mailto:sales@textra.video?subject=Book a Demo - Website"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{ background: C.teal, color: '#fff', borderRadius: 9999, padding: '11px 24px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms' }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '0.85'; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '1'; }}
