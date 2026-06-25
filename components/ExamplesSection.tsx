@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Player from '@vimeo/player';
 import { C } from '@/lib/theme';
+import { isIOS } from '@/lib/device';
 
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
@@ -18,6 +19,11 @@ export default function ExamplesSection() {
   const iframeRefs = useRef<{ [key: string]: HTMLIFrameElement }>({});
   const playersRef = useRef<{ [key: string]: Player }>({});
   const [playingVideos, setPlayingVideos] = useState<Set<string>>(new Set());
+  const [showFullscreenBtn, setShowFullscreenBtn] = useState(true);
+
+  useEffect(() => {
+    setShowFullscreenBtn(!isIOS());
+  }, []);
 
   useEffect(() => {
     const players: Player[] = [];
@@ -83,6 +89,7 @@ export default function ExamplesSection() {
                   position: 'relative',
                 }}
               >
+                {showFullscreenBtn && (
                 <button
                   className="fullscreen-btn"
                   onClick={(e) => {
@@ -119,6 +126,7 @@ export default function ExamplesSection() {
                 >
                   ⛶
                 </button>
+                )}
                 <iframe
                   ref={(el) => {
                     if (el) iframeRefs.current[video.id] = el;

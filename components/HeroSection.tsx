@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef, CSSProperties } from 'react';
 import Player from '@vimeo/player';
 import { C, grad, gradHero, sh } from '@/lib/theme';
+import { isIOS } from '@/lib/device';
 
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
@@ -134,7 +135,12 @@ const trustItems: [string, string][] = [
 export default function HeroSection() {
   const [showModal, setShowModal] = useState(false);
   const [heroPlaying, setHeroPlaying] = useState(false);
+  const [showFullscreenBtn, setShowFullscreenBtn] = useState(true);
   const heroIframeRef = useRef<HTMLIFrameElement | null>(null);
+
+  useEffect(() => {
+    setShowFullscreenBtn(!isIOS());
+  }, []);
 
   useEffect(() => {
     if (!heroIframeRef.current) return;
@@ -217,6 +223,7 @@ export default function HeroSection() {
               allowFullScreen
               style={{ display: 'block' }}
             />
+            {showFullscreenBtn && (
             <button
               className="fullscreen-btn"
               onClick={() => {
@@ -254,6 +261,7 @@ export default function HeroSection() {
             >
               ⛶
             </button>
+            )}
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, alignItems: 'center' }}>
             <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', letterSpacing: '0.04em' }}>Textra Video· <span style={{ color: 'rgba(102,188,173,0.9)' }}>Fast · Studio-quality · On-brand</span></div>
