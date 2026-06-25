@@ -54,7 +54,7 @@ export default function NavBar() {
 
         <div style={{ display: 'flex', gap: 12, flexShrink: 0 }}>
           <a
-            href="https://invest.textra.ai"
+            href="https://invest.textra.video/"
             target="_blank"
             rel="noopener noreferrer"
             style={{ background: 'transparent', color: C.teal, borderRadius: 9999, padding: '11px 20px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', border: `1.5px solid ${C.teal}` }}
