@@ -48,7 +48,8 @@ export default function AboutPage() {
       bio: '25+ years building B2B and D2C digital products and leading engineering teams. Responsible for platform scalability, security, and automation.',
       linkedin: 'https://www.linkedin.com/in/alexischeshire/',
       image: '/assets/Profile pics/Alexis.png',
-      imagePos: 'center 36%',
+      imagePos: 'center 22%',
+      imageScale: 0.75,
     },
   ];
 
