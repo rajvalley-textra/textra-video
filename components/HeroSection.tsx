@@ -210,15 +210,14 @@ export default function HeroSection() {
               className="fullscreen-btn"
               onClick={() => {
                 const iframe = document.querySelector('iframe[src*="1077894850"]') as HTMLIFrameElement;
-                if (iframe && iframe.requestFullscreen) {
+                if (!iframe) return;
+                if (iframe.requestFullscreen) {
                   iframe.requestFullscreen();
-                  return;
-                } else if (iframe && (iframe as any).webkitRequestFullscreen) {
+                } else if ((iframe as any).webkitRequestFullscreen) {
                   (iframe as any).webkitRequestFullscreen();
-                  return;
                 }
-                // iOS Safari doesn't support fullscreen on iframes - open the video directly instead
-                window.open('https://vimeo.com/1077894850', '_blank', 'noopener,noreferrer');
+                // If none of the above are supported (e.g. iOS Safari), do nothing —
+                // the Vimeo player's own built-in fullscreen control is still available.
               }}
               style={{
                 position: 'absolute',

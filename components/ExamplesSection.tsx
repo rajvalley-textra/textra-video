@@ -19,23 +19,18 @@ export default function ExamplesSection() {
 
   const handleFullscreen = (videoId: string) => {
     const iframe = iframeRefs.current[videoId];
-    if (iframe) {
-      if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-        return;
-      } else if ((iframe as any).webkitRequestFullscreen) {
-        (iframe as any).webkitRequestFullscreen();
-        return;
-      } else if ((iframe as any).mozRequestFullScreen) {
-        (iframe as any).mozRequestFullScreen();
-        return;
-      } else if ((iframe as any).msRequestFullscreen) {
-        (iframe as any).msRequestFullscreen();
-        return;
-      }
+    if (!iframe) return;
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if ((iframe as any).webkitRequestFullscreen) {
+      (iframe as any).webkitRequestFullscreen();
+    } else if ((iframe as any).mozRequestFullScreen) {
+      (iframe as any).mozRequestFullScreen();
+    } else if ((iframe as any).msRequestFullscreen) {
+      (iframe as any).msRequestFullscreen();
     }
-    // iOS Safari doesn't support fullscreen on iframes - open the video directly instead
-    window.open(`https://vimeo.com/${videoId}`, '_blank', 'noopener,noreferrer');
+    // If none of the above are supported (e.g. iOS Safari), do nothing —
+    // the Vimeo player's own built-in fullscreen control is still available.
   };
 
   return (
