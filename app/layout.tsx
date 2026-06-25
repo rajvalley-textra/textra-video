@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     'Turn boring documents into studio-quality branded video in 24 hours. No crew. No delays. No compromise on brand.',
   icons: {
-    icon: '/assets/logos/Textra video logo_1.png',
+    icon: '/assets/logos/ico.jpeg',
   },
 };
 
