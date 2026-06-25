@@ -15,7 +15,7 @@ export default function AboutPage() {
       bio: 'Founder and product-led CEO with 14+ years\' experience across animation, video, and technology. Leads product vision, strategy, and commercial direction.',
       linkedin: 'https://www.linkedin.com/in/matthewjamescooper/',
       image: '/assets/Profile pics/Matt.png',
-      imagePos: 'center 40%',
+      imagePos: 'center 55%',
     },
     {
       name: 'Raj Valley',
@@ -47,7 +47,7 @@ export default function AboutPage() {
       bio: '25+ years building B2B and D2C digital products and leading engineering teams. Responsible for platform scalability, security, and automation.',
       linkedin: 'https://www.linkedin.com/in/alexischeshire/',
       image: '/assets/Profile pics/Alexis.png',
-      imagePos: 'center 40%',
+      imagePos: 'center 55%',
     },
   ];
 
