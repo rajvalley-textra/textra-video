@@ -59,7 +59,12 @@ export default function PrivacyPage() {
               <li><strong>Third Parties:</strong> We do not sell your data. Information may only be shared with verified creative and technical specialists within our managed network for the sole purpose of QC and professional finishing.</li>
             </ul>
 
-            <h2 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginTop: 32, marginBottom: 16 }}>6. Your Rights</h2>
+            <h2 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginTop: 32, marginBottom: 16 }}>6. Cookies</h2>
+            <p>
+              We use a minimal set of cookies to support core site functionality. Our embedded video player (Vimeo) may set third-party cookies when you play a video, used to support playback and basic viewing analytics. We do not use cookies for advertising or to sell your data. You can manage your cookie preference using the banner shown on your first visit, or via your browser settings.
+            </p>
+
+            <h2 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginTop: 32, marginBottom: 16 }}>7. Your Rights</h2>
             <p>As an enterprise-facing, GDPR-compliant platform, we comply with international data protection standards. Clients have the right to:</p>
             <ul style={{ marginLeft: 20, marginBottom: 16 }}>
               <li>Access, rectify, or request the deletion of their uploaded content and brand data.</li>
