@@ -117,12 +117,14 @@ export default function AboutPage() {
                   overflow: 'hidden',
                 }}
               >
-                <div style={{ width: '100%', height: 160, overflow: 'hidden', background: '#e2e6ec', borderBottom: '1px solid #e2e6ec' }}>
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: member.imagePos || 'center center', transform: member.imageScale ? `scale(${member.imageScale})` : undefined, transformOrigin: 'center' }}
-                  />
+                <div style={{ width: '100%', height: 160, padding: 6, boxSizing: 'border-box', background: '#e2e6ec' }}>
+                  <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: 6, border: '1px solid #c9d0d9' }}>
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: member.imagePos || 'center center', transform: member.imageScale ? `scale(${member.imageScale})` : undefined, transformOrigin: 'center' }}
+                    />
+                  </div>
                 </div>
                 <div style={{ padding: 16 }}>
                   <h3 style={{ fontSize: 13, fontWeight: 800, color: C.navy, margin: '0 0 4px 0', lineHeight: 1.3 }}>
