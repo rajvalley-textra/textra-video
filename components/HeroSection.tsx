@@ -207,13 +207,18 @@ export default function HeroSection() {
               style={{ display: 'block' }}
             />
             <button
+              className="fullscreen-btn"
               onClick={() => {
                 const iframe = document.querySelector('iframe[src*="1077894850"]') as HTMLIFrameElement;
                 if (iframe && iframe.requestFullscreen) {
                   iframe.requestFullscreen();
+                  return;
                 } else if (iframe && (iframe as any).webkitRequestFullscreen) {
                   (iframe as any).webkitRequestFullscreen();
+                  return;
                 }
+                // iOS Safari doesn't support fullscreen on iframes - open the video directly instead
+                window.open('https://vimeo.com/1077894850', '_blank', 'noopener,noreferrer');
               }}
               style={{
                 position: 'absolute',
@@ -248,7 +253,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll cue */}
-      <div style={{ position: 'absolute', bottom: 28, left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, opacity: 0.45 }}>
+      <div className="scroll-cue" style={{ position: 'absolute', bottom: 28, left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, opacity: 0.45 }}>
         <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#fff' }}>Scroll</div>
         <svg width="14" height="20" viewBox="0 0 14 22" fill="none">
           <rect x="1" y="1" width="12" height="20" rx="6" stroke="white" strokeWidth="1.5"/>

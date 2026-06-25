@@ -22,14 +22,20 @@ export default function ExamplesSection() {
     if (iframe) {
       if (iframe.requestFullscreen) {
         iframe.requestFullscreen();
+        return;
       } else if ((iframe as any).webkitRequestFullscreen) {
         (iframe as any).webkitRequestFullscreen();
+        return;
       } else if ((iframe as any).mozRequestFullScreen) {
         (iframe as any).mozRequestFullScreen();
+        return;
       } else if ((iframe as any).msRequestFullscreen) {
         (iframe as any).msRequestFullscreen();
+        return;
       }
     }
+    // iOS Safari doesn't support fullscreen on iframes - open the video directly instead
+    window.open(`https://vimeo.com/${videoId}`, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -59,6 +65,7 @@ export default function ExamplesSection() {
                 onMouseLeave={() => setHoveredVideo(null)}
               >
                 <button
+                  className="fullscreen-btn"
                   onClick={(e) => {
                     e.stopPropagation();
                     handleFullscreen(video.id);

@@ -35,6 +35,16 @@
 html { scroll-behavior: smooth; font-size: 16px; }
 body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
+/* ── Touch devices: hover-only controls don't work, show them always ── */
+@media (hover: none) {
+  .fullscreen-btn { opacity: 1 !important; pointer-events: auto !important; }
+}
+
+/* ── Hide scroll cue animation on mobile ── */
+@media (max-width: 900px) {
+  .scroll-cue { display: none !important; }
+}
+
 /* ── Responsive layout helpers ── */
 @media (max-width: 900px) {
   .hero-grid       { grid-template-columns: 1fr !important; gap: 40px !important; }
