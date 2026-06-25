@@ -1,5 +1,6 @@
 'use client';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import Player from '@vimeo/player';
 import { C } from '@/lib/theme';
 
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
@@ -15,7 +16,32 @@ const videos = [
 
 export default function ExamplesSection() {
   const iframeRefs = useRef<{ [key: string]: HTMLIFrameElement }>({});
-  const [hoveredVideo, setHoveredVideo] = useState<string | null>(null);
+  const playersRef = useRef<{ [key: string]: Player }>({});
+  const [playingVideos, setPlayingVideos] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    const players: Player[] = [];
+    videos.forEach((video) => {
+      const iframe = iframeRefs.current[video.id];
+      if (!iframe) return;
+      const player = new Player(iframe);
+      playersRef.current[video.id] = player;
+      players.push(player);
+      player.on('play', () => {
+        setPlayingVideos((prev) => new Set(prev).add(video.id));
+      });
+      player.on('pause', () => {
+        setPlayingVideos((prev) => {
+          const next = new Set(prev);
+          next.delete(video.id);
+          return next;
+        });
+      });
+    });
+    return () => {
+      players.forEach((p) => p.unload?.());
+    };
+  }, []);
 
   const handleFullscreen = (videoId: string) => {
     const iframe = iframeRefs.current[videoId];
@@ -56,8 +82,6 @@ export default function ExamplesSection() {
                   boxShadow: '0 4px 16px rgba(39,53,114,0.12)',
                   position: 'relative',
                 }}
-                onMouseEnter={() => setHoveredVideo(video.id)}
-                onMouseLeave={() => setHoveredVideo(null)}
               >
                 <button
                   className="fullscreen-btn"
@@ -82,8 +106,8 @@ export default function ExamplesSection() {
                     justifyContent: 'center',
                     fontSize: 16,
                     transition: 'opacity 200ms, background 200ms',
-                    opacity: hoveredVideo === video.id ? 1 : 0,
-                    pointerEvents: hoveredVideo === video.id ? 'auto' : 'none',
+                    opacity: playingVideos.has(video.id) ? 1 : 0,
+                    pointerEvents: playingVideos.has(video.id) ? 'auto' : 'none',
                   }}
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLButtonElement).style.background = 'rgba(0,0,0,0.8)';

@@ -1,5 +1,6 @@
 'use client';
-import { useState, useEffect, CSSProperties } from 'react';
+import { useState, useEffect, useRef, CSSProperties } from 'react';
+import Player from '@vimeo/player';
 import { C, grad, gradHero, sh } from '@/lib/theme';
 
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
@@ -131,8 +132,19 @@ const trustItems: [string, string][] = [
 ];
 
 export default function HeroSection() {
-  const [heroHovered, setHeroHovered] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [heroPlaying, setHeroPlaying] = useState(false);
+  const heroIframeRef = useRef<HTMLIFrameElement | null>(null);
+
+  useEffect(() => {
+    if (!heroIframeRef.current) return;
+    const player = new Player(heroIframeRef.current);
+    player.on('play', () => setHeroPlaying(true));
+    player.on('pause', () => setHeroPlaying(false));
+    return () => {
+      player.unload?.();
+    };
+  }, []);
 
   return (
     <>
@@ -194,10 +206,9 @@ export default function HeroSection() {
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
           <div
             style={{ position: 'relative', width: '100%', maxWidth: 560, borderRadius: 20, overflow: 'hidden', boxShadow: sh.xl, border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '4/3' }}
-            onMouseEnter={() => setHeroHovered(true)}
-            onMouseLeave={() => setHeroHovered(false)}
           >
             <iframe
+              ref={heroIframeRef}
               src="https://player.vimeo.com/video/1077894850"
               width="100%"
               height="100%"
@@ -209,7 +220,7 @@ export default function HeroSection() {
             <button
               className="fullscreen-btn"
               onClick={() => {
-                const iframe = document.querySelector('iframe[src*="1077894850"]') as HTMLIFrameElement;
+                const iframe = heroIframeRef.current;
                 if (!iframe) return;
                 if (iframe.requestFullscreen) {
                   iframe.requestFullscreen();
@@ -236,8 +247,8 @@ export default function HeroSection() {
                 justifyContent: 'center',
                 fontSize: 16,
                 transition: 'opacity 200ms, background 200ms',
-                opacity: heroHovered ? 1 : 0,
-                pointerEvents: heroHovered ? 'auto' : 'none',
+                opacity: heroPlaying ? 1 : 0,
+                pointerEvents: heroPlaying ? 'auto' : 'none',
               }}
               title="Fullscreen"
             >
