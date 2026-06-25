@@ -16,7 +16,7 @@ export default function AboutPage() {
       linkedin: 'https://www.linkedin.com/in/matthewjamescooper/',
       image: '/assets/Profile pics/Matt.png',
       imagePos: 'center 22%',
-      imageScale: 0.75,
+      imageScale: 1.1,
     },
     {
       name: 'Raj Valley',
@@ -52,7 +52,7 @@ export default function AboutPage() {
       linkedin: 'https://www.linkedin.com/in/alexischeshire/',
       image: '/assets/Profile pics/Alexis.png',
       imagePos: 'center 22%',
-      imageScale: 0.75,
+      imageScale: 1.1,
     },
   ];
 
