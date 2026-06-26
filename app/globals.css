@@ -39,6 +39,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 @media (max-width: 900px) {
   .scroll-cue { display: none !important; }
   .hide-on-mobile { display: none !important; }
+  .hero-heading { margin-top: 24px !important; }
 }
 
 /* ── Responsive layout helpers ── */

@@ -167,7 +167,7 @@ export default function HeroSection() {
           <div className="hide-on-mobile" style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(102,188,173,0.92)', marginBottom: 18 }}>
             Enterprise Video Platform
           </div>
-          <h1 style={{ fontSize: 52, fontWeight: 900, color: '#fff', lineHeight: 1.08, letterSpacing: '-0.02em', margin: '0 0 22px 0' }}>
+          <h1 className="hero-heading" style={{ fontSize: 52, fontWeight: 900, color: '#fff', lineHeight: 1.08, letterSpacing: '-0.02em', margin: '0 0 22px 0' }}>
             Don't be lifeless...{' '}
             <em style={{ fontStyle: 'italic', color: '#fff' }}>get animated</em>
           </h1>
