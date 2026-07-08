@@ -12,6 +12,8 @@ export default function BlogPage() {
       date: '2024',
       slug: 'level-up-your-learning',
       color: C.blue,
+      videoId: '1077894850',
+      videoToken: 'fl=pl&fe=cm',
     },
     {
       title: 'Textra: Scale Your Training, Not Your Effort',
@@ -20,6 +22,8 @@ export default function BlogPage() {
       date: '2024',
       slug: 'scale-your-training',
       color: C.teal,
+      videoId: '1056397509',
+      videoToken: '346bb42aa4?fl=pl&fe=cm',
     },
   ];
 
@@ -43,19 +47,18 @@ export default function BlogPage() {
         <section style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 40px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))', gap: 40 }}>
             {posts.map((post) => (
-              <a
+              <div
                 key={post.slug}
-                href={`/blog/${post.slug}`}
                 style={{
                   textDecoration: 'none',
                   background: '#fff',
                   border: `1px solid ${C.gray200}`,
                   borderRadius: 12,
-                  padding: 32,
+                  overflow: 'hidden',
                   transition: 'all 300ms ease',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: 16,
+                  gap: 0,
                   cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
@@ -68,35 +71,94 @@ export default function BlogPage() {
                   e.currentTarget.style.boxShadow = 'none';
                   e.currentTarget.style.transform = 'none';
                 }}>
-                <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                {/* Video Thumbnail */}
+                <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', background: '#000', overflow: 'hidden' }}>
+                  <img
+                    src={`https://i.vimeocdn.com/video/${post.videoId}.jpg`}
+                    alt={post.title}
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                  {/* Play Button */}
                   <div
                     style={{
-                      width: 4,
-                      height: 4,
-                      borderRadius: '50%',
-                      background: post.color,
+                      position: 'absolute',
+                      inset: 0,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      background: 'rgba(0,0,0,0.3)',
+                      transition: 'background 300ms ease',
                     }}
-                  />
-                  <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.gray500 }}>
-                    {post.category}
-                  </span>
-                  <span style={{ fontSize: 12, color: C.gray400 }}>•</span>
-                  <span style={{ fontSize: 12, color: C.gray400 }}>
-                    {post.date}
-                  </span>
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.background = 'rgba(0,0,0,0.5)';
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.background = 'rgba(0,0,0,0.3)';
+                    }}>
+                    <div
+                      style={{
+                        width: 56,
+                        height: 56,
+                        borderRadius: '50%',
+                        background: post.color,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        transition: 'transform 200ms ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLElement).style.transform = 'scale(1.1)';
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
+                      }}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 2 }}>
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
-                <h2 style={{ fontSize: 22, fontWeight: 700, color: C.navy, lineHeight: 1.3, margin: 0 }}>
-                  {post.title}
-                </h2>
-                <p style={{ fontSize: 15, color: C.gray600, lineHeight: 1.6, margin: 0 }}>
-                  {post.excerpt}
-                </p>
-                <div style={{ marginTop: 'auto', paddingTop: 16, borderTop: `1px solid ${C.gray100}` }}>
-                  <span style={{ fontSize: 14, fontWeight: 600, color: post.color }}>
-                    Read Article →
-                  </span>
-                </div>
-              </a>
+
+                {/* Content */}
+                <a
+                  href={`/blog/${post.slug}`}
+                  style={{
+                    textDecoration: 'none',
+                    padding: 32,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 16,
+                    flex: 1,
+                  }}>
+                  <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                    <div
+                      style={{
+                        width: 4,
+                        height: 4,
+                        borderRadius: '50%',
+                        background: post.color,
+                      }}
+                    />
+                    <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.gray500 }}>
+                      {post.category}
+                    </span>
+                    <span style={{ fontSize: 12, color: C.gray400 }}>•</span>
+                    <span style={{ fontSize: 12, color: C.gray400 }}>
+                      {post.date}
+                    </span>
+                  </div>
+                  <h2 style={{ fontSize: 22, fontWeight: 700, color: C.navy, lineHeight: 1.3, margin: 0 }}>
+                    {post.title}
+                  </h2>
+                  <p style={{ fontSize: 15, color: C.gray600, lineHeight: 1.6, margin: 0 }}>
+                    {post.excerpt}
+                  </p>
+                  <div style={{ marginTop: 'auto', paddingTop: 16, borderTop: `1px solid ${C.gray100}` }}>
+                    <span style={{ fontSize: 14, fontWeight: 600, color: post.color }}>
+                      Read Article →
+                    </span>
+                  </div>
+                </a>
+              </div>
             ))}
           </div>
         </section>

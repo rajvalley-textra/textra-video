@@ -1,9 +1,11 @@
 'use client';
+import { useState } from 'react';
 import NavBar from '@/components/NavBar';
 import FooterSection from '@/components/FooterSection';
 import { C } from '@/lib/theme';
 
 export default function BlogPost() {
+  const [showVideo, setShowVideo] = useState(false);
   return (
     <>
       <NavBar />
@@ -29,6 +31,63 @@ export default function BlogPost() {
             <p style={{ marginBottom: 32 }}>
               Traditional e-learning modules with dense text create a tedious, disengaging experience where information fails to stick. Animated video offers a compelling solution to transform how organizations deliver learning and development.
             </p>
+
+            {/* Video Embed */}
+            <div
+              onClick={() => setShowVideo(true)}
+              style={{
+                position: 'relative',
+                width: '100%',
+                paddingBottom: '56.25%',
+                background: '#000',
+                borderRadius: 12,
+                overflow: 'hidden',
+                marginBottom: 40,
+                cursor: 'pointer',
+              }}>
+              <img
+                src="https://i.vimeocdn.com/video/1077894850.jpg"
+                alt="Video Thumbnail"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: 'rgba(0,0,0,0.3)',
+                  transition: 'background 300ms ease',
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = 'rgba(0,0,0,0.5)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = 'rgba(0,0,0,0.3)';
+                }}>
+                <div
+                  style={{
+                    width: 64,
+                    height: 64,
+                    borderRadius: '50%',
+                    background: C.teal,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'transform 200ms ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.transform = 'scale(1.1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
+                  }}>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 2 }}>
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+              </div>
+            </div>
 
             <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 16, marginTop: 40 }}>
               Key Benefits of Animated E-Learning
@@ -88,6 +147,61 @@ export default function BlogPost() {
           </div>
         </section>
       </main>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(0,0,0,0.95)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1000,
+            padding: 20,
+          }}
+          onClick={() => setShowVideo(false)}>
+          <div
+            style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: 900,
+              paddingBottom: '56.25%',
+            }}
+            onClick={(e) => e.stopPropagation()}>
+            <iframe
+              src="https://player.vimeo.com/video/1077894850?fl=pl&fe=cm"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                borderRadius: 12,
+              }}
+              allow="autoplay; fullscreen; picture-in-picture"
+              title="Level Up Your Learning"
+            />
+          </div>
+          <button
+            onClick={() => setShowVideo(false)}
+            style={{
+              position: 'absolute',
+              top: 20,
+              right: 20,
+              background: 'none',
+              border: 'none',
+              color: '#fff',
+              fontSize: 32,
+              cursor: 'pointer',
+              zIndex: 1001,
+            }}>
+            ✕
+          </button>
+        </div>
+      )}
+
       <FooterSection />
     </>
   );
