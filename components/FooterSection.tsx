@@ -9,7 +9,7 @@ export default function FooterSection() {
   const cols = [
     {
       title: 'Company',
-      links: ['About Textra', 'Our Team', 'FAQ'],
+      links: ['About Textra', 'Our Team', 'Blog', 'FAQ'],
     },
     {
       title: 'Legal',
@@ -59,7 +59,7 @@ export default function FooterSection() {
               {col.links.map((link) => (
                 <a
                   key={link}
-                  href={link === 'Privacy Policy' ? '/privacy' : link === 'Terms of Service' ? '/terms' : link === 'About Textra' ? '/about' : link === 'Our Team' ? '/about#team' : link === 'FAQ' ? '/faq' : '#'}
+                  href={link === 'Privacy Policy' ? '/privacy' : link === 'Terms of Service' ? '/terms' : link === 'About Textra' ? '/about' : link === 'Our Team' ? '/about#team' : link === 'Blog' ? '/blog' : link === 'FAQ' ? '/faq' : '#'}
                   style={linkStyle}
                   onMouseEnter={(e) => { e.currentTarget.style.color = '#273572'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = '#576170'; }}>

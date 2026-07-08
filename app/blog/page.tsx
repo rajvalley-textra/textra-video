@@ -1,0 +1,144 @@
+'use client';
+import NavBar from '@/components/NavBar';
+import FooterSection from '@/components/FooterSection';
+import { C } from '@/lib/theme';
+
+export default function BlogPage() {
+  const posts = [
+    {
+      title: 'Level Up Your Learning: How Animated Videos Make E-Learning Unforgettable',
+      excerpt: 'Discover why animated videos are revolutionizing corporate training and employee engagement.',
+      category: 'Learning & Development',
+      date: '2024',
+      slug: 'level-up-your-learning',
+      color: C.blue,
+    },
+    {
+      title: 'Textra: Scale Your Training, Not Your Effort',
+      excerpt: 'Create scalable, cost-effective video training content without the traditional production overhead.',
+      category: 'Training & Development',
+      date: '2024',
+      slug: 'scale-your-training',
+      color: C.teal,
+    },
+  ];
+
+  return (
+    <>
+      <NavBar />
+      <main style={{ minHeight: '100vh', background: '#fff', paddingTop: 80 }}>
+        {/* Hero */}
+        <section style={{ background: 'linear-gradient(160deg, #273572 0%, #1A71B1 62%, #66BCAD 100%)', color: '#fff', padding: '80px 40px', textAlign: 'center' }}>
+          <div style={{ maxWidth: 800, margin: '0 auto' }}>
+            <h1 style={{ fontSize: 52, fontWeight: 900, lineHeight: 1.1, marginBottom: 16 }}>
+              Blog
+            </h1>
+            <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>
+              Insights and best practices for creating engaging video content and transforming your training strategy.
+            </p>
+          </div>
+        </section>
+
+        {/* Posts Grid */}
+        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 40px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))', gap: 40 }}>
+            {posts.map((post) => (
+              <a
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                style={{
+                  textDecoration: 'none',
+                  background: '#fff',
+                  border: `1px solid ${C.gray200}`,
+                  borderRadius: 12,
+                  padding: 32,
+                  transition: 'all 300ms ease',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 16,
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = post.color;
+                  e.currentTarget.style.boxShadow = `0 8px 32px rgba(102,188,173,0.12)`;
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = C.gray200;
+                  e.currentTarget.style.boxShadow = 'none';
+                  e.currentTarget.style.transform = 'none';
+                }}>
+                <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                  <div
+                    style={{
+                      width: 4,
+                      height: 4,
+                      borderRadius: '50%',
+                      background: post.color,
+                    }}
+                  />
+                  <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.gray500 }}>
+                    {post.category}
+                  </span>
+                  <span style={{ fontSize: 12, color: C.gray400 }}>•</span>
+                  <span style={{ fontSize: 12, color: C.gray400 }}>
+                    {post.date}
+                  </span>
+                </div>
+                <h2 style={{ fontSize: 22, fontWeight: 700, color: C.navy, lineHeight: 1.3, margin: 0 }}>
+                  {post.title}
+                </h2>
+                <p style={{ fontSize: 15, color: C.gray600, lineHeight: 1.6, margin: 0 }}>
+                  {post.excerpt}
+                </p>
+                <div style={{ marginTop: 'auto', paddingTop: 16, borderTop: `1px solid ${C.gray100}` }}>
+                  <span style={{ fontSize: 14, fontWeight: 600, color: post.color }}>
+                    Read Article →
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section style={{ background: C.gray50, padding: '60px 40px', textAlign: 'center' }}>
+          <div style={{ maxWidth: 600, margin: '0 auto' }}>
+            <h2 style={{ fontSize: 32, fontWeight: 700, color: C.navy, marginBottom: 16 }}>
+              Ready to transform your content?
+            </h2>
+            <p style={{ fontSize: 16, color: C.gray600, lineHeight: 1.7, marginBottom: 32 }}>
+              Discover how Textra can help you create engaging video content at scale.
+            </p>
+            <a
+              href="mailto:sales@textra.video?subject=Learn More About Textra"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                background: C.teal,
+                color: '#fff',
+                padding: '14px 28px',
+                borderRadius: 9999,
+                textDecoration: 'none',
+                fontWeight: 600,
+                fontSize: 15,
+                transition: 'all 200ms',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(102,188,173,0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'none';
+                e.currentTarget.style.boxShadow = 'none';
+              }}>
+              Book a Demo
+            </a>
+          </div>
+        </section>
+      </main>
+      <FooterSection />
+    </>
+  );
+}
