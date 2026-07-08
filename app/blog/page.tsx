@@ -45,7 +45,7 @@ export default function BlogPage() {
 
         {/* Posts Grid */}
         <section style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 40px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 32 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
             {posts.map((post) => (
               <div
                 key={post.slug}
@@ -72,8 +72,12 @@ export default function BlogPage() {
                   e.currentTarget.style.transform = 'none';
                 }}>
                 {/* Video Thumbnail */}
-                <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', background: '#1a1a1a', overflow: 'hidden' }}>
-                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(135deg, #273572 0%, #1A71B1 62%, #66BCAD 100%)' }} />
+                <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', background: '#000', overflow: 'hidden' }}>
+                  <img
+                    src={`https://i.vimeocdn.com/video/${post.videoId}.jpg`}
+                    alt={post.title}
+                    loading="lazy"
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
                   {/* Play Button */}
                   <div
                     style={{
