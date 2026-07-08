@@ -64,6 +64,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               Tawk_API.setCustomStyle({
                 primaryColor: '#66BCAD'
               });
+              Tawk_API.setDesktopSize({
+                width: 280,
+                height: 350
+              });
             };
           `}
         </Script>
