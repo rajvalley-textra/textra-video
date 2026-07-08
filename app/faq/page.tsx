@@ -1,4 +1,11 @@
 import { C } from '@/lib/theme';
+import NavBar from '@/components/NavBar';
+import FooterSection from '@/components/FooterSection';
+
+export const metadata = {
+  title: 'FAQ | Textra Video',
+  description: 'Frequently asked questions about Textra Video platform, pricing, and video production process.',
+};
 
 export default function FAQPage() {
   const faqs = [
@@ -29,7 +36,9 @@ export default function FAQPage() {
   ];
 
   return (
-    <main style={{ minHeight: '100vh', background: '#fff', paddingTop: 80 }}>
+    <>
+      <NavBar />
+      <main style={{ minHeight: '100vh', background: '#fff', paddingTop: 80 }}>
       <section style={{ padding: '60px 40px', maxWidth: 900, margin: '0 auto' }}>
         <div style={{ marginBottom: 60 }}>
           <h1 style={{ fontSize: 48, fontWeight: 900, color: C.navy, lineHeight: 1.1, marginBottom: 16 }}>
@@ -77,5 +86,7 @@ export default function FAQPage() {
         </div>
       </section>
     </main>
+      <FooterSection />
+    </>
   );
 }
