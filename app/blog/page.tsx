@@ -44,8 +44,8 @@ export default function BlogPage() {
         </section>
 
         {/* Posts Grid */}
-        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 40px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
+        <section style={{ maxWidth: 900, margin: '0 auto', padding: '80px 40px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
             {posts.map((post) => (
               <div
                 key={post.slug}
@@ -124,10 +124,10 @@ export default function BlogPage() {
                   href={`/blog/${post.slug}`}
                   style={{
                     textDecoration: 'none',
-                    padding: 32,
+                    padding: '16px',
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: 16,
+                    gap: 12,
                     flex: 1,
                   }}>
                   <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
@@ -147,14 +147,14 @@ export default function BlogPage() {
                       {post.date}
                     </span>
                   </div>
-                  <h2 style={{ fontSize: 22, fontWeight: 700, color: C.navy, lineHeight: 1.3, margin: 0 }}>
+                  <h2 style={{ fontSize: 16, fontWeight: 700, color: C.navy, lineHeight: 1.3, margin: 0 }}>
                     {post.title}
                   </h2>
-                  <p style={{ fontSize: 15, color: C.gray600, lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: 13, color: C.gray600, lineHeight: 1.5, margin: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                     {post.excerpt}
                   </p>
-                  <div style={{ marginTop: 'auto', paddingTop: 16, borderTop: `1px solid ${C.gray100}` }}>
-                    <span style={{ fontSize: 14, fontWeight: 600, color: post.color }}>
+                  <div style={{ marginTop: 'auto', paddingTop: 12, borderTop: `1px solid ${C.gray100}` }}>
+                    <span style={{ fontSize: 12, fontWeight: 600, color: post.color }}>
                       Read Article →
                     </span>
                   </div>
