@@ -9,7 +9,6 @@ export default function BlogPage() {
       title: 'Level Up Your Learning: How Animated Videos Make E-Learning Unforgettable',
       excerpt: 'Discover why animated videos are revolutionizing corporate training and employee engagement.',
       category: 'Learning & Development',
-      date: '2024',
       slug: 'level-up-your-learning',
       color: C.blue,
       videoId: '1077894850',
@@ -19,11 +18,19 @@ export default function BlogPage() {
       title: 'Textra: Scale Your Training, Not Your Effort',
       excerpt: 'Create scalable, cost-effective video training content without the traditional production overhead.',
       category: 'Training & Development',
-      date: '2024',
       slug: 'scale-your-training',
       color: C.teal,
       videoId: '1056397509',
       videoToken: '346bb42aa4?fl=pl&fe=cm',
+    },
+    {
+      title: 'The Power of Acted-Out Scenarios in E-Learning',
+      excerpt: 'Transform your training with realistic, engaging scenarios that drive better learning outcomes.',
+      category: 'Learning Effectiveness',
+      slug: 'acted-out-scenarios',
+      color: C.blue,
+      videoId: '1095042991',
+      videoToken: '',
     },
   ];
 
