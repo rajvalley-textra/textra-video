@@ -1,7 +1,46 @@
 'use client';
+import { useState, useEffect } from 'react';
 import NavBar from '@/components/NavBar';
 import FooterSection from '@/components/FooterSection';
 import { C } from '@/lib/theme';
+
+function VimeoThumbnail({ videoId, title, color }: { videoId: string; title: string; color: string }) {
+  const [thumbnail, setThumbnail] = useState<string>('');
+
+  useEffect(() => {
+    fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${videoId}`)
+      .then((res) => res.json())
+      .then((data) => setThumbnail(data.thumbnail_url || ''))
+      .catch(() => setThumbnail(`https://i.vimeocdn.com/video/${videoId}_1280x720.jpg`));
+  }, [videoId]);
+
+  return thumbnail ? (
+    <img
+      src={thumbnail}
+      alt={title}
+      loading="lazy"
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+      }}
+    />
+  ) : (
+    <div
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        background: color,
+      }}
+    />
+  );
+}
 
 export default function BlogPage() {
   const posts = [
@@ -84,9 +123,10 @@ export default function BlogPage() {
                     position: 'relative',
                     width: '100%',
                     paddingBottom: '56.25%',
-                    background: post.color,
+                    background: '#000',
                     overflow: 'hidden',
                   }}>
+                  <VimeoThumbnail videoId={post.videoId} title={post.title} color={post.color} />
                   {/* Play Button */}
                   <div
                     style={{
