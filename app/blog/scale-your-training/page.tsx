@@ -4,22 +4,26 @@ import NavBar from '@/components/NavBar';
 import FooterSection from '@/components/FooterSection';
 import { C } from '@/lib/theme';
 
-function VimeoThumbnail({ videoUrl, videoId, title, color }: { videoUrl?: string; videoId: string; title: string; color: string }) {
-  const [thumbnail, setThumbnail] = useState<string>('');
+function VimeoThumbnail({ videoId, title, color }: { videoId: string; title: string; color: string }) {
+  const [thumbnail, setThumbnail] = useState<string>(`https://i.vimeocdn.com/video/${videoId}_1280x720.jpg`);
 
   useEffect(() => {
-    const url = videoUrl || `https://vimeo.com/${videoId}`;
-    fetch(`https://vimeo.com/api/oembed.json?url=${encodeURIComponent(url)}`)
+    fetch(`https://vimeo.com/api/oembed.json?url=${encodeURIComponent(`https://vimeo.com/${videoId}`)}`)
       .then((res) => res.json())
-      .then((data) => setThumbnail(data.thumbnail_url || ''))
-      .catch(() => setThumbnail(`https://i.vimeocdn.com/video/${videoId}_1280x720.jpg`));
-  }, [videoId, videoUrl]);
+      .then((data) => {
+        if (data.thumbnail_url) {
+          setThumbnail(data.thumbnail_url);
+        }
+      })
+      .catch(() => {
+        // Keep fallback URL
+      });
+  }, [videoId]);
 
-  return thumbnail ? (
+  return (
     <img
       src={thumbnail}
       alt={title}
-      loading="lazy"
       style={{
         position: 'absolute',
         top: 0,
@@ -27,16 +31,6 @@ function VimeoThumbnail({ videoUrl, videoId, title, color }: { videoUrl?: string
         width: '100%',
         height: '100%',
         objectFit: 'cover',
-      }}
-    />
-  ) : (
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
         background: color,
       }}
     />

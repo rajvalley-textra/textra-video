@@ -1,25 +1,32 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import NavBar from '@/components/NavBar';
 import FooterSection from '@/components/FooterSection';
 import { C } from '@/lib/theme';
 
-function VimeoThumbnail({ videoUrl, videoId, title, color }: { videoUrl?: string; videoId: string; title: string; color: string }) {
-  const [thumbnail, setThumbnail] = useState<string>('');
+function VimeoThumbnail({ videoId, title, color }: { videoId: string; title: string; color: string }) {
+  const [thumbnail, setThumbnail] = useState<string>(`https://i.vimeocdn.com/video/${videoId}_1280x720.jpg`);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const url = videoUrl || `https://vimeo.com/${videoId}`;
-    fetch(`https://vimeo.com/api/oembed.json?url=${encodeURIComponent(url)}`)
+    fetch(`https://vimeo.com/api/oembed.json?url=${encodeURIComponent(`https://vimeo.com/${videoId}`)}`)
       .then((res) => res.json())
-      .then((data) => setThumbnail(data.thumbnail_url || ''))
-      .catch(() => setThumbnail(`https://i.vimeocdn.com/video/${videoId}_1280x720.jpg`));
-  }, [videoId, videoUrl]);
+      .then((data) => {
+        if (data.thumbnail_url) {
+          setThumbnail(data.thumbnail_url);
+        }
+      })
+      .catch(() => {
+        // Keep fallback URL
+      });
+  }, [videoId]);
 
-  return thumbnail ? (
+  return (
     <img
       src={thumbnail}
       alt={title}
-      loading="lazy"
+      onLoad={() => setIsLoaded(true)}
       style={{
         position: 'absolute',
         top: 0,
@@ -27,16 +34,6 @@ function VimeoThumbnail({ videoUrl, videoId, title, color }: { videoUrl?: string
         width: '100%',
         height: '100%',
         objectFit: 'cover',
-      }}
-    />
-  ) : (
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
         background: color,
       }}
     />
@@ -44,6 +41,7 @@ function VimeoThumbnail({ videoUrl, videoId, title, color }: { videoUrl?: string
 }
 
 export default function BlogPage() {
+  const router = useRouter();
   const posts = [
     {
       title: 'Level Up Your Learning: How Animated Videos Make E-Learning Unforgettable',
@@ -94,11 +92,10 @@ export default function BlogPage() {
         <section style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 40px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
             {posts.map((post) => (
-              <a
+              <div
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                onClick={() => router.push(`/blog/${post.slug}`)}
                 style={{
-                  textDecoration: 'none',
                   background: '#fff',
                   border: `1px solid ${C.gray200}`,
                   borderRadius: 12,
@@ -198,7 +195,7 @@ export default function BlogPage() {
                     </span>
                   </div>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </section>
