@@ -89,6 +89,15 @@ export default function BlogPage() {
       videoId: '1203796244',
       videoToken: '',
     },
+    {
+      title: 'Cut Through the Chaos: Messaging That Reaches Busy Audiences',
+      excerpt: 'Master the art of communicating with time-stretched audiences using video that\'s fast, friendly, and actually gets watched.',
+      category: 'Brand Communication & Messaging',
+      slug: 'messaging-for-busy-audiences',
+      color: C.blue,
+      videoId: '1163223157',
+      videoToken: '',
+    },
   ];
 
   return (
