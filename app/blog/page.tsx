@@ -71,6 +71,15 @@ export default function BlogPage() {
       videoId: '1095042991',
       videoToken: '',
     },
+    {
+      title: 'Master Asbestos Management: Essential Training for Workplace Safety',
+      excerpt: 'Protect your team with comprehensive asbestos awareness training that ensures regulatory compliance and safeguards employee health.',
+      category: 'Workplace Safety & Compliance',
+      slug: 'asbestos-safety-training',
+      color: C.teal,
+      videoId: '891038775',
+      videoToken: '',
+    },
   ];
 
   return (
