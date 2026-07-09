@@ -5,18 +5,23 @@ import FooterSection from '@/components/FooterSection';
 import { C } from '@/lib/theme';
 
 function VimeoThumbnail({ videoId, title, color }: { videoId: string; title: string; color: string }) {
-  const [thumbnail, setThumbnail] = useState<string>(`https://i.vimeocdn.com/video/${videoId}_1280x720.jpg`);
+  const [thumbnail, setThumbnail] = useState<string>(`https://i.vimeocdn.com/video/${videoId}_1920x1080.jpg`);
 
   useEffect(() => {
     fetch(`https://vimeo.com/api/oembed.json?url=${encodeURIComponent(`https://vimeo.com/${videoId}`)}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.thumbnail_url) {
-          setThumbnail(data.thumbnail_url);
+          const url = data.thumbnail_url;
+          if (url.includes('vimeocdn')) {
+            setThumbnail(url.replace(/_\d+x\d+\.jpg/, '_1920x1080.jpg'));
+          } else {
+            setThumbnail(url);
+          }
         }
       })
       .catch(() => {
-        // Keep fallback URL
+        // Keep high-quality CDN fallback
       });
   }, [videoId]);
 
