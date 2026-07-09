@@ -80,6 +80,15 @@ export default function BlogPage() {
       videoId: '1124858916',
       videoToken: '',
     },
+    {
+      title: 'Getting Online Made Simple: A Beginner\'s Guide to Digital Connection',
+      excerpt: 'Discover how animated learning breaks down digital literacy barriers and empowers everyone to confidently join the online world.',
+      category: 'Digital Literacy & Inclusion',
+      slug: 'digital-inclusion-getting-online',
+      color: C.teal,
+      videoId: '1203796244',
+      videoToken: '',
+    },
   ];
 
   return (
