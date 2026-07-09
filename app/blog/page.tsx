@@ -118,7 +118,7 @@ export default function BlogPage() {
                   e.currentTarget.style.boxShadow = 'none';
                   e.currentTarget.style.transform = 'none';
                 }}>
-                {/* Vimeo Video Embed */}
+                {/* Vimeo Video Preview */}
                 <div
                   style={{
                     position: 'relative',
@@ -137,6 +137,7 @@ export default function BlogPage() {
                       width: '100%',
                       height: '100%',
                       borderRadius: 12,
+                      pointerEvents: 'none',
                     }}
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
