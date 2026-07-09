@@ -84,7 +84,6 @@ export default function BlogPost() {
 
             {/* Video Embed */}
             <div
-              onClick={handlePlayClick}
               style={{
                 position: 'relative',
                 width: '100%',
@@ -93,51 +92,21 @@ export default function BlogPost() {
                 borderRadius: 12,
                 overflow: 'hidden',
                 marginBottom: 40,
-                cursor: 'pointer',
               }}>
-              <VimeoThumbnail
-                videoId="1095042991"
-                title="The Power of Acted-Out Scenarios in E-Learning"
-                color="#1A71B1"
-              />
-              <div
+              <iframe
+                src="https://player.vimeo.com/video/1095042991?badge=0&autopause=0&player_id=0&app_id=58479"
                 style={{
                   position: 'absolute',
-                  inset: 0,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  background: 'rgba(0,0,0,0.3)',
-                  transition: 'background 300ms ease',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: 12,
                 }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = 'rgba(0,0,0,0.5)';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = 'rgba(0,0,0,0.3)';
-                }}>
-                <div
-                  style={{
-                    width: 64,
-                    height: 64,
-                    borderRadius: '50%',
-                    background: C.teal,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    transition: 'transform 200ms ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.transform = 'scale(1.1)';
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
-                  }}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 2 }}>
-                    <polygon points="5 3 19 12 5 21 5 3" />
-                  </svg>
-                </div>
-              </div>
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="The Power of Acted-Out Scenarios in E-Learning"
+              />
             </div>
 
             <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
@@ -281,62 +250,6 @@ export default function BlogPost() {
         </section>
       </main>
 
-      {/* Video Modal */}
-      {showVideo && (
-        <div
-          style={{
-            position: 'fixed',
-            inset: 0,
-            background: 'rgba(0,0,0,0.95)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 1000,
-            padding: 20,
-          }}
-          onClick={() => setShowVideo(false)}>
-          <div
-            style={{
-              position: 'relative',
-              width: '100%',
-              maxWidth: 900,
-              paddingBottom: '56.25%',
-              backgroundImage: videoThumbnail ? `url(${videoThumbnail})` : undefined,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-            onClick={(e) => e.stopPropagation()}>
-            <iframe
-              src="https://player.vimeo.com/video/1095042991"
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                borderRadius: 12,
-              }}
-              allow="autoplay; fullscreen; picture-in-picture"
-              title="The Power of Acted-Out Scenarios in E-Learning"
-            />
-          </div>
-          <button
-            onClick={() => setShowVideo(false)}
-            style={{
-              position: 'absolute',
-              top: 20,
-              right: 20,
-              background: 'none',
-              border: 'none',
-              color: '#fff',
-              fontSize: 32,
-              cursor: 'pointer',
-              zIndex: 1001,
-            }}>
-            ✕
-          </button>
-        </div>
-      )}
 
       <FooterSection />
     </>

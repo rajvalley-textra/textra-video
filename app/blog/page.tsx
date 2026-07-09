@@ -118,7 +118,7 @@ export default function BlogPage() {
                   e.currentTarget.style.boxShadow = 'none';
                   e.currentTarget.style.transform = 'none';
                 }}>
-                {/* Video Thumbnail */}
+                {/* Vimeo Video Embed */}
                 <div
                   style={{
                     position: 'relative',
@@ -128,39 +128,20 @@ export default function BlogPage() {
                     background: '#000',
                     overflow: 'hidden',
                   }}>
-                  <VimeoThumbnail
-                    videoId={post.videoId}
-                    title={post.title}
-                    color={post.color}
-                  />
-                  {/* Play Button */}
-                  <div
+                  <iframe
+                    src={`https://player.vimeo.com/video/${post.videoId}?badge=0&autopause=0&player_id=0&app_id=58479`}
                     style={{
                       position: 'absolute',
-                      inset: 0,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      background: 'rgba(0,0,0,0.3)',
-                      transition: 'background 300ms ease',
-                      pointerEvents: 'none',
-                    }}>
-                    <div
-                      style={{
-                        width: 56,
-                        height: 56,
-                        borderRadius: '50%',
-                        background: post.color,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        transition: 'transform 200ms ease',
-                      }}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 2 }}>
-                        <polygon points="5 3 19 12 5 21 5 3" />
-                      </svg>
-                    </div>
-                  </div>
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: 12,
+                    }}
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    title={post.title}
+                  />
                 </div>
 
                 {/* Content */}
