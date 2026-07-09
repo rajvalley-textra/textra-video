@@ -44,8 +44,8 @@ export default function BlogPage() {
         </section>
 
         {/* Posts Grid */}
-        <section style={{ maxWidth: 900, margin: '0 auto', padding: '80px 40px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
+        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 40px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
             {posts.map((post) => (
               <div
                 key={post.slug}
@@ -72,12 +72,18 @@ export default function BlogPage() {
                   e.currentTarget.style.transform = 'none';
                 }}>
                 {/* Video Thumbnail */}
-                <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', background: '#000', overflow: 'hidden' }}>
-                  <img
-                    src={`https://i.vimeocdn.com/video/${post.videoId}.jpg`}
-                    alt={post.title}
-                    loading="lazy"
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', background: '#f0f0f0', overflow: 'hidden' }}>
+                  <picture>
+                    <source
+                      srcSet={`https://i.vimeocdn.com/video/${post.videoId}_800x600.jpg`}
+                      type="image/jpeg" />
+                    <img
+                      src={`https://i.vimeocdn.com/video/${post.videoId}.jpg`}
+                      alt={post.title}
+                      loading="lazy"
+                      decoding="async"
+                      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </picture>
                   {/* Play Button */}
                   <div
                     style={{
@@ -141,10 +147,6 @@ export default function BlogPage() {
                     />
                     <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.gray500 }}>
                       {post.category}
-                    </span>
-                    <span style={{ fontSize: 12, color: C.gray400 }}>•</span>
-                    <span style={{ fontSize: 12, color: C.gray400 }}>
-                      {post.date}
                     </span>
                   </div>
                   <h2 style={{ fontSize: 16, fontWeight: 700, color: C.navy, lineHeight: 1.3, margin: 0 }}>
