@@ -4,15 +4,16 @@ import NavBar from '@/components/NavBar';
 import FooterSection from '@/components/FooterSection';
 import { C } from '@/lib/theme';
 
-function VimeoThumbnail({ videoId, title, color }: { videoId: string; title: string; color: string }) {
+function VimeoThumbnail({ videoUrl, videoId, title, color }: { videoUrl?: string; videoId: string; title: string; color: string }) {
   const [thumbnail, setThumbnail] = useState<string>('');
 
   useEffect(() => {
-    fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${videoId}`)
+    const url = videoUrl || `https://vimeo.com/${videoId}`;
+    fetch(`https://vimeo.com/api/oembed.json?url=${encodeURIComponent(url)}`)
       .then((res) => res.json())
       .then((data) => setThumbnail(data.thumbnail_url || ''))
       .catch(() => setThumbnail(`https://i.vimeocdn.com/video/${videoId}_1280x720.jpg`));
-  }, [videoId]);
+  }, [videoId, videoUrl]);
 
   return thumbnail ? (
     <img
@@ -129,7 +130,12 @@ export default function BlogPage() {
                     overflow: 'hidden',
                     textDecoration: 'none',
                   }}>
-                  <VimeoThumbnail videoId={post.videoId} title={post.title} color={post.color} />
+                  <VimeoThumbnail
+                    videoUrl={`https://vimeo.com/${post.videoId}${post.videoToken ? '/' + post.videoToken : ''}`}
+                    videoId={post.videoId}
+                    title={post.title}
+                    color={post.color}
+                  />
                   {/* Play Button */}
                   <div
                     style={{

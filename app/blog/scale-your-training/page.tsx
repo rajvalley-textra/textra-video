@@ -1,8 +1,47 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import NavBar from '@/components/NavBar';
 import FooterSection from '@/components/FooterSection';
 import { C } from '@/lib/theme';
+
+function VimeoThumbnail({ videoUrl, videoId, title, color }: { videoUrl?: string; videoId: string; title: string; color: string }) {
+  const [thumbnail, setThumbnail] = useState<string>('');
+
+  useEffect(() => {
+    const url = videoUrl || `https://vimeo.com/${videoId}`;
+    fetch(`https://vimeo.com/api/oembed.json?url=${encodeURIComponent(url)}`)
+      .then((res) => res.json())
+      .then((data) => setThumbnail(data.thumbnail_url || ''))
+      .catch(() => setThumbnail(`https://i.vimeocdn.com/video/${videoId}_1280x720.jpg`));
+  }, [videoId, videoUrl]);
+
+  return thumbnail ? (
+    <img
+      src={thumbnail}
+      alt={title}
+      loading="lazy"
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+      }}
+    />
+  ) : (
+    <div
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        background: color,
+      }}
+    />
+  );
+}
 
 export default function BlogPost() {
   const [showVideo, setShowVideo] = useState(false);
@@ -45,10 +84,12 @@ export default function BlogPost() {
                 marginBottom: 40,
                 cursor: 'pointer',
               }}>
-              <img
-                src="https://i.vimeocdn.com/video/1056397509.jpg"
-                alt="Video Thumbnail"
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+              <VimeoThumbnail
+                videoUrl="https://vimeo.com/1056397509/346bb42aa4?fl=pl&fe=cm"
+                videoId="1056397509"
+                title="Scale Your Training, Not Your Effort"
+                color="#66BCAD"
+              />
               <div
                 style={{
                   position: 'absolute',
