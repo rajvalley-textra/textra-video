@@ -117,14 +117,17 @@ export default function BlogPage() {
                   e.currentTarget.style.boxShadow = 'none';
                   e.currentTarget.style.transform = 'none';
                 }}>
-                {/* Video Thumbnail */}
-                <div
+                {/* Video Thumbnail - Clickable */}
+                <a
+                  href={`/blog/${post.slug}`}
                   style={{
                     position: 'relative',
+                    display: 'block',
                     width: '100%',
                     paddingBottom: '56.25%',
                     background: '#000',
                     overflow: 'hidden',
+                    textDecoration: 'none',
                   }}>
                   <VimeoThumbnail videoId={post.videoId} title={post.title} color={post.color} />
                   {/* Play Button */}
@@ -166,11 +169,10 @@ export default function BlogPage() {
                       </svg>
                     </div>
                   </div>
-                </div>
+                </a>
 
                 {/* Content */}
-                <a
-                  href={`/blog/${post.slug}`}
+                <div
                   style={{
                     textDecoration: 'none',
                     padding: '16px',
@@ -199,11 +201,13 @@ export default function BlogPage() {
                     {post.excerpt}
                   </p>
                   <div style={{ marginTop: 'auto', paddingTop: 12, borderTop: `1px solid ${C.gray100}` }}>
-                    <span style={{ fontSize: 12, fontWeight: 600, color: post.color }}>
+                    <a
+                      href={`/blog/${post.slug}`}
+                      style={{ fontSize: 12, fontWeight: 600, color: post.color, textDecoration: 'none' }}>
                       Read Article →
-                    </span>
+                    </a>
                   </div>
-                </a>
+                </div>
               </div>
             ))}
           </div>
