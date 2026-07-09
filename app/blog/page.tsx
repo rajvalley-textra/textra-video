@@ -72,12 +72,12 @@ export default function BlogPage() {
       videoToken: '',
     },
     {
-      title: 'Master Asbestos Management: Essential Training for Workplace Safety',
-      excerpt: 'Protect your team with comprehensive asbestos awareness training that ensures regulatory compliance and safeguards employee health.',
-      category: 'Workplace Safety & Compliance',
-      slug: 'asbestos-safety-training',
-      color: C.teal,
-      videoId: '891038775',
+      title: 'AI in the Workplace: Empowering Teams, Not Replacing Them',
+      excerpt: 'Discover how AI transforms organizational capability by augmenting human expertise and accelerating meaningful outcomes.',
+      category: 'Digital Transformation & AI',
+      slug: 'ai-empowering-workforce',
+      color: C.blue,
+      videoId: '1124858916',
       videoToken: '',
     },
   ];
