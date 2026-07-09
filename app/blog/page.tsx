@@ -72,18 +72,14 @@ export default function BlogPage() {
                   e.currentTarget.style.transform = 'none';
                 }}>
                 {/* Video Thumbnail */}
-                <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', background: '#f0f0f0', overflow: 'hidden' }}>
-                  <picture>
-                    <source
-                      srcSet={`https://i.vimeocdn.com/video/${post.videoId}_800x600.jpg`}
-                      type="image/jpeg" />
-                    <img
-                      src={`https://i.vimeocdn.com/video/${post.videoId}.jpg`}
-                      alt={post.title}
-                      loading="lazy"
-                      decoding="async"
-                      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
-                  </picture>
+                <div
+                  style={{
+                    position: 'relative',
+                    width: '100%',
+                    paddingBottom: '56.25%',
+                    background: post.color,
+                    overflow: 'hidden',
+                  }}>
                   {/* Play Button */}
                   <div
                     style={{
