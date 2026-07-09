@@ -45,6 +45,18 @@ function VimeoThumbnail({ videoUrl, videoId, title, color }: { videoUrl?: string
 
 export default function BlogPost() {
   const [showVideo, setShowVideo] = useState(false);
+  const [videoThumbnail, setVideoThumbnail] = useState<string>('');
+
+  const handlePlayClick = () => {
+    if (!videoThumbnail) {
+      fetch('https://vimeo.com/api/oembed.json?url=https://vimeo.com/1077894850')
+        .then((res) => res.json())
+        .then((data) => setVideoThumbnail(data.thumbnail_url || ''))
+        .catch(() => {});
+    }
+    setShowVideo(true);
+  };
+
   return (
     <>
       <NavBar />
@@ -73,7 +85,7 @@ export default function BlogPost() {
 
             {/* Video Embed */}
             <div
-              onClick={() => setShowVideo(true)}
+              onClick={handlePlayClick}
               style={{
                 position: 'relative',
                 width: '100%',
@@ -85,7 +97,6 @@ export default function BlogPost() {
                 cursor: 'pointer',
               }}>
               <VimeoThumbnail
-                videoUrl="https://vimeo.com/1077894850?fl=pl&fe=cm"
                 videoId="1077894850"
                 title="Level Up Your Learning"
                 color="#1A71B1"
@@ -209,6 +220,9 @@ export default function BlogPost() {
               width: '100%',
               maxWidth: 900,
               paddingBottom: '56.25%',
+              backgroundImage: videoThumbnail ? `url(${videoThumbnail})` : undefined,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
             }}
             onClick={(e) => e.stopPropagation()}>
             <iframe

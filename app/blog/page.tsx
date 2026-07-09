@@ -94,8 +94,9 @@ export default function BlogPage() {
         <section style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 40px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
             {posts.map((post) => (
-              <div
+              <a
                 key={post.slug}
+                href={`/blog/${post.slug}`}
                 style={{
                   textDecoration: 'none',
                   background: '#fff',
@@ -118,9 +119,8 @@ export default function BlogPage() {
                   e.currentTarget.style.boxShadow = 'none';
                   e.currentTarget.style.transform = 'none';
                 }}>
-                {/* Video Thumbnail - Clickable */}
-                <a
-                  href={`/blog/${post.slug}`}
+                {/* Video Thumbnail */}
+                <div
                   style={{
                     position: 'relative',
                     display: 'block',
@@ -128,10 +128,8 @@ export default function BlogPage() {
                     paddingBottom: '56.25%',
                     background: '#000',
                     overflow: 'hidden',
-                    textDecoration: 'none',
                   }}>
                   <VimeoThumbnail
-                    videoUrl={`https://vimeo.com/${post.videoId}${post.videoToken ? '/' + post.videoToken : ''}`}
                     videoId={post.videoId}
                     title={post.title}
                     color={post.color}
@@ -146,12 +144,7 @@ export default function BlogPage() {
                       justifyContent: 'center',
                       background: 'rgba(0,0,0,0.3)',
                       transition: 'background 300ms ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.background = 'rgba(0,0,0,0.5)';
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.background = 'rgba(0,0,0,0.3)';
+                      pointerEvents: 'none',
                     }}>
                     <div
                       style={{
@@ -163,24 +156,17 @@ export default function BlogPage() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         transition: 'transform 200ms ease',
-                      }}
-                      onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLElement).style.transform = 'scale(1.1)';
-                      }}
-                      onMouseLeave={(e) => {
-                        (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
                       }}>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 2 }}>
                         <polygon points="5 3 19 12 5 21 5 3" />
                       </svg>
                     </div>
                   </div>
-                </a>
+                </div>
 
                 {/* Content */}
                 <div
                   style={{
-                    textDecoration: 'none',
                     padding: '16px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -207,14 +193,12 @@ export default function BlogPage() {
                     {post.excerpt}
                   </p>
                   <div style={{ marginTop: 'auto', paddingTop: 12, borderTop: `1px solid ${C.gray100}` }}>
-                    <a
-                      href={`/blog/${post.slug}`}
-                      style={{ fontSize: 12, fontWeight: 600, color: post.color, textDecoration: 'none' }}>
+                    <span style={{ fontSize: 12, fontWeight: 600, color: post.color }}>
                       Read Article →
-                    </a>
+                    </span>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </section>
