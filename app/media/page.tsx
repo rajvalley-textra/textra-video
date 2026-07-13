@@ -46,7 +46,7 @@ export default function MediaPage() {
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'Case Studies' | 'Articles & Interviews' | 'Company News'>('all');
 
   const posts = [
-    { title: 'The Future of AI in Video: Ideas, Quality, and the Human Edge', excerpt: 'Insights from Matt Cooper (founder & CEO) on how technology is reshaping video production, what still requires human creativity, and why distribution is becoming the new differentiator.', category: 'Articles & Interviews', slug: 'future-of-ai-in-video', color: C.teal, videoId: '', videoToken: '' },
+    { title: 'The Future of AI in Video: Ideas, Quality, and the Human Edge', excerpt: 'Insights from Matt Cooper (founder & CEO) on how technology is reshaping video production, what still requires human creativity, and why distribution is becoming the new differentiator.', category: 'Articles & Interviews', slug: 'future-of-ai-in-video', color: C.teal, videoId: 'ut_nW9TMP2k', videoToken: '', isYoutube: true },
     { title: 'Cut Through the Chaos: Messaging That Reaches Busy Audiences', excerpt: 'Master the art of communicating with time-stretched audiences using video that\'s fast, friendly, and actually gets watched.', category: 'Case Studies', slug: 'messaging-for-busy-audiences', color: C.blue, videoId: '1163223157', videoToken: '' },
     { title: 'Getting Online Made Simple: A Beginner\'s Guide to Digital Connection', excerpt: 'Discover how animated learning breaks down digital literacy barriers and empowers everyone to confidently join the online world.', category: 'Case Studies', slug: 'digital-inclusion-getting-online', color: C.teal, videoId: '1203796244', videoToken: '' },
     { title: 'AI in the Workplace: Empowering Teams, Not Replacing Them', excerpt: 'Discover how AI transforms organizational capability by augmenting human expertise and accelerating meaningful outcomes.', category: 'Case Studies', slug: 'ai-empowering-workforce', color: C.blue, videoId: '1124858916', videoToken: '' },
@@ -162,7 +162,7 @@ export default function MediaPage() {
                   }}>
                   {post.videoId ? (
                     <iframe
-                      src={`https://player.vimeo.com/video/${post.videoId}?badge=0&autopause=0&player_id=0&app_id=58479`}
+                      src={post.isYoutube ? `https://www.youtube.com/embed/${post.videoId}?si=r-KgvKHBjPWUMMz-` : `https://player.vimeo.com/video/${post.videoId}?badge=0&autopause=0&player_id=0&app_id=58479`}
                       style={{
                         position: 'absolute',
                         top: 0,
@@ -172,7 +172,7 @@ export default function MediaPage() {
                         borderRadius: 12,
                         pointerEvents: 'none',
                       }}
-                      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       referrerPolicy="strict-origin-when-cross-origin"
                       title={post.title}
                     />
