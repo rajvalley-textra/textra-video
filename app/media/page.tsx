@@ -46,69 +46,13 @@ export default function MediaPage() {
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'Case Studies' | 'Articles & Interviews' | 'Company News'>('all');
 
   const posts = [
-    {
-      title: 'Level Up Your Learning: How Animated Videos Make E-Learning Unforgettable',
-      excerpt: 'Discover why animated videos are revolutionizing corporate training and employee engagement.',
-      category: 'Case Studies',
-      slug: 'level-up-your-learning',
-      color: C.blue,
-      videoId: '1077894850',
-      videoToken: 'fl=pl&fe=cm',
-    },
-    {
-      title: 'Textra: Scale Your Training, Not Your Effort',
-      excerpt: 'Create scalable, cost-effective video training content without the traditional production overhead.',
-      category: 'Case Studies',
-      slug: 'scale-your-training',
-      color: C.teal,
-      videoId: '1056397509',
-      videoToken: '346bb42aa4?fl=pl&fe=cm',
-    },
-    {
-      title: 'The Power of Acted-Out Scenarios in E-Learning',
-      excerpt: 'Transform your training with realistic, engaging scenarios that drive better learning outcomes.',
-      category: 'Case Studies',
-      slug: 'acted-out-scenarios',
-      color: C.blue,
-      videoId: '1095042991',
-      videoToken: '',
-    },
-    {
-      title: 'AI in the Workplace: Empowering Teams, Not Replacing Them',
-      excerpt: 'Discover how AI transforms organizational capability by augmenting human expertise and accelerating meaningful outcomes.',
-      category: 'Case Studies',
-      slug: 'ai-empowering-workforce',
-      color: C.blue,
-      videoId: '1124858916',
-      videoToken: '',
-    },
-    {
-      title: 'Getting Online Made Simple: A Beginner\'s Guide to Digital Connection',
-      excerpt: 'Discover how animated learning breaks down digital literacy barriers and empowers everyone to confidently join the online world.',
-      category: 'Case Studies',
-      slug: 'digital-inclusion-getting-online',
-      color: C.teal,
-      videoId: '1203796244',
-      videoToken: '',
-    },
-    {
-      title: 'Cut Through the Chaos: Messaging That Reaches Busy Audiences',
-      excerpt: 'Master the art of communicating with time-stretched audiences using video that\'s fast, friendly, and actually gets watched.',
-      category: 'Case Studies',
-      slug: 'messaging-for-busy-audiences',
-      color: C.blue,
-      videoId: '1163223157',
-      videoToken: '',
-    },
-    {
-      title: 'The Future of AI in Video: Ideas, Quality, and the Human Edge',
-      excerpt: 'Insights from Matt Cooper (founder & CEO) on how technology is reshaping video production, what still requires human creativity, and why distribution is becoming the new differentiator.',
-      category: 'Articles & Interviews',
-      slug: 'future-of-ai-in-video',
-      color: C.teal,
-      videoId: '',
-      videoToken: '',
-    },
+    { title: 'The Future of AI in Video: Ideas, Quality, and the Human Edge', excerpt: 'Insights from Matt Cooper (founder & CEO) on how technology is reshaping video production, what still requires human creativity, and why distribution is becoming the new differentiator.', category: 'Articles & Interviews', slug: 'future-of-ai-in-video', color: C.teal, videoId: '', videoToken: '' },
+    { title: 'Cut Through the Chaos: Messaging That Reaches Busy Audiences', excerpt: 'Master the art of communicating with time-stretched audiences using video that\'s fast, friendly, and actually gets watched.', category: 'Case Studies', slug: 'messaging-for-busy-audiences', color: C.blue, videoId: '1163223157', videoToken: '' },
+    { title: 'Getting Online Made Simple: A Beginner\'s Guide to Digital Connection', excerpt: 'Discover how animated learning breaks down digital literacy barriers and empowers everyone to confidently join the online world.', category: 'Case Studies', slug: 'digital-inclusion-getting-online', color: C.teal, videoId: '1203796244', videoToken: '' },
+    { title: 'AI in the Workplace: Empowering Teams, Not Replacing Them', excerpt: 'Discover how AI transforms organizational capability by augmenting human expertise and accelerating meaningful outcomes.', category: 'Case Studies', slug: 'ai-empowering-workforce', color: C.blue, videoId: '1124858916', videoToken: '' },
+    { title: 'The Power of Acted-Out Scenarios in E-Learning', excerpt: 'Transform your training with realistic, engaging scenarios that drive better learning outcomes.', category: 'Case Studies', slug: 'acted-out-scenarios', color: C.blue, videoId: '1095042991', videoToken: '' },
+    { title: 'Textra: Scale Your Training, Not Your Effort', excerpt: 'Create scalable, cost-effective video training content without the traditional production overhead.', category: 'Case Studies', slug: 'scale-your-training', color: C.teal, videoId: '1056397509', videoToken: '346bb42aa4?fl=pl&fe=cm' },
+    { title: 'Level Up Your Learning: How Animated Videos Make E-Learning Unforgettable', excerpt: 'Discover why animated videos are revolutionizing corporate training and employee engagement.', category: 'Case Studies', slug: 'level-up-your-learning', color: C.blue, videoId: '1077894850', videoToken: 'fl=pl&fe=cm' },
   ];
 
   return (
@@ -206,31 +150,52 @@ export default function MediaPage() {
                   e.currentTarget.style.boxShadow = 'none';
                   e.currentTarget.style.transform = 'none';
                 }}>
-                {/* Vimeo Video Preview */}
+                {/* Preview */}
                 <div
                   style={{
                     position: 'relative',
                     display: 'block',
                     width: '100%',
                     paddingBottom: '56.25%',
-                    background: '#000',
+                    background: post.videoId ? '#000' : post.color,
                     overflow: 'hidden',
                   }}>
-                  <iframe
-                    src={`https://player.vimeo.com/video/${post.videoId}?badge=0&autopause=0&player_id=0&app_id=58479`}
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: 12,
-                      pointerEvents: 'none',
-                    }}
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    title={post.title}
-                  />
+                  {post.videoId ? (
+                    <iframe
+                      src={`https://player.vimeo.com/video/${post.videoId}?badge=0&autopause=0&player_id=0&app_id=58479`}
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: 12,
+                        pointerEvents: 'none',
+                      }}
+                      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      title={post.title}
+                    />
+                  ) : (
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#fff',
+                        textAlign: 'center',
+                        padding: '20px',
+                      }}>
+                      <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                        {post.category}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}

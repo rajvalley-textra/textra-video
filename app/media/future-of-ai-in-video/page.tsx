@@ -34,7 +34,35 @@ export default function BlogPost() {
               AI has democratized video production. Tools are cheaper, faster, and more accessible than ever before. But accessibility isn't the same as excellence—and in a world flooded with low-effort AI content, that distinction has become the defining competitive advantage.
             </p>
 
-            {/* PDF Carousel */}
+            {/* YouTube Embed */}
+            <div
+              style={{
+                position: 'relative',
+                width: '100%',
+                paddingBottom: '56.25%',
+                background: '#000',
+                borderRadius: 12,
+                overflow: 'hidden',
+                marginBottom: 40,
+              }}>
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/ut_nW9TMP2k"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: 12,
+                }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                title="The Future of AI in Video Interview"
+              />
+            </div>
             <div style={{ marginBottom: 40 }}>
               <div
                 style={{
@@ -203,41 +231,60 @@ export default function BlogPost() {
               </p>
             </div>
 
-            {/* PDF Download */}
-            <div style={{ background: '#f0f4ff', padding: 32, borderRadius: 12, marginBottom: 40 }}>
-              <h3 style={{ fontSize: 18, fontWeight: 700, color: C.navy, marginBottom: 12 }}>Read the Full Collateral</h3>
-              <p style={{ fontSize: 14, color: C.gray600, marginBottom: 16 }}>
-                Download the comprehensive PDF with visuals, detailed insights, and the complete conversation transcript.
-              </p>
-              <a
-                href="/media/future-of-ai-in-video/AI-in-Video-Insights.pdf"
-                download
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  background: C.teal,
-                  color: '#fff',
-                  padding: '12px 24px',
-                  borderRadius: 8,
-                  textDecoration: 'none',
-                  fontWeight: 600,
-                  fontSize: 14,
-                  transition: 'all 200ms',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(102,188,173,0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'none';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}>
-                📄 Download PDF
-              </a>
+            {/* PDF Carousel at Bottom */}
+            <div style={{ marginTop: 60, paddingTop: 40, borderTop: `1px solid ${C.gray200}`, marginBottom: 40 }}>
+              <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24 }}>Full Collateral</h2>
+              <div style={{ marginBottom: 20 }}>
+                <embed
+                  src={`/media/future-of-ai-in-video/AI-in-Video-Insights.pdf#page=${currentPdfPage}`}
+                  type="application/pdf"
+                  style={{
+                    width: '100%',
+                    height: '600px',
+                    borderRadius: 12,
+                  }}
+                />
+              </div>
+              <div style={{ display: 'flex', gap: 12, alignItems: 'center', justifyContent: 'space-between' }}>
+                <button
+                  onClick={() => setCurrentPdfPage(Math.max(1, currentPdfPage - 1))}
+                  disabled={currentPdfPage === 1}
+                  style={{
+                    padding: '10px 16px',
+                    borderRadius: 6,
+                    border: `1px solid ${C.gray200}`,
+                    background: currentPdfPage === 1 ? C.gray100 : '#fff',
+                    color: currentPdfPage === 1 ? C.gray400 : C.navy,
+                    cursor: currentPdfPage === 1 ? 'not-allowed' : 'pointer',
+                    fontSize: 14,
+                    fontWeight: 600,
+                    transition: 'all 200ms',
+                  }}>
+                  ← Previous
+                </button>
+                <span style={{ fontSize: 14, fontWeight: 600, color: C.gray600 }}>
+                  Page {currentPdfPage} of {totalPdfPages}
+                </span>
+                <button
+                  onClick={() => setCurrentPdfPage(Math.min(totalPdfPages, currentPdfPage + 1))}
+                  disabled={currentPdfPage === totalPdfPages}
+                  style={{
+                    padding: '10px 16px',
+                    borderRadius: 6,
+                    border: `1px solid ${C.gray200}`,
+                    background: currentPdfPage === totalPdfPages ? C.gray100 : '#fff',
+                    color: currentPdfPage === totalPdfPages ? C.gray400 : C.navy,
+                    cursor: currentPdfPage === totalPdfPages ? 'not-allowed' : 'pointer',
+                    fontSize: 14,
+                    fontWeight: 600,
+                    transition: 'all 200ms',
+                  }}>
+                  Next →
+                </button>
+              </div>
             </div>
 
-            <div style={{ marginTop: 60, paddingTop: 40, borderTop: `1px solid ${C.gray200}` }}>
+            <div style={{ marginTop: 20, paddingTop: 40, borderTop: `1px solid ${C.gray200}` }}>
               <a
                 href="/media"
                 style={{
