@@ -119,7 +119,7 @@ export default function MediaPage() {
         </section>
 
         {/* Category Filter */}
-        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px 60px' }}>
+        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '60px 40px 80px' }}>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
             {[
               { label: 'All', value: 'all' as const },
