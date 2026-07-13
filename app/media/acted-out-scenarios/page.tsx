@@ -231,7 +231,7 @@ export default function BlogPost() {
 
             <div style={{ marginTop: 60, paddingTop: 40, borderTop: `1px solid ${C.gray200}` }}>
               <a
-                href="/blog"
+                href="/media"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',

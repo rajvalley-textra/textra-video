@@ -42,12 +42,12 @@ function VimeoThumbnail({ videoId, title, color }: { videoId: string; title: str
   );
 }
 
-export default function BlogPage() {
+export default function MediaPage() {
   const posts = [
     {
       title: 'Level Up Your Learning: How Animated Videos Make E-Learning Unforgettable',
       excerpt: 'Discover why animated videos are revolutionizing corporate training and employee engagement.',
-      category: 'Learning & Development',
+      category: 'Case Studies',
       slug: 'level-up-your-learning',
       color: C.blue,
       videoId: '1077894850',
@@ -56,7 +56,7 @@ export default function BlogPage() {
     {
       title: 'Textra: Scale Your Training, Not Your Effort',
       excerpt: 'Create scalable, cost-effective video training content without the traditional production overhead.',
-      category: 'Training & Development',
+      category: 'Case Studies',
       slug: 'scale-your-training',
       color: C.teal,
       videoId: '1056397509',
@@ -65,7 +65,7 @@ export default function BlogPage() {
     {
       title: 'The Power of Acted-Out Scenarios in E-Learning',
       excerpt: 'Transform your training with realistic, engaging scenarios that drive better learning outcomes.',
-      category: 'Learning Effectiveness',
+      category: 'Case Studies',
       slug: 'acted-out-scenarios',
       color: C.blue,
       videoId: '1095042991',
@@ -74,7 +74,7 @@ export default function BlogPage() {
     {
       title: 'AI in the Workplace: Empowering Teams, Not Replacing Them',
       excerpt: 'Discover how AI transforms organizational capability by augmenting human expertise and accelerating meaningful outcomes.',
-      category: 'Digital Transformation & AI',
+      category: 'Case Studies',
       slug: 'ai-empowering-workforce',
       color: C.blue,
       videoId: '1124858916',
@@ -83,7 +83,7 @@ export default function BlogPage() {
     {
       title: 'Getting Online Made Simple: A Beginner\'s Guide to Digital Connection',
       excerpt: 'Discover how animated learning breaks down digital literacy barriers and empowers everyone to confidently join the online world.',
-      category: 'Digital Literacy & Inclusion',
+      category: 'Case Studies',
       slug: 'digital-inclusion-getting-online',
       color: C.teal,
       videoId: '1203796244',
@@ -92,7 +92,7 @@ export default function BlogPage() {
     {
       title: 'Cut Through the Chaos: Messaging That Reaches Busy Audiences',
       excerpt: 'Master the art of communicating with time-stretched audiences using video that\'s fast, friendly, and actually gets watched.',
-      category: 'Brand Communication & Messaging',
+      category: 'Case Studies',
       slug: 'messaging-for-busy-audiences',
       color: C.blue,
       videoId: '1163223157',
@@ -108,10 +108,10 @@ export default function BlogPage() {
         <section style={{ background: 'linear-gradient(160deg, #273572 0%, #1A71B1 62%, #66BCAD 100%)', color: '#fff', padding: '80px 40px', textAlign: 'center' }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
             <h1 style={{ fontSize: 52, fontWeight: 900, lineHeight: 1.1, marginBottom: 16 }}>
-              Blog
+              Media
             </h1>
             <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>
-              Insights and best practices for creating engaging video content and transforming your training strategy.
+              Case studies, articles, and insights for creating engaging video content and transforming how you communicate.
             </p>
           </div>
         </section>
@@ -122,7 +122,7 @@ export default function BlogPage() {
             {posts.map((post) => (
               <a
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={`/media/${post.slug}`}
                 style={{
                   textDecoration: 'none',
                   background: '#fff',

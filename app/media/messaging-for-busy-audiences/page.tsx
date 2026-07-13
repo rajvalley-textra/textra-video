@@ -12,13 +12,13 @@ export default function BlogPost() {
         <section style={{ background: 'linear-gradient(160deg, #273572 0%, #1A71B1 62%, #66BCAD 100%)', color: '#fff', padding: '80px 40px', textAlign: 'center' }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.8)', marginBottom: 16 }}>
-              Digital Transformation & AI
+              Brand Communication & Messaging
             </div>
             <h1 style={{ fontSize: 52, fontWeight: 900, lineHeight: 1.1, marginBottom: 24 }}>
-              AI in the Workplace: Empowering Teams, Not Replacing Them
+              Cut Through the Chaos: Messaging That Reaches Busy Audiences
             </h1>
             <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>
-              Discover how AI transforms organizational capability by augmenting human expertise and accelerating meaningful outcomes.
+              Master the art of communicating with time-stretched audiences using video that's fast, friendly, and actually gets watched.
             </p>
           </div>
         </section>
@@ -27,7 +27,7 @@ export default function BlogPost() {
         <section style={{ maxWidth: 800, margin: '0 auto', padding: '60px 40px' }}>
           <div style={{ fontSize: 15, color: C.gray600, lineHeight: 1.8 }}>
             <p style={{ marginBottom: 32 }}>
-              The conversation around AI in the workplace often centers on anxiety—fear that automation will eliminate jobs and diminish human value. Yet forward-thinking organizations are reframing AI entirely: not as a replacement tool, but as an enabler that magnifies human capability. When deployed thoughtfully, AI doesn't displace talent; it liberates it.
+              Your audience is busy. Whether they're juggling parenthood, managing a household, or balancing multiple priorities, their attention is fragmented and their time is precious. Long emails get ignored. Dense documentation never gets read. Blog posts disappear into inboxes. If you want your message to land, you need to cut through the noise with something that's quick, engaging, and actually worth their time. That's where modern video messaging becomes essential.
             </p>
 
             {/* Video Embed */}
@@ -42,7 +42,7 @@ export default function BlogPost() {
                 marginBottom: 40,
               }}>
               <iframe
-                src="https://player.vimeo.com/video/1124858916?badge=0&autopause=0&player_id=0&app_id=58479"
+                src="https://player.vimeo.com/video/1163223157?badge=0&autopause=0&player_id=0&app_id=58479"
                 style={{
                   position: 'absolute',
                   top: 0,
@@ -53,132 +53,145 @@ export default function BlogPost() {
                 }}
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
-                title="AI in the Workplace"
+                title="Messaging for Busy Audiences"
               />
             </div>
 
             <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
-              The Real Value of AI: Augmentation Over Automation
+              The Attention Crisis: Why Traditional Messaging Fails
             </h2>
 
             <div style={{ marginBottom: 32 }}>
               <h3 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginBottom: 12 }}>
-                Streamlining Complex Processes
+                Information Overload
               </h3>
               <p style={{ marginBottom: 0 }}>
-                AI excels at processing vast datasets, identifying patterns, and synthesizing insights that would take humans weeks to uncover. In research and development, this means faster problem-solving and accelerated decision-making. Teams shift from data hunting to strategic thinking.
+                Modern audiences receive dozens of messages daily—emails, notifications, social posts, texts. Static content gets lost in the deluge. Stand out requires format that captures attention instantly and delivers value immediately.
               </p>
             </div>
 
             <div style={{ marginBottom: 32 }}>
               <h3 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginBottom: 12 }}>
-                Uncovering Insights at Scale
+                The Skimming Problem
               </h3>
               <p style={{ marginBottom: 0 }}>
-                Complex data that was previously too unwieldy to analyze becomes navigable. AI surfaces hidden correlations and trends, giving experts the intelligence they need to make better decisions faster. The result: improved outcomes delivered with greater confidence.
+                Even when people open your message, they skim. Long form content gets scanned for key points. Nuance gets missed. Critical context gets lost. By the time someone finishes your email, they've forgotten the opening—and they never internalize your message.
               </p>
             </div>
 
             <div style={{ marginBottom: 32 }}>
               <h3 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginBottom: 12 }}>
-                Reclaiming Time for High-Value Work
+                The Engagement Gap
               </h3>
               <p style={{ marginBottom: 0 }}>
-                When AI handles routine analysis and data processing, knowledge workers reclaim hours previously spent on administrative tasks. This freed capacity redirects toward creative problem-solving, strategic planning, and work that genuinely requires human judgment—the work that matters most.
+                Text communicates information; video communicates experience. When your message is important enough to matter—whether it's a product launch, vital information, or a brand story—video engagement rates are consistently 5-10x higher than text alone.
               </p>
             </div>
 
             <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
-              Shifting the Mindset: Tool, Not Threat
+              The Traditional Barrier: Video Takes Too Long
             </h2>
 
             <p style={{ marginBottom: 32 }}>
-              The difference between organizations that thrive with AI and those that struggle often comes down to culture. Companies that position AI as a tool—something that amplifies team capability—see faster adoption, greater innovation, and stronger employee engagement. Those that frame it as a cost-cutting measure face resistance and lose talent.
+              This is where most brands get stuck. Video clearly works—audiences prefer it, engagement soars, messages land better. But traditional video production is prohibitively slow: storyboarding, casting, filming, reshoots, editing. By the time your video launches, the moment has passed. Product launches wait for no one. Seasonal messaging has a window. Sustainability updates need timeliness.
             </p>
 
             <p style={{ marginBottom: 32 }}>
-              The most successful deployments emphasize upskilling and collaboration. Employees learn to work alongside AI systems, discovering how to leverage the technology to deliver better results faster. This partnership approach builds trust and unlocks genuine organizational transformation.
+              Brands end up choosing between impact and speed. Use traditional video and miss the market window. Use static content and watch engagement tank. It's a false choice that leaves money and effectiveness on the table.
             </p>
 
             <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
-              Real-World Impact: Faster Outcomes, Greater Purpose
-            </h2>
-
-            <div style={{ marginBottom: 32 }}>
-              <h3 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginBottom: 12 }}>
-                Accelerating Research and Development
-              </h3>
-              <p style={{ marginBottom: 0 }}>
-                In regulated industries like pharmaceuticals, AI dramatically reduces the time required to analyze research data and identify promising compounds. What previously took months can now be accomplished in weeks, meaning new medicines reach patients faster.
-              </p>
-            </div>
-
-            <div style={{ marginBottom: 32 }}>
-              <h3 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginBottom: 12 }}>
-                Enabling Evidence-Based Decision Making
-              </h3>
-              <p style={{ marginBottom: 0 }}>
-                AI provides the data clarity needed for confident, strategic decisions. Leaders can act on deeper insights rather than intuition, reducing risk and improving outcomes across the organization.
-              </p>
-            </div>
-
-            <div style={{ marginBottom: 32 }}>
-              <h3 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginBottom: 12 }}>
-                Purpose-Driven Outcomes
-              </h3>
-              <p style={{ marginBottom: 0 }}>
-                When teams focus on strategy and innovation rather than manual data processing, their work becomes more fulfilling. AI doesn't just improve efficiency—it creates space for purpose-driven work that resonates with employees and stakeholders alike.
-              </p>
-            </div>
-
-            <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
-              Building an AI-Ready Culture
+              Fast, Friendly Video That Actually Gets Made
             </h2>
 
             <p style={{ marginBottom: 24 }}>
-              Organizations ready to harness AI's potential invest in three critical areas:
+              Modern animated video flips this script entirely. You get the engagement benefits of video—warmth, clarity, entertainment—at the speed your business actually needs.
             </p>
 
             <div style={{ marginBottom: 32 }}>
               <h3 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginBottom: 12 }}>
-                1. Transparent Communication
+                Ship at Speed
               </h3>
               <p style={{ marginBottom: 0 }}>
-                Clear dialogue about AI's role—augmentation, not replacement—builds psychological safety and engagement. Employees who understand the "why" become advocates rather than resisters.
+                Turn your script into a finished video in days, not months. No filming logistics. No weather delays. No post-production bottlenecks. When your messaging window is open, you're ready to go.
               </p>
             </div>
 
             <div style={{ marginBottom: 32 }}>
               <h3 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginBottom: 12 }}>
-                2. Continuous Upskilling
+                Effortless Iteration
               </h3>
               <p style={{ marginBottom: 0 }}>
-                Training programs that teach teams how to collaborate with AI systems ensure adoption succeeds and capability grows. This investment in people signals genuine commitment to their future.
+                Need to adjust messaging? Update a few lines of copy and regenerate. A/B test variations. Respond to feedback without scrapping the whole production. This flexibility makes video a genuine business tool, not a one-shot production effort.
               </p>
             </div>
 
             <div style={{ marginBottom: 32 }}>
               <h3 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginBottom: 12 }}>
-                3. Thoughtful Implementation
+                Consistent Brand Voice
               </h3>
               <p style={{ marginBottom: 0 }}>
-                Rolling out AI strategically—starting with high-impact, low-risk applications—builds confidence and demonstrates real value before expanding organization-wide.
+                Animated video preserves your brand personality at scale. Every message—product launch, educational content, sustainability update—carries the same warmth and approachability. Your brand voice becomes truly omnipresent.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: 32 }}>
+              <h3 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginBottom: 12 }}>
+                Audience-Ready Format
+              </h3>
+              <p style={{ marginBottom: 0 }}>
+                Audiences watch video everywhere—email, social, websites, messaging apps. Animated video works at every size, every context, every device. Your message travels wherever your customers are.
+              </p>
+            </div>
+
+            <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
+              Real-World Impact: Messages That Land
+            </h2>
+
+            <p style={{ marginBottom: 24 }}>
+              When you can combine video's engagement power with the speed and flexibility of modern production, messaging transforms:
+            </p>
+
+            <div style={{ marginBottom: 32 }}>
+              <h3 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginBottom: 12 }}>
+                Product Launches
+              </h3>
+              <p style={{ marginBottom: 0 }}>
+                Announce with a video that explains *why* the product matters, not just *what* it is. Engagement spikes. Pre-orders accelerate. Launch momentum carries forward.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: 32 }}>
+              <h3 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginBottom: 12 }}>
+                Educational Content
+              </h3>
+              <p style={{ marginBottom: 0 }}>
+                Share weaning tips, how-to guides, best practices—content that audiences actually engage with rather than skim. Video transforms education from push to pull; people *want* to watch.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: 32 }}>
+              <h3 style={{ fontSize: 20, fontWeight: 700, color: C.navy, marginBottom: 12 }}>
+                Values & Sustainability
+              </h3>
+              <p style={{ marginBottom: 0 }}>
+                When you share your sustainability story, brand values, or impact initiatives via video, audiences connect emotionally—not just intellectually. Values marketing actually works when it's presented as human story, not corporate statement.
               </p>
             </div>
 
             <div style={{ background: C.gray50, padding: 32, borderRadius: 12, borderLeft: `4px solid ${C.teal}`, marginBottom: 32 }}>
               <p style={{ fontSize: 16, fontWeight: 600, color: C.navy, margin: 0 }}>
-                AI isn't about doing more with less. It's about empowering teams to focus on what truly matters—solving complex problems, driving innovation, and delivering outcomes that change lives.
+                Your busy audience isn't ignoring you because they don't care. They're ignoring static content because they're drowning in it. Give them video—fast, friendly, and genuinely worth their time—and watch what actually gets watched.
               </p>
             </div>
 
             <p style={{ fontSize: 16, fontWeight: 600, color: C.navy, marginBottom: 32 }}>
-              The organizations winning with AI aren't those cutting costs—they're those amplifying human potential. They're reshaping how work gets done, creating roles that are more strategic, more fulfilling, and ultimately, more valuable. That's the real promise of AI in the workplace: not replacement, but transformation.
+              Stop choosing between speed and impact. Modern video messaging gives you both. Launch faster. Engage deeper. Watch your audience actually receive—and remember—your message.
             </p>
 
             <div style={{ marginTop: 60, paddingTop: 40, borderTop: `1px solid ${C.gray200}` }}>
               <a
-                href="/blog"
+                href="/media"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
