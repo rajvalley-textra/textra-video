@@ -100,6 +100,15 @@ export default function MediaPage() {
       videoId: '1163223157',
       videoToken: '',
     },
+    {
+      title: 'The Future of AI in Video: Ideas, Quality, and the Human Edge',
+      excerpt: 'Insights from Matt Cooper (Textra.video) on how technology is reshaping video production, what still requires human creativity, and why distribution is becoming the new differentiator.',
+      category: 'Articles & Interviews',
+      slug: 'future-of-ai-in-video',
+      color: C.teal,
+      videoId: 'ut_nW9TMP2k',
+      videoToken: '',
+    },
   ];
 
   return (
