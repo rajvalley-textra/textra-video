@@ -162,9 +162,16 @@ export default function MediaPage() {
         {/* Posts Grid */}
         <section style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px 80px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
-            {posts
-              .filter((post) => selectedCategory === 'all' || post.category === selectedCategory)
-              .map((post) => (
+            {(() => {
+              const filteredPosts = posts.filter((post) => selectedCategory === 'all' || post.category === selectedCategory);
+              if (filteredPosts.length === 0) {
+                return (
+                  <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '60px 20px' }}>
+                    <p style={{ fontSize: 16, color: C.gray500 }}>No content in this category yet. Check back soon!</p>
+                  </div>
+                );
+              }
+              return filteredPosts.map((post) => (
               <a
                 key={post.slug}
                 href={`/media/${post.slug}`}
@@ -252,12 +259,8 @@ export default function MediaPage() {
                   </div>
                 </div>
               </a>
-            ))
-              .length === 0 ? (
-                <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '60px 20px' }}>
-                  <p style={{ fontSize: 16, color: C.gray500 }}>No content in this category yet. Check back soon!</p>
-                </div>
-              ) : null}
+              ));
+            })()}
           </div>
         </section>
 
