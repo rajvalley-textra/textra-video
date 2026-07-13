@@ -43,6 +43,8 @@ function VimeoThumbnail({ videoId, title, color }: { videoId: string; title: str
 }
 
 export default function MediaPage() {
+  const [selectedCategory, setSelectedCategory] = useState<'all' | 'Case Studies' | 'Articles & Interviews' | 'Company News'>('all');
+
   const posts = [
     {
       title: 'Level Up Your Learning: How Animated Videos Make E-Learning Unforgettable',
@@ -116,10 +118,53 @@ export default function MediaPage() {
           </div>
         </section>
 
+        {/* Category Filter */}
+        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px 60px' }}>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
+            {[
+              { label: 'All', value: 'all' as const },
+              { label: 'Case Studies', value: 'Case Studies' as const },
+              { label: 'Articles & Interviews', value: 'Articles & Interviews' as const },
+              { label: 'Company News', value: 'Company News' as const },
+            ].map((btn) => (
+              <button
+                key={btn.value}
+                onClick={() => setSelectedCategory(btn.value)}
+                style={{
+                  padding: '10px 20px',
+                  borderRadius: 24,
+                  border: selectedCategory === btn.value ? `2px solid ${C.teal}` : `1px solid ${C.gray200}`,
+                  background: selectedCategory === btn.value ? C.teal : '#fff',
+                  color: selectedCategory === btn.value ? '#fff' : C.navy,
+                  fontSize: 14,
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'all 200ms',
+                }}
+                onMouseEnter={(e) => {
+                  if (selectedCategory !== btn.value) {
+                    e.currentTarget.style.borderColor = C.teal;
+                    e.currentTarget.style.color = C.teal;
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (selectedCategory !== btn.value) {
+                    e.currentTarget.style.borderColor = C.gray200;
+                    e.currentTarget.style.color = C.navy;
+                  }
+                }}>
+                {btn.label}
+              </button>
+            ))}
+          </div>
+        </section>
+
         {/* Posts Grid */}
-        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 40px' }}>
+        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px 80px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
-            {posts.map((post) => (
+            {posts
+              .filter((post) => selectedCategory === 'all' || post.category === selectedCategory)
+              .map((post) => (
               <a
                 key={post.slug}
                 href={`/media/${post.slug}`}
@@ -207,7 +252,12 @@ export default function MediaPage() {
                   </div>
                 </div>
               </a>
-            ))}
+            ))
+              .length === 0 ? (
+                <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '60px 20px' }}>
+                  <p style={{ fontSize: 16, color: C.gray500 }}>No content in this category yet. Check back soon!</p>
+                </div>
+              ) : null}
           </div>
         </section>
 
