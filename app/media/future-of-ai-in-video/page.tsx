@@ -1,9 +1,13 @@
 'use client';
+import { useState } from 'react';
 import NavBar from '@/components/NavBar';
 import FooterSection from '@/components/FooterSection';
 import { C } from '@/lib/theme';
 
 export default function BlogPost() {
+  const [currentPdfPage, setCurrentPdfPage] = useState(1);
+  const totalPdfPages = 10;
+
   return (
     <>
       <NavBar />
@@ -30,34 +34,64 @@ export default function BlogPost() {
               AI has democratized video production. Tools are cheaper, faster, and more accessible than ever before. But accessibility isn't the same as excellence—and in a world flooded with low-effort AI content, that distinction has become the defining competitive advantage.
             </p>
 
-            {/* Video Embed */}
-            <div
-              style={{
-                position: 'relative',
-                width: '100%',
-                paddingBottom: '56.25%',
-                background: '#000',
-                borderRadius: 12,
-                overflow: 'hidden',
-                marginBottom: 40,
-              }}>
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/ut_nW9TMP2k"
+            {/* PDF Carousel */}
+            <div style={{ marginBottom: 40 }}>
+              <div
                 style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
+                  position: 'relative',
                   width: '100%',
-                  height: '100%',
+                  background: C.gray100,
                   borderRadius: 12,
-                }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                title="The Future of AI in Video"
-              />
+                  overflow: 'hidden',
+                  marginBottom: 16,
+                }}>
+                <embed
+                  src={`/media/future-of-ai-in-video/AI-in-Video-Insights.pdf#page=${currentPdfPage}`}
+                  type="application/pdf"
+                  style={{
+                    width: '100%',
+                    height: '600px',
+                    borderRadius: 12,
+                  }}
+                />
+              </div>
+              <div style={{ display: 'flex', gap: 12, alignItems: 'center', justifyContent: 'space-between' }}>
+                <button
+                  onClick={() => setCurrentPdfPage(Math.max(1, currentPdfPage - 1))}
+                  disabled={currentPdfPage === 1}
+                  style={{
+                    padding: '10px 16px',
+                    borderRadius: 6,
+                    border: `1px solid ${C.gray200}`,
+                    background: currentPdfPage === 1 ? C.gray100 : '#fff',
+                    color: currentPdfPage === 1 ? C.gray400 : C.navy,
+                    cursor: currentPdfPage === 1 ? 'not-allowed' : 'pointer',
+                    fontSize: 14,
+                    fontWeight: 600,
+                    transition: 'all 200ms',
+                  }}>
+                  ← Previous
+                </button>
+                <span style={{ fontSize: 14, fontWeight: 600, color: C.gray600 }}>
+                  Page {currentPdfPage} of {totalPdfPages}
+                </span>
+                <button
+                  onClick={() => setCurrentPdfPage(Math.min(totalPdfPages, currentPdfPage + 1))}
+                  disabled={currentPdfPage === totalPdfPages}
+                  style={{
+                    padding: '10px 16px',
+                    borderRadius: 6,
+                    border: `1px solid ${C.gray200}`,
+                    background: currentPdfPage === totalPdfPages ? C.gray100 : '#fff',
+                    color: currentPdfPage === totalPdfPages ? C.gray400 : C.navy,
+                    cursor: currentPdfPage === totalPdfPages ? 'not-allowed' : 'pointer',
+                    fontSize: 14,
+                    fontWeight: 600,
+                    transition: 'all 200ms',
+                  }}>
+                  Next →
+                </button>
+              </div>
             </div>
 
             <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
