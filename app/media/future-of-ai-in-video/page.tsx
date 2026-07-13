@@ -1,13 +1,9 @@
 'use client';
-import { useState } from 'react';
 import NavBar from '@/components/NavBar';
 import FooterSection from '@/components/FooterSection';
 import { C } from '@/lib/theme';
 
 export default function BlogPost() {
-  const [currentPdfPage, setCurrentPdfPage] = useState(1);
-  const totalPdfPages = 10;
-
   return (
     <>
       <NavBar />
@@ -178,7 +174,7 @@ export default function BlogPost() {
               <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24 }}>Full Collateral</h2>
               <div style={{ marginBottom: 20 }}>
                 <embed
-                  src={`/media/future-of-ai-in-video/AI-in-Video-Insights.pdf#page=${currentPdfPage}`}
+                  src="/media/future-of-ai-in-video/AI-in-Video-Insights.pdf"
                   type="application/pdf"
                   style={{
                     width: '100%',
@@ -186,43 +182,6 @@ export default function BlogPost() {
                     borderRadius: 12,
                   }}
                 />
-              </div>
-              <div style={{ display: 'flex', gap: 12, alignItems: 'center', justifyContent: 'space-between' }}>
-                <button
-                  onClick={() => setCurrentPdfPage(Math.max(1, currentPdfPage - 1))}
-                  disabled={currentPdfPage === 1}
-                  style={{
-                    padding: '10px 16px',
-                    borderRadius: 6,
-                    border: `1px solid ${C.gray200}`,
-                    background: currentPdfPage === 1 ? C.gray100 : '#fff',
-                    color: currentPdfPage === 1 ? C.gray400 : C.navy,
-                    cursor: currentPdfPage === 1 ? 'not-allowed' : 'pointer',
-                    fontSize: 14,
-                    fontWeight: 600,
-                    transition: 'all 200ms',
-                  }}>
-                  ← Previous
-                </button>
-                <span style={{ fontSize: 14, fontWeight: 600, color: C.gray600 }}>
-                  Page {currentPdfPage} of {totalPdfPages}
-                </span>
-                <button
-                  onClick={() => setCurrentPdfPage(Math.min(totalPdfPages, currentPdfPage + 1))}
-                  disabled={currentPdfPage === totalPdfPages}
-                  style={{
-                    padding: '10px 16px',
-                    borderRadius: 6,
-                    border: `1px solid ${C.gray200}`,
-                    background: currentPdfPage === totalPdfPages ? C.gray100 : '#fff',
-                    color: currentPdfPage === totalPdfPages ? C.gray400 : C.navy,
-                    cursor: currentPdfPage === totalPdfPages ? 'not-allowed' : 'pointer',
-                    fontSize: 14,
-                    fontWeight: 600,
-                    transition: 'all 200ms',
-                  }}>
-                  Next →
-                </button>
               </div>
             </div>
 
