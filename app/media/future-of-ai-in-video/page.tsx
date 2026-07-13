@@ -48,7 +48,7 @@ export default function BlogPost() {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/ut_nW9TMP2k"
+                src="https://www.youtube.com/embed/ut_nW9TMP2k?si=r-KgvKHBjPWUMMz-"
                 style={{
                   position: 'absolute',
                   top: 0,
@@ -62,64 +62,6 @@ export default function BlogPost() {
                 allowFullScreen
                 title="The Future of AI in Video Interview"
               />
-            </div>
-            <div style={{ marginBottom: 40 }}>
-              <div
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  background: C.gray100,
-                  borderRadius: 12,
-                  overflow: 'hidden',
-                  marginBottom: 16,
-                }}>
-                <embed
-                  src={`/media/future-of-ai-in-video/AI-in-Video-Insights.pdf#page=${currentPdfPage}`}
-                  type="application/pdf"
-                  style={{
-                    width: '100%',
-                    height: '600px',
-                    borderRadius: 12,
-                  }}
-                />
-              </div>
-              <div style={{ display: 'flex', gap: 12, alignItems: 'center', justifyContent: 'space-between' }}>
-                <button
-                  onClick={() => setCurrentPdfPage(Math.max(1, currentPdfPage - 1))}
-                  disabled={currentPdfPage === 1}
-                  style={{
-                    padding: '10px 16px',
-                    borderRadius: 6,
-                    border: `1px solid ${C.gray200}`,
-                    background: currentPdfPage === 1 ? C.gray100 : '#fff',
-                    color: currentPdfPage === 1 ? C.gray400 : C.navy,
-                    cursor: currentPdfPage === 1 ? 'not-allowed' : 'pointer',
-                    fontSize: 14,
-                    fontWeight: 600,
-                    transition: 'all 200ms',
-                  }}>
-                  ← Previous
-                </button>
-                <span style={{ fontSize: 14, fontWeight: 600, color: C.gray600 }}>
-                  Page {currentPdfPage} of {totalPdfPages}
-                </span>
-                <button
-                  onClick={() => setCurrentPdfPage(Math.min(totalPdfPages, currentPdfPage + 1))}
-                  disabled={currentPdfPage === totalPdfPages}
-                  style={{
-                    padding: '10px 16px',
-                    borderRadius: 6,
-                    border: `1px solid ${C.gray200}`,
-                    background: currentPdfPage === totalPdfPages ? C.gray100 : '#fff',
-                    color: currentPdfPage === totalPdfPages ? C.gray400 : C.navy,
-                    cursor: currentPdfPage === totalPdfPages ? 'not-allowed' : 'pointer',
-                    fontSize: 14,
-                    fontWeight: 600,
-                    transition: 'all 200ms',
-                  }}>
-                  Next →
-                </button>
-              </div>
             </div>
 
             <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
