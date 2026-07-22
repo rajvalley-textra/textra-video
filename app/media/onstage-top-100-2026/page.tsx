@@ -148,7 +148,7 @@ export default function OnstageTop100() {
 
             <div style={{ marginBottom: 40 }}>
               <a
-                href="https://www.linkedin.com/feed/update/urn:li:activity:7468270665461190657"
+                href="https://www.linkedin.com/posts/textra-video_s26-top-100-onstage-activity-7463179767199227904-UkWC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAASqaYBawf_adnyzq74HUA1GPRD8uiCXKI"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
