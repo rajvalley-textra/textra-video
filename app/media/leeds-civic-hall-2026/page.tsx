@@ -148,6 +148,26 @@ export default function LeedsCivicHallTalk() {
               We can turn one of your current council guidelines into a custom 60-second summary video sample—no obligation, just proof of what's possible.
             </p>
 
+            <div style={{ marginBottom: 40 }}>
+              <a
+                href="https://www.linkedin.com/posts/textra-video_innovationsinrevenues2026-localgov-digitaltransformation-activity-7468270665461190657-2OtT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABxALIBQtdt2gOB8xi0qvDZpcurPtkn9H0"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  color: C.teal,
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                  transition: 'opacity 200ms',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.7'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}>
+                Read on LinkedIn →
+              </a>
+            </div>
+
             <div style={{ marginTop: 40, paddingTop: 40, borderTop: `1px solid ${C.gray200}` }}>
               <a
                 href="mailto:sales@textra.video?subject=Local Authority Video Communication"
@@ -176,7 +196,7 @@ export default function LeedsCivicHallTalk() {
               </a>
             </div>
 
-            <div style={{ marginTop: 40, paddingTop: 40, borderTop: `1px solid ${C.gray200}`, display: 'flex', gap: 24, alignItems: 'center' }}>
+            <div style={{ marginTop: 40, paddingTop: 40, borderTop: `1px solid ${C.gray200}` }}>
               <a
                 href="/media"
                 style={{
@@ -191,23 +211,6 @@ export default function LeedsCivicHallTalk() {
                 onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.7'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}>
                 ← Back to Media
-              </a>
-              <a
-                href="https://www.linkedin.com/posts/textra-video_innovationsinrevenues2026-localgov-digitaltransformation-activity-7468270665461190657-2OtT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABxALIBQtdt2gOB8xi0qvDZpcurPtkn9H0"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  color: C.teal,
-                  textDecoration: 'none',
-                  fontWeight: 600,
-                  transition: 'opacity 200ms',
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.7'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}>
-                Read on LinkedIn →
               </a>
             </div>
           </div>
