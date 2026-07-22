@@ -20,6 +20,9 @@ export default function BlogPost() {
             <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>
               Insights from Matt Cooper (Textra.video) on how technology is reshaping video production, what still requires human creativity, and why distribution is becoming the new differentiator.
             </p>
+            <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', marginTop: 16 }}>
+              July 10, 2026
+            </p>
           </div>
         </section>
 
