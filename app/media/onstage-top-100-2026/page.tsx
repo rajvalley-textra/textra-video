@@ -33,6 +33,19 @@ export default function OnstageTop100() {
               We are thrilled to announce that Textra Video has been shortlisted for <strong>The Onstage Top 100</strong>—the next stage of Onstage S26 Demo Day. Out of 1,600 global applicants, we've made it to the top 5%.
             </p>
 
+            {/* Screenshot */}
+            <img
+              src="/media/onstage-top-100-2026/screenshot.png"
+              alt="Onstage Top 100 announcement"
+              style={{
+                width: '100%',
+                borderRadius: 12,
+                marginBottom: 40,
+                height: 'auto',
+                display: 'block',
+              }}
+            />
+
             <div style={{ background: 'rgba(102, 188, 173, 0.1)', padding: 24, borderRadius: 12, borderLeft: `4px solid ${C.teal}`, marginBottom: 32 }}>
               <p style={{ fontSize: 16, fontWeight: 600, color: C.navy, margin: 0 }}>
                 We're honoured to be recognized as one of the standout companies in the May cohort.
