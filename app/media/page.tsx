@@ -189,7 +189,7 @@ export default function MediaPage() {
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover',
-                        objectPosition: 'center top',
+                        objectPosition: 'center 28%',
                         borderRadius: 12,
                       }}
                     />
