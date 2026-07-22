@@ -46,7 +46,7 @@ export default function MediaPage() {
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'Case Studies' | 'Articles & Interviews' | 'Company News' | 'Talks'>('all');
 
   const posts = [
-    { title: 'Reimagining Local Gov Comms: From Unread Letters to Engaging Video', excerpt: 'Live from Leeds Civic Hall: How councils can transform citizen engagement and protect budgets by replacing unread text letters with compelling video communication.', category: 'Talks', slug: 'leeds-civic-hall-2026', color: C.blue, videoId: '', videoToken: '' },
+    { title: 'Reimagining Local Gov Comms: From Unread Letters to Engaging Video', excerpt: 'Live from Leeds Civic Hall: How councils can transform citizen engagement and protect budgets by replacing unread text letters with compelling video communication.', category: 'Talks', slug: 'leeds-civic-hall-2026', color: C.blue, videoId: '', videoToken: '', image: '/media/leeds-civic-hall-2026/event-hall.jpg' },
     { title: 'The Future of AI in Video: Ideas, Quality, and the Human Edge', excerpt: 'Insights from Matt Cooper (founder & CEO) on how technology is reshaping video production, what still requires human creativity, and why distribution is becoming the new differentiator.', category: 'Articles & Interviews', slug: 'future-of-ai-in-video', color: C.teal, videoId: 'ut_nW9TMP2k', videoToken: '', isYoutube: true },
     { title: 'Cut Through the Chaos: Messaging That Reaches Busy Audiences', excerpt: 'Master the art of communicating with time-stretched audiences using video that\'s fast, friendly, and actually gets watched.', category: 'Case Studies', slug: 'messaging-for-busy-audiences', color: C.blue, videoId: '1163223157', videoToken: '' },
     { title: 'Getting Online Made Simple: A Beginner\'s Guide to Digital Connection', excerpt: 'Discover how animated learning breaks down digital literacy barriers and empowers everyone to confidently join the online world.', category: 'Case Studies', slug: 'digital-inclusion-getting-online', color: C.teal, videoId: '1203796244', videoToken: '' },
@@ -159,7 +159,7 @@ export default function MediaPage() {
                     display: 'block',
                     width: '100%',
                     paddingBottom: '56.25%',
-                    background: post.videoId ? '#000' : post.color,
+                    background: post.videoId || post.image ? '#000' : post.color,
                     overflow: 'hidden',
                   }}>
                   {post.videoId ? (
@@ -177,6 +177,21 @@ export default function MediaPage() {
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       referrerPolicy="strict-origin-when-cross-origin"
                       title={post.title}
+                    />
+                  ) : post.image ? (
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                        borderRadius: 12,
+                      }}
                     />
                   ) : (
                     <div
