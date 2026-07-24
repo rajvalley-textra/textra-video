@@ -125,8 +125,8 @@ export default function MediaPage() {
         </section>
 
         {/* Posts Grid */}
-        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px 80px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '0 20px 80px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
             {(() => {
               const filteredPosts = posts.filter((post) => selectedCategory === 'all' || post.category === selectedCategory);
               if (filteredPosts.length === 0) {
