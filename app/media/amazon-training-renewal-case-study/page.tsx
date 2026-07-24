@@ -33,6 +33,19 @@ export default function AmazonTrainingCaseStudyPost() {
               <strong>Amazon doesn't renew things that don't work.</strong> They renewed with us in March. That renewal isn't just a contract renewal—it's validation that we solved a problem every enterprise was struggling with.
             </p>
 
+            {/* Warehouse image */}
+            <img
+              src="/media/amazon-training-renewal-case-study/warehouse-team.png"
+              alt="Amazon warehouse team"
+              style={{
+                width: '100%',
+                borderRadius: 12,
+                marginBottom: 40,
+                height: 'auto',
+                display: 'block',
+              }}
+            />
+
             <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
               The Problem Every Enterprise Faces
             </h2>
@@ -77,6 +90,19 @@ export default function AmazonTrainingCaseStudyPost() {
             <p style={{ marginBottom: 32 }}>
               We fundamentally changed the timeline. Here's what happens now:
             </p>
+
+            {/* Worker image */}
+            <img
+              src="/media/amazon-training-renewal-case-study/worker.png"
+              alt="Amazon warehouse worker"
+              style={{
+                width: '100%',
+                borderRadius: 12,
+                marginBottom: 40,
+                height: 'auto',
+                display: 'block',
+              }}
+            />
 
             <div style={{ marginBottom: 32 }}>
               <div style={{ display: 'flex', gap: 16, marginBottom: 24 }}>
@@ -151,6 +177,19 @@ export default function AmazonTrainingCaseStudyPost() {
             <p style={{ marginBottom: 32 }}>
               But here's what matters most: <strong>Amazon isn't unique.</strong> Every enterprise has this problem. Every training team is dealing with the same bottleneck—outdated training, delayed deployment, consultant dependency, engagement gaps.
             </p>
+
+            {/* Delivery image */}
+            <img
+              src="/media/amazon-training-renewal-case-study/delivery.png"
+              alt="Amazon delivery team"
+              style={{
+                width: '100%',
+                borderRadius: 12,
+                marginBottom: 40,
+                height: 'auto',
+                display: 'block',
+              }}
+            />
 
             <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
               The Question We're Asking Every Enterprise
