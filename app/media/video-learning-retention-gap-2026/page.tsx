@@ -221,26 +221,6 @@ export default function VideoLearningRetentionGapPost() {
               </p>
             </div>
 
-            <div style={{ marginBottom: 40 }}>
-              <a
-                href="https://www.linkedin.com/feed/update/urn:li:activity:7221635432112640000"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  color: C.teal,
-                  textDecoration: 'none',
-                  fontWeight: 600,
-                  transition: 'opacity 200ms',
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.7'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}>
-                Read on LinkedIn →
-              </a>
-            </div>
-
             <div style={{ marginTop: 40, paddingTop: 40, borderTop: `1px solid ${C.gray200}` }}>
               <a
                 href="/media"
