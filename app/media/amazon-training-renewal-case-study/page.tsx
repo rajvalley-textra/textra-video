@@ -35,7 +35,7 @@ export default function AmazonTrainingCaseStudyPost() {
 
             {/* Warehouse image */}
             <img
-              src="/media/amazon-training-renewal-case-study/warehouse-team.png"
+              src="/media/amazon-training-renewal-case-study/warehouse.png"
               alt="Amazon warehouse team"
               style={{
                 width: '100%',
@@ -93,7 +93,7 @@ export default function AmazonTrainingCaseStudyPost() {
 
             {/* Worker image */}
             <img
-              src="/media/amazon-training-renewal-case-study/worker.png"
+              src="/media/amazon-training-renewal-case-study/worker-focus.png"
               alt="Amazon warehouse worker"
               style={{
                 width: '100%',
