@@ -150,6 +150,44 @@ export default function VideoLearningRetentionGapPost() {
             />
 
             <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
+              The Real Cost of Text-Based Training
+            </h2>
+
+            <p style={{ marginBottom: 32 }}>
+              Here's what happens when critical knowledge lives in text:
+            </p>
+
+            <div style={{ marginBottom: 32 }}>
+              <div style={{ display: 'flex', gap: 16, marginBottom: 16 }}>
+                <div style={{ fontSize: 20, fontWeight: 700, color: C.teal, minWidth: 30 }}>⚠️</div>
+                <p style={{ margin: 0, fontSize: 15, color: C.gray600 }}>
+                  <strong>Compliance Risk</strong> — Regulations aren't optional. When only 10% of your team retains compliance information, you're operating with unacknowledged risk exposure.
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', gap: 16, marginBottom: 16 }}>
+                <div style={{ fontSize: 20, fontWeight: 700, color: C.teal, minWidth: 30 }}>💰</div>
+                <p style={{ margin: 0, fontSize: 15, color: C.gray600 }}>
+                  <strong>Wasted Training Budget</strong> — You're investing in content nobody fully absorbs. That's money spent with minimal return.
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', gap: 16, marginBottom: 16 }}>
+                <div style={{ fontSize: 20, fontWeight: 700, color: C.teal, minWidth: 30 }}>😤</div>
+                <p style={{ margin: 0, fontSize: 15, color: C.gray600 }}>
+                  <strong>Frustrated Employees</strong> — Your team knows they're supposed to read it. They feel guilty for skipping it. Then they make mistakes because the knowledge didn't stick.
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', gap: 16 }}>
+                <div style={{ fontSize: 20, fontWeight: 700, color: C.teal, minWidth: 30 }}>📉</div>
+                <p style={{ margin: 0, fontSize: 15, color: C.gray600 }}>
+                  <strong>Slower Onboarding</strong> — New hires spend weeks wading through documentation. They could be productive in days if the knowledge was delivered in a format that actually sticks.
+                </p>
+              </div>
+            </div>
+
+            <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
               What One Piece of Critical Knowledge Is Gathering Dust Right Now?
             </h2>
 
@@ -159,6 +197,22 @@ export default function VideoLearningRetentionGapPost() {
 
             <p style={{ marginBottom: 32 }}>
               That knowledge exists. Your team needs it. But the format you chose to deliver it in ensures it won't stick.
+            </p>
+
+            <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
+              The Path Forward
+            </h2>
+
+            <p style={{ marginBottom: 32 }}>
+              This doesn't require overhauling everything. It starts with one piece of critical knowledge—the thing your team most needs to understand and retain.
+            </p>
+
+            <p style={{ marginBottom: 32 }}>
+              Turn that into video. Measure the difference in retention and engagement. Watch your team actually absorb and apply the knowledge instead of skimming and forgetting.
+            </p>
+
+            <p style={{ marginBottom: 32 }}>
+              Once you see the gap close, you'll never go back to text-only training.
             </p>
 
             <div style={{ background: C.gray50, padding: 32, borderRadius: 12, borderLeft: `4px solid ${C.teal}`, marginTop: 40, marginBottom: 32 }}>
