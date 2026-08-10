@@ -11,7 +11,7 @@ export default function GetInTouchCTA({ postUrl, postTitle }: GetInTouchCTAProps
   const body = encodeURIComponent(
     `Hi,\n\nI'm interested in learning more about your services.\n\nI was reading: ${postTitle}\n${postUrl}\n\nLooking forward to hearing from you.`
   );
-  const mailtoLink = `mailto:hello@textra.video?subject=${subject}&body=${body}`;
+  const mailtoLink = `mailto:sales@textra.video?subject=${subject}&body=${body}`;
 
   return (
     <div style={{ marginTop: 60, paddingTop: 40, borderTop: `1px solid ${C.gray200}` }}>
