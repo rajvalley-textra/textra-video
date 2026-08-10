@@ -38,27 +38,18 @@ export default function PDFParadoxPost() {
               Retention rates tell a brutal story:
             </p>
 
-            {/* Retention bars visualization */}
-            <div style={{ background: '#f8f9fa', padding: 24, borderRadius: 12, marginBottom: 40 }}>
-              <div style={{ marginBottom: 24 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontWeight: 600, color: C.navy }}>
-                  <span>Video</span>
-                  <span style={{ color: C.teal }}>95%</span>
-                </div>
-                <div style={{ height: 40, background: C.teal, borderRadius: 4, width: '95%' }}></div>
-              </div>
-              <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontWeight: 600, color: C.navy }}>
-                  <span>Text (PDFs, documents, emails)</span>
-                  <span style={{ color: '#d4725d' }}>10%</span>
-                </div>
-                <div style={{ height: 40, background: '#d4725d', borderRadius: 4, width: '10%' }}></div>
-              </div>
-              <div style={{ background: 'rgba(102, 188, 173, 0.1)', padding: 16, borderRadius: 8, marginTop: 24, borderLeft: `4px solid ${C.teal}` }}>
-                <p style={{ margin: 0, fontWeight: 600, color: C.navy }}>Gap: 85 percentage points</p>
-                <p style={{ margin: '8px 0 0 0', fontSize: 13, color: C.gray600 }}>20+ years of research, replicated across learning science, cognitive psychology, and organizational behavior</p>
-              </div>
-            </div>
+            {/* Retention Gap Image */}
+            <img
+              src="/media/the-pdf-paradox/retention-gap.png"
+              alt="Video retention 95% vs Text retention 10%"
+              style={{
+                width: '100%',
+                borderRadius: 12,
+                marginBottom: 40,
+                height: 'auto',
+                display: 'block',
+              }}
+            />
 
             <p style={{ marginBottom: 32 }}>
               That gap isn't new. It's not contested. The research is twenty years old and has been replicated dozens of times. Yet walk into any Fortune 500 company today and ask how they onboard new employees, communicate policy changes, or deliver compliance training. The answer, overwhelmingly, is the same: <strong>email a PDF</strong>.
@@ -140,6 +131,19 @@ export default function PDFParadoxPost() {
             <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
               The Cost of Delay
             </h2>
+
+            {/* Enterprise Default Image */}
+            <img
+              src="/media/the-pdf-paradox/enterprise-default.png"
+              alt="Enterprise default medium - 80% PDFs, 20% Video"
+              style={{
+                width: '100%',
+                borderRadius: 12,
+                marginBottom: 40,
+                height: 'auto',
+                display: 'block',
+              }}
+            />
 
             <p style={{ marginBottom: 32 }}>
               Here's what gets lost in the inertia: <strong>Every quarter that your compliance training sits in a PDF format, you're accepting an 85-point retention gap.</strong> If 100 employees watch a compliance video, roughly 95 will remember what matters. If 100 employees read a PDF on the same topic, roughly 10 will.
@@ -252,6 +256,19 @@ export default function PDFParadoxPost() {
             <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
               What Would Change If Your Training Actually Worked?
             </h2>
+
+            {/* When Training Works Image */}
+            <img
+              src="/media/the-pdf-paradox/when-training-works.png"
+              alt="Business impact when training sticks - Hiring, Retention, Compliance, NPS, Culture"
+              style={{
+                width: '100%',
+                borderRadius: 12,
+                marginBottom: 40,
+                height: 'auto',
+                display: 'block',
+              }}
+            />
 
             <p style={{ marginBottom: 32 }}>
               The enterprises that move first—that acknowledge the gap between data and action and actually close it—will see the compounding benefits first:
