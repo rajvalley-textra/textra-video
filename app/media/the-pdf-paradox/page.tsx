@@ -269,7 +269,7 @@ export default function PDFParadoxPost() {
               alt="Business impact when training sticks - Hiring, Retention, Compliance, NPS, Culture"
               style={{
                 width: '100%',
-                maxWidth: 350,
+                maxWidth: 550,
                 borderRadius: 12,
                 marginBottom: 40,
                 marginLeft: 'auto',
