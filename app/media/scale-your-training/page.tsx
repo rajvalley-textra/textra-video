@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import NavBar from '@/components/NavBar';
 import FooterSection from '@/components/FooterSection';
+import GetInTouchCTA from '@/components/media/GetInTouchCTA';
 import { C } from '@/lib/theme';
 
 function VimeoThumbnail({ videoId, title, color }: { videoId: string; title: string; color: string }) {

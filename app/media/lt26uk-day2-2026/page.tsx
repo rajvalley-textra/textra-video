@@ -1,6 +1,7 @@
 'use client';
 import NavBar from '@/components/NavBar';
 import FooterSection from '@/components/FooterSection';
+import GetInTouchCTA from '@/components/media/GetInTouchCTA';
 import { C } from '@/lib/theme';
 
 export default function LT26UKDay2Post() {
