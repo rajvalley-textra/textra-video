@@ -175,6 +175,7 @@ export default function MediaPage() {
                     paddingBottom: '56.25%',
                     background: post.videoId || post.image ? '#000' : post.color,
                     overflow: 'hidden',
+                    borderRadius: 12,
                   }}>
                   {post.videoId ? (
                     <iframe
