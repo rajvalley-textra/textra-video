@@ -170,9 +170,11 @@ export default function MediaPage() {
                 <div
                   style={{
                     position: 'relative',
-                    display: 'block',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     width: '100%',
-                    paddingBottom: '56.25%',
+                    minHeight: post.videoId ? '300px' : 'auto',
                     background: post.videoId || post.image ? '#000' : post.color,
                     overflow: 'hidden',
                     borderRadius: 12,
@@ -181,13 +183,11 @@ export default function MediaPage() {
                     <iframe
                       src={post.isYoutube ? `https://www.youtube.com/embed/${post.videoId}?si=r-KgvKHBjPWUMMz-` : `https://player.vimeo.com/video/${post.videoId}?badge=0&autopause=0&player_id=0&app_id=58479`}
                       style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
+                        position: 'relative',
                         width: '100%',
-                        height: '100%',
+                        height: '300px',
                         borderRadius: 12,
-                        pointerEvents: 'none',
+                        border: 'none',
                       }}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       referrerPolicy="strict-origin-when-cross-origin"
@@ -198,13 +198,11 @@ export default function MediaPage() {
                       src={post.image}
                       alt={post.title}
                       style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
+                        position: 'relative',
                         width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        objectPosition: 'center 28%',
+                        height: 'auto',
+                        maxHeight: '500px',
+                        objectFit: 'contain',
                         borderRadius: 12,
                       }}
                     />
