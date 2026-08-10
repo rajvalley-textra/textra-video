@@ -44,7 +44,7 @@ export default function PDFParadoxPost() {
               alt="Video retention 95% vs Text retention 10%"
               style={{
                 width: '100%',
-                maxWidth: 600,
+                maxWidth: 350,
                 borderRadius: 12,
                 marginBottom: 40,
                 marginLeft: 'auto',
@@ -141,7 +141,7 @@ export default function PDFParadoxPost() {
               alt="Enterprise default medium - 80% PDFs, 20% Video"
               style={{
                 width: '100%',
-                maxWidth: 600,
+                maxWidth: 350,
                 borderRadius: 12,
                 marginBottom: 40,
                 marginLeft: 'auto',
@@ -269,7 +269,7 @@ export default function PDFParadoxPost() {
               alt="Business impact when training sticks - Hiring, Retention, Compliance, NPS, Culture"
               style={{
                 width: '100%',
-                maxWidth: 600,
+                maxWidth: 350,
                 borderRadius: 12,
                 marginBottom: 40,
                 marginLeft: 'auto',
