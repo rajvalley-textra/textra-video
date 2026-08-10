@@ -18,6 +18,8 @@ export default function GetInTouchCTA({ postUrl, postTitle }: GetInTouchCTAProps
       <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
         <a
           href={mailtoLink}
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             display: 'inline-flex',
             alignItems: 'center',

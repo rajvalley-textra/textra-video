@@ -169,51 +169,10 @@ export default function LeedsCivicHallTalk() {
               </a>
             </div>
 
-            <div style={{ marginTop: 40, paddingTop: 40, borderTop: `1px solid ${C.gray200}` }}>
-              <a
-                href="mailto:sales@textra.video?subject=Local Authority Video Communication"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  background: C.teal,
-                  color: '#fff',
-                  padding: '14px 28px',
-                  borderRadius: 9999,
-                  textDecoration: 'none',
-                  fontWeight: 600,
-                  fontSize: 15,
-                  transition: 'all 200ms',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(102,188,173,0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'none';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}>
-                Request a Video Demo
-              </a>
-            </div>
-
-            <div style={{ marginTop: 40, paddingTop: 40, borderTop: `1px solid ${C.gray200}` }}>
-              <a
-                href="/media"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  color: C.teal,
-                  textDecoration: 'none',
-                  fontWeight: 600,
-                  transition: 'opacity 200ms',
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.7'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}>
-                ← Back to Media
-              </a>
-            </div>
+            <GetInTouchCTA
+              postUrl="https://www.textra.video/media/leeds-civic-hall-2026"
+              postTitle="Reimagining Local Gov Comms: From Unread Letters to Engaging Video"
+            />
           </div>
         </section>
       </main>

@@ -189,23 +189,10 @@ export default function BlogPost() {
               </div>
             </div>
 
-            <div style={{ marginTop: 20, paddingTop: 40, borderTop: `1px solid ${C.gray200}` }}>
-              <a
-                href="/media"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  color: C.teal,
-                  textDecoration: 'none',
-                  fontWeight: 600,
-                  transition: 'opacity 200ms',
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.7'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}>
-                ← Back to Media
-              </a>
-            </div>
+            <GetInTouchCTA
+              postUrl="https://www.textra.video/media/future-of-ai-in-video"
+              postTitle="The Future of AI in Video: Ideas, Quality, and the Human Edge"
+            />
           </div>
         </section>
       </main>

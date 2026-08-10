@@ -188,23 +188,10 @@ export default function LT26UKDay1Post() {
               </a>
             </div>
 
-            <div style={{ marginTop: 40, paddingTop: 40, borderTop: `1px solid ${C.gray200}` }}>
-              <a
-                href="/media"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  color: C.teal,
-                  textDecoration: 'none',
-                  fontWeight: 600,
-                  transition: 'opacity 200ms',
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.7'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}>
-                ← Back to Media
-              </a>
-            </div>
+            <GetInTouchCTA
+              postUrl="https://www.textra.video/media/lt26uk-day1-2026"
+              postTitle="LT26 Day One: Moving Past the Video Bottleneck"
+            />
           </div>
         </section>
       </main>
