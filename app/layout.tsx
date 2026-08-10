@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   icons: {
     icon: '/assets/logos/ico.jpeg',
   },
+  metadataBase: new URL('https://www.textra.video'),
+  alternates: {
+    canonical: 'https://www.textra.video',
+  },
 };
 
 const GA_ID = 'G-40P54MVE5E';

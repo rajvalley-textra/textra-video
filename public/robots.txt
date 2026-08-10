@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 
 Sitemap: https://www.textra.video/sitemap.xml
+
+# Canonical domain preference
+Host: https://www.textra.video
