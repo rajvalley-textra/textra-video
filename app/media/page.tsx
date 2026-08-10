@@ -67,6 +67,7 @@ export default function MediaPage() {
     { title: 'The Power of Acted-Out Scenarios in E-Learning', excerpt: 'Transform your training with realistic, engaging scenarios that drive better learning outcomes.', category: 'Case Studies', slug: 'acted-out-scenarios', color: C.blue, videoId: '1095042991', videoToken: '' },
     { title: 'Textra: Scale Your Training, Not Your Effort', excerpt: 'Create scalable, cost-effective video training content without the traditional production overhead.', category: 'Case Studies', slug: 'scale-your-training', color: C.teal, videoId: '1056397509', videoToken: '346bb42aa4?fl=pl&fe=cm' },
     { title: 'Level Up Your Learning: How Animated Videos Make E-Learning Unforgettable', excerpt: 'Discover why animated videos are revolutionizing corporate training and employee engagement.', category: 'Case Studies', slug: 'level-up-your-learning', color: C.blue, videoId: '1077894850', videoToken: 'fl=pl&fe=cm' },
+    { title: 'The PDF Paradox: Why Enterprises Ignore What They Already Know', excerpt: 'The data is unambiguous: video retention is 95%, text retention is 10%. Yet 80% of enterprises still default to PDFs. Here\'s why the gap between knowing and doing persists—and how to close it.', category: 'Articles & Interviews', slug: 'the-pdf-paradox', color: C.teal, videoId: '', videoToken: '', image: '' },
   ];
 
   return (
