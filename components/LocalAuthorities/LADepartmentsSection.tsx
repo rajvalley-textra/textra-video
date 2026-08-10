@@ -43,16 +43,16 @@ export default function DepartmentsSection() {
           <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#66BCAD', marginBottom: 12 }}>
             Department Solutions
           </div>
-          <h2 style={{ fontSize: 42, fontWeight: 900, color: C.navy, lineHeight: 1.1, margin: 0, marginBottom: 18 }}>
+          <h2 style={{ fontSize: 42, fontWeight: 900, color: C.navy, lineHeight: 1.1, margin: 0, marginBottom: 18, textAlign: 'center' }}>
             Textra works across your entire council
           </h2>
-          <p style={{ fontSize: 16, color: C.gray600, lineHeight: 1.7, maxWidth: 600, marginLeft: 'auto', marginRight: 'auto', margin: 0 }}>
+          <p style={{ fontSize: 16, color: C.gray600, lineHeight: 1.7, maxWidth: 600, marginLeft: 'auto', marginRight: 'auto', textAlign: 'center' }}>
             Every department faces the same challenge: residents don't understand your processes. Textra solves it across all of them.
           </p>
         </div>
 
         {/* Department grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 28 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
           {departments.map((dept) => (
             <div
               key={dept.name}
@@ -60,7 +60,7 @@ export default function DepartmentsSection() {
                 background: '#fff',
                 border: `1px solid ${C.gray100}`,
                 borderRadius: 12,
-                padding: 32,
+                padding: 20,
                 boxShadow: sh.sm,
                 transition: 'transform 200ms, box-shadow 200ms, border-color 200ms',
                 cursor: 'pointer',

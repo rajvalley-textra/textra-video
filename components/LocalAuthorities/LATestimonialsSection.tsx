@@ -37,7 +37,7 @@ export default function TestimonialsSection() {
           <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#66BCAD', marginBottom: 12 }}>
             What Councils Are Saying
           </div>
-          <h2 style={{ fontSize: 42, fontWeight: 900, color: C.navy, lineHeight: 1.1, margin: 0, marginBottom: 18 }}>
+          <h2 style={{ fontSize: 42, fontWeight: 900, color: C.navy, lineHeight: 1.1, margin: 0, marginBottom: 18, textAlign: 'center' }}>
             Real results from real councils
           </h2>
         </div>
@@ -61,7 +61,7 @@ export default function TestimonialsSection() {
               </div>
 
               {/* Quote */}
-              <p style={{ fontSize: 15, fontStyle: 'italic', color: C.gray700, lineHeight: 1.7, margin: '0 0 24px 0' }}>
+              <p style={{ fontSize: 15, fontStyle: 'italic', color: C.gray600, lineHeight: 1.7, margin: '0 0 24px 0' }}>
                 {testimonial.quote}
               </p>
 

@@ -5,11 +5,11 @@ import { C, sh } from '@/lib/theme';
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
 const councils = [
-  { name: 'Breckland Council', role: 'Founding partner', year: '2003' },
-  { name: 'East Cambridgeshire District Council', role: 'Partner authority', year: '2003' },
-  { name: 'East Suffolk Council', role: 'Partner authority', year: '2017' },
-  { name: 'Fenland District Council', role: 'Partner authority', year: '2003' },
-  { name: 'West Suffolk Council', role: 'Partner authority', year: '2003' },
+  { name: 'Breckland', role: 'Founding partner', year: '2003', logo: '/assets/logos/breckland council logo.jpeg' },
+  { name: 'East Cambridgeshire', role: 'Partner authority', year: '2003', logo: '/assets/logos/East Camb council logo2.png' },
+  { name: 'East Suffolk', role: 'Partner authority', year: '2017', logo: '/assets/logos/East Suffolk Logo.png' },
+  { name: 'Fenland', role: 'Partner authority', year: '2003', logo: '/assets/logos/fenland council logo.webp' },
+  { name: 'West Suffolk', role: 'Partner authority', year: '2003', logo: '/assets/logos/west suffolk council logo.png' },
 ];
 
 export default function ARPPartnershipSection() {
@@ -24,16 +24,16 @@ export default function ARPPartnershipSection() {
           <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#66BCAD', marginBottom: 12 }}>
             Trusted Partnership
           </div>
-          <h2 style={{ fontSize: 42, fontWeight: 900, color: C.navy, lineHeight: 1.1, margin: 0, marginBottom: 18 }}>
+          <h2 style={{ fontSize: 42, fontWeight: 900, color: C.navy, lineHeight: 1.1, margin: 0, marginBottom: 18, textAlign: 'center', textDecoration: 'none', borderBottom: 'none', outline: 'none' }}>
             Used by Anglian Revenues Partnership
           </h2>
-          <p style={{ fontSize: 16, color: C.gray600, lineHeight: 1.7, maxWidth: 600, marginLeft: 'auto', marginRight: 'auto', margin: 0 }}>
+          <p style={{ fontSize: 16, color: C.gray600, lineHeight: 1.7, maxWidth: 600, marginLeft: 'auto', marginRight: 'auto', textAlign: 'center' }}>
             Textra video engagement is trusted by 5 member councils across the East of England, helping residents understand council services and improving payment rates.
           </p>
         </div>
 
         {/* Council cards grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 24, marginBottom: 48 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16, marginBottom: 48 }}>
           {councils.map((council, i) => (
             <div
               key={council.name}
@@ -45,6 +45,8 @@ export default function ARPPartnershipSection() {
                 boxShadow: sh.sm,
                 transition: 'transform 200ms, box-shadow 200ms',
                 cursor: 'pointer',
+                display: 'flex',
+                flexDirection: 'column',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
@@ -55,6 +57,9 @@ export default function ARPPartnershipSection() {
                 e.currentTarget.style.boxShadow = sh.sm;
               }}
             >
+              {/* Logo */}
+              <img src={council.logo} alt={council.name} style={{ height: 50, objectFit: 'contain', marginBottom: 16, alignSelf: 'center' }} />
+
               <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#66BCAD', marginBottom: 8 }}>
                 {council.role}
               </div>

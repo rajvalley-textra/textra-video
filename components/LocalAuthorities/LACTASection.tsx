@@ -60,7 +60,7 @@ export default function CTASection() {
                   <div style={{ width: 20, height: 20, borderRadius: '50%', background: '#66BCAD', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 700, flexShrink: 0 }}>
                     ✓
                   </div>
-                  <span style={{ fontSize: 15, color: C.gray700, fontWeight: 500 }}>
+                  <span style={{ fontSize: 15, color: C.gray600, fontWeight: 500 }}>
                     {benefit}
                   </span>
                 </div>

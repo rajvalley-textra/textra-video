@@ -21,7 +21,7 @@ export default function LAHeroSection() {
           </div>
 
           <h1 style={{ fontSize: 52, fontWeight: 900, color: '#fff', lineHeight: 1.08, letterSpacing: '-0.02em', margin: '0 0 22px 0' }}>
-            Engage residents better, <em style={{ fontStyle: 'italic', color: '#fff' }}>reduce council costs</em>
+            Engage residents better,<br />reduce council costs
           </h1>
 
           <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.76)', lineHeight: 1.7, margin: '0 0 36px 0', fontWeight: 400, maxWidth: 700, marginLeft: 'auto', marginRight: 'auto' }}>
@@ -49,6 +49,17 @@ export default function LAHeroSection() {
             </a>
           </div>
 
+          {/* ARP Logo */}
+          <div style={{ marginBottom: 48, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.7)', fontWeight: 500, marginBottom: 20, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+              Proud to be working with
+            </div>
+            <img src="/assets/logos/APR-removebg-preview.png" alt="ARP Logo" style={{ height: 120, maxWidth: 400, objectFit: 'contain', filter: 'drop-shadow(0 0 1px rgba(0,0,0,0.7))' }} />
+            <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.8)', fontWeight: 500, lineHeight: 1.6, textAlign: 'center', marginTop: 20 }}>
+              covering East Suffolk, Fenland, West Suffolk, East Cambridgeshire, Breckland Councils
+            </div>
+          </div>
+
           {/* Trust metrics */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, maxWidth: 600, marginLeft: 'auto', marginRight: 'auto' }}>
             <div>
@@ -67,16 +78,6 @@ export default function LAHeroSection() {
         </div>
       </div>
 
-      {/* Scroll cue */}
-      <div style={{ position: 'absolute', bottom: 28, left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, opacity: 0.45 }}>
-        <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#fff' }}>Scroll</div>
-        <svg width="14" height="20" viewBox="0 0 14 22" fill="none">
-          <rect x="1" y="1" width="12" height="20" rx="6" stroke="white" strokeWidth="1.5"/>
-          <circle cx="7" cy="6" r="2" fill="white">
-            <animate attributeName="cy" values="6;14;6" dur="1.8s" repeatCount="indefinite"/>
-          </circle>
-        </svg>
-      </div>
     </section>
   );
 }
