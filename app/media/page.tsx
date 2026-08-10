@@ -174,7 +174,7 @@ export default function MediaPage() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     width: '100%',
-                    minHeight: post.videoId ? '300px' : 'auto',
+                    height: '280px',
                     background: post.videoId || post.image ? '#000' : post.color,
                     overflow: 'hidden',
                     borderRadius: 12,
@@ -185,7 +185,7 @@ export default function MediaPage() {
                       style={{
                         position: 'relative',
                         width: '100%',
-                        height: '300px',
+                        height: '100%',
                         borderRadius: 12,
                         border: 'none',
                       }}
@@ -200,8 +200,7 @@ export default function MediaPage() {
                       style={{
                         position: 'relative',
                         width: '100%',
-                        height: 'auto',
-                        maxHeight: '500px',
+                        height: '100%',
                         objectFit: 'contain',
                         borderRadius: 12,
                       }}
