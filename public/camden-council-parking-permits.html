@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor parking permits - Camden Council</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    body {
+      background: white;
+      color: #333;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
+    .header {
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      padding: 0 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .header-brand img {
+      height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 20px;
+      color: white;
+      font-size: 14px;
+    }
+
+    .header-nav div {
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .header-nav div:hover {
+      opacity: 0.7;
+    }
+
+    /* Magenta stripe */
+    .magenta-stripe {
+      height: 4px;
+      background: #c1006f;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      padding: 20px 40px;
+      font-size: 14px;
+      background: white;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .breadcrumb a {
+      color: #0066cc;
+    }
+
+    .breadcrumb span {
+      margin: 0 8px;
+      color: #999;
+    }
+
+    /* Main container */
+    .main-container {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 40px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Content */
+    .content h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .intro-text {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    .content h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 40px 0 20px 0;
+      line-height: 1.2;
+    }
+
+    .section-text {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      color: #555;
+    }
+
+    ul {
+      margin: 16px 0 32px 20px;
+      list-style: disc;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: #555;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Video container */
+    .video-container {
+      aspect-ratio: 16 / 9;
+      margin: 0 0 40px 0;
+      max-width: 600px;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: relative;
+    }
+
+    .related-box {
+      background: #f9f9f9;
+      padding: 24px;
+      border-top: 3px solid #c1006f;
+    }
+
+    .related-box h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .related-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .related-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .related-link::before {
+      content: "–";
+      color: #999;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .related-link a {
+      color: #0066cc;
+    }
+
+    /* Chat button */
+    .chat-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #c1006f;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: background 0.2s;
+      z-index: 1000;
+    }
+
+    .chat-button:hover {
+      background: #a8005a;
+    }
+
+    /* Footer */
+    .footer {
+      background: #4a4a4a;
+      color: white;
+      margin-top: 60px;
+    }
+
+    .footer-main {
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .footer-col h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 16px;
+      font-size: 14px;
+      transition: opacity 0.2s;
+    }
+
+    .footer-col a:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+
+    .footer-right {
+      grid-column: 3;
+    }
+
+    .footer-button {
+      background: #c1006f;
+      color: white;
+      padding: 12px 16px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: block;
+      width: 100%;
+      text-align: left;
+      transition: background 0.2s;
+      border-radius: 2px;
+    }
+
+    .footer-button:hover {
+      background: #a8005a;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: white;
+      transition: transform 0.2s;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .social-icon.facebook { background: #1877f2; }
+    .social-icon.youtube { background: #ff0000; }
+    .social-icon.twitter { background: #000000; }
+    .social-icon.linkedin { background: #0a66c2; }
+    .social-icon.instagram { background: #e4405f; }
+    .social-icon.whatsapp { background: #25d366; }
+
+    .footer-divider {
+      border-top: 1px solid #555;
+      margin: 40px 0;
+    }
+
+    .footer-bottom {
+      padding: 0 40px 40px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-logo img {
+      height: 24px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom-links a {
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .footer-bottom-links a:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .header-nav {
+        display: none;
+      }
+
+      .content h1 {
+        font-size: 32px;
+      }
+
+      .content h2 {
+        font-size: 20px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .footer-right {
+        grid-column: 1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-bottom-links {
+        gap: 20px;
+      }
+
+      .breadcrumb {
+        padding: 12px 20px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="header-brand">
+      <img src="/camden-logo.png" alt="Camden Council">
+    </div>
+    <div class="header-nav">
+      <div>▼ Services</div>
+      <div>News</div>
+      <div>▼ Camden Account</div>
+      <div>🔍</div>
+    </div>
+  </div>
+
+  <div class="magenta-stripe"></div>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="#">Home</a><span>›</span><a href="#">Parking</a><span>›</span><a href="#">Parking permits</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <div class="content">
+      <h1>Visitor parking permits</h1>
+
+      <!-- Vimeo Video -->
+      <div class="video-container">
+        <iframe
+          src="https://player.vimeo.com/video/1217988817"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p class="intro-text">A visitor parking permit is a temporary permit for visitors to park near your home.</p>
+
+      <h2>Who can buy a visitor parking permit</h2>
+
+      <p class="section-text">To buy a visitor parking permit, you must:</p>
+
+      <ul>
+        <li>be 16 or over</li>
+        <li>live in Camden for at least five nights per week</li>
+      </ul>
+
+      <h2>Buy a visitor parking permit</h2>
+
+      <p class="section-text">You can buy visitor permits online by making a parking account in the Camden Account.</p>
+
+      <p class="section-text">Visitor permits:</p>
+
+      <ul>
+        <li>can be bought on the day or up to 20 days in advance</li>
+        <li>cannot be refunded once you've bought them</li>
+        <li>cannot be changed once you've bought them</li>
+      </ul>
+
+      <p class="section-text">A visitor parking permit is a temporary permit for visitors to park near your home.</p>
+
+      <h2>How to apply for a visitor parking permit</h2>
+
+      <p class="section-text">If you have difficulties buying your permit online, you can call us on 020 7974 4444.</p>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="related-box">
+        <h3>Related pages</h3>
+        <div class="related-links">
+          <div class="related-link">
+            <a href="#">Terms and conditions for parking permits</a>
+          </div>
+          <div class="related-link">
+            <a href="#">British Sign Language parking video</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-col">
+        <a href="#">Contact Camden</a>
+        <a href="#">Resident account</a>
+        <a href="#">Accessibility options</a>
+      </div>
+      <div class="footer-col">
+        <a href="#">Find your nearest</a>
+        <a href="#">Decision making in Camden</a>
+        <a href="#">Translation</a>
+      </div>
+      <div class="footer-col footer-right">
+        <button class="footer-button">Have your say</button>
+        <button class="footer-button">Subscribe to our newsletters</button>
+        <button class="footer-button">Report a problem with our website</button>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <div class="footer-logo">
+        <img src="/camden-logo.png" alt="Camden Council">
+        <span>Copyright © The London Borough of Camden</span>
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Freedom of Information (FOI) requests</a>
+        <a href="#">Data protection and privacy</a>
+        <a href="#">Accessibility statement</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chat Button -->
+  <button class="chat-button">
+    ◆◆ Chat with us
+  </button>
+
+  <script>
+    // Chat button interaction
+    document.querySelector('.chat-button').addEventListener('click', () => {
+      alert('Chat functionality would be integrated here');
+    });
+
+    // Footer buttons
+    document.querySelectorAll('.footer-button').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const text = e.target.textContent;
+        alert(`${text} functionality would be integrated here`);
+      });
+    });
+  </script>
+</body>
+</html>
