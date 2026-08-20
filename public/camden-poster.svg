@@ -1,38 +1,53 @@
 <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background with gradient -->
+  <!-- Background with gradient (Camden black to dark grey) -->
   <defs>
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2d2d2d;stop-opacity:1" />
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
     </linearGradient>
-    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
-    </filter>
   </defs>
 
   <rect width="1280" height="720" fill="url(#bgGradient)"/>
 
-  <!-- Magenta accent stripe -->
-  <rect width="1280" height="6" y="0" fill="#c1006f"/>
+  <!-- Magenta accent bar at top -->
+  <rect width="1280" height="8" y="0" fill="#c1006f"/>
 
-  <!-- Camden logo circle background -->
-  <circle cx="120" cy="80" r="55" fill="#ffffff" opacity="0.95"/>
+  <!-- Camden logo box (top-left) -->
+  <rect x="40" y="40" width="160" height="70" fill="#ffffff" rx="8"/>
+  <text x="120" y="60" font-size="12" font-weight="bold" fill="#000" text-anchor="middle" font-family="Arial, sans-serif">Camden</text>
+  <circle cx="120" cy="85" r="8" fill="#c1006f"/>
+  <text x="120" y="90" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="Arial, sans-serif">C</text>
 
-  <!-- Simplified Camden logo (circular badge) -->
-  <circle cx="120" cy="80" r="50" fill="none" stroke="#000" stroke-width="3"/>
-  <text x="120" y="95" font-size="32" font-weight="bold" fill="#000" text-anchor="middle" font-family="Arial, sans-serif">C</text>
+  <!-- Textra badge (top-right) -->
+  <circle cx="1240" cy="75" r="40" fill="#ffffff"/>
+  <text x="1240" y="90" font-size="48" font-weight="bold" fill="#c1006f" text-anchor="middle" font-family="Arial, sans-serif">T</text>
+
+  <!-- Video overview label -->
+  <text x="120" y="200" font-size="16" font-weight="600" fill="#c1006f" letter-spacing="2" font-family="Arial, sans-serif">VIDEO OVERVIEW</text>
 
   <!-- Main title -->
-  <text x="640" y="280" font-size="72" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="Arial, sans-serif">Camden Visitor</text>
-  <text x="640" y="360" font-size="72" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="Arial, sans-serif">Parking Permits</text>
+  <text x="120" y="280" font-size="64" font-weight="700" fill="#ffffff" font-family="Arial, sans-serif">Visitor Parking</text>
+  <text x="120" y="360" font-size="64" font-weight="700" fill="#ffffff" font-family="Arial, sans-serif">Permits</text>
 
   <!-- Subtitle -->
-  <text x="640" y="430" font-size="28" fill="#c1006f" text-anchor="middle" font-family="Arial, sans-serif">Learn about temporary parking permits</text>
+  <text x="120" y="420" font-size="20" fill="#c1006f" font-family="Arial, sans-serif">Learn about temporary parking permits for visitors</text>
 
-  <!-- Play button icon -->
-  <circle cx="640" cy="560" r="50" fill="#c1006f" opacity="0.9"/>
-  <polygon points="625,545 625,575 665,560" fill="#ffffff"/>
+  <!-- Bottom section with gradient overlay -->
+  <rect x="0" y="520" width="1280" height="200" fill="#000000" opacity="0.3"/>
 
-  <!-- Footer info -->
-  <text x="640" y="680" font-size="18" fill="#999999" text-anchor="middle" font-family="Arial, sans-serif">www.camden.gov.uk • Parking Information Video</text>
+  <!-- Play button -->
+  <polygon points="100,640 100,720 160,680" fill="#c1006f" opacity="0.9"/>
+
+  <!-- Time display -->
+  <text x="180" y="700" font-size="20" fill="#ffffff" font-family="Arial, sans-serif">0:00 / 1:11</text>
+
+  <!-- Volume icon -->
+  <text x="1100" y="710" font-size="28" fill="#ffffff" text-anchor="middle" font-family="Arial, sans-serif">🔊</text>
+
+  <!-- Fullscreen icon -->
+  <text x="1160" y="710" font-size="28" fill="#ffffff" text-anchor="middle" font-family="Arial, sans-serif">⛶</text>
+
+  <!-- Progress bar -->
+  <rect x="100" y="710" width="980" height="4" fill="#666666" rx="2"/>
+  <rect x="100" y="710" width="80" height="4" fill="#c1006f" rx="2"/>
 </svg>
