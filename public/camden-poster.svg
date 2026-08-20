@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <!-- Background with gradient (Camden black to dark grey) -->
   <defs>
     <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -11,8 +11,12 @@
 
   <!-- Camden logo box (top-left) - white rounded box -->
   <rect x="50" y="30" width="200" height="80" fill="#ffffff" rx="10"/>
-  <text x="150" y="55" font-size="14" font-weight="700" fill="#000" text-anchor="middle" font-family="Arial, sans-serif">Camden Council</text>
-  <circle cx="150" cy="80" r="10" fill="#c1006f"/>
+
+  <!-- Camden logo image -->
+  <image x="75" y="40" width="60" height="60" xlink:href="/camden-logo.png" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Camden text -->
+  <text x="150" y="105" font-size="12" font-weight="700" fill="#000" text-anchor="middle" font-family="Arial, sans-serif">Camden</text>
 
   <!-- Textra badge (top-right) -->
   <circle cx="1200" cy="70" r="50" fill="#ffffff"/>
