@@ -57,6 +57,8 @@ export default function DemosPage() {
               <a
                 key={demo.slug}
                 href={`/${demo.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   textDecoration: 'none',
                   background: '#fff',
@@ -101,16 +103,9 @@ export default function DemosPage() {
                     gap: 12,
                     flex: 1,
                   }}>
-                  <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-                    <img
-                      src={demo.logo}
-                      alt={`${demo.org} logo`}
-                      style={{ width: 22, height: 22, objectFit: 'contain', borderRadius: 4 }}
-                    />
-                    <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.04em', color: C.gray500 }}>
-                      {demo.org}
-                    </span>
-                  </div>
+                  <span style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.02em', color: C.gray600 }}>
+                    {demo.org}
+                  </span>
                   <h2 style={{ fontSize: 16, fontWeight: 700, color: C.navy, lineHeight: 1.3, margin: 0 }}>
                     {demo.title}
                   </h2>
