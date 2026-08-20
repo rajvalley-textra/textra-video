@@ -63,9 +63,9 @@ async function main() {
   const logoB64 = fs.readFileSync(logoPath).toString('base64');
   const logoMime = logoPath.toLowerCase().endsWith('.jpg') || logoPath.toLowerCase().endsWith('.jpeg') ? 'jpeg' : 'png';
 
-  // Fit the logo into a badge up to 400x90, preserving aspect ratio (larger for better visibility).
+  // Fit the logo into a badge up to 400x160, preserving aspect ratio (larger for better visibility).
   const logoMeta = await sharp(logoPath).metadata();
-  const maxW = 400, maxH = 90;
+  const maxW = 400, maxH = 160;
   const scale = Math.min(maxW / logoMeta.width, maxH / logoMeta.height);
   const logoW = Math.round(logoMeta.width * scale);
   const logoH = Math.round(logoMeta.height * scale);
@@ -108,9 +108,9 @@ async function main() {
 
   <!-- Logo badge -->
   <g filter="url(#shadow)">
-    <rect x="40" y="35" width="${logoW + 60}" height="130" rx="16" fill="#ffffff" fill-opacity="0.97"/>
+    <rect x="35" y="25" width="${logoW + 70}" height="180" rx="16" fill="#ffffff" fill-opacity="0.97"/>
   </g>
-  <image x="70" y="${35 + (130 - logoH) / 2}" width="${logoW}" height="${logoH}"
+  <image x="70" y="${25 + (180 - logoH) / 2}" width="${logoW}" height="${logoH}"
     href="data:image/${logoMime};base64,${logoB64}" preserveAspectRatio="xMinYMid meet"/>
 
   <!-- Label -->
