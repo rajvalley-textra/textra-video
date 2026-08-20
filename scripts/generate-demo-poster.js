@@ -63,9 +63,10 @@ async function main() {
   const logoB64 = fs.readFileSync(logoPath).toString('base64');
   const logoMime = logoPath.toLowerCase().endsWith('.jpg') || logoPath.toLowerCase().endsWith('.jpeg') ? 'jpeg' : 'png';
 
-  // Fit the logo into a badge up to 400x160, preserving aspect ratio (larger for better visibility).
+  // Fit the logo into a badge, preserving aspect ratio (customizable via --maxW and --maxH).
   const logoMeta = await sharp(logoPath).metadata();
-  const maxW = 400, maxH = 160;
+  const maxW = parseInt(args.maxW) || 400;
+  const maxH = parseInt(args.maxH) || 90;
   const scale = Math.min(maxW / logoMeta.width, maxH / logoMeta.height);
   const logoW = Math.round(logoMeta.width * scale);
   const logoH = Math.round(logoMeta.height * scale);
