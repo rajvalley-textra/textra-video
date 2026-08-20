@@ -29,7 +29,7 @@ const demos = [
     excerpt: 'An explainer video showing Camden residents how to apply for visitor parking permits, with clean branding and intuitive navigation embedded into the council\'s parking page.',
     poster: '/camden-poster.jpg',
     logo: '/camden-logo-user.png',
-    color: C.magenta,
+    color: C.teal,
   },
 ];
 
