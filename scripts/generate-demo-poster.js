@@ -113,12 +113,6 @@ async function main() {
   <image x="76" y="${56 + (82 - logoH) / 2}" width="${logoW}" height="${logoH}"
     href="data:image/${logoMime};base64,${logoB64}" preserveAspectRatio="xMinYMid meet"/>
 
-  <!-- Textra badge -->
-  <g filter="url(#shadow)">
-    <circle cx="1200" cy="98" r="48" fill="#ffffff" fill-opacity="0.97"/>
-  </g>
-  <text x="1200" y="115" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700" fill="#2f9c8f" text-anchor="middle">T</text>
-
   <!-- Label -->
   <text x="64" y="330" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2.5" fill="#bfe3ff">${escapeXml(label.toUpperCase())}</text>
 
