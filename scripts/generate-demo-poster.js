@@ -108,9 +108,9 @@ async function main() {
 
   <!-- Logo badge -->
   <g filter="url(#shadow)">
-    <rect x="56" y="56" width="${logoW + 40}" height="82" rx="14" fill="#ffffff" fill-opacity="0.97"/>
+    <rect x="40" y="35" width="${logoW + 60}" height="130" rx="16" fill="#ffffff" fill-opacity="0.97"/>
   </g>
-  <image x="76" y="${56 + (82 - logoH) / 2}" width="${logoW}" height="${logoH}"
+  <image x="70" y="${35 + (130 - logoH) / 2}" width="${logoW}" height="${logoH}"
     href="data:image/${logoMime};base64,${logoB64}" preserveAspectRatio="xMinYMid meet"/>
 
   <!-- Label -->
