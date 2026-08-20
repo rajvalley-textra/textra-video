@@ -94,38 +94,6 @@ export default function DemosPage() {
                   />
                 </div>
 
-                {/* Logo Badge */}
-                <div
-                  style={{
-                    padding: '20px 16px 12px 16px',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    background: C.gray50,
-                  }}>
-                  <div
-                    style={{
-                      width: 72,
-                      height: 72,
-                      background: '#fff',
-                      borderRadius: 12,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      padding: 8,
-                      border: `1px solid ${C.gray200}`,
-                    }}>
-                    <img
-                      src={demo.logo}
-                      alt={`${demo.org} logo`}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'contain',
-                      }}
-                    />
-                  </div>
-                </div>
-
                 {/* Content */}
                 <div
                   style={{
