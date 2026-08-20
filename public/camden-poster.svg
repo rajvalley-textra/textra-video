@@ -1,0 +1,38 @@
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d2d2d;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bgGradient)"/>
+
+  <!-- Magenta accent stripe -->
+  <rect width="1280" height="6" y="0" fill="#c1006f"/>
+
+  <!-- Camden logo circle background -->
+  <circle cx="120" cy="80" r="55" fill="#ffffff" opacity="0.95"/>
+
+  <!-- Simplified Camden logo (circular badge) -->
+  <circle cx="120" cy="80" r="50" fill="none" stroke="#000" stroke-width="3"/>
+  <text x="120" y="95" font-size="32" font-weight="bold" fill="#000" text-anchor="middle" font-family="Arial, sans-serif">C</text>
+
+  <!-- Main title -->
+  <text x="640" y="280" font-size="72" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="Arial, sans-serif">Camden Visitor</text>
+  <text x="640" y="360" font-size="72" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="Arial, sans-serif">Parking Permits</text>
+
+  <!-- Subtitle -->
+  <text x="640" y="430" font-size="28" fill="#c1006f" text-anchor="middle" font-family="Arial, sans-serif">Learn about temporary parking permits</text>
+
+  <!-- Play button icon -->
+  <circle cx="640" cy="560" r="50" fill="#c1006f" opacity="0.9"/>
+  <polygon points="625,545 625,575 665,560" fill="#ffffff"/>
+
+  <!-- Footer info -->
+  <text x="640" y="680" font-size="18" fill="#999999" text-anchor="middle" font-family="Arial, sans-serif">www.camden.gov.uk • Parking Information Video</text>
+</svg>
