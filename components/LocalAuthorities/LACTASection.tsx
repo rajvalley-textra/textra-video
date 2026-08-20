@@ -106,10 +106,12 @@ export default function CTASection() {
                 <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: C.navy, marginBottom: 8 }}>
                   Council name *
                 </label>
-                <select
+                <input
+                  type="text"
                   name="council"
                   value={formData.council}
                   onChange={handleChange}
+                  placeholder="E.g., East Suffolk Council"
                   required
                   style={{
                     width: '100%',
@@ -119,17 +121,10 @@ export default function CTASection() {
                     fontSize: 14,
                     fontFamily: 'var(--font-montserrat), -apple-system, BlinkMacSystemFont, sans-serif',
                     boxSizing: 'border-box',
-                    cursor: 'pointer',
                   }}
-                >
-                  <option value="">Select your council...</option>
-                  <option value="Breckland">Breckland Council</option>
-                  <option value="East Cambridgeshire">East Cambridgeshire District Council</option>
-                  <option value="East Suffolk">East Suffolk Council</option>
-                  <option value="Fenland">Fenland District Council</option>
-                  <option value="West Suffolk">West Suffolk Council</option>
-                  <option value="other">Other council</option>
-                </select>
+                  onFocus={(e) => { e.target.style.borderColor = '#66BCAD'; }}
+                  onBlur={(e) => { e.target.style.borderColor = C.gray200; }}
+                />
               </div>
 
               {/* Department */}

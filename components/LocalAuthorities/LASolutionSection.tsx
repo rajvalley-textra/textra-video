@@ -69,19 +69,6 @@ export default function SolutionSection() {
                 {solution.step}
               </div>
 
-              {/* Connector line (hide on last) */}
-              {i < solutions.length - 1 && (
-                <div style={{
-                  position: 'absolute',
-                  top: 20,
-                  left: 56,
-                  width: 'calc(100% + 16px)',
-                  height: 2,
-                  background: 'linear-gradient(90deg, #66BCAD, transparent)',
-                  zIndex: 0,
-                  pointerEvents: 'none',
-                }} />
-              )}
 
               {/* Content */}
               <div style={{ paddingLeft: 80, paddingTop: 8 }}>
@@ -99,7 +86,7 @@ export default function SolutionSection() {
         {/* Key benefits */}
         <div style={{ marginTop: 80, background: 'linear-gradient(135deg, rgba(102,188,173,0.08), rgba(39,53,114,0.02))', border: `1px solid ${C.gray100}`, borderRadius: 16, padding: 40 }}>
           <h3 style={{ fontSize: 20, fontWeight: 700, color: C.navy, textAlign: 'center', margin: '0 0 32px 0' }}>
-            What councils see:
+            What councils can potentially see:
           </h3>
           <div style={{ display: 'flex', justifyContent: 'space-around', gap: 20, flexWrap: 'nowrap' }}>
             <div style={{ textAlign: 'center', flex: 1, minWidth: 0 }}>

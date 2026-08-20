@@ -9,7 +9,6 @@ import SolutionSection from '@/components/LocalAuthorities/LASolutionSection';
 import DepartmentsSection from '@/components/LocalAuthorities/LADepartmentsSection';
 import VideoShowcaseSection from '@/components/LocalAuthorities/LAVideoShowcaseSection';
 import ROICalculatorSection from '@/components/LocalAuthorities/LAROICalculatorSection';
-import TestimonialsSection from '@/components/LocalAuthorities/LATestimonialsSection';
 import CTASection from '@/components/LocalAuthorities/LACTASection';
 
 export default function LocalAuthoritiesPage() {
@@ -24,7 +23,6 @@ export default function LocalAuthoritiesPage() {
         <DepartmentsSection />
         <VideoShowcaseSection />
         <ROICalculatorSection />
-        <TestimonialsSection />
         <CTASection />
       </main>
       <FooterSection />

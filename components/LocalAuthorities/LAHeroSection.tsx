@@ -49,14 +49,29 @@ export default function LAHeroSection() {
             </a>
           </div>
 
-          {/* ARP Logo */}
-          <div style={{ marginBottom: 48, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.7)', fontWeight: 500, marginBottom: 20, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+          {/* ARP Logo with Council List */}
+          <div style={{ marginBottom: 48 }}>
+            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.7)', fontWeight: 500, marginBottom: 24, letterSpacing: '0.06em', textTransform: 'uppercase', textAlign: 'center' }}>
               Proud to be working with
             </div>
-            <img src="/assets/logos/APR-removebg-preview.png" alt="ARP Logo" style={{ height: 120, maxWidth: 400, objectFit: 'contain', filter: 'drop-shadow(0 0 1px rgba(0,0,0,0.7))' }} />
-            <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.8)', fontWeight: 500, lineHeight: 1.6, textAlign: 'center', marginTop: 20 }}>
-              covering East Suffolk, Fenland, West Suffolk, East Cambridgeshire, Breckland Councils
+            <div style={{ display: 'flex', gap: 40, alignItems: 'center', justifyContent: 'center', maxWidth: 700, marginLeft: 'auto', marginRight: 'auto' }}>
+              {/* Logo Box */}
+              <div style={{ background: 'rgba(255,255,255,0.12)', borderRadius: 12, padding: '24px 32px', flexShrink: 0 }}>
+                <img src="/assets/logos/APR-removebg-preview.png" alt="ARP Logo" style={{ height: 100, maxWidth: 200, objectFit: 'contain', filter: 'drop-shadow(0 0 1px rgba(0,0,0,0.7))' }} />
+              </div>
+
+              {/* Council List */}
+              <div style={{ textAlign: 'left' }}>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 500, marginBottom: 12, letterSpacing: '0.05em' }}>
+                  Covering:
+                </div>
+                <ul style={{ margin: 0, paddingLeft: 20, listStyle: 'disc', textAlign: 'left' }}>
+                  <li style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', fontWeight: 400, lineHeight: 1.8, marginBottom: 4 }}>East Suffolk</li>
+                  <li style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', fontWeight: 400, lineHeight: 1.8, marginBottom: 4 }}>Fenland, West Suffolk</li>
+                  <li style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', fontWeight: 400, lineHeight: 1.8, marginBottom: 4 }}>East Cambridgeshire</li>
+                  <li style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', fontWeight: 400, lineHeight: 1.8 }}>Breckland Councils</li>
+                </ul>
+              </div>
             </div>
           </div>
 
