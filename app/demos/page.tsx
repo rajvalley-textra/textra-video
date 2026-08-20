@@ -94,16 +94,35 @@ export default function DemosPage() {
                   />
                 </div>
 
+                {/* Logo Badge */}
+                <div
+                  style={{
+                    padding: '16px 16px 0 16px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                  }}>
+                  <img
+                    src={demo.logo}
+                    alt={`${demo.org} logo`}
+                    style={{
+                      width: 48,
+                      height: 48,
+                      objectFit: 'contain',
+                      borderRadius: 6,
+                    }}
+                  />
+                </div>
+
                 {/* Content */}
                 <div
                   style={{
-                    padding: '16px',
+                    padding: '12px 16px 16px 16px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: 12,
                     flex: 1,
                   }}>
-                  <span style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.02em', color: C.gray600 }}>
+                  <span style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.02em', color: C.gray600, textAlign: 'center' }}>
                     {demo.org}
                   </span>
                   <h2 style={{ fontSize: 16, fontWeight: 700, color: C.navy, lineHeight: 1.3, margin: 0 }}>
