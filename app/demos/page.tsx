@@ -97,7 +97,7 @@ export default function DemosPage() {
                 {/* Logo Badge */}
                 <div
                   style={{
-                    padding: '16px 16px 0 16px',
+                    padding: '20px 16px 0 16px',
                     display: 'flex',
                     justifyContent: 'center',
                   }}>
@@ -105,10 +105,10 @@ export default function DemosPage() {
                     src={demo.logo}
                     alt={`${demo.org} logo`}
                     style={{
-                      width: 48,
-                      height: 48,
+                      width: 64,
+                      height: 64,
                       objectFit: 'contain',
-                      borderRadius: 6,
+                      borderRadius: 8,
                     }}
                   />
                 </div>
