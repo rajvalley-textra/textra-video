@@ -1,8 +1,20 @@
+import { NextResponse } from 'next/server';
+import fs from 'fs';
+import path from 'path';
+
 export async function GET() {
-  return new Response(null, {
-    status: 307,
-    headers: {
-      Location: 'https://textra-video.vercel.app/crisis-resilience-demo.html',
-    },
-  });
+  try {
+    const filePath = path.join(process.cwd(), 'public', 'crisis-resilience-demo.html');
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+
+    return new NextResponse(fileContent, {
+      headers: {
+        'Content-Type': 'text/html; charset=utf-8',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'X-Robots-Tag': 'noindex, nofollow',
+      },
+    });
+  } catch (error) {
+    return new NextResponse('Design not found', { status: 404 });
+  }
 }
