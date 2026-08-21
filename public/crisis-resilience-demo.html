@@ -32,7 +32,7 @@
 
     /* Header */
     .header {
-      background: #000;
+      background: #0b7d9e;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -48,12 +48,12 @@
       color: white;
       font-size: 20px;
       font-weight: 600;
+      text-decoration: none;
     }
 
     .header-brand img {
-      height: 40px;
+      height: 32px;
       width: auto;
-      filter: brightness(0) invert(1);
     }
 
     .header-nav {
@@ -61,6 +61,7 @@
       gap: 20px;
       color: white;
       font-size: 14px;
+      align-items: center;
     }
 
     .header-nav div {
@@ -232,9 +233,10 @@
 
     /* Footer */
     .footer {
-      background: #4a4a4a;
-      color: white;
+      background: #f3f2f1;
+      color: #0b0c0c;
       margin-top: 60px;
+      border-top: 1px solid #b1b4b6;
     }
 
     .footer-main {
@@ -242,32 +244,25 @@
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 2fr 1fr;
       gap: 40px;
     }
 
-    .footer-col h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-
     .footer-col a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      margin-bottom: 16px;
+      display: inline;
+      color: #0b7d9e;
+      text-decoration: underline;
+      margin-right: 20px;
       font-size: 14px;
       transition: opacity 0.2s;
     }
 
     .footer-col a:hover {
-      text-decoration: underline;
       opacity: 0.8;
     }
 
     .footer-divider {
-      border-top: 1px solid #555;
+      border-top: 1px solid #b1b4b6;
       margin: 40px 0;
     }
 
@@ -276,23 +271,21 @@
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      font-size: 14px;
-      flex-wrap: wrap;
-      gap: 20px;
+      font-size: 12px;
+      gap: 40px;
     }
 
     .footer-logo {
       display: flex;
-      align-items: center;
-      gap: 8px;
+      align-items: flex-start;
+      gap: 12px;
     }
 
     .footer-logo img {
-      height: 24px;
+      height: 32px;
       width: auto;
-      filter: brightness(0) invert(1);
     }
 
     .footer-bottom-links {
@@ -302,13 +295,12 @@
     }
 
     .footer-bottom-links a {
-      color: white;
-      text-decoration: none;
+      color: #0b7d9e;
+      text-decoration: underline;
       transition: opacity 0.2s;
     }
 
     .footer-bottom-links a:hover {
-      text-decoration: underline;
       opacity: 0.8;
     }
 
@@ -356,9 +348,10 @@
 <body>
   <!-- Header -->
   <div class="header">
-    <div class="header-brand">
+    <a href="https://www.gov.uk" class="header-brand" target="_blank">
       <img src="/gov-uk-logo.webp" alt="GOV.UK">
-    </div>
+      <span style="color: white; font-size: 16px; font-weight: 600;">GOV.UK</span>
+    </a>
     <div class="header-nav">
       <div>▼ Menu</div>
       <div>🔍</div>
@@ -437,36 +430,25 @@
   <footer class="footer">
     <div class="footer-main">
       <div class="footer-col">
-        <h3>Support</h3>
-        <a href="https://www.gov.uk/help" target="_blank">Get help</a>
-        <a href="https://www.gov.uk/contact" target="_blank">Contact</a>
-        <a href="https://www.gov.uk/accessibility-statement" target="_blank">Accessibility</a>
-      </div>
-      <div class="footer-col">
-        <h3>Government</h3>
-        <a href="https://www.gov.uk/government/organisations" target="_blank">Organisations</a>
-        <a href="https://www.gov.uk/government/topics" target="_blank">Topics</a>
-        <a href="https://www.gov.uk/government/publications" target="_blank">Publications</a>
-      </div>
-      <div class="footer-col">
-        <h3>Legal</h3>
+        <a href="https://www.gov.uk/help" target="_blank">Help</a>
         <a href="https://www.gov.uk/help/privacy-notice" target="_blank">Privacy</a>
         <a href="https://www.gov.uk/help/cookies" target="_blank">Cookies</a>
-        <a href="https://www.gov.uk/help/terms-conditions" target="_blank">Terms &amp; conditions</a>
-      </div>
-    </div>
-
-    <div class="footer-divider"></div>
-
-    <div class="footer-bottom">
-      <div class="footer-logo">
-        <img src="/gov-uk-logo.webp" alt="GOV.UK">
-        <span>© Crown copyright</span>
-      </div>
-      <div class="footer-bottom-links">
+        <a href="https://www.gov.uk/accessibility-statement" target="_blank">Accessibility statement</a>
+        <a href="https://www.gov.uk/contact" target="_blank">Contact</a>
+        <br><br>
+        <a href="https://www.gov.uk/help/terms-conditions" target="_blank">Terms and conditions</a>
+        <br><br>
+        <a href="https://www.gov.uk/help/welsh-language-scheme" target="_blank">Rhestr o Wasanaethau Cymraeg</a>
+        <br><br>
         <a href="https://www.gov.uk/government/organisations/office-of-the-leader-of-the-house-of-commons" target="_blank">Government Digital Service</a>
-        <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank">Open Government Licence</a>
-        <a href="https://www.textra.video/" target="_blank">Video by Textra</a>
+        <br><br>
+        <strong>OGL</strong>
+        <br>
+        All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank">Open Government Licence v3.0</a>, except where otherwise stated
+      </div>
+      <div style="text-align: right;">
+        <div style="font-size: 24px; margin-bottom: 8px;">©</div>
+        <strong><a href="https://www.gov.uk/help/about-crown-copyright" target="_blank">Crown copyright</a></strong>
       </div>
     </div>
   </footer>
