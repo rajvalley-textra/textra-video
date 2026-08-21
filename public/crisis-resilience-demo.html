@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crisis and Resilience Fund (1 April 2026 to 31 March 2029) - GOV.UK</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+      background: #f3f2f1;
+      color: #0b0c0c;
+    }
+
+    /* Header */
+    .header {
+      background: #000;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .header img {
+      height: 40px;
+      width: auto;
+    }
+
+    /* Magenta stripe */
+    .stripe {
+      height: 4px;
+      background: #c1006f;
+    }
+
+    /* Main container */
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 0;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .content {
+      background: #fff;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* Video section */
+    .video-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* T badge */
+    .textra-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.94);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      z-index: 2;
+      padding: 5px;
+      text-decoration: none;
+    }
+
+    .textra-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Page metadata */
+    .page-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      color: #666;
+      padding: 20px 0;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .page-meta strong {
+      font-weight: 600;
+      color: #0b0c0c;
+    }
+
+    /* Main content */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .page-content h1 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .page-content > p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #0b0c0c;
+    }
+
+    .page-content > p:first-of-type {
+      margin-top: 12px;
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .section {
+      margin: 24px 0;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .documents-list {
+      list-style: none;
+      margin: 16px 0;
+    }
+
+    .documents-list li {
+      margin: 12px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .documents-list li:before {
+      content: "📄";
+      position: absolute;
+      left: 0;
+    }
+
+    .documents-list a {
+      color: #0b7e9c;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .documents-list a:hover {
+      text-decoration: underline;
+    }
+
+    .doc-type {
+      font-size: 13px;
+      color: #999;
+      margin-left: 4px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: #f3f2f1;
+      padding: 32px 20px;
+      border-top: 3px solid #c1006f;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .sidebar-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sidebar-section h3 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #666;
+      margin: 0;
+    }
+
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .sidebar-links li {
+      list-style: none;
+    }
+
+    .sidebar-links a {
+      font-size: 14px;
+      color: #0b7e9c;
+      text-decoration: none;
+      line-height: 1.5;
+    }
+
+    .sidebar-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Chat button */
+    .chat-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #c1006f;
+      color: #fff;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(193, 0, 111, 0.3);
+      z-index: 100;
+    }
+
+    .chat-button:hover {
+      background: #a90060;
+      box-shadow: 0 6px 16px rgba(193, 0, 111, 0.4);
+    }
+
+    /* Footer */
+    .footer {
+      grid-column: 1 / -1;
+      background: #000;
+      color: #fff;
+      padding: 32px 40px;
+      text-align: center;
+      font-size: 13px;
+      border-top: 1px solid #333;
+    }
+
+    .footer-branding {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .footer-branding img {
+      height: 24px;
+      width: auto;
+    }
+
+    .footer a {
+      color: #c1006f;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        border-top: 3px solid #c1006f;
+        padding: 24px 20px;
+        background: #f3f2f1;
+        order: -1;
+      }
+
+      .content {
+        padding: 24px;
+        gap: 24px;
+      }
+
+      .page-content h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <img src="/gov-uk-logo.webp" alt="GOV.UK">
+  </div>
+
+  <!-- Magenta Stripe -->
+  <div class="stripe"></div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <div class="content">
+      <!-- Video Container -->
+      <div class="video-container">
+        <a href="https://www.textra.video/" target="_blank" rel="noopener" title="Made with Textra" class="textra-badge">
+          <img src="/textra-logo-mark.png" alt="Textra">
+        </a>
+        <video controls poster="/crisis-resilience-poster.jpg">
+          <source src="https://res.cloudinary.com/oyo7xls1/video/upload/placeholder.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Page Metadata -->
+      <div class="page-meta">
+        <div><strong>Guidance</strong></div>
+        <div>From: <strong>Department for Work and Pensions</strong></div>
+        <div>Published: <strong>13 January 2026</strong></div>
+        <div>Last updated: <strong>7 April 2026</strong> — <a href="#" style="color: #0b7e9c;">See all updates</a></div>
+        <div>Applies to: <strong>England</strong></div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="page-content">
+          <h1>Crisis and Resilience Fund (1 April 2026 to 31 March 2029)</h1>
+          <p>Guidance for local authorities on delivering the Crisis and Resilience Fund in England.</p>
+
+          <div class="section">
+            <h2>Documents</h2>
+            <ul class="documents-list">
+              <li>
+                <a href="https://www.gov.uk/government/publications/crisis-and-resilience-fund-guidance-for-local-authorities-in-england-1-april-2026-to-31-march-2029/crisis-and-resilience-fund-guidance-for-local-authorities-in-england-1-april-2026-to-31-march-2029" target="_blank">Crisis and Resilience Fund: Guidance for local authorities in England (1 April 2026 to 31 March 2029)</a>
+                <span class="doc-type">HTML</span>
+              </li>
+              <li>
+                <a href="#" target="_blank">Crisis and Resilience Fund (1 April 2026 to 31 March 2029): management information (combined) reporting requirements</a>
+                <span class="doc-type">HTML</span>
+              </li>
+              <li>
+                <a href="#" target="_blank">Crisis and Resilience Fund management information (combined) data</a>
+                <span class="doc-type">HTML</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Details</h2>
+            <p>If you need support, you can find out how to get help through the Crisis Resilience Fund from your local council.</p>
+            <p>From 1 April 2026, the new Crisis and Resilience Fund will be launched in England.</p>
+            <p>The Crisis and Resilience Fund provides grant funding to local authorities in England to provide preventative support to communities, as well as assisting people when faced with a financial crisis.</p>
+            <p>The Crisis and Resilience Fund's guidance provides detailed information to support local authorities design their schemes.</p>
+            <p>Funding for the Crisis and Resilience Fund covers the period starting 1 April 2026 and ending 31 March 2029. Provisional Allocations and draft grant conditions for the fund have already been published, and will be finalised in due course.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-section">
+        <h3>Related Content</h3>
+        <ul class="sidebar-links">
+          <li><a href="https://www.gov.uk/government/organisations/department-for-work-pensions" target="_blank">Department for Work and Pensions</a></li>
+          <li><a href="https://www.gov.uk/government/organisations/local-government-association" target="_blank">Local Government Association</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Related Topics</h3>
+        <ul class="sidebar-links">
+          <li><a href="https://www.gov.uk/government/topics/local-government" target="_blank">Local Government</a></li>
+          <li><a href="https://www.gov.uk/government/topics/funding-and-support-for-councils" target="_blank">Funding and Support for Councils</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Support</h3>
+        <ul class="sidebar-links">
+          <li><a href="https://www.gov.uk/help" target="_blank">Get Help with GOV.UK</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Button -->
+  <button class="chat-button" title="Start chat">💬</button>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-branding">
+      <img src="/gov-uk-logo.webp" alt="GOV.UK">
+      <span>Department for Work and Pensions</span>
+    </div>
+    <p>Video by <a href="https://www.textra.video/" target="_blank">Textra</a></p>
+  </div>
+</body>
+</html>
