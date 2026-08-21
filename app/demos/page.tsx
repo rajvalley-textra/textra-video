@@ -23,7 +23,7 @@ const demos = [
     color: C.blue,
   },
   {
-    slug: 'camden-council-parking-permits.html',
+    slug: 'camden-demo',
     org: 'London Borough of Camden',
     title: 'Visitor Parking Permits',
     excerpt: 'An explainer video showing Camden residents how to apply for visitor parking permits, with clean branding and intuitive navigation embedded into the council\'s parking page.',
