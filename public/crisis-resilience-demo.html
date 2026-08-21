@@ -11,102 +11,161 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-      background: #fff;
-      color: #0b0c0c;
+    html {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    body {
+      background: white;
+      color: #333;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     /* Header */
     .header {
-      background: #0b7d9e;
-      padding: 15px 20px;
-    }
-
-    .header-content {
+      background: #000;
       display: flex;
       align-items: center;
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
+      justify-content: space-between;
+      height: 60px;
+      padding: 0 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .header img {
-      height: 32px;
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .header-brand img {
+      height: 40px;
       width: auto;
+      filter: brightness(0) invert(1);
     }
 
     .header-nav {
       display: flex;
-      align-items: center;
-      gap: 30px;
-      margin-left: auto;
+      gap: 20px;
+      color: white;
+      font-size: 14px;
     }
 
-    .header-nav button, .header-nav a {
-      color: #fff;
-      background: none;
-      border: none;
-      font-size: 16px;
+    .header-nav div {
       cursor: pointer;
-      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .header-nav div:hover {
+      opacity: 0.7;
+    }
+
+    /* Magenta stripe */
+    .magenta-stripe {
+      height: 4px;
+      background: #c1006f;
     }
 
     /* Breadcrumb */
     .breadcrumb {
-      padding: 12px 20px;
-      background: #fff;
-      border-bottom: 1px solid #b1b4b6;
+      padding: 20px 40px;
       font-size: 14px;
-      max-width: 1200px;
-      margin: 0 auto;
+      background: white;
+      border-bottom: 1px solid #e0e0e0;
     }
 
     .breadcrumb a {
-      color: #0b7d9e;
-      text-decoration: none;
-    }
-
-    .breadcrumb a:hover {
-      text-decoration: underline;
+      color: #0066cc;
     }
 
     .breadcrumb span {
-      color: #666;
       margin: 0 8px;
+      color: #999;
     }
 
-    /* Main content */
-    .main {
+    /* Main container */
+    .main-container {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 40px;
+      padding: 40px;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 20px;
     }
 
-    .page-title {
-      font-size: 36px;
+    /* Content */
+    .content h1 {
+      font-size: 48px;
       font-weight: 700;
+      margin-bottom: 24px;
       line-height: 1.2;
-      margin-bottom: 30px;
     }
 
-    /* Video section */
+    .intro-text {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    .content h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 40px 0 20px 0;
+      line-height: 1.2;
+    }
+
+    .section-text {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      color: #555;
+    }
+
+    ul {
+      margin: 16px 0 32px 20px;
+      list-style: disc;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: #555;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Video container */
     .video-container {
-      position: relative;
-      width: 100%;
       aspect-ratio: 16 / 9;
-      background: #000;
+      margin: 0 0 40px 0;
+      max-width: 600px;
       border-radius: 8px;
       overflow: hidden;
-      margin-bottom: 40px;
+      background: #000;
+      position: relative;
     }
 
-    video {
+    .video-container video,
+    .video-container iframe {
       width: 100%;
       height: 100%;
+      border: none;
+      border-radius: 4px;
     }
 
-    /* T badge */
+    /* Textra T badge overlay */
     .textra-badge {
       position: absolute;
       top: 10px;
@@ -121,7 +180,6 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
       z-index: 2;
       padding: 5px;
-      text-decoration: none;
     }
 
     .textra-badge img {
@@ -131,156 +189,166 @@
       display: block;
     }
 
-    /* Content sections */
-    .content-section {
-      margin-bottom: 40px;
-    }
-
-    .content-section h2 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .content-section p {
-      font-size: 15px;
-      line-height: 1.6;
-      margin-bottom: 12px;
-      color: #333;
-    }
-
-    .documents-list {
-      list-style: none;
-      margin: 16px 0;
-    }
-
-    .documents-list li {
-      margin: 12px 0;
-      padding-left: 20px;
+    /* Sidebar */
+    .sidebar {
       position: relative;
     }
 
-    .documents-list li:before {
-      content: "📄";
-      position: absolute;
-      left: 0;
+    .related-box {
+      background: #f9f9f9;
+      padding: 24px;
+      border-top: 3px solid #c1006f;
     }
 
-    .documents-list a {
-      color: #0b7d9e;
-      text-decoration: none;
-      font-weight: 600;
+    .related-box h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 24px;
     }
 
-    .documents-list a:hover {
-      text-decoration: underline;
-    }
-
-    .doc-type {
-      font-size: 12px;
-      color: #999;
-      margin-left: 8px;
-    }
-
-    /* Page metadata */
-    .page-meta {
+    .related-links {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      font-size: 13px;
-      color: #666;
-      padding: 20px 0;
-      border-top: 1px solid #e5e5e5;
-      border-bottom: 1px solid #e5e5e5;
-      margin-bottom: 40px;
+      gap: 16px;
     }
 
-    .page-meta strong {
-      font-weight: 600;
-      color: #0b0c0c;
+    .related-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .related-link::before {
+      content: "–";
+      color: #999;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .related-link a {
+      color: #0066cc;
     }
 
     /* Footer */
     .footer {
-      background: #f3f2f1;
-      color: #0b0c0c;
-      padding: 40px 20px;
-      border-top: 1px solid #b1b4b6;
-      font-size: 14px;
+      background: #4a4a4a;
+      color: white;
+      margin-top: 60px;
     }
 
-    .footer-content {
+    .footer-main {
+      padding: 40px;
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: repeat(3, 1fr);
       gap: 40px;
-      align-items: start;
     }
 
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+    .footer-col h3 {
+      font-size: 16px;
+      font-weight: 600;
       margin-bottom: 20px;
     }
 
-    .footer-links a {
-      color: #0b7d9e;
+    .footer-col a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 16px;
+      font-size: 14px;
+      transition: opacity 0.2s;
+    }
+
+    .footer-col a:hover {
       text-decoration: underline;
+      opacity: 0.8;
     }
 
-    .footer-links a:hover {
-      color: #0b5d7e;
+    .footer-divider {
+      border-top: 1px solid #555;
+      margin: 40px 0;
     }
 
-    .footer-section {
-      margin: 20px 0;
-    }
-
-    .footer-section a {
-      color: #0b7d9e;
-      text-decoration: underline;
-      display: inline-block;
-      margin-bottom: 8px;
-    }
-
-    .footer-branding {
+    .footer-bottom {
+      padding: 0 40px 40px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin: 20px 0;
+      justify-content: space-between;
+      font-size: 14px;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
-    .footer-branding img {
-      height: 32px;
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-logo img {
+      height: 24px;
       width: auto;
+      filter: brightness(0) invert(1);
     }
 
-    .footer-copyright {
-      text-align: right;
-      font-size: 12px;
+    .footer-bottom-links {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
     }
 
-    .footer-copyright img {
-      height: 40px;
-      width: auto;
-      display: block;
-      margin-bottom: 8px;
+    .footer-bottom-links a {
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.2s;
     }
 
-    /* Mobile responsive */
+    .footer-bottom-links a:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
-      .page-title {
-        font-size: 28px;
-      }
-
-      .footer-content {
+      .main-container {
         grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
       }
 
-      .footer-copyright {
-        text-align: left;
+      .header-nav {
+        display: none;
+      }
+
+      .content h1 {
+        font-size: 32px;
+      }
+
+      .content h2 {
+        font-size: 20px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-bottom-links {
+        gap: 20px;
+      }
+
+      .breadcrumb {
+        padding: 12px 20px;
+        font-size: 12px;
       }
     }
   </style>
@@ -288,116 +356,128 @@
 <body>
   <!-- Header -->
   <div class="header">
-    <div class="header-content">
-      <a href="https://www.gov.uk" target="_blank">
-        <img src="/gov-uk-logo.webp" alt="GOV.UK">
-      </a>
-      <div class="header-nav">
-        <button>☰ Menu</button>
-        <button>🔍</button>
-      </div>
+    <div class="header-brand">
+      <img src="/gov-uk-logo.webp" alt="GOV.UK">
+    </div>
+    <div class="header-nav">
+      <div>▼ Menu</div>
+      <div>🔍</div>
     </div>
   </div>
+
+  <div class="magenta-stripe"></div>
 
   <!-- Breadcrumb -->
   <div class="breadcrumb">
-    <a href="https://www.gov.uk">Home</a>
-    <span>&gt;</span>
-    <a href="https://www.gov.uk/government/topics/local-government">Regional and local government</a>
-    <span>&gt;</span>
-    <a href="https://www.gov.uk/government/topics/local-government">Local government</a>
+    <a href="https://www.gov.uk">Home</a><span>›</span><a href="https://www.gov.uk/government/topics/local-government">Regional and local government</a><span>›</span><a href="https://www.gov.uk/government/topics/local-government">Local government</a>
   </div>
 
   <!-- Main Content -->
-  <div class="main">
-    <h1 class="page-title">Crisis and Resilience Fund (1 April 2026 to 31 March 2029)</h1>
+  <div class="main-container">
+    <div class="content">
+      <h1>Crisis and Resilience Fund (1 April 2026 to 31 March 2029)</h1>
 
-    <!-- Video Container -->
-    <div class="video-container">
-      <a href="https://www.textra.video/" target="_blank" rel="noopener" title="Made with Textra" class="textra-badge">
-        <img src="/textra-logo-mark.png" alt="Textra">
-      </a>
-      <video controls poster="/crisis-resilience-poster.jpg">
-        <source src="https://res.cloudinary.com/oyo7xls1/video/upload/placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
+      <!-- Video -->
+      <div class="video-container">
+        <video
+          controls
+          poster="/crisis-resilience-poster.jpg"
+          style="width: 100%; height: 100%; background: #000;">
+          <source src="https://res.cloudinary.com/oyo7xls1/video/upload/placeholder.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <a href="https://www.textra.video/" class="textra-badge" target="_blank" rel="noopener" title="Made with Textra">
+          <img src="/textra-logo-mark.png" alt="Textra">
+        </a>
+      </div>
 
-    <!-- Page Metadata -->
-    <div class="page-meta">
-      <div><strong>Guidance</strong></div>
-      <div>From: <strong>Department for Work and Pensions</strong></div>
-      <div>Published: <strong>13 January 2026</strong></div>
-      <div>Last updated: <strong>7 April 2026</strong> — <a href="#" style="color: #0b7d9e;">See all updates</a></div>
-      <div>Applies to: <strong>England</strong></div>
-    </div>
+      <p class="intro-text">Guidance for local authorities on delivering the Crisis and Resilience Fund in England.</p>
 
-    <!-- Content Sections -->
-    <div class="content-section">
-      <p style="font-size: 16px; line-height: 1.6;">Guidance for local authorities on delivering the Crisis and Resilience Fund in England.</p>
-    </div>
-
-    <div class="content-section">
       <h2>Documents</h2>
-      <ul class="documents-list">
-        <li>
-          <a href="https://www.gov.uk/government/publications/crisis-and-resilience-fund-guidance-for-local-authorities-in-england-1-april-2026-to-31-march-2029/crisis-and-resilience-fund-guidance-for-local-authorities-in-england-1-april-2026-to-31-march-2029" target="_blank">Crisis and Resilience Fund: Guidance for local authorities in England (1 April 2026 to 31 March 2029)</a>
-          <span class="doc-type">HTML</span>
-        </li>
-        <li>
-          <a href="#" target="_blank">Crisis and Resilience Fund (1 April 2026 to 31 March 2029): management information (combined) reporting requirements</a>
-          <span class="doc-type">HTML</span>
-        </li>
-        <li>
-          <a href="#" target="_blank">Crisis and Resilience Fund management information (combined) data</a>
-          <span class="doc-type">HTML</span>
-        </li>
+
+      <ul>
+        <li><a href="https://www.gov.uk/government/publications/crisis-and-resilience-fund-guidance-for-local-authorities-in-england-1-april-2026-to-31-march-2029/crisis-and-resilience-fund-guidance-for-local-authorities-in-england-1-april-2026-to-31-march-2029" target="_blank">Crisis and Resilience Fund: Guidance for local authorities in England (1 April 2026 to 31 March 2029)</a></li>
+        <li><a href="#" target="_blank">Crisis and Resilience Fund (1 April 2026 to 31 March 2029): management information (combined) reporting requirements</a></li>
+        <li><a href="#" target="_blank">Crisis and Resilience Fund management information (combined) data</a></li>
       </ul>
+
+      <h2>Details</h2>
+
+      <p class="section-text">If you need support, you can find out how to get help through the Crisis Resilience Fund from your local council.</p>
+
+      <p class="section-text">From 1 April 2026, the new Crisis and Resilience Fund will be launched in England.</p>
+
+      <p class="section-text">The Crisis and Resilience Fund provides grant funding to local authorities in England to provide preventative support to communities, as well as assisting people when faced with a financial crisis.</p>
+
+      <p class="section-text">The Crisis and Resilience Fund's guidance provides detailed information to support local authorities design their schemes.</p>
+
+      <p class="section-text">Funding for the Crisis and Resilience Fund covers the period starting 1 April 2026 and ending 31 March 2029. Provisional Allocations and draft grant conditions for the fund have already been published, and will be finalised in due course.</p>
     </div>
 
-    <div class="content-section">
-      <h2>Details</h2>
-      <p>If you need support, you can find out how to get help through the Crisis Resilience Fund from your local council.</p>
-      <p>From 1 April 2026, the new Crisis and Resilience Fund will be launched in England.</p>
-      <p>The Crisis and Resilience Fund provides grant funding to local authorities in England to provide preventative support to communities, as well as assisting people when faced with a financial crisis.</p>
-      <p>The Crisis and Resilience Fund's guidance provides detailed information to support local authorities design their schemes.</p>
-      <p>Funding for the Crisis and Resilience Fund covers the period starting 1 April 2026 and ending 31 March 2029. Provisional Allocations and draft grant conditions for the fund have already been published, and will be finalised in due course.</p>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="related-box">
+        <h3>Related pages</h3>
+        <div class="related-links">
+          <div class="related-link">
+            <a href="https://www.gov.uk/government/organisations/department-for-work-pensions" target="_blank">Department for Work and Pensions</a>
+          </div>
+          <div class="related-link">
+            <a href="https://www.gov.uk/government/topics/local-government" target="_blank">Local government</a>
+          </div>
+          <div class="related-link">
+            <a href="https://www.gov.uk/government/topics/funding-and-support-for-councils" target="_blank">Funding and support for councils</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Footer -->
-  <div class="footer">
-    <div class="footer-content">
-      <div>
-        <div class="footer-links">
-          <a href="https://www.gov.uk/help" target="_blank">Help</a>
-          <a href="https://www.gov.uk/privacy" target="_blank">Privacy</a>
-          <a href="https://www.gov.uk/cookies" target="_blank">Cookies</a>
-          <a href="https://www.gov.uk/accessibility-statement" target="_blank">Accessibility statement</a>
-          <a href="https://www.gov.uk/contact" target="_blank">Contact</a>
-        </div>
-
-        <div class="footer-section">
-          <a href="https://www.gov.uk/help/terms-conditions" target="_blank">Terms and conditions</a>
-        </div>
-
-        <div class="footer-section">
-          <a href="https://www.gov.uk/government/organisations/office-of-the-leader-of-the-house-of-commons" target="_blank">Government Digital Service</a>
-        </div>
-
-        <div class="footer-branding">
-          <span style="font-weight: 600;">OGL</span>
-        </div>
-
-        <p style="font-size: 13px;">All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank">Open Government Licence v3.0</a>, except where otherwise stated</p>
-
-        <p style="margin-top: 20px; font-size: 13px;">Video by <a href="https://www.textra.video/" target="_blank" style="color: #0b7d9e;">Textra</a></p>
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-col">
+        <h3>Support</h3>
+        <a href="https://www.gov.uk/help" target="_blank">Get help</a>
+        <a href="https://www.gov.uk/contact" target="_blank">Contact</a>
+        <a href="https://www.gov.uk/accessibility-statement" target="_blank">Accessibility</a>
       </div>
-
-      <div class="footer-copyright">
-        <p style="margin: 0;">© Crown copyright</p>
+      <div class="footer-col">
+        <h3>Government</h3>
+        <a href="https://www.gov.uk/government/organisations" target="_blank">Organisations</a>
+        <a href="https://www.gov.uk/government/topics" target="_blank">Topics</a>
+        <a href="https://www.gov.uk/government/publications" target="_blank">Publications</a>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <a href="https://www.gov.uk/help/privacy-notice" target="_blank">Privacy</a>
+        <a href="https://www.gov.uk/help/cookies" target="_blank">Cookies</a>
+        <a href="https://www.gov.uk/help/terms-conditions" target="_blank">Terms &amp; conditions</a>
       </div>
     </div>
-  </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <div class="footer-logo">
+        <img src="/gov-uk-logo.webp" alt="GOV.UK">
+        <span>© Crown copyright</span>
+      </div>
+      <div class="footer-bottom-links">
+        <a href="https://www.gov.uk/government/organisations/office-of-the-leader-of-the-house-of-commons" target="_blank">Government Digital Service</a>
+        <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank">Open Government Licence</a>
+        <a href="https://www.textra.video/" target="_blank">Video by Textra</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header nav
+    document.querySelectorAll('.header-nav div').forEach(item => {
+      item.addEventListener('click', function() {
+        // Nav functionality
+      });
+    });
+  </script>
 </body>
 </html>
