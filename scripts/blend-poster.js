@@ -24,8 +24,8 @@ async function blendPoster() {
   <!-- Light semi-transparent overlay -->
   <rect width="${overlayWidth}" height="${overlayHeight}" fill="rgba(0,0,0,0.2)"/>
 
-  <!-- Logo badge - clean white, no shadow -->
-  <rect x="40" y="30" width="220" height="150" rx="12" fill="#ffffff"/>
+  <!-- Logo badge - sharp edges, no shadow -->
+  <rect x="40" y="30" width="220" height="150" fill="#ffffff" stroke="none"/>
   <image x="50" y="40" width="160" height="130" href="data:image/png;base64,${logoB64}" preserveAspectRatio="xMinYMid meet"/>
 
   <!-- Label -->
