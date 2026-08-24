@@ -21,7 +21,7 @@ const svg = `
   <rect x="30" y="30" width="180" height="90" fill="white" rx="8"/>
 
   <!-- GOV.UK text in logo box -->
-  <text x="120" y="85" font-size="24" font-weight="bold" fill="#0b7d9e" font-family="Arial, sans-serif" text-anchor="middle">GOV.UK</text>
+  <text x="120" y="85" font-size="36" font-weight="bold" fill="#0b7d9e" font-family="Arial, sans-serif" text-anchor="middle">GOV.UK</text>
 
   <!-- Label -->
   <text x="40" y="180" font-size="20" font-weight="bold" fill="white" letter-spacing="2">FUNDING GUIDANCE</text>
