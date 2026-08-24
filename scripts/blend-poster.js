@@ -1,28 +1,34 @@
 const sharp = require('sharp');
+const fs = require('fs');
+const path = require('path');
 
 async function blendPoster() {
   // Read the video frame
   const videoFrame = sharp('public/east-cambs-complaints-poster.jpg');
-  
+
   // Darken the video frame (reduce brightness to ~50%)
   const darkened = await videoFrame
     .modulate({ brightness: 0.5 })
     .toBuffer();
-  
+
+  // Load and encode the logo
+  const logoPath = path.resolve('public/east-cambs-icon.png');
+  const logoB64 = fs.readFileSync(logoPath).toString('base64');
+
   // Create the poster overlay SVG
   const overlayWidth = 1280;
   const overlayHeight = 720;
-  
+
   const overlay = `
 <svg width="${overlayWidth}" height="${overlayHeight}" xmlns="http://www.w3.org/2000/svg">
   <!-- Semi-transparent dark overlay -->
   <rect width="${overlayWidth}" height="${overlayHeight}" fill="rgba(0,0,0,0.4)"/>
-  
+
   <!-- Logo badge -->
   <g filter="drop-shadow(0 8px 10px rgba(0,0,0,0.28))">
-    <rect x="42" y="32" width="140" height="110" rx="14" fill="#ffffff" fill-opacity="0.95"/>
+    <rect x="42" y="32" width="220" height="110" rx="14" fill="#ffffff" fill-opacity="0.95"/>
   </g>
-  <text x="112" y="95" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="bold" fill="#0b7d9e" text-anchor="middle">EC</text>
+  <image x="52" y="42" width="100" height="90" href="data:image/png;base64,${logoB64}" preserveAspectRatio="xMinYMid meet"/>
 
   <!-- Label -->
   <text x="64" y="330" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2.5" fill="#bfe3ff">FORMAL COMPLAINTS</text>
