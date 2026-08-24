@@ -27,7 +27,7 @@ const demos = [
     org: 'London Borough of Camden',
     title: 'Visitor Parking Permits',
     excerpt: 'An explainer video showing Camden residents how to apply for visitor parking permits, with clean branding and intuitive navigation embedded into the council\'s parking page.',
-    poster: '/camden-poster.jpg',
+    poster: '/camden-visitor-parking-poster.jpg',
     logo: '/camden-logo-user.png',
     color: C.teal,
   },
