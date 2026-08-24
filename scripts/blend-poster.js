@@ -24,11 +24,9 @@ async function blendPoster() {
   <!-- Light semi-transparent overlay -->
   <rect width="${overlayWidth}" height="${overlayHeight}" fill="rgba(0,0,0,0.2)"/>
 
-  <!-- Logo badge -->
-  <g filter="drop-shadow(0 8px 10px rgba(0,0,0,0.28))">
-    <rect x="42" y="32" width="180" height="110" rx="14" fill="#ffffff" fill-opacity="0.95"/>
-  </g>
-  <image x="52" y="42" width="100" height="90" href="data:image/png;base64,${logoB64}" preserveAspectRatio="xMinYMid meet"/>
+  <!-- Logo badge - clean white, no shadow -->
+  <rect x="40" y="30" width="220" height="150" rx="12" fill="#ffffff"/>
+  <image x="50" y="40" width="160" height="130" href="data:image/png;base64,${logoB64}" preserveAspectRatio="xMinYMid meet"/>
 
   <!-- Label -->
   <text x="64" y="330" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2.5" fill="#bfe3ff">FORMAL COMPLAINTS</text>
