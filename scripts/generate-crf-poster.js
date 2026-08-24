@@ -24,16 +24,14 @@ const svg = `
   <text x="120" y="85" font-size="36" font-weight="bold" fill="#0b7d9e" font-family="Arial, sans-serif" text-anchor="middle">GOV.UK</text>
 
   <!-- Label -->
-  <text x="40" y="180" font-size="20" font-weight="bold" fill="white" letter-spacing="2">FUNDING GUIDANCE</text>
+  <text x="64" y="330" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2.5" fill="#bfe3ff">FUNDING GUIDANCE</text>
 
   <!-- Title -->
-  <text x="40" y="280" font-size="56" font-weight="bold" fill="white" font-family="Arial, sans-serif">
-    <tspan x="40">Crisis and</tspan>
-    <tspan x="40" dy="70">Resilience Fund</tspan>
-  </text>
+  <text x="62" y="392" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="800" fill="#ffffff">Crisis and</text>
+  <text x="62" y="452" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="800" fill="#ffffff">Resilience Fund</text>
 
   <!-- Bottom right branding -->
-  <text x="${width - 250}" y="${height - 30}" font-size="16" fill="white">Video by Textra</text>
+  <text x="1216" y="622" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600" fill="#e6f1fb" text-anchor="end">Video by Textra</text>
 </svg>
 `;
 
