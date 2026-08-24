@@ -1,8 +1,9 @@
+# Block non-existent pages
 User-agent: *
 Allow: /
 Disallow: /api/
-
-Sitemap: https://www.textra.video/sitemap.xml
+Disallow: /contact
 
 # Canonical domain preference
 Host: https://www.textra.video
+Sitemap: https://www.textra.video/sitemap.xml
