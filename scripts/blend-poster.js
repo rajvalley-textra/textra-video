@@ -6,9 +6,9 @@ async function blendPoster() {
   // Read the video frame
   const videoFrame = sharp('public/east-cambs-complaints-poster.jpg');
 
-  // Darken the video frame (reduce brightness to ~50%)
+  // Slightly darken the video frame (reduce brightness to ~70% - less dark)
   const darkened = await videoFrame
-    .modulate({ brightness: 0.5 })
+    .modulate({ brightness: 0.7 })
     .toBuffer();
 
   // Load and encode the logo
@@ -21,14 +21,14 @@ async function blendPoster() {
 
   const overlay = `
 <svg width="${overlayWidth}" height="${overlayHeight}" xmlns="http://www.w3.org/2000/svg">
-  <!-- Semi-transparent dark overlay -->
-  <rect width="${overlayWidth}" height="${overlayHeight}" fill="rgba(0,0,0,0.4)"/>
+  <!-- Light semi-transparent overlay -->
+  <rect width="${overlayWidth}" height="${overlayHeight}" fill="rgba(0,0,0,0.2)"/>
 
   <!-- Logo badge -->
   <g filter="drop-shadow(0 8px 10px rgba(0,0,0,0.28))">
-    <rect x="42" y="32" width="220" height="110" rx="14" fill="#ffffff" fill-opacity="0.95"/>
+    <rect x="30" y="20" width="260" height="140" rx="14" fill="#ffffff" fill-opacity="0.98"/>
   </g>
-  <image x="52" y="42" width="100" height="90" href="data:image/png;base64,${logoB64}" preserveAspectRatio="xMinYMid meet"/>
+  <image x="45" y="35" width="130" height="110" href="data:image/png;base64,${logoB64}" preserveAspectRatio="xMinYMid meet"/>
 
   <!-- Label -->
   <text x="64" y="330" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2.5" fill="#bfe3ff">FORMAL COMPLAINTS</text>
