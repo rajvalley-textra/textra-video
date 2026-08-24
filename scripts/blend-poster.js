@@ -26,9 +26,9 @@ async function blendPoster() {
 
   <!-- Logo badge -->
   <g filter="drop-shadow(0 8px 10px rgba(0,0,0,0.28))">
-    <rect x="30" y="20" width="260" height="140" rx="14" fill="#ffffff" fill-opacity="0.98"/>
+    <rect x="42" y="32" width="180" height="110" rx="14" fill="#ffffff" fill-opacity="0.95"/>
   </g>
-  <image x="45" y="35" width="130" height="110" href="data:image/png;base64,${logoB64}" preserveAspectRatio="xMinYMid meet"/>
+  <image x="52" y="42" width="100" height="90" href="data:image/png;base64,${logoB64}" preserveAspectRatio="xMinYMid meet"/>
 
   <!-- Label -->
   <text x="64" y="330" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2.5" fill="#bfe3ff">FORMAL COMPLAINTS</text>
