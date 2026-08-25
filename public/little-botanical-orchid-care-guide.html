@@ -81,7 +81,7 @@
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 500px;
+      align-items: stretch;
     }
     .hero-left {
       background: #f3ede7;
@@ -124,6 +124,7 @@
     .hero-right {
       position: relative;
       background: #000;
+      aspect-ratio: 16 / 9;
     }
     .hero-right video {
       width: 100%;
