@@ -54,12 +54,12 @@ export default function NavBar() {
           })}
         </div>
 
-        <div className="nav-cta" style={{ display: 'flex', gap: 12, flexShrink: 0, marginLeft: 'auto' }}>
+        <div className="nav-cta" style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0, marginLeft: 'auto' }}>
           <a
             href="https://invest.textra.video/"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ background: 'transparent', color: C.teal, borderRadius: 9999, padding: '11px 20px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', border: `1.5px solid ${C.teal}` }}
+            style={{ background: 'transparent', color: C.teal, borderRadius: 9999, padding: '9px 16px', fontSize: 13, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', border: `1.5px solid ${C.teal}` }}
             onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.8'; }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
           >
@@ -69,9 +69,9 @@ export default function NavBar() {
             href="mailto:sales@textra.video?subject=Book a Demo - Website"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ background: grad, color: '#fff', borderRadius: 9999, padding: '13px 28px', fontSize: 15, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', boxShadow: `0 4px 16px ${C.navy}4d` }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-1px) scale(1.03)'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 6px 20px ${C.navy}66`; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = 'none'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 4px 16px ${C.navy}4d`; }}
+            style={{ background: grad, color: '#fff', borderRadius: 9999, padding: '10px 18px', fontSize: 13, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', boxShadow: `0 3px 12px ${C.navy}4d` }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-1px) scale(1.03)'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 5px 16px ${C.navy}66`; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = 'none'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 3px 12px ${C.navy}4d`; }}
           >
             Book a personalised demo
           </a>
