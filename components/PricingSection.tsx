@@ -60,7 +60,7 @@ export default function PricingSection() {
               onMouseEnter={(e) => { e.currentTarget.style.filter = 'brightness(1.08)'; e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = sh.lg; }}
               onMouseLeave={(e) => { e.currentTarget.style.filter = 'none'; e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = sh.md; }}
             >
-              Book a Demo
+              Book a personalised demo
             </a>
             <div style={{ fontSize: 12, color: C.gray400, textAlign: 'center', marginTop: 12 }}>* Pilot scheme option for six-month contracts available</div>
           </div>

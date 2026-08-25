@@ -202,7 +202,7 @@ export default function DemosPage() {
                 fontSize: 15,
                 transition: 'all 200ms',
               }}>
-              Book a Demo
+              Book a personalised demo
             </a>
           </div>
         </section>

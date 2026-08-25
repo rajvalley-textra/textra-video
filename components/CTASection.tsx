@@ -50,7 +50,7 @@ export default function CTASection() {
                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(0,0,0,0.25)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)'; }}
               >
-                Book a Demo
+                Book a personalised demo
               </a>
               <button
                 onClick={() => setShowModal(true)}

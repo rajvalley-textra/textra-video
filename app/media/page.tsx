@@ -300,7 +300,7 @@ export default function MediaPage() {
                 e.currentTarget.style.transform = 'none';
                 e.currentTarget.style.boxShadow = 'none';
               }}>
-              Book a Demo
+              Book a personalised demo
             </a>
           </div>
         </section>

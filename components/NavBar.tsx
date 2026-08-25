@@ -69,11 +69,11 @@ export default function NavBar() {
             href="mailto:sales@textra.video?subject=Book a Demo - Website"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ background: C.teal, color: '#fff', borderRadius: 9999, padding: '11px 24px', fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms' }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '0.85'; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '1'; }}
+            style={{ background: C.teal, color: '#fff', borderRadius: 9999, padding: '13px 28px', fontSize: 15, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', boxShadow: `0 4px 14px ${C.teal}66` }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-1px) scale(1.03)'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 6px 18px ${C.teal}80`; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = 'none'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 4px 14px ${C.teal}66`; }}
           >
-            Book a Demo
+            Book a personalised demo
           </a>
         </div>
 
@@ -116,9 +116,9 @@ export default function NavBar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
-              style={{ background: C.teal, color: '#fff', borderRadius: 9999, padding: '12px 24px', fontSize: 14, fontWeight: 600, textDecoration: 'none', textAlign: 'center' }}
+              style={{ background: C.teal, color: '#fff', borderRadius: 9999, padding: '13px 24px', fontSize: 15, fontWeight: 700, textDecoration: 'none', textAlign: 'center', boxShadow: `0 4px 14px ${C.teal}66` }}
             >
-              Book a Demo
+              Book a personalised demo
             </a>
           </div>
         </div>
