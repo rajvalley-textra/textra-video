@@ -87,6 +87,33 @@
       width: 160px;
       height: 100%;
     }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+      padding: 4px 8px;
+      line-height: 1;
+    }
+
+    @media (max-width: 700px) {
+      .nav-toggle { display: block; }
+      .header { flex-wrap: nowrap; }
+      .header-right {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 12px;
+        padding-top: 8px;
+      }
+      .header-right.open { display: flex; }
+      .pill-btn, .search-box { width: 100%; justify-content: space-between; }
+      .search-box input { width: auto; flex: 1; }
+    }
+
     .search-box button {
       background: #16303a;
       border: none;
@@ -292,7 +319,8 @@
         <span class="bottom">City Council</span>
       </div>
     </a>
-    <div class="header-right">
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <div class="header-right" id="headerRight">
       <div class="services-menu">Services <span>&#9662;</span></div>
       <a href="#" class="pill-btn">Your accounts <span class="icon-circle">&#128100;</span></a>
       <a href="#" class="pill-btn">Read and translate <span class="icon-circle">&#9855;</span></a>
@@ -408,5 +436,15 @@
     </div>
   </div>
   <div class="footer-copyright">All content &copy; 2026 Norwich City Council</div>
+
+  <script>
+    var navToggle = document.getElementById('navToggle');
+    var headerRight = document.getElementById('headerRight');
+    navToggle.addEventListener('click', function () {
+      var isOpen = headerRight.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      navToggle.innerHTML = isOpen ? '&#10005;' : '&#9776;';
+    });
+  </script>
 </body>
 </html>

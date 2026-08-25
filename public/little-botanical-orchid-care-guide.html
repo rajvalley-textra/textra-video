@@ -37,11 +37,21 @@
       justify-content: space-between;
       padding: 22px 40px;
     }
-    .brand-bar .spacer { width: 80px; }
+    .brand-bar .spacer { width: 80px; display: flex; align-items: center; }
     .brand-logo { display: flex; justify-content: center; flex: 1; }
     .brand-logo img { height: 34px; width: auto; }
     .brand-icons { display: flex; gap: 20px; align-items: center; width: 80px; justify-content: flex-end; }
     .brand-icons span { color: #fff; font-size: 18px; }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 0;
+    }
+    .mobile-menu-panel { display: none; }
 
     /* Sub nav (tan) */
     .sub-nav {
@@ -299,6 +309,31 @@
       .care-grid { grid-template-columns: 1fr; }
       .footer-links-inner { grid-template-columns: repeat(2, 1fr); }
       .as-seen-logos { gap: 24px; }
+
+      /* Collapse both nav bars into a hamburger menu */
+      .top-nav, .sub-nav { display: none; }
+      .nav-toggle { display: block; }
+      .mobile-menu-panel {
+        background: #1c1c1c;
+      }
+      .mobile-menu-panel.open { display: block; }
+      .mobile-menu-panel a {
+        display: block;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 14px 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        text-transform: none;
+      }
+      .mobile-menu-panel .panel-section-label {
+        color: #cfa66b;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        padding: 14px 20px 4px;
+      }
     }
   </style>
 </head>
@@ -316,7 +351,9 @@
 
   <!-- Brand bar -->
   <div class="brand-bar">
-    <div class="spacer"></div>
+    <div class="spacer">
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    </div>
     <div class="brand-logo">
       <img src="/little-botanical-logo-white.png" alt="The Little Botanical">
     </div>
@@ -325,6 +362,27 @@
       <span>&#128100;</span>
       <span>&#128722;</span>
     </div>
+  </div>
+
+  <!-- Mobile menu panel (combines top-nav + sub-nav links) -->
+  <div class="mobile-menu-panel" id="mobileMenuPanel">
+    <a href="#">About</a>
+    <a href="#">The Hot House</a>
+    <a href="#">Plant Guides</a>
+    <a href="#">Business</a>
+    <a href="#">Charity Partners</a>
+    <a href="#">T&amp;Cs</a>
+    <a href="#">Contact</a>
+    <div class="panel-section-label">Shop</div>
+    <a href="#">Summer Sale &#9728;&#65039;</a>
+    <a href="#">Indoor plants</a>
+    <a href="#">New In</a>
+    <a href="#">Outdoor Collection</a>
+    <a href="#">Bundle &amp; Save</a>
+    <a href="#">Collections</a>
+    <a href="#">Plant Care Accessories</a>
+    <a href="#">Gifts &#127873;</a>
+    <a href="#">View all indoor plants &#127793;</a>
   </div>
 
   <!-- Sub nav -->
@@ -497,5 +555,15 @@
     </div>
     <div>&copy; The Little Botanical</div>
   </div>
+
+  <script>
+    var navToggle = document.getElementById('navToggle');
+    var panel = document.getElementById('mobileMenuPanel');
+    navToggle.addEventListener('click', function () {
+      var isOpen = panel.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      navToggle.innerHTML = isOpen ? '&#10005;' : '&#9776;';
+    });
+  </script>
 </body>
 </html>
