@@ -9,7 +9,7 @@ async function main() {
     .modulate({ brightness: 0.9 })
     .toBuffer();
 
-  const logoPath = path.resolve('public/norwich-logo.png');
+  const logoPath = path.resolve('public/norwich-logo-lockup.png');
   const logoB64 = fs.readFileSync(logoPath).toString('base64');
   const playButtonPath = path.resolve('public/play-button-final.png');
   const playButtonB64 = fs.readFileSync(playButtonPath).toString('base64');
