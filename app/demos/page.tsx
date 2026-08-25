@@ -40,6 +40,15 @@ const demos = [
     logo: '/gov-uk-logo.webp',
     color: C.blue,
   },
+  {
+    slug: 'norwich-demo',
+    org: 'Norwich City Council',
+    title: 'About Council Tax',
+    excerpt: 'An explainer video helping Norwich residents understand how Council Tax works, what it pays for, and how their band is decided.',
+    poster: '/norwich-council-tax-poster.jpg',
+    logo: '/norwich-logo.png',
+    color: C.teal,
+  },
 ];
 
 export default function DemosPage() {
