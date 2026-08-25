@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting started on the internet - Age UK</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-family: Arial, Helvetica, sans-serif; background: #fff; }
+    body { background: #fff; color: #1a1a1a; }
+    a { color: #005EB8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Top utility bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .logo-block { display: flex; align-items: flex-end; gap: 10px; }
+    .logo-block img { height: 60px; width: auto; }
+    .logo-tagline {
+      font-size: 15px;
+      color: #0A2E5C;
+      font-weight: 400;
+      padding-bottom: 6px;
+    }
+    .logo-tagline .change { text-decoration: underline; }
+
+    .top-bar-right { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .top-links { display: flex; gap: 20px; font-size: 14px; color: #0A2E5C; align-items: center; }
+    .top-links a { color: #0A2E5C; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+
+    .search-form { display: flex; align-items: stretch; width: 300px; }
+    .search-form input {
+      flex: 1;
+      border: 1px solid #ccc;
+      border-right: none;
+      padding: 0 16px;
+      font-size: 15px;
+      height: 44px;
+    }
+    .search-form button {
+      background: #0A2E5C;
+      border: none;
+      color: #fff;
+      width: 50px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .donate-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 2px solid #E4032E;
+      color: #E4032E;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 24px;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+    .donate-btn:hover { background: #E4032E; color: #fff; text-decoration: none; }
+
+    /* Main nav */
+    .main-nav {
+      background: #f2f2f2;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .main-nav li { border-left: 3px solid transparent; }
+    .main-nav li:first-child { border-left: 3px solid #0A2E5C; }
+    .main-nav a {
+      display: block;
+      padding: 18px 24px;
+      color: #0A2E5C;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .main-nav a:hover { text-decoration: none; background: #e6e6e6; }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 16px 40px;
+      font-size: 13px;
+      color: #555;
+    }
+    .breadcrumb a { color: #005EB8; }
+
+    /* Main layout */
+    .main-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px 60px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+    }
+
+    /* Sidebar */
+    .sidebar h2 {
+      font-size: 20px;
+      font-weight: 700;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #ccc;
+      margin-bottom: 4px;
+      color: #1a1a1a;
+    }
+    .sidebar ul { list-style: none; }
+    .sidebar li { border-bottom: 1px solid #e0e0e0; }
+    .sidebar a {
+      display: block;
+      padding: 14px 4px;
+      color: #005EB8;
+      font-size: 15px;
+    }
+    .sidebar a:hover { text-decoration: underline; }
+    .sidebar li.active { border-left: 4px solid #0A2E5C; }
+    .sidebar li.active a { padding-left: 12px; color: #1a1a1a; font-weight: 700; }
+
+    /* Content */
+    .content h1 {
+      font-size: 34px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #0A2E5C;
+    }
+    .intro-text {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      color: #1a1a1a;
+      font-weight: 700;
+    }
+
+    /* Video */
+    .video-container {
+      aspect-ratio: 16 / 9;
+      margin: 0 0 40px 0;
+      max-width: 700px;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+    }
+    .video-container video { width: 100%; height: 100%; background: #000; }
+    .textra-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.94);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      z-index: 2;
+      padding: 5px;
+    }
+    .textra-badge img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+    .content h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 36px 0 14px 0;
+      color: #0A2E5C;
+    }
+    .section-text {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+      max-width: 700px;
+    }
+
+    /* Footer */
+    .footer-top {
+      background: #f2f2f2;
+      padding: 40px;
+    }
+    .footer-top-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-social-block { text-align: center; border-right: 1px solid #ccc; }
+    .footer-social-block h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; color: #1a1a1a; }
+    .social-icons { display: flex; gap: 14px; justify-content: center; }
+    .social-icons a {
+      width: 36px; height: 36px; border-radius: 50%; border: 1px solid #999;
+      display: flex; align-items: center; justify-content: center; color: #1a1a1a;
+    }
+    .footer-signup { padding-left: 40px; }
+    .footer-signup h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; color: #1a1a1a; }
+    .signup-form { display: flex; max-width: 420px; }
+    .signup-form input {
+      flex: 1; border: 1px solid #ccc; padding: 0 16px; height: 44px; font-size: 15px;
+    }
+    .signup-form button {
+      background: #005EB8; color: #fff; border: none; padding: 0 24px; font-weight: 700; cursor: pointer;
+    }
+
+    .footer-links-section {
+      background: #f2f2f2;
+      padding: 0 40px 40px;
+    }
+    .footer-links-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      padding-top: 32px;
+      border-top: 1px solid #ccc;
+    }
+    .footer-links-inner h4 { font-size: 16px; font-weight: 700; margin-bottom: 14px; color: #1a1a1a; }
+    .footer-links-inner ul { list-style: none; }
+    .footer-links-inner li { margin-bottom: 10px; }
+    .footer-links-inner a { color: #005EB8; font-size: 14px; }
+
+    .footer-bottom {
+      background: #f2f2f2;
+      padding: 24px 40px 40px;
+    }
+    .footer-bottom-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-bottom-links { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; }
+    .footer-bottom-links a { color: #005EB8; }
+    .footer-legal { font-size: 12px; color: #555; max-width: 800px; margin-top: 12px; }
+    .footer-badge {
+      border: 2px solid #a6337e; border-radius: 50%; width: 84px; height: 84px;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      font-size: 10px; font-weight: 700; color: #a6337e; line-height: 1.2; flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .main-container { grid-template-columns: 1fr; }
+      .main-nav ul { overflow-x: auto; }
+      .footer-top-inner, .footer-links-inner { grid-template-columns: 1fr; }
+      .footer-social-block { border-right: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="logo-block">
+      <img src="/age-uk-logo-final.png" alt="Age UK">
+      <div class="logo-tagline">Let's <span class="change">change</span> how we age</div>
+    </div>
+    <div class="top-bar-right">
+      <div class="top-links">
+        <a href="#">&#128205; Find your local Age UK</a>
+        <a href="#">Contact us</a>
+      </div>
+    </div>
+  </div>
+  <div class="top-bar" style="padding-top:0;">
+    <form class="search-form">
+      <input type="text" placeholder="Search">
+      <button type="submit">&#128269;</button>
+    </form>
+    <a href="#" class="donate-btn">&#10084;&#65039; Please donate</a>
+  </div>
+
+  <!-- Main nav -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#">Information and advice</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Get involved</a></li>
+      <li><a href="#">Our impact</a></li>
+      <li style="margin-left: auto;"><a href="#">Buy products</a></li>
+    </ul>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="#">Home</a> / <a href="#">Information and advice</a> / <a href="#">Work &amp; learning</a> / <a href="#">Making the most of the internet</a> / Getting started on the internet
+  </div>
+
+  <!-- Main -->
+  <div class="main-container">
+    <div class="sidebar">
+      <h2>Making the most of the internet</h2>
+      <ul>
+        <li><a href="#">Computer training courses</a></li>
+        <li><a href="#">Glossary of online terms</a></li>
+        <li class="active"><a href="#">Getting started on the internet</a></li>
+        <li><a href="#">Staying safe online</a></li>
+        <li><a href="#">How to make a video call</a></li>
+        <li><a href="#">Making your device easier to use</a></li>
+        <li><a href="#">How to download apps</a></li>
+        <li><a href="#">Email essentials</a></li>
+        <li><a href="#">What's WhatsApp?</a></li>
+        <li><a href="#">Using social media</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h1>Getting started on the internet</h1>
+      <p class="intro-text">You might be surprised at how much you're able to do on the internet – from connecting with friends and family, carrying out tasks like shopping and banking, and accessing services such as your GP surgery. The internet can also be a great source of entertainment and education.</p>
+
+      <div class="video-container">
+        <video
+          controls
+          poster="/age-uk-getting-online-poster.jpg"
+          style="width: 100%; height: 100%; background: #000;">
+          <source src="https://res.cloudinary.com/oyo7xls1/video/upload/Age%20UK%20-%20A%20beginners%20guide%20to%20getting%20online.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <a href="https://www.textra.video/" class="textra-badge" target="_blank" rel="noopener" title="Made with Textra">
+          <img src="/textra-logo-mark.png" alt="Textra">
+        </a>
+      </div>
+
+      <h2>Why get online?</h2>
+      <p class="section-text">Being online can help you stay in touch with the people who matter most, whether that's a video call with family or catching up with friends on social media.</p>
+
+      <h2>What do I need to get started?</h2>
+      <p class="section-text">You'll need a device such as a smartphone, tablet, laptop or computer, and an internet connection. Many libraries and community centres also offer free Wi-Fi and computer access.</p>
+
+      <h2>Getting support</h2>
+      <p class="section-text">If you'd like one-to-one help getting online, our Digital Champions can support you at your own pace. Contact your local Age UK to find out what's available in your area.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-top">
+    <div class="footer-top-inner">
+      <div class="footer-social-block">
+        <h3>Become part of our story</h3>
+        <div class="social-icons">
+          <a href="#">f</a>
+          <a href="#">X</a>
+          <a href="#">&#9654;</a>
+          <a href="#">&#128247;</a>
+        </div>
+      </div>
+      <div class="footer-signup">
+        <h3>Sign up today</h3>
+        <form class="signup-form">
+          <input type="email" placeholder="Email address">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-links-section">
+    <div class="footer-links-inner">
+      <div>
+        <h4>About Age UK</h4>
+        <ul>
+          <li><a href="#">What we do</a></li>
+          <li><a href="#">Work for us</a></li>
+          <li><a href="#">Age International</a></li>
+          <li><a href="#">Media / Press</a></li>
+          <li><a href="#">Latest news</a></li>
+          <li><a href="#">Who we are</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Age UK Advice Line</a></li>
+          <li><a href="#">Befriending services</a></li>
+          <li><a href="#">Charity shops</a></li>
+          <li><a href="#">In your area</a></li>
+          <li><a href="#">Commissioned healthcare services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Popular pages</h4>
+        <ul>
+          <li><a href="#">Benefits Calculator</a></li>
+          <li><a href="#">TV licence concessions</a></li>
+          <li><a href="#">Pension Credit</a></li>
+          <li><a href="#">Making a will</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Latest</h4>
+        <ul>
+          <li><a href="#">Act Now, Age Better</a></li>
+          <li><a href="#">A crisis hiding in plain sight</a></li>
+          <li><a href="#">Let's change how we age</a></li>
+          <li><a href="#">The difference your support makes</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div>
+        <div class="footer-bottom-links">
+          <a href="#">Linking policy</a>
+          <a href="#">Terms and conditions</a>
+          <a href="#">Privacy policy</a>
+          <a href="#">Publications</a>
+          <a href="#">Cookies</a>
+          <a href="#">Safeguarding</a>
+          <a href="#">About us</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Contact us</a>
+          <a href="#">Modern slavery statement</a>
+          <a href="#">Fundraising charter</a>
+        </div>
+        <p class="footer-legal">Age UK, 7th Floor, One America Square, 17 Crosswall, London, EC3N 2LB. Registered charity number 1128267. Company number 6825798. &copy; Age UK Group and/or its National Partners (Age NI, Age Scotland and Age Cymru) 2026. All Rights Reserved.</p>
+      </div>
+      <div class="footer-badge">Registered<br>2025/26<br>FUNDRAISING<br>REGULATOR</div>
+    </div>
+  </div>
+</body>
+</html>

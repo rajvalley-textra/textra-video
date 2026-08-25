@@ -50,6 +50,15 @@ const demos = [
     logo: '/norwich-logo.png',
     color: C.teal,
   },
+  {
+    slug: 'age-uk-demo',
+    org: 'Age UK',
+    title: 'Getting Started on the Internet',
+    excerpt: 'A beginner-friendly explainer video embedded into Age UK\'s advice page, helping older people get online with confidence.',
+    poster: '/age-uk-getting-online-poster.jpg',
+    logo: '/age-uk-logo-final.png',
+    color: C.blue,
+  },
 ];
 
 export default function DemosPage() {
