@@ -42,9 +42,9 @@ async function main() {
   </g>
   <image x="52" y="42" width="240" height="66" href="data:image/png;base64,${logoB64}" preserveAspectRatio="xMidYMid meet"/>
 
-  <text x="64" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700" letter-spacing="2.5" fill="#F4D03F">CARE GUIDE</text>
-  <text x="62" y="392" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">Orchid Care</text>
-  <text x="62" y="452" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">Guide</text>
+  <text x="64" y="330" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2.5" fill="#F4D03F">CARE GUIDE</text>
+  <text x="62" y="392" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" fill="#ffffff">Orchid Care</text>
+  <text x="62" y="452" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" fill="#ffffff">Guide</text>
 
   <text x="1216" y="622" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#f5e6ee" text-anchor="end">Video by Textra</text>
 </svg>

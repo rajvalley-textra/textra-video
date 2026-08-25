@@ -58,6 +58,21 @@
       color: #1a1a1a;
     }
     .sub-nav a:hover { background: #f2f2f2; }
+    .nav-toggle {
+      display: none;
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 16px 20px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+      cursor: pointer;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #ddd;
+    }
 
     /* Hero section (background image behind breadcrumb + hero) */
     .hero-section {
@@ -248,6 +263,12 @@
       .header { padding: 16px 20px; }
       .hero { padding: 0 20px; }
       .content-section, .footer { padding-left: 20px; padding-right: 20px; }
+
+      /* Collapse sub-nav into a hamburger menu */
+      .nav-toggle { display: flex; }
+      .sub-nav { display: none; flex-direction: column; }
+      .sub-nav.open { display: flex; }
+      .sub-nav a { border-top: 1px solid #eee; padding: 14px 20px; }
     }
   </style>
 </head>
@@ -264,7 +285,10 @@
   </div>
 
   <!-- Sub nav -->
-  <nav class="sub-nav">
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="subNav">
+    <span id="navToggleIcon">&#9776;</span> Menu
+  </button>
+  <nav class="sub-nav" id="subNav">
     <a href="#">Report</a>
     <a href="#">Tell us about</a>
     <a href="#">Apply or register</a>
@@ -395,5 +419,16 @@
       </div>
     </div>
   </div>
+
+  <script>
+    var navToggle = document.getElementById('navToggle');
+    var subNav = document.getElementById('subNav');
+    var navToggleIcon = document.getElementById('navToggleIcon');
+    navToggle.addEventListener('click', function () {
+      var isOpen = subNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      navToggleIcon.innerHTML = isOpen ? '&#10005;' : '&#9776;';
+    });
+  </script>
 </body>
 </html>

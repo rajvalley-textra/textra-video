@@ -15,6 +15,17 @@ export async function GET() {
       '<div class=\\"video-embed\\">\\n    <div class=\\"video-embed-label\\">💡 Video Overview</div>\\n    <div class=\\"video-embed-heading\\">See how the complaints process works</div>\\n    ' + newVideoSection + '\\n  </div>'
     );
 
+    // Give the "Find your bin day / My Portal / Planning search" pill row an id,
+    // then hide it on mobile via the page's existing 768px breakpoint.
+    fileContent = fileContent.replace(
+      'display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;\\">',
+      'display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;\\" id=\\"quickLinksRow\\">'
+    );
+    fileContent = fileContent.replace(
+      '@media (max-width: 768px) {\\n',
+      '@media (max-width: 768px) {\\n  #quickLinksRow { display: none !important; }\\n'
+    );
+
     return new NextResponse(fileContent, {
       headers: {
         'Content-Type': 'text/html; charset=utf-8',
