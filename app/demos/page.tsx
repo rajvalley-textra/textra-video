@@ -94,6 +94,8 @@ export default function DemosPage() {
               Concept demos showing how Textra videos look embedded in real-world pages — want to see yours?{' '}
               <a
                 href="mailto:sales@textra.video?subject=Make%20my%20demo&body=Hi%20Textra%20team%2C%20I%20saw%20your%20demo%20page%20and%20would%20love%20to%20see%20what%20my%20own%20content%20could%20look%20like%20as%20a%20Textra%20video."
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{ color: '#fff', textDecoration: 'underline', fontWeight: 700 }}
               >
                 Click here
