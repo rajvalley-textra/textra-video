@@ -31,15 +31,16 @@ const demos = [
     logo: '/camden-logo-user.png',
     color: C.teal,
   },
-  {
-    slug: 'crisis-resilience-demo',
-    org: 'Department for Work and Pensions',
-    title: 'Crisis and Resilience Fund Guidance',
-    excerpt: 'An explainer video embedded into the GOV.UK publication page, helping local authorities understand the Crisis and Resilience Fund for the 2026-2029 period.',
-    poster: '/crisis-resilience-poster.jpg',
-    logo: '/gov-uk-logo.webp',
-    color: C.blue,
-  },
+  // Hidden for now — re-add when ready to show again.
+  // {
+  //   slug: 'crisis-resilience-demo',
+  //   org: 'Department for Work and Pensions',
+  //   title: 'Crisis and Resilience Fund Guidance',
+  //   excerpt: 'An explainer video embedded into the GOV.UK publication page, helping local authorities understand the Crisis and Resilience Fund for the 2026-2029 period.',
+  //   poster: '/crisis-resilience-poster.jpg',
+  //   logo: '/gov-uk-logo.webp',
+  //   color: C.blue,
+  // },
   {
     slug: 'norwich-demo',
     org: 'Norwich City Council',
