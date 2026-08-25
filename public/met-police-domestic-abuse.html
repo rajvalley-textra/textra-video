@@ -59,28 +59,57 @@
     }
     .sub-nav a:hover { background: #f2f2f2; }
 
+    /* Hero section (background image behind breadcrumb + hero) */
+    .hero-section {
+      background-image: url('/met-police-hero-bg.webp');
+      background-size: cover;
+      background-position: center;
+      padding-bottom: 32px;
+    }
+
     /* Breadcrumb */
     .breadcrumb-bar {
       display: flex;
-      align-items: center;
+      align-items: stretch;
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 24px 40px 0;
-      gap: 0;
     }
-    .crumb {
+    .crumb-home {
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
       background: #fff;
       border: 1px solid #ccc;
-      padding: 12px 24px 12px 16px;
-      font-size: 16px;
-      font-weight: 700;
+      width: 56px;
+      padding-right: 14px;
       color: #0D2A8C;
       position: relative;
       clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+      z-index: 3;
     }
-    .crumb.home { color: #0D2A8C; padding-right: 32px; }
-    .crumb .home-icon { font-size: 18px; }
+    .crumb-home .home-icon { font-size: 20px; }
+    .crumb-divider {
+      width: 22px;
+      background: #b9b9b9;
+      clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+      margin-left: -14px;
+      z-index: 2;
+    }
+    .crumb-link {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 12px 28px 12px 32px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #0D2A8C;
+      text-decoration: underline;
+      clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+      margin-left: -14px;
+      z-index: 1;
+    }
 
     /* Hero split */
     .hero {
@@ -89,7 +118,7 @@
       align-items: stretch;
       gap: 28px;
       max-width: 1200px;
-      margin: 32px auto;
+      margin: 32px auto 0;
       padding: 0 40px;
     }
     .hero-video, .hero-text { min-width: 0; }
@@ -235,28 +264,32 @@
     <a href="#">Your area</a>
   </nav>
 
-  <!-- Breadcrumb -->
-  <div class="breadcrumb-bar">
-    <span class="crumb home"><span class="home-icon">&#127968;</span></span>
-    <span class="crumb">Advice and information</span>
-  </div>
-
-  <!-- Hero: video left, text right -->
-  <div class="hero">
-    <div class="hero-video">
-      <video
-        controls
-        poster="/met-police-domestic-abuse-poster.jpg"
-        style="width: 100%; height: 100%; background: #000;">
-        <source src="https://res.cloudinary.com/oyo7xls1/video/upload/Met%20Police%20Demo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <a href="https://www.textra.video/" class="textra-badge" target="_blank" rel="noopener" title="Made with Textra">
-        <img src="/textra-logo-mark.png" alt="Textra">
-      </a>
+  <!-- Hero section with background image -->
+  <div class="hero-section">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar">
+      <span class="crumb-home"><span class="home-icon">&#127968;</span></span>
+      <span class="crumb-divider"></span>
+      <a href="#" class="crumb-link">Advice and information</a>
     </div>
-    <div class="hero-text">
-      <p>Domestic abuse affects people from all walks of life and in many different ways. Find out what classes as domestic abuse, how to report it and how, under Clare's Law, you can find out if a partner has a history of domestic violence or abuse. We'll also show you how to delete your visit here from your web history, if you need to.</p>
+
+    <!-- Hero: video left, text right -->
+    <div class="hero">
+      <div class="hero-video">
+        <video
+          controls
+          poster="/met-police-domestic-abuse-poster.jpg"
+          style="width: 100%; height: 100%; background: #000;">
+          <source src="https://res.cloudinary.com/oyo7xls1/video/upload/Met%20Police%20Demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <a href="https://www.textra.video/" class="textra-badge" target="_blank" rel="noopener" title="Made with Textra">
+          <img src="/textra-logo-mark.png" alt="Textra">
+        </a>
+      </div>
+      <div class="hero-text">
+        <p>Domestic abuse affects people from all walks of life and in many different ways. Find out what classes as domestic abuse, how to report it and how, under Clare's Law, you can find out if a partner has a history of domestic violence or abuse. We'll also show you how to delete your visit here from your web history, if you need to.</p>
+      </div>
     </div>
   </div>
 
