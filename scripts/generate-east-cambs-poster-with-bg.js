@@ -48,9 +48,9 @@ async function main() {
 
   <!-- Logo badge -->
   <g filter="drop-shadow(0 8px 10px rgba(0,0,0,0.28))">
-    <rect x="32" y="20" width="280" height="110" rx="16" fill="#ffffff" fill-opacity="0.97"/>
+    <rect x="32" y="15" width="400" height="120" rx="16" fill="#ffffff" fill-opacity="0.97"/>
   </g>
-  <image x="52" y="28" width="240" height="100" href="data:image/png;base64,${logoB64}" preserveAspectRatio="xMidYMid meet"/>
+  <image x="52" y="30" width="360" height="90" href="data:image/png;base64,${logoB64}" preserveAspectRatio="xMidYMid meet"/>
 
   <!-- Label -->
   <text x="64" y="330" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2.5" fill="#bfe3ff">FORMAL COMPLAINTS</text>
