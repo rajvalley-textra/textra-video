@@ -91,7 +91,7 @@ export default function DemosPage() {
               Demos
             </h1>
             <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>
-              See Textra videos embedded in real-world pages, built for the organisations we work with.
+              Concept demos showing how Textra videos could look embedded in real-world pages, for the kinds of organisations we'd love to work with.
             </p>
           </div>
         </section>
