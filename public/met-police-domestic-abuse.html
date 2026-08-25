@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domestic abuse - Metropolitan Police</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-family: Arial, Helvetica, sans-serif; background: #fff; }
+    body { background: #fff; color: #1a1a1a; }
+    a { color: inherit; text-decoration: none; }
+
+    /* Header */
+    .header {
+      background: #0D2A8C;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .header-logo img { height: 56px; width: auto; }
+    .search-form {
+      display: flex;
+      align-items: stretch;
+      width: 340px;
+      max-width: 100%;
+    }
+    .search-form input {
+      flex: 1;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      padding: 0 16px;
+      font-size: 15px;
+      height: 46px;
+    }
+    .search-form button {
+      background: #fff;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      width: 50px;
+      cursor: pointer;
+      font-size: 18px;
+      color: #0D2A8C;
+    }
+
+    /* Sub nav */
+    .sub-nav {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
+    }
+    .sub-nav a {
+      padding: 20px 28px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+    .sub-nav a:hover { background: #f2f2f2; }
+
+    /* Breadcrumb */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      padding: 24px 40px 0;
+      gap: 0;
+    }
+    .crumb {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 12px 24px 12px 16px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #0D2A8C;
+      position: relative;
+      clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+    }
+    .crumb.home { color: #0D2A8C; padding-right: 32px; }
+    .crumb .home-icon { font-size: 18px; }
+
+    /* Hero split */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      align-items: stretch;
+      margin-top: 20px;
+    }
+    .hero-video {
+      position: relative;
+      background: #000;
+      aspect-ratio: 16 / 9;
+    }
+    .hero-video video { width: 100%; height: 100%; background: #000; }
+    .textra-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.94);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      z-index: 2;
+      padding: 5px;
+    }
+    .textra-badge img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+    .hero-text {
+      background: #f2f1ef;
+      display: flex;
+      align-items: center;
+      padding: 40px 48px;
+    }
+    .hero-text p {
+      font-size: 19px;
+      line-height: 1.6;
+      color: #1a1a1a;
+    }
+
+    /* Content section */
+    .content-section {
+      background: #f1efec;
+      padding: 60px 40px;
+    }
+    .content-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .content-inner h1 {
+      font-size: 46px;
+      font-weight: 800;
+      margin-bottom: 32px;
+      color: #1a1a1a;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-bottom: 4px solid #ccc;
+      padding: 24px 28px 28px;
+    }
+    .card.active { background: #d9d7d3; border-bottom-color: #999; }
+    .card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #0D2A8C;
+      text-decoration: underline;
+    }
+    .card p { font-size: 15px; color: #333; line-height: 1.5; }
+
+    /* Footer */
+    .footer {
+      background: #1a1c2b;
+      color: #fff;
+      padding: 60px 40px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      position: relative;
+    }
+    .footer-inner h3 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+    .footer-inner ul { list-style: none; }
+    .footer-inner li { margin-bottom: 14px; }
+    .footer-inner a { font-size: 15px; font-weight: 600; }
+    .footer-inner a:hover { text-decoration: underline; }
+    .footer-inner li.underline a { text-decoration: underline; }
+
+    .follow-us { grid-column: 3; margin-top: 60px; }
+    .follow-us h4 { font-size: 18px; font-weight: 700; margin-bottom: 18px; }
+    .social-icons { display: flex; gap: 14px; }
+    .social-icons a {
+      width: 44px; height: 44px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 20px;
+    }
+    .social-icons a.fb { background: #3b5998; }
+    .social-icons a.x { background: #000; }
+    .social-icons a.yt { background: #d92323; }
+    .social-icons a.ig { background: linear-gradient(45deg, #f09433, #dc2743, #cc2366); }
+    .social-icons a.wa { background: #25d366; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .card-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .follow-us { grid-column: 1; margin-top: 20px; }
+      .content-inner h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="header-logo">
+      <img src="/met-police-logo-header.png" alt="Metropolitan Police">
+    </div>
+    <form class="search-form">
+      <input type="text" placeholder="Search">
+      <button type="submit">&#128269;</button>
+    </form>
+  </div>
+
+  <!-- Sub nav -->
+  <nav class="sub-nav">
+    <a href="#">Report</a>
+    <a href="#">Tell us about</a>
+    <a href="#">Apply or register</a>
+    <a href="#">Request</a>
+    <a href="#">Thanks and complaints</a>
+    <a href="#">Your area</a>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-bar">
+    <span class="crumb home"><span class="home-icon">&#127968;</span></span>
+    <span class="crumb">Advice and information</span>
+  </div>
+
+  <!-- Hero: video left, text right -->
+  <div class="hero">
+    <div class="hero-video">
+      <video
+        controls
+        poster="/met-police-domestic-abuse-poster.jpg"
+        style="width: 100%; height: 100%; background: #000;">
+        <source src="https://res.cloudinary.com/oyo7xls1/video/upload/Met%20Police%20Demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <a href="https://www.textra.video/" class="textra-badge" target="_blank" rel="noopener" title="Made with Textra">
+        <img src="/textra-logo-mark.png" alt="Textra">
+      </a>
+    </div>
+    <div class="hero-text">
+      <p>Domestic abuse affects people from all walks of life and in many different ways. Find out what classes as domestic abuse, how to report it and how, under Clare's Law, you can find out if a partner has a history of domestic violence or abuse. We'll also show you how to delete your visit here from your web history, if you need to.</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content-section">
+    <div class="content-inner">
+      <h1>Domestic abuse</h1>
+      <div class="card-grid">
+        <div class="card active">
+          <h3>What is domestic abuse?</h3>
+          <p>What domestic violence and abuse is, and how to spot the signs</p>
+        </div>
+        <div class="card">
+          <h3>How to report domestic abuse</h3>
+          <p>The ways to report domestic abuse or violence to us</p>
+        </div>
+        <div class="card">
+          <h3>Request information under Clare's Law: Make a Domestic Violence Disclosure Scheme (DVDS) application</h3>
+          <p></p>
+        </div>
+        <div class="card">
+          <h3>Digital domestic abuse</h3>
+          <p>What digital domestic abuse is and how to get help</p>
+        </div>
+        <div class="card">
+          <h3>Animal cruelty and domestic abuse</h3>
+          <p>What to do if your pet is harmed</p>
+        </div>
+        <div class="card">
+          <h3>How to hide this visit from your web history</h3>
+          <p>Concerned about your web visits being checked by a partner?</p>
+        </div>
+        <div class="card">
+          <h3>Support organisations</h3>
+          <p>Details of partner organisations that can give help and advice</p>
+        </div>
+        <div class="card">
+          <h3>Report domestic abuse</h3>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-inner">
+      <div>
+        <h3>Metropolitan Police</h3>
+        <ul>
+          <li class="underline"><a href="#">Contact us</a></li>
+          <li><a href="#">Find a police station</a></li>
+          <li><a href="#">Careers at the Met</a></li>
+          <li><a href="#">About the Met</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Privacy notice</a></li>
+          <li><a href="#">Cookies</a></li>
+          <li><a href="#">Terms and conditions</a></li>
+          <li><a href="#">Accessibility</a></li>
+          <li><a href="#">Met shop</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Information and services</h3>
+        <ul>
+          <li><a href="#">Advice and information</a></li>
+          <li><a href="#">Crime prevention</a></li>
+          <li><a href="#">Stats and data</a></li>
+          <li><a href="#">Accessing information (FOI)</a></li>
+          <li><a href="#">Report</a></li>
+          <li><a href="#">Tell us about</a></li>
+          <li><a href="#">Apply or register</a></li>
+          <li><a href="#">Request</a></li>
+          <li><a href="#">Feedback</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Partners</h3>
+        <ul>
+          <li><a href="#">Police.uk</a></li>
+          <li><a href="#">Ask the Police</a></li>
+          <li><a href="#">Mayor of London</a></li>
+        </ul>
+      </div>
+      <div class="follow-us">
+        <h4>Follow us on</h4>
+        <div class="social-icons">
+          <a href="#" class="fb">f</a>
+          <a href="#" class="x">X</a>
+          <a href="#" class="yt">&#9654;</a>
+          <a href="#" class="ig">&#128247;</a>
+          <a href="#" class="wa">&#128241;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

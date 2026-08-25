@@ -68,6 +68,15 @@ const demos = [
     logo: '/little-botanical-logo-dark.png',
     color: C.teal,
   },
+  {
+    slug: 'met-police-demo',
+    org: 'Metropolitan Police',
+    title: 'Domestic Abuse Advice',
+    excerpt: 'An advice video embedded into the Met Police advice and information page, helping people understand domestic abuse and how to get support.',
+    poster: '/met-police-domestic-abuse-poster.jpg',
+    logo: '/met-police-logo-badge.png',
+    color: C.blue,
+  },
 ];
 
 export default function DemosPage() {
