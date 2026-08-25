@@ -263,9 +263,18 @@
 
     @media (max-width: 900px) {
       .main-container { grid-template-columns: 1fr; }
-      .main-nav ul { overflow-x: auto; }
+      .main-nav ul { overflow-x: auto; max-width: 100%; }
       .footer-top-inner, .footer-links-inner { grid-template-columns: 1fr; }
       .footer-social-block { border-right: none; }
+      .footer-top, .footer-links-section, .top-bar { padding-left: 20px; padding-right: 20px; }
+      .signup-form { max-width: 100%; }
+      .signup-form input { min-width: 0; }
+      .footer-signup { padding-left: 0; }
+    }
+    @media (max-width: 500px) {
+      .top-bar-right { width: 100%; justify-content: flex-start; }
+      .search-form { width: 100%; }
+      .donate-btn { white-space: normal; }
     }
   </style>
 </head>
