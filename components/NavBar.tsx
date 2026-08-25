@@ -69,9 +69,9 @@ export default function NavBar() {
             href="mailto:sales@textra.video?subject=Book a Demo - Website"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ background: C.teal, color: '#fff', borderRadius: 9999, padding: '13px 28px', fontSize: 15, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', boxShadow: `0 4px 14px ${C.teal}66` }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-1px) scale(1.03)'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 6px 18px ${C.teal}80`; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = 'none'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 4px 14px ${C.teal}66`; }}
+            style={{ background: grad, color: '#fff', borderRadius: 9999, padding: '13px 28px', fontSize: 15, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 200ms', boxShadow: `0 4px 16px ${C.navy}4d` }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-1px) scale(1.03)'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 6px 20px ${C.navy}66`; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = 'none'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 4px 16px ${C.navy}4d`; }}
           >
             Book a personalised demo
           </a>
@@ -116,7 +116,7 @@ export default function NavBar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
-              style={{ background: C.teal, color: '#fff', borderRadius: 9999, padding: '13px 24px', fontSize: 15, fontWeight: 700, textDecoration: 'none', textAlign: 'center', boxShadow: `0 4px 14px ${C.teal}66` }}
+              style={{ background: grad, color: '#fff', borderRadius: 9999, padding: '13px 24px', fontSize: 15, fontWeight: 700, textDecoration: 'none', textAlign: 'center', boxShadow: `0 4px 16px ${C.navy}4d` }}
             >
               Book a personalised demo
             </a>
