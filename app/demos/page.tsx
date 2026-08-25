@@ -59,6 +59,15 @@ const demos = [
     logo: '/age-uk-logo-final.png',
     color: C.blue,
   },
+  {
+    slug: 'little-botanical-demo',
+    org: 'The Little Botanical',
+    title: 'Orchid Care Guide',
+    excerpt: 'A care guide video embedded into the product page, showing customers exactly how to water, mist and care for their orchid.',
+    poster: '/little-botanical-orchid-poster.jpg',
+    logo: '/little-botanical-logo-dark.png',
+    color: C.teal,
+  },
 ];
 
 export default function DemosPage() {

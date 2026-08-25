@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orchid Care Guide | The Little Botanical</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-family: Arial, Helvetica, sans-serif; background: #fff; }
+    body { background: #fff; color: #1a1a1a; }
+    a { color: inherit; text-decoration: none; }
+
+    /* Top nav */
+    .top-nav {
+      background: #262626;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      padding: 14px 20px;
+      flex-wrap: wrap;
+    }
+    .top-nav a {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    .top-nav a:hover { opacity: 0.75; }
+
+    /* Brand bar */
+    .brand-bar {
+      background: #1c1c1c;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 40px;
+    }
+    .brand-bar .spacer { width: 80px; }
+    .brand-logo { display: flex; justify-content: center; flex: 1; }
+    .brand-logo img { height: 34px; width: auto; }
+    .brand-icons { display: flex; gap: 20px; align-items: center; width: 80px; justify-content: flex-end; }
+    .brand-icons span { color: #fff; font-size: 18px; }
+
+    /* Sub nav (tan) */
+    .sub-nav {
+      background: #cfa66b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 14px;
+      font-weight: 700;
+      color: #262626;
+    }
+    .sub-nav a {
+      color: #262626;
+      padding: 12px 18px;
+      border-right: 1px solid rgba(0,0,0,0.15);
+      white-space: nowrap;
+    }
+    .sub-nav a:last-child { border-right: none; }
+    .sub-nav a:hover { opacity: 0.7; }
+
+    /* Reviews bar */
+    .reviews-bar {
+      background: #1c1c1c;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .reviews-bar .stars { color: #F4D03F; letter-spacing: 2px; }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 500px;
+    }
+    .hero-left {
+      background: #f3ede7;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-left::before {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184,76,134,0.15), transparent 70%);
+    }
+    .hero-left h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.1;
+      color: #1a1a1a;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-breadcrumb {
+      font-size: 14px;
+      color: #444;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-breadcrumb a { text-decoration: underline; }
+
+    .hero-right {
+      position: relative;
+      background: #000;
+    }
+    .hero-right video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .textra-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.94);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      z-index: 2;
+      padding: 5px;
+    }
+    .textra-badge img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+    /* Content */
+    .content-wrap {
+      background: #faf5ef;
+      padding: 60px 40px;
+    }
+    .content-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .content-inner h2.title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 40px;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 32px;
+      color: #1a1a1a;
+    }
+    .content-inner p.intro {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .fact-box {
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px 32px;
+      margin: 32px auto;
+      max-width: 700px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #333;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+    .fact-box strong { color: #7A1F4E; }
+
+    .care-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin: 48px 0;
+      text-align: center;
+    }
+    .care-grid .icon { font-size: 32px; margin-bottom: 12px; }
+    .care-grid h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+    .care-grid p { font-size: 14px; color: #555; line-height: 1.5; }
+
+    .content-inner h2.section {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 30px;
+      font-weight: 400;
+      margin: 48px 0 16px;
+      color: #1a1a1a;
+    }
+    .content-inner .section-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    /* Footer */
+    .footer-info {
+      background: #1c1c1c;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      padding: 28px 40px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+    .footer-info div { display: flex; align-items: center; gap: 12px; }
+    .footer-info .icon { font-size: 22px; }
+
+    .as-seen {
+      text-align: center;
+      padding: 50px 40px 30px;
+    }
+    .as-seen h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 30px;
+      color: #1a1a1a;
+    }
+    .as-seen-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      opacity: 0.75;
+      font-weight: 700;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .footer-links-section {
+      padding: 0 40px 40px;
+    }
+    .footer-links-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+    .footer-links-inner h4 { font-size: 15px; font-weight: 700; margin-bottom: 16px; color: #1a1a1a; }
+    .footer-links-inner ul { list-style: none; }
+    .footer-links-inner li { margin-bottom: 10px; }
+    .footer-links-inner a { color: #333; font-size: 14px; }
+    .footer-links-inner a:hover { text-decoration: underline; }
+
+    .payment-icons {
+      text-align: center;
+      padding: 24px 40px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .footer-bottom {
+      background: #1c1c1c;
+      color: #fff;
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-brand-mini { display: flex; align-items: center; gap: 10px; }
+    .footer-brand-mini img { height: 28px; width: auto; }
+    .footer-social { display: flex; gap: 16px; }
+    .footer-social a { color: #fff; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 40px 24px; }
+      .hero-left h1 { font-size: 34px; }
+      .care-grid { grid-template-columns: 1fr; }
+      .footer-links-inner { grid-template-columns: repeat(2, 1fr); }
+      .as-seen-logos { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top nav -->
+  <nav class="top-nav">
+    <a href="#">About</a>
+    <a href="#">The Hot House</a>
+    <a href="#">Plant Guides</a>
+    <a href="#">Business</a>
+    <a href="#">Charity Partners</a>
+    <a href="#">T&amp;Cs</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- Brand bar -->
+  <div class="brand-bar">
+    <div class="spacer"></div>
+    <div class="brand-logo">
+      <img src="/little-botanical-logo-white.png" alt="The Little Botanical">
+    </div>
+    <div class="brand-icons">
+      <span>&#128269;</span>
+      <span>&#128100;</span>
+      <span>&#128722;</span>
+    </div>
+  </div>
+
+  <!-- Sub nav -->
+  <div class="sub-nav">
+    <a href="#">Summer Sale &#9728;&#65039;</a>
+    <a href="#">Indoor plants</a>
+    <a href="#">New In</a>
+    <a href="#">Outdoor Collection</a>
+    <a href="#">Bundle &amp; Save</a>
+    <a href="#">Collections</a>
+    <a href="#">Plant Care Accessories</a>
+    <a href="#">Gifts &#127873;</a>
+    <a href="#">View all indoor plants &#127793;</a>
+  </div>
+
+  <!-- Reviews bar -->
+  <div class="reviews-bar">
+    <span>&#9679;REVIEWS.io</span>
+    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+    <span>4.8 based on 1,780 reviews</span>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-left">
+      <h1>Orchid Care<br>Guide</h1>
+      <div class="hero-breadcrumb">
+        <a href="#">Home</a> / <a href="#">Care guides</a> / Orchid Care Guide
+      </div>
+    </div>
+    <div class="hero-right">
+      <video
+        controls
+        poster="/little-botanical-orchid-poster.jpg"
+        style="width: 100%; height: 100%; background: #000;">
+        <source src="https://res.cloudinary.com/oyo7xls1/video/upload/Little%20Botanical%20-%20Orchid%20Care%20Guide.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <a href="https://www.textra.video/" class="textra-badge" target="_blank" rel="noopener" title="Made with Textra">
+        <img src="/textra-logo-mark.png" alt="Textra">
+      </a>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content-wrap">
+    <div class="content-inner">
+      <h2 class="title">Orchid Care Guide</h2>
+      <p class="intro">The beautiful and ornate orchid is a stunning addition to any home. Our orchids come with a small number of flowers in bloom, so you can enjoy the theatre of watching the remaining buds open.</p>
+
+      <div class="fact-box">
+        <strong>Did you know?</strong> Orchids are one of the world's oldest flowering plants. Experts believe they've been around since before the continents separated!
+      </div>
+
+      <div class="care-grid">
+        <div>
+          <div class="icon">&#128167;</div>
+          <h3>Water</h3>
+          <p>Orchids don't need much water, so give your plant max 20-30ml of water every 14-21 days</p>
+        </div>
+        <div>
+          <div class="icon">&#127783;&#65039;</div>
+          <h3>Mist</h3>
+          <p>Spray the moss with water to keep it fresh and moist</p>
+        </div>
+        <div>
+          <div class="icon">&#128167;</div>
+          <h3>Drain</h3>
+          <p>Drain your plant to ensure it never sits in water</p>
+        </div>
+      </div>
+
+      <h2 class="section">Things To Do</h2>
+      <p class="section-text">Even though orchids are from the rainforest, surprisingly they only need a small amount of water. Water your plant by placing a small amount of water directly into the roots, avoiding the leaves. Alternatively, place a couple of medium-sized ice cubes into the soil every 14-21 days.</p>
+      <p class="section-text">Orchids need bright, indirect sunlight to thrive. An east or west-facing windowsill is perfect for your plant. Be careful of too much light in the middle of summer, though, as it'll scorch the leaves.</p>
+      <p class="section-text">With the right care an orchid can flower again and again. However, it'll only do so if the roots are firm and pale, which means they're healthy. Once its finished flowering cut the plant at the base of the stem and continue to water it every 14-21 days. You can also help your orchid to grow by providing it with plenty of indirect sunlight.</p>
+
+      <h2 class="section">Things Not To Do</h2>
+      <p class="section-text">Overwatering can cause the leaves to turn yellow and the flowers to drop off the stem. In fact, you're better off underwatering your orchid than giving it too much water. Check that the plant appears dry before watering. If it feels a bit moist, hold out for a few more days before giving your orchid another drink.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-info">
+    <div><span class="icon">&#128230;</span> Free delivery on orders over &pound;65 - Post code dependent</div>
+    <div><span class="icon">&#128260;</span> We dispatch Monday - Thursday</div>
+    <div><span class="icon">&#9999;&#65039;</span> Personalise your plants</div>
+  </div>
+
+  <div class="as-seen">
+    <h3>As Seen In</h3>
+    <div class="as-seen-logos">
+      <span style="font-family: Georgia, serif;">THE TIMES</span>
+      <span style="font-family: Arial Black, sans-serif;">HELLO!</span>
+      <span style="font-style: italic;">GRAZIA</span>
+      <span>marie claire</span>
+      <span style="font-style: italic; font-family: Georgia, serif;">STYLIST</span>
+      <span>itv</span>
+      <span>John Lewis</span>
+    </div>
+  </div>
+
+  <div class="footer-links-section">
+    <div class="footer-links-inner">
+      <div>
+        <h4>Shop By Price</h4>
+        <ul>
+          <li><a href="#">Under &pound;10</a></li>
+          <li><a href="#">&pound;10-&pound;20</a></li>
+          <li><a href="#">&pound;20-&pound;50</a></li>
+          <li><a href="#">&pound;50+</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Best-sellers</a></li>
+          <li><a href="#">Indoor Plants</a></li>
+          <li><a href="#">Outdoor Plants</a></li>
+          <li><a href="#">Christmas Collection</a></li>
+          <li><a href="#">Plant Care Accessories</a></li>
+          <li><a href="#">Living Walls</a></li>
+          <li><a href="#">Botanical Families</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>The Little Botanical</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Meet Our Team</a></li>
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">Helping The Planet</a></li>
+          <li><a href="#">Charity Partners</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Business</h4>
+        <ul>
+          <li><a href="#">Work With Us</a></li>
+          <li><a href="#">&#128722; Shop Wholesale on Faire</a></li>
+          <li><a href="#">&#128717; Become a Stockist</a></li>
+          <li><a href="#">&#127873; Corporate gifting and Events</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Online</h4>
+        <ul>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Delivery &amp; Returns</a></li>
+          <li><a href="#">Cookie policy</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="payment-icons">Powered by Stripe &nbsp;|&nbsp; PayPal &nbsp;|&nbsp; Apple Pay &nbsp;|&nbsp; Google Pay &nbsp;|&nbsp; Mastercard &nbsp;|&nbsp; Amex &nbsp;|&nbsp; Visa</div>
+
+  <div class="footer-bottom">
+    <div class="footer-brand-mini">
+      <img src="/little-botanical-logo-white.png" alt="The Little Botanical">
+    </div>
+    <div>Tag us @thelittlebotanical</div>
+    <div class="footer-social">
+      <a href="#">f</a>
+      <a href="#">&#128247;</a>
+      <a href="#">p</a>
+    </div>
+    <div>&copy; The Little Botanical</div>
+  </div>
+</body>
+</html>
