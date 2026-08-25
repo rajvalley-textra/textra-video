@@ -146,6 +146,24 @@
     .sidebar a:hover { text-decoration: underline; }
     .sidebar li.active { border-left: 4px solid #0A2E5C; }
     .sidebar li.active a { padding-left: 12px; color: #1a1a1a; font-weight: 700; }
+    .sidebar-toggle {
+      display: none;
+      width: 100%;
+      background: #f2f2f2;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      text-align: left;
+      padding: 14px 16px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+      cursor: pointer;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .sidebar-toggle .chevron { transition: transform 0.2s; font-size: 13px; }
+    .sidebar-toggle[aria-expanded="true"] .chevron { transform: rotate(180deg); }
 
     /* Content */
     .content h1 {
@@ -295,6 +313,13 @@
       .signup-form { max-width: 100%; }
       .signup-form input { min-width: 0; }
       .footer-signup { padding-left: 0; }
+
+      /* Collapse the 10-item sidebar list into an accordion so the
+         video isn't pushed far down the page */
+      .sidebar-toggle { display: flex; }
+      .sidebar h2 { display: none; }
+      .sidebar ul { display: none; }
+      .sidebar ul.open { display: block; }
     }
     @media (max-width: 500px) {
       .top-bar-right { width: 100%; justify-content: flex-start; }
@@ -347,7 +372,11 @@
   <div class="main-container">
     <div class="sidebar">
       <h2>Making the most of the internet</h2>
-      <ul>
+      <button class="sidebar-toggle" id="sidebarToggle" aria-expanded="false" aria-controls="sidebarList">
+        <span>Making the most of the internet</span>
+        <span class="chevron">&#9662;</span>
+      </button>
+      <ul id="sidebarList">
         <li><a href="#">Computer training courses</a></li>
         <li><a href="#">Glossary of online terms</a></li>
         <li class="active"><a href="#">Getting started on the internet</a></li>
@@ -485,6 +514,13 @@
       var isOpen = navList.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', isOpen);
       navToggleIcon.innerHTML = isOpen ? '&#10005;' : '&#9776;';
+    });
+
+    var sidebarToggle = document.getElementById('sidebarToggle');
+    var sidebarList = document.getElementById('sidebarList');
+    sidebarToggle.addEventListener('click', function () {
+      var isOpen = sidebarList.classList.toggle('open');
+      sidebarToggle.setAttribute('aria-expanded', isOpen);
     });
   </script>
 </body>
