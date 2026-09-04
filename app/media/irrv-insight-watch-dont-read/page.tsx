@@ -1,9 +1,119 @@
 'use client';
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import NavBar from '@/components/NavBar';
 import FooterSection from '@/components/FooterSection';
 import GetInTouchCTA from '@/components/media/GetInTouchCTA';
 import { C } from '@/lib/theme';
+
+function IconBadge({ children }: { children: ReactNode }) {
+  return (
+    <div style={{ width: 64, height: 64, borderRadius: 16, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(39,53,114,0.08)', flexShrink: 0 }}>
+      {children}
+    </div>
+  );
+}
+
+function Arrow() {
+  return (
+    <svg width="28" height="14" viewBox="0 0 28 14" fill="none" style={{ flexShrink: 0 }}>
+      <path d="M0 7H26M26 7L20 1M26 7L20 13" stroke={C.gray300} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function PlayCircle({ size = 64 }: { size?: number }) {
+  return (
+    <div
+      style={{
+        width: size,
+        height: size,
+        borderRadius: '50%',
+        background: `linear-gradient(135deg, ${C.blue} 0%, ${C.teal} 100%)`,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
+      }}>
+      <svg width={size * 0.32} height={size * 0.32} viewBox="0 0 24 24" fill="#fff">
+        <path d="M6 4L20 12L6 20V4Z" />
+      </svg>
+    </div>
+  );
+}
+
+function StatBanner({
+  kicker,
+  stat,
+  statLabel,
+  caption,
+  children,
+}: {
+  kicker: string;
+  stat: string;
+  statLabel: string;
+  caption: string;
+  children: ReactNode;
+}) {
+  return (
+    <div style={{ background: C.gray50, borderRadius: 16, padding: '32px 28px', marginBottom: 32 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 28, flexWrap: 'wrap', gap: 12 }}>
+        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.teal }}>
+          {kicker}
+        </span>
+        <div style={{ textAlign: 'right' }}>
+          <div style={{ fontSize: 26, fontWeight: 900, color: C.navy, lineHeight: 1 }}>{stat}</div>
+          <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.gray500, marginTop: 4 }}>
+            {statLabel}
+          </div>
+        </div>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24, flexWrap: 'wrap' }}>
+        {children}
+      </div>
+      <div style={{ fontSize: 13, color: C.gray500 }}>{caption}</div>
+    </div>
+  );
+}
+
+function PlatformStrip() {
+  const platforms = ['TikTok', 'YouTube', 'Instagram', 'Facebook Reels', 'LinkedIn'];
+  return (
+    <div style={{ background: `linear-gradient(160deg, ${C.navy} 0%, ${C.blue} 62%, ${C.teal} 100%)`, borderRadius: 16, padding: '32px 28px', marginBottom: 32 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 24, flexWrap: 'wrap', gap: 12 }}>
+        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.85)' }}>
+          Platforms Residents Live On
+        </span>
+        <div style={{ fontSize: 26, fontWeight: 900, color: '#fff', lineHeight: 1 }}>5</div>
+      </div>
+      <div style={{ display: 'flex', gap: 10, marginBottom: 20 }}>
+        {platforms.map((p, i) => {
+          const active = i === 2;
+          return (
+            <div
+              key={p}
+              title={p}
+              style={{
+                flex: 1,
+                aspectRatio: '3 / 4',
+                borderRadius: 12,
+                background: active ? '#fff' : 'rgba(255,255,255,0.16)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill={active ? C.navy : 'rgba(255,255,255,0.85)'}>
+                <path d="M6 4L20 12L6 20V4Z" />
+              </svg>
+            </div>
+          );
+        })}
+      </div>
+      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)' }}>
+        {platforms.join(' · ')} — residents already live here
+      </div>
+    </div>
+  );
+}
 
 export default function IRRVInsightWatchDontReadPost() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -69,6 +179,24 @@ export default function IRRVInsightWatchDontReadPost() {
               Revenues and Recovery
             </h2>
 
+            <StatBanner
+              kicker="Revenues & Recovery"
+              stat="+30–50%"
+              statLabel="Engagement & Retention"
+              caption="Instalment plans · direct debit setup · arrears support · Council Tax Support">
+              <IconBadge>
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                  <rect x="4" y="3" width="16" height="18" rx="2" stroke={C.navy} strokeWidth="1.6" />
+                  <line x1="7.5" y1="8" x2="16.5" y2="8" stroke={C.navy} strokeWidth="1.6" strokeLinecap="round" />
+                  <line x1="7.5" y1="11.5" x2="16.5" y2="11.5" stroke={C.gray300} strokeWidth="1.6" strokeLinecap="round" />
+                  <line x1="7.5" y1="15" x2="13" y2="15" stroke={C.gray300} strokeWidth="1.6" strokeLinecap="round" />
+                  <line x1="7.5" y1="18" x2="10.5" y2="18" stroke={C.teal} strokeWidth="1.8" strokeLinecap="round" />
+                </svg>
+              </IconBadge>
+              <Arrow />
+              <PlayCircle />
+            </StatBanner>
+
             <p style={{ marginBottom: 32 }}>
               For local authority revenues and benefits teams, the potential impact is significant. Council Tax reminders, benefit entitlement explanations, discount schemes and payment support processes are often difficult for residents to understand. Many people ignore written communications simply because they are too long, too technical or arrive at stressful moments. A short, friendly video explaining what a resident needs to do, what support is available and how to avoid enforcement action could dramatically improve engagement and compliance.
             </p>
@@ -91,6 +219,29 @@ export default function IRRVInsightWatchDontReadPost() {
               Enforcement, Housing and Beyond
             </h2>
 
+            <StatBanner
+              kicker="Enforcement, Housing & Beyond"
+              stat="<1 Hour"
+              statLabel="From Document to Video"
+              caption="Parking · environmental enforcement · licensing · repairs · anti-social behaviour reporting">
+              <IconBadge>
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3L19 5.5V11C19 15.5 16 19 12 21C8 19 5 15.5 5 11V5.5L12 3Z" stroke={C.navy} strokeWidth="1.6" strokeLinejoin="round" />
+                  <path d="M9 12L11 14L15.5 9.5" stroke={C.teal} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </IconBadge>
+              <Arrow />
+              <IconBadge>
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 11L12 4L20 11" stroke={C.navy} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M6 9.5V20H18V9.5" stroke={C.navy} strokeWidth="1.6" strokeLinejoin="round" />
+                  <rect x="10" y="14" width="4" height="6" stroke={C.navy} strokeWidth="1.6" />
+                </svg>
+              </IconBadge>
+              <Arrow />
+              <PlayCircle size={72} />
+            </StatBanner>
+
             <p style={{ marginBottom: 32 }}>
               Enforcement services could benefit equally. Parking enforcement, environmental enforcement, licensing compliance and debt recovery all rely heavily on public understanding. Educational video campaigns explaining why enforcement exists, how appeals work and how residents can remain compliant would help build trust and reduce perceptions of unfairness.
             </p>
@@ -110,6 +261,8 @@ export default function IRRVInsightWatchDontReadPost() {
             <h2 style={{ fontSize: 28, fontWeight: 700, color: C.navy, marginBottom: 24, marginTop: 40 }}>
               A Permanent Shift in Expectations
             </h2>
+
+            <PlatformStrip />
 
             <p style={{ marginBottom: 32 }}>
               Critically, local authorities must recognise that public expectations around communication have changed permanently. Residents now consume news, advice and educational content through TikTok, YouTube, Instagram, Facebook Reels and LinkedIn video. Government and public services compete for attention in the same digital ecosystem as commercial brands and media outlets.
@@ -140,6 +293,31 @@ export default function IRRVInsightWatchDontReadPost() {
       </main>
 
       <FooterSection />
+
+      {lightboxOpen && (
+        <div
+          onClick={() => setLightboxOpen(false)}
+          role="button"
+          tabIndex={0}
+          aria-label="Close photo"
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(15,20,40,0.85)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1000,
+            padding: 24,
+            cursor: 'zoom-out',
+          }}>
+          <img
+            src="/media/irrv-insight-watch-dont-read/dan-pearce.jpg"
+            alt="Dan Pearce IRRV"
+            style={{ maxWidth: 480, width: '100%', height: 'auto', borderRadius: 16, boxShadow: '0 20px 60px rgba(0,0,0,0.4)' }}
+          />
+        </div>
+      )}
     </>
   );
 }
