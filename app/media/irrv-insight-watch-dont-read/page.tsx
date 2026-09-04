@@ -1,10 +1,13 @@
 'use client';
+import { useState } from 'react';
 import NavBar from '@/components/NavBar';
 import FooterSection from '@/components/FooterSection';
 import GetInTouchCTA from '@/components/media/GetInTouchCTA';
 import { C } from '@/lib/theme';
 
 export default function IRRVInsightWatchDontReadPost() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
   return (
     <>
       <NavBar />
@@ -18,6 +21,26 @@ export default function IRRVInsightWatchDontReadPost() {
             <h1 style={{ fontSize: 52, fontWeight: 900, lineHeight: 1.1, marginBottom: 24 }}>
               Watch Don&apos;t Read — The Results
             </h1>
+            <button
+              onClick={() => setLightboxOpen(true)}
+              aria-label="View larger photo of Dan Pearce"
+              style={{
+                border: '3px solid rgba(255,255,255,0.6)',
+                borderRadius: '50%',
+                width: 88,
+                height: 88,
+                padding: 0,
+                overflow: 'hidden',
+                cursor: 'pointer',
+                background: 'transparent',
+                marginBottom: 20,
+              }}>
+              <img
+                src="/media/irrv-insight-watch-dont-read/dan-pearce.jpg"
+                alt="Dan Pearce IRRV"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </button>
             <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>
               Dan Pearce IRRV, writing in Insight, considers how AI-generated explainer videos can transform the way councils communicate with residents
             </p>
