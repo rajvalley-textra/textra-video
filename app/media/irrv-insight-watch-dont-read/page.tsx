@@ -19,7 +19,7 @@ export default function IRRVInsightWatchDontReadPost() {
               Watch Don&apos;t Read — The Results
             </h1>
             <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>
-              Daniel Pearce IRRV, writing in Insight, considers how AI-generated explainer videos can transform the way councils communicate with residents
+              Dan Pearce IRRV, writing in Insight, considers how AI-generated explainer videos can transform the way councils communicate with residents
             </p>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', marginTop: 16 }}>
               Insight — The monthly journal of the Institute of Revenues, Rating and Valuation, September 2026
@@ -105,7 +105,7 @@ export default function IRRVInsightWatchDontReadPost() {
             </p>
 
             <p style={{ marginBottom: 32, fontSize: 13, color: C.gray500 }}>
-              Daniel Pearce IRRV is Director of Business Development at Telsolutions Ltd. This article first appeared in Insight, the monthly journal of the Institute of Revenues, Rating and Valuation, September 2026.
+              Dan Pearce IRRV is Director of Sales and Business Development at Telsolutions, a company that provides customer contact technology and services specifically designed for income recovery and customer engagement applications. This article first appeared in Insight, the monthly journal of the Institute of Revenues, Rating and Valuation, September 2026.
             </p>
 
             <GetInTouchCTA
