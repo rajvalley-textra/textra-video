@@ -128,7 +128,7 @@ export default function IRRVInsightWatchDontReadPost() {
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.8)', marginBottom: 16 }}>
               Technology
             </div>
-            <h1 style={{ fontSize: 52, fontWeight: 900, lineHeight: 1.1, marginBottom: 24 }}>
+            <h1 style={{ fontSize: 'clamp(28px, 5.4vw, 52px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 24, whiteSpace: 'nowrap' }}>
               Watch Don&apos;t Read — The Results
             </h1>
             <button
