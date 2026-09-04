@@ -247,18 +247,18 @@ export default function MediaPage() {
                         background: post.color,
                       }}
                     />
-                    <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.gray500 }}>
+                    <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.gray500 }}>
                       {post.category}
                     </span>
                   </div>
-                  <h2 style={{ fontSize: 20, fontWeight: 700, color: C.navy, lineHeight: 1.3, margin: 0 }}>
+                  <h2 style={{ fontSize: 16, fontWeight: 700, color: C.navy, lineHeight: 1.3, margin: 0 }}>
                     {post.title}
                   </h2>
-                  <p style={{ fontSize: 15, color: C.gray600, lineHeight: 1.6, margin: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                  <p style={{ fontSize: 13, color: C.gray600, lineHeight: 1.5, margin: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                     {post.excerpt}
                   </p>
                   <div style={{ marginTop: 'auto', paddingTop: 12, borderTop: `1px solid ${C.gray100}` }}>
-                    <span style={{ fontSize: 13, fontWeight: 600, color: post.color, pointerEvents: 'none' }}>
+                    <span style={{ fontSize: 12, fontWeight: 600, color: post.color, pointerEvents: 'none' }}>
                       Read Article →
                     </span>
                   </div>
