@@ -13,10 +13,10 @@ export default function IRRVInsightWatchDontReadPost() {
         <section style={{ background: 'linear-gradient(160deg, #273572 0%, #1A71B1 62%, #66BCAD 100%)', color: '#fff', padding: '80px 40px', textAlign: 'center' }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.8)', marginBottom: 16 }}>
-              Company News
+              Technology
             </div>
             <h1 style={{ fontSize: 52, fontWeight: 900, lineHeight: 1.1, marginBottom: 24 }}>
-              Watch, Don&apos;t Read — The Results
+              Watch Don&apos;t Read — The Results
             </h1>
             <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>
               Daniel Pearce IRRV, writing in Insight, considers how AI-generated explainer videos can transform the way councils communicate with residents
@@ -110,7 +110,7 @@ export default function IRRVInsightWatchDontReadPost() {
 
             <GetInTouchCTA
               postUrl="https://www.textra.video/media/irrv-insight-watch-dont-read"
-              postTitle="Watch, Don't Read — The Results"
+              postTitle="Watch Don't Read — The Results"
             />
           </div>
         </section>
