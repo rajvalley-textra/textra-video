@@ -57,12 +57,12 @@ function StatBanner({
   return (
     <div style={{ background: C.gray50, borderRadius: 16, padding: '32px 28px', marginBottom: 32 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 28, flexWrap: 'wrap', gap: 12 }}>
-        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.teal }}>
+        <span style={{ fontSize: 14, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.teal }}>
           {kicker}
         </span>
         <div style={{ textAlign: 'right' }}>
-          <div style={{ fontSize: 26, fontWeight: 900, color: C.navy, lineHeight: 1 }}>{stat}</div>
-          <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.gray500, marginTop: 4 }}>
+          <div style={{ fontSize: 34, fontWeight: 900, color: C.navy, lineHeight: 1 }}>{stat}</div>
+          <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: C.gray500, marginTop: 4 }}>
             {statLabel}
           </div>
         </div>
@@ -70,7 +70,7 @@ function StatBanner({
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24, flexWrap: 'wrap' }}>
         {children}
       </div>
-      <div style={{ fontSize: 13, color: C.gray500 }}>{caption}</div>
+      <div style={{ fontSize: 16, color: C.gray500 }}>{caption}</div>
     </div>
   );
 }
@@ -80,10 +80,10 @@ function PlatformStrip() {
   return (
     <div style={{ background: `linear-gradient(160deg, ${C.navy} 0%, ${C.blue} 62%, ${C.teal} 100%)`, borderRadius: 16, padding: '32px 28px', marginBottom: 32 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 24, flexWrap: 'wrap', gap: 12 }}>
-        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.85)' }}>
+        <span style={{ fontSize: 14, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.85)' }}>
           Platforms Residents Live On
         </span>
-        <div style={{ fontSize: 26, fontWeight: 900, color: '#fff', lineHeight: 1 }}>5</div>
+        <div style={{ fontSize: 34, fontWeight: 900, color: '#fff', lineHeight: 1 }}>5</div>
       </div>
       <div style={{ display: 'flex', gap: 10, marginBottom: 20 }}>
         {platforms.map((p, i) => {
@@ -108,7 +108,7 @@ function PlatformStrip() {
           );
         })}
       </div>
-      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)' }}>
+      <div style={{ fontSize: 16, color: 'rgba(255,255,255,0.85)' }}>
         {platforms.join(' · ')} — residents already live here
       </div>
     </div>
