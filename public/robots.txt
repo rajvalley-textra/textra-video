@@ -1,8 +1,6 @@
-# Block non-existent pages
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /contact
 
 # Canonical domain preference
 Host: https://www.textra.video
