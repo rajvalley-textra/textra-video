@@ -3,21 +3,32 @@ import { NextRequest, NextResponse } from 'next/server';
 const HUBSPOT_API_BASE = 'https://api.hubapi.com/crm/v3/objects/contacts';
 
 interface ContactPayload {
-  name: string;
+  firstName: string;
+  lastName: string;
   council: string;
   department: string;
   email: string;
   phone?: string;
 }
 
-function splitName(fullName: string) {
-  const trimmed = fullName.trim();
-  const spaceIndex = trimmed.indexOf(' ');
-  if (spaceIndex === -1) return { firstname: trimmed, lastname: '' };
-  return {
-    firstname: trimmed.slice(0, spaceIndex),
-    lastname: trimmed.slice(spaceIndex + 1),
-  };
+async function notifySlack(payload: ContactPayload) {
+  const webhookUrl = process.env.SLACK_WEBHOOK_URL;
+  if (!webhookUrl) return;
+
+  try {
+    await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        text:
+          `:dart: New Local Authorities lead: *${payload.firstName} ${payload.lastName}* ` +
+          `(${payload.council}, ${payload.department}) — ${payload.email}` +
+          (payload.phone ? ` — ${payload.phone}` : ''),
+      }),
+    });
+  } catch {
+    // Slack alert is best-effort; never let it block the actual submission.
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -36,15 +47,14 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 });
   }
 
-  const { name, council, department, email, phone } = body;
-  if (!name?.trim() || !council?.trim() || !department?.trim() || !email?.trim()) {
+  const { firstName, lastName, council, department, email, phone } = body;
+  if (!firstName?.trim() || !lastName?.trim() || !council?.trim() || !department?.trim() || !email?.trim()) {
     return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 });
   }
 
-  const { firstname, lastname } = splitName(name);
   const properties = {
-    firstname,
-    lastname,
+    firstname: firstName,
+    lastname: lastName,
     email,
     phone: phone || '',
     company: council,
@@ -61,6 +71,7 @@ export async function POST(request: NextRequest) {
   });
 
   if (createRes.ok) {
+    await notifySlack(body);
     return NextResponse.json({ ok: true });
   }
 
@@ -80,6 +91,7 @@ export async function POST(request: NextRequest) {
       });
 
       if (updateRes.ok) {
+        await notifySlack(body);
         return NextResponse.json({ ok: true });
       }
 

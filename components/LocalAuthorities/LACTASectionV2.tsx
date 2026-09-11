@@ -7,7 +7,8 @@ const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
 export default function CTASectionV2() {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     council: '',
     department: '',
     email: '',
@@ -41,7 +42,7 @@ export default function CTASectionV2() {
       }
 
       setStatus('success');
-      setFormData({ name: '', council: '', department: '', email: '', phone: '' });
+      setFormData({ firstName: '', lastName: '', council: '', department: '', email: '', phone: '' });
     } catch (err) {
       setStatus('error');
       setErrorMessage(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
@@ -96,29 +97,56 @@ export default function CTASectionV2() {
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               {/* Name */}
-              <div>
-                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: C.navy, marginBottom: 8 }}>
-                  Your name *
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  style={{
-                    width: '100%',
-                    padding: '12px 16px',
-                    border: `1px solid ${C.gray200}`,
-                    borderRadius: 8,
-                    fontSize: 14,
-                    fontFamily: 'var(--font-montserrat), -apple-system, BlinkMacSystemFont, sans-serif',
-                    boxSizing: 'border-box',
-                    transition: 'border-color 200ms',
-                  }}
-                  onFocus={(e) => { e.target.style.borderColor = '#66BCAD'; }}
-                  onBlur={(e) => { e.target.style.borderColor = C.gray200; }}
-                />
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                <div>
+                  <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: C.navy, marginBottom: 8 }}>
+                    First name *
+                  </label>
+                  <input
+                    type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    required
+                    style={{
+                      width: '100%',
+                      padding: '12px 16px',
+                      border: `1px solid ${C.gray200}`,
+                      borderRadius: 8,
+                      fontSize: 14,
+                      fontFamily: 'var(--font-montserrat), -apple-system, BlinkMacSystemFont, sans-serif',
+                      boxSizing: 'border-box',
+                      transition: 'border-color 200ms',
+                    }}
+                    onFocus={(e) => { e.target.style.borderColor = '#66BCAD'; }}
+                    onBlur={(e) => { e.target.style.borderColor = C.gray200; }}
+                  />
+                </div>
+
+                <div>
+                  <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: C.navy, marginBottom: 8 }}>
+                    Last name *
+                  </label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    required
+                    style={{
+                      width: '100%',
+                      padding: '12px 16px',
+                      border: `1px solid ${C.gray200}`,
+                      borderRadius: 8,
+                      fontSize: 14,
+                      fontFamily: 'var(--font-montserrat), -apple-system, BlinkMacSystemFont, sans-serif',
+                      boxSizing: 'border-box',
+                      transition: 'border-color 200ms',
+                    }}
+                    onFocus={(e) => { e.target.style.borderColor = '#66BCAD'; }}
+                    onBlur={(e) => { e.target.style.borderColor = C.gray200; }}
+                  />
+                </div>
               </div>
 
               {/* Council */}
