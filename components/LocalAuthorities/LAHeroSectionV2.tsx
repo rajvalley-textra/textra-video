@@ -14,8 +14,23 @@ export default function LAHeroSectionV2() {
       <div style={{ position: 'absolute', top: -140, right: -100, width: 600, height: 600, borderRadius: '50%', background: 'rgba(255,255,255,0.03)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', bottom: -80, left: -60, width: 340, height: 340, borderRadius: '50%', background: 'rgba(102,188,173,0.09)', pointerEvents: 'none' }} />
 
-      <div style={{ ...WRAP, width: '100%', display: 'grid', gridTemplateColumns: '1fr 1.15fr', gap: 64, alignItems: 'center', padding: '80px 40px' }}>
-        {/* Left: ARP partnership + CTAs */}
+      <div style={{ ...WRAP, width: '100%', display: 'grid', gridTemplateColumns: '1.15fr 1fr', gap: 64, alignItems: 'center', padding: '80px 40px' }}>
+        {/* Left: Headline */}
+        <div style={{ textAlign: 'left' }}>
+          <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(102,188,173,0.92)', marginBottom: 18 }}>
+            Resident Engagement Platform
+          </div>
+
+          <h1 style={{ fontSize: 52, fontWeight: 900, color: '#fff', lineHeight: 1.08, letterSpacing: '-0.02em', margin: '0 0 22px 0' }}>
+            <span style={{ whiteSpace: 'nowrap' }}>Cut arrears. Cut calls.</span><br />Give your team their time back.
+          </h1>
+
+          <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.76)', lineHeight: 1.7, margin: 0, fontWeight: 400, maxWidth: 560 }}>
+            Textra turns your council tax and benefits letters into short, on-brand videos residents actually watch — so your team spends less time re-explaining the same thing on the phone, and more time on the cases that need a human.
+          </p>
+        </div>
+
+        {/* Right: ARP partnership + CTAs */}
         <div style={{ textAlign: 'left' }}>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.7)', fontWeight: 500, marginBottom: 24, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
             Proud to be working with
@@ -77,21 +92,6 @@ export default function LAHeroSectionV2() {
               <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.5)', fontWeight: 500, marginTop: 4, lineHeight: 1.3 }}>Engagement Uplift</div>
             </div>
           </div>
-        </div>
-
-        {/* Right: Headline */}
-        <div style={{ textAlign: 'left' }}>
-          <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(102,188,173,0.92)', marginBottom: 18 }}>
-            Resident Engagement Platform
-          </div>
-
-          <h1 style={{ fontSize: 52, fontWeight: 900, color: '#fff', lineHeight: 1.08, letterSpacing: '-0.02em', margin: '0 0 22px 0' }}>
-            Cut arrears. Cut calls.<br />Give your team their time back.
-          </h1>
-
-          <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.76)', lineHeight: 1.7, margin: 0, fontWeight: 400, maxWidth: 560 }}>
-            Textra turns your council tax and benefits letters into short, on-brand videos residents actually watch — so your team spends less time re-explaining the same thing on the phone, and more time on the cases that need a human.
-          </p>
         </div>
       </div>
 
