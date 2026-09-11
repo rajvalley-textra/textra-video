@@ -13,10 +13,13 @@ interface ContactPayload {
 
 async function notifySlack(payload: ContactPayload) {
   const webhookUrl = process.env.SLACK_WEBHOOK_URL;
-  if (!webhookUrl) return;
+  if (!webhookUrl) {
+    console.warn('[local-authorities-contact] SLACK_WEBHOOK_URL not set, skipping Slack alert');
+    return;
+  }
 
   try {
-    await fetch(webhookUrl, {
+    const res = await fetch(webhookUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -26,8 +29,16 @@ async function notifySlack(payload: ContactPayload) {
           (payload.phone ? ` — ${payload.phone}` : ''),
       }),
     });
-  } catch {
+
+    if (!res.ok) {
+      const body = await res.text().catch(() => '');
+      console.error(`[local-authorities-contact] Slack webhook returned ${res.status}: ${body}`);
+    } else {
+      console.log('[local-authorities-contact] Slack alert sent');
+    }
+  } catch (err) {
     // Slack alert is best-effort; never let it block the actual submission.
+    console.error('[local-authorities-contact] Slack webhook fetch threw:', err);
   }
 }
 
