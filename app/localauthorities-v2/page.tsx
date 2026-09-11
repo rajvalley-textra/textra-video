@@ -8,7 +8,7 @@ import ARPPartnershipSectionV2 from '@/components/LocalAuthorities/ARPPartnershi
 import ProblemSection from '@/components/LocalAuthorities/LAProblemSection';
 import SolutionSection from '@/components/LocalAuthorities/LASolutionSection';
 import VideoShowcaseSection from '@/components/LocalAuthorities/LAVideoShowcaseSection';
-import ROICalculatorSection from '@/components/LocalAuthorities/LAROICalculatorSection';
+import ROICalculatorSectionV2 from '@/components/LocalAuthorities/LAROICalculatorSectionV2';
 import CTASectionV2 from '@/components/LocalAuthorities/LACTASectionV2';
 
 export default function LocalAuthoritiesPageV2() {
@@ -22,7 +22,7 @@ export default function LocalAuthoritiesPageV2() {
         <ProblemSection />
         <SolutionSection />
         <VideoShowcaseSection />
-        <ROICalculatorSection />
+        <ROICalculatorSectionV2 />
         <CTASectionV2 />
       </main>
       <FooterSection />
