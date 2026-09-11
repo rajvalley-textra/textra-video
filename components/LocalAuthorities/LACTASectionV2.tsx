@@ -1,18 +1,79 @@
 'use client';
 
-import Script from 'next/script';
+import { useState } from 'react';
 import { C } from '@/lib/theme';
 
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
+const HUBSPOT_PORTAL_ID = '149079327';
+const HUBSPOT_FORM_ID = '65aaa6cb-0572-4d3a-a863-1064576578b6';
+
 export default function CTASectionV2() {
+  const [formData, setFormData] = useState({
+    name: '',
+    council: '',
+    department: '',
+    email: '',
+    phone: '',
+  });
+
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('submitting');
+    setErrorMessage('');
+
+    const [firstname, ...rest] = formData.name.trim().split(' ');
+    const lastname = rest.join(' ');
+
+    try {
+      const res = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fields: [
+              { name: 'firstname', value: firstname || formData.name },
+              { name: 'lastname', value: lastname },
+              { name: 'email', value: formData.email },
+              { name: 'phone', value: formData.phone },
+              { name: 'company', value: formData.council },
+              { name: 'department', value: formData.department },
+            ],
+            context: {
+              pageUri: typeof window !== 'undefined' ? window.location.href : '',
+              pageName: typeof document !== 'undefined' ? document.title : '',
+            },
+          }),
+        }
+      );
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        throw new Error(body?.message || `HubSpot rejected the submission (${res.status})`);
+      }
+
+      setStatus('success');
+      setFormData({ name: '', council: '', department: '', email: '', phone: '' });
+    } catch (err) {
+      setStatus('error');
+      setErrorMessage(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    }
+  };
+
   return (
     <section style={{ background: '#fff', paddingTop: 80, paddingBottom: 80, position: 'relative', overflow: 'hidden' }}>
       {/* Background */}
       <div style={{ position: 'absolute', bottom: -150, left: -100, width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(39,53,114,0.03), transparent)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', top: -100, right: -150, width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle, rgba(102,188,173,0.04), transparent)', pointerEvents: 'none' }} />
-
-      <Script src="https://js-eu1.hsforms.net/forms/embed/149079327.js" strategy="afterInteractive" defer />
 
       <div style={{ ...WRAP, width: '100%' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
@@ -48,22 +109,174 @@ export default function CTASectionV2() {
             </div>
           </div>
 
-          {/* Right: HubSpot form */}
+          {/* Right: Form */}
           <div style={{ background: '#f8f9fc', border: `1px solid ${C.gray100}`, borderRadius: 16, padding: 40 }}>
             <h3 style={{ fontSize: 18, fontWeight: 700, color: C.navy, margin: '0 0 24px 0' }}>
               Tell us about your council
             </h3>
 
-            <div
-              className="hs-form-frame"
-              data-region="eu1"
-              data-form-id="65aaa6cb-0572-4d3a-a863-1064576578b6"
-              data-portal-id="149079327"
-            />
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+              {/* Name */}
+              <div>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: C.navy, marginBottom: 8 }}>
+                  Your name *
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  style={{
+                    width: '100%',
+                    padding: '12px 16px',
+                    border: `1px solid ${C.gray200}`,
+                    borderRadius: 8,
+                    fontSize: 14,
+                    fontFamily: 'var(--font-montserrat), -apple-system, BlinkMacSystemFont, sans-serif',
+                    boxSizing: 'border-box',
+                    transition: 'border-color 200ms',
+                  }}
+                  onFocus={(e) => { e.target.style.borderColor = '#66BCAD'; }}
+                  onBlur={(e) => { e.target.style.borderColor = C.gray200; }}
+                />
+              </div>
 
-            <p style={{ fontSize: 12, color: C.gray400, margin: '16px 0 0 0' }}>
-              We'll be in touch within 24 hours. No spam, no nonsense.
-            </p>
+              {/* Council */}
+              <div>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: C.navy, marginBottom: 8 }}>
+                  Council name *
+                </label>
+                <input
+                  type="text"
+                  name="council"
+                  value={formData.council}
+                  onChange={handleChange}
+                  placeholder="E.g., East Suffolk Council"
+                  required
+                  style={{
+                    width: '100%',
+                    padding: '12px 16px',
+                    border: `1px solid ${C.gray200}`,
+                    borderRadius: 8,
+                    fontSize: 14,
+                    fontFamily: 'var(--font-montserrat), -apple-system, BlinkMacSystemFont, sans-serif',
+                    boxSizing: 'border-box',
+                  }}
+                  onFocus={(e) => { e.target.style.borderColor = '#66BCAD'; }}
+                  onBlur={(e) => { e.target.style.borderColor = C.gray200; }}
+                />
+              </div>
+
+              {/* Department */}
+              <div>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: C.navy, marginBottom: 8 }}>
+                  Your department *
+                </label>
+                <input
+                  type="text"
+                  name="department"
+                  value={formData.department}
+                  onChange={handleChange}
+                  placeholder="E.g., Revenues, Benefits, Communications"
+                  required
+                  style={{
+                    width: '100%',
+                    padding: '12px 16px',
+                    border: `1px solid ${C.gray200}`,
+                    borderRadius: 8,
+                    fontSize: 14,
+                    fontFamily: 'var(--font-montserrat), -apple-system, BlinkMacSystemFont, sans-serif',
+                    boxSizing: 'border-box',
+                  }}
+                  onFocus={(e) => { e.target.style.borderColor = '#66BCAD'; }}
+                  onBlur={(e) => { e.target.style.borderColor = C.gray200; }}
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: C.navy, marginBottom: 8 }}>
+                  Email address *
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  style={{
+                    width: '100%',
+                    padding: '12px 16px',
+                    border: `1px solid ${C.gray200}`,
+                    borderRadius: 8,
+                    fontSize: 14,
+                    fontFamily: 'var(--font-montserrat), -apple-system, BlinkMacSystemFont, sans-serif',
+                    boxSizing: 'border-box',
+                  }}
+                  onFocus={(e) => { e.target.style.borderColor = '#66BCAD'; }}
+                  onBlur={(e) => { e.target.style.borderColor = C.gray200; }}
+                />
+              </div>
+
+              {/* Phone */}
+              <div>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: C.navy, marginBottom: 8 }}>
+                  Phone (optional)
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  style={{
+                    width: '100%',
+                    padding: '12px 16px',
+                    border: `1px solid ${C.gray200}`,
+                    borderRadius: 8,
+                    fontSize: 14,
+                    fontFamily: 'var(--font-montserrat), -apple-system, BlinkMacSystemFont, sans-serif',
+                    boxSizing: 'border-box',
+                  }}
+                  onFocus={(e) => { e.target.style.borderColor = '#66BCAD'; }}
+                  onBlur={(e) => { e.target.style.borderColor = C.gray200; }}
+                />
+              </div>
+
+              {/* Submit button */}
+              <button
+                type="submit"
+                disabled={status === 'submitting'}
+                style={{
+                  padding: '14px 24px',
+                  background: '#66BCAD',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: 8,
+                  fontSize: 15,
+                  fontWeight: 700,
+                  cursor: status === 'submitting' ? 'default' : 'pointer',
+                  opacity: status === 'submitting' ? 0.7 : 1,
+                  transition: 'background 200ms',
+                  marginTop: 12,
+                }}
+                onMouseEnter={(e) => { if (status !== 'submitting') e.currentTarget.style.background = '#5aa89a'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = '#66BCAD'; }}
+              >
+                {status === 'submitting' ? 'Sending…' : status === 'success' ? '✓ Message sent!' : 'Book a call'}
+              </button>
+
+              {status === 'error' && (
+                <p style={{ fontSize: 13, color: '#b5453a', margin: 0 }}>
+                  {errorMessage}
+                </p>
+              )}
+
+              {/* Small print */}
+              <p style={{ fontSize: 12, color: C.gray400, margin: '8px 0 0 0' }}>
+                We'll be in touch within 24 hours. No spam, no nonsense.
+              </p>
+            </form>
           </div>
         </div>
       </div>
